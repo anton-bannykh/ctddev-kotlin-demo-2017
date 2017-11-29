@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="my.lib.splay.SplaySetTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2017-12-12T23:10:05" hostname="Gregs-MacBook-Pro.local" time="19.167">
+  <properties/>
+  <testcase name="sequenceWithRepeatsTest" classname="my.lib.splay.SplaySetTest" time="0.941"/>
+  <testcase name="sequenceIntsAddTest" classname="my.lib.splay.SplaySetTest" time="2.597"/>
+  <testcase name="randomIntsAddTest" classname="my.lib.splay.SplaySetTest" time="14.427"/>
+  <testcase name="randomAddRemoveTest" classname="my.lib.splay.SplaySetTest" time="1.2"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
