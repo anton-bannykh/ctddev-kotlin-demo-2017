@@ -1,0 +1,4 @@
+#Mon Dec 18 18:43:13 MSK 2017
+base.0=/Users/greg/Documents/University/Kotlin/ctddev-kotlin-demo-2017/app/build/intermediates/transforms/dexMerger/debug/97
+path.0=classes.dex
+renamed.0=classes.dex
