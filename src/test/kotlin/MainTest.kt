@@ -1,12 +1,11 @@
-import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import java.util.*
+import java.util.Arrays
 
 /**
  * Created by Александр on 29.11.2017.
  */
-fun main(args: Array<String>) {
+class MainTest {
 
     @Test
     fun testSortedArray() {
@@ -16,6 +15,7 @@ fun main(args: Array<String>) {
         ans.sort()
         assertTrue(Arrays.equals(ans, ms))
     }
+
     @Test
     fun testUnSortedArray() {
         val ms = intArrayOf(100, 67, 32, 10, 0, -100)
