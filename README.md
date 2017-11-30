@@ -1,3 +1,5 @@
+[![Build status](https://travis-ci.org/anton-bannykh/ctddev-kotlin-demo-2017.svg?branch=master)](https://travis-ci.org/anton-bannykh/ctddev-kotlin-demo-2017)
+
 # Описание
 
 Репозиторий предназначен для знакомства студентов сторого курса КТ с основами языка [Kotlin](kotlinlang.org)
