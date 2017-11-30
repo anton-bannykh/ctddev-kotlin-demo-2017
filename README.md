@@ -18,3 +18,14 @@
   * Создайте pull request в ветку `"$name-$surname"`
 2. TODO
 
+# Разное
+
+## Gradle
+
+Полезные команды
+
+* `./gradlew assemble` собрать проект
+* `./gradlew test` собрать и запустить тесты
+* `./gradlew check` собрать, запустить все проверки (тесты и style-checker)
+* `./gradlew ktlintCheck` запустить style-checker (ошибки в `build/reports/ktlint`)
+* `./gradlew ktlintFormat` попытаться отформатировать код (работает не всегда :-( )
