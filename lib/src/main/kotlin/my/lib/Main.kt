@@ -1,7 +1,5 @@
 package my.lib
-
-
-import java.util.*
+import java.util.Random
 
 /**
  * Created by Александр on 29.11.2017.
