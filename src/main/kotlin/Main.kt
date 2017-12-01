@@ -66,11 +66,5 @@ class Graph {
 }
 
 fun main(args: Array<String>) {
-    val g = Graph()
-    g.setSize(3)
-    g.addEdge(1, 2, 5)
-    g.addEdge(1, 3, 10)
-    g.addEdge(2, 3, 15)
-    println(g.getAnswAsString())
-
+    //
 }
