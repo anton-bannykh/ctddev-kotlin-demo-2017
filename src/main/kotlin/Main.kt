@@ -169,7 +169,7 @@ fun main(args: Array<String>) {
             println()
         }
     } catch (e: Exception) {
-        //If input is incorrect, let user know about ir
+        //If input is incorrect, let user know about it
         println(e.message)
         return
     }
