@@ -1,39 +1,49 @@
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import java.util.*
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun testA() {
+        assertEquals(1, searchSubstring("aaa", "a"))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testSecondIndex() {
+        assertEquals(2, searchSubstring("apple", "ppl"))
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun testNotOccurrence() {
+        assertEquals(-1, searchSubstring("apple", "mandarin"))
     }
 
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+    fun testRandomSuffixFromRandomString() {
+        val s = StringBuilder()
+        val sizeOfString = Random().nextInt(100000) + 1
+        for (i in 1..sizeOfString)
+            s.append((Random().nextInt() + 1).toChar())
+        val ind = Random().nextInt(s.length)
+
+        assertEquals(ind + 1, searchSubstring(s.toString(), s.substring(ind)))
     }
 
     @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
+    fun testRandomSuffixFromConstString() {
+        val s = "Abacabadababubababa"
+        val ind = Random().nextInt(s.length)
+        assertEquals(ind + 1, searchSubstring(s, s.substring(ind)))
     }
 
     @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun testRandomSubstring() {
+        val s = StringBuilder()
+        val sizeOfString = Random().nextInt(100000) + 1
+        for (i in 1..sizeOfString)
+            s.append(i.toChar())
+        val indStart = Random().nextInt(s.length)
+        val indEnd = Random().nextInt(s.length - indStart) + indStart
+        assertEquals(indStart + 1, searchSubstring(s.toString(), s.substring(indStart, indEnd)))
     }
 }
