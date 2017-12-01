@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.Scanner
 import kotlin.collections.ArrayList
 
 val INF = Int.MAX_VALUE
@@ -7,8 +7,7 @@ val INF = Int.MAX_VALUE
 fun getNextNumber(scanner: Scanner): Int {
     try {
         return scanner.nextInt()
-    }
-    catch (e: Exception) {
+    } catch (e: Exception) {
         throw RuntimeException("Not a valid number, please, check input")
     }
 }
@@ -23,7 +22,7 @@ fun getGraph() : Graph {
     //Number of vertex and edges, |V| and |E|
     val n = getNextNumber(scanner)
     val m = getNextNumber(scanner)
-    val graph = Array<ArrayList<Pair<Int, Int>>>(n + 1, {i -> ArrayList() })
+    val graph = Array<ArrayList<Pair<Int, Int>>>(n + 1, { i -> ArrayList() })
     for (i in 0..m - 1) {
         val u = getNextNumber(scanner)
         val v = getNextNumber(scanner)
@@ -42,7 +41,7 @@ fun getGraph() : Graph {
 //returns distances from start vertex to other vertex, if there is no negative cycle
 //if there is negative cycle, returns null
 fun bellmanFord(graph: Graph) : Array<Int>? {
-    val dist = Array(graph.size, {i ->
+    val dist = Array(graph.size, { i ->
         if (i == 0)
             0
         else
@@ -83,14 +82,14 @@ fun bellmanFord(graph: Graph) : Array<Int>? {
 //if al weights are not-negative
 //returns dist, where d[v] is distance from s to v, INF when there are no paths P: s~>v
 fun dijkstra(graph: Graph, q: Array<Int>, s: Int) : Array<Int> {
-    val dist = Array(graph.size, {i ->
+    val dist = Array(graph.size, { i ->
         if (i == s)
             0
         else
             INF
     }) //d <- INF, d[s] = 0
 
-    val used = Array(graph.size, {i -> false}) //used <- false
+    val used = Array(graph.size, { i -> false }) //used <- false
 
     while (true) {
         var z = -1
@@ -153,7 +152,7 @@ fun main(args: Array<String>) {
         val answer = johnson(graph)
         if (answer == null) {
             //if Johnson's algorithm has found negative cycle and returned null
-            println("Negative cycle");
+            println("Negative cycle")
             return
         }
         for (x in answer) {

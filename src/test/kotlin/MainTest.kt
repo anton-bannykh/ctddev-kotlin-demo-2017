@@ -1,11 +1,10 @@
-import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class MainTest {
     @Test
     fun test1() {
-        val graph = Array<ArrayList<Pair<Int, Int>>>(5, {i -> ArrayList() })
+        val graph = Array<ArrayList<Pair<Int, Int>>>(5, { i -> ArrayList() })
         for (i in 1..4) {
             graph[0].add(Pair(i, 0))
         }
@@ -25,7 +24,7 @@ class MainTest {
 
     @Test
     fun test2() {
-        val graph = Array<ArrayList<Pair<Int, Int>>>(4, {i -> ArrayList() })
+        val graph = Array<ArrayList<Pair<Int, Int>>>(4, { i -> ArrayList() })
         for (i in 1..3) {
             graph[0].add(Pair(i, 0))
         }
@@ -37,7 +36,7 @@ class MainTest {
 
     @Test
     fun test3() {
-        val graph = Array<ArrayList<Pair<Int, Int>>>(3, {i -> ArrayList() })
+        val graph = Array<ArrayList<Pair<Int, Int>>>(3, { i -> ArrayList() })
         for (i in 1..2) {
             graph[0].add(Pair(i, 0))
         }
@@ -51,7 +50,7 @@ class MainTest {
 
     @Test
     fun test4() {
-        val graph = Array<ArrayList<Pair<Int, Int>>>(6, {i -> ArrayList() })
+        val graph = Array<ArrayList<Pair<Int, Int>>>(6, { i -> ArrayList() })
         for (i in 1..5) {
             graph[0].add(Pair(i, 0))
         }
@@ -65,7 +64,7 @@ class MainTest {
 
     @Test
     fun test5() {
-        val graph = Array<ArrayList<Pair<Int, Int>>>(5, {i -> ArrayList() })
+        val graph = Array<ArrayList<Pair<Int, Int>>>(5, { i -> ArrayList() })
         for (i in 1..4) {
             graph[0].add(Pair(i, 0))
         }
@@ -77,14 +76,14 @@ class MainTest {
                 arrayOf(0, -1, 0, 1),
                 arrayOf(Int.MAX_VALUE, 0, 1, 2),
                 arrayOf(Int.MAX_VALUE, Int.MAX_VALUE, 0, 1),
-                arrayOf(Int.MAX_VALUE, Int.MAX_VALUE, Int.MAX_VALUE,0)
+                arrayOf(Int.MAX_VALUE, Int.MAX_VALUE, Int.MAX_VALUE, 0)
         )
         assertEquals(answer, johnson(graph))
     }
 
     @Test
     fun test6() {
-        val graph = Array<ArrayList<Pair<Int, Int>>>(8, {i -> ArrayList() })
+        val graph = Array<ArrayList<Pair<Int, Int>>>(8, { i -> ArrayList() })
         for (i in 1..7) {
             graph[0].add(Pair(i, 0))
         }
@@ -110,7 +109,7 @@ class MainTest {
 
     @Test
     fun test7() {
-        val graph = Array<ArrayList<Pair<Int, Int>>>(8, {i -> ArrayList() })
+        val graph = Array<ArrayList<Pair<Int, Int>>>(8, { i -> ArrayList() })
         for (i in 1..7) {
             graph[0].add(Pair(i, 0))
         }
@@ -122,7 +121,7 @@ class MainTest {
         graph[5].add(Pair(7, -1))
         graph[6].add(Pair(4, 1))
         graph[4].add(Pair(3, 1))
-        graph[3].add(Pair(7,- 1))
+        graph[3].add(Pair(7, -1))
         graph[7].add(Pair(1, 10))
         val answer = arrayOf(
                 arrayOf(0, 1, 1, 0, -1, 0, -2),
