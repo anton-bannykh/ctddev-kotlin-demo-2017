@@ -55,7 +55,6 @@ class MainTest {
         assertEquals(false, checkGraph(0, g, used, n - 1))
     }
 
-
     @Test
     fun testSmall() {
         val n = 4
@@ -88,7 +87,6 @@ class MainTest {
         runTest(n, m, maxc)
     }
 
-
     @Test
     fun testRand1() {
         val n = (2..1000).random()
@@ -120,5 +118,4 @@ class MainTest {
         val maxc = 1000_000_000
         runTest(n, m, maxc)
     }
-
 }
