@@ -1,22 +1,28 @@
 [![Build status](https://travis-ci.org/anton-bannykh/ctddev-kotlin-demo-2017.svg?branch=master)](https://travis-ci.org/anton-bannykh/ctddev-kotlin-demo-2017)
+# Kotlin course 2017
+## Рыкунов Николай
 
-# Описание
+Ветка Рыкунова Николая студента М3235 по курсу Котлин 2017
 
-Репозиторий предназначен для знакомства студентов второго курса КТ с основами языка [Kotlin](kotlinlang.org)
+[Текущие баллы](https://docs.google.com/spreadsheets/d/1rpBErIUVnsn0_QTr-PFzxGzP3exrx2vTqB1tMRyDSB8/edit#gid=0&range=A91)
 
-[Google Doc c баллами](https://docs.google.com/spreadsheets/d/1rpBErIUVnsn0_QTr-PFzxGzP3exrx2vTqB1tMRyDSB8/edit?usp=sharing)
+# Задание 1
+## Алгоритм Кнута-Морриса-Пратта
 
-# Инструкция
+Алгоритм который осуществляет поиск подстроки в строке.
 
-1. Основы
-  * Создайте issue в этом репозитории с указанием имени и фамилии на английском языке.
-    Это необходимо для создания ветки в формате `"$name-$surname"`, в которую Вы будете отправлять pull request-ы.
-    Также укажите выбранный алгоритм.
-  * Убедитесь, что `./gradlew check` собирает проект и запускает тесты (`gradlew.bat check` для Windows).
-  * Реализуйте этот алгоритм на языке Kotlin (можно прямо в `Main.kt`).
-  * Напишите тесты к нему (можно не очень сложные).
-  * Создайте pull request в ветку `"$name-$surname"`
-2. TODO
+Интерфейс:
+```kotlin
+/**
+* Searches substring [k] in string [s].
+* @param[s] the string(without #), where finds substring.
+* @param[k] the substring(without #).
+* @return the index of first occurrence of the substring in the string,
+ * -1 if there is no such substring.
+*/
+fun searchSubstring(s:String, k: String): Int
+```
+
 
 # Разное
 
