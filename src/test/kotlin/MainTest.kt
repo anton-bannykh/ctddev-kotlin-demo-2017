@@ -1,8 +1,11 @@
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
+import org.junit.Assert.assertNull
+import org.junit.Assert.fail
 import org.junit.Test
 
 class MainTest {
-    fun checkAnswer(edges: Array<ArrayList<Int>>, answer: ArrayList<Int>?, n: Int, m: Int) {
+    fun checkAnswer(edges: Array<ArrayList<Int>>, answer: ArrayList<Int>?, m: Int) {
         if (answer == null) {
             fail()
             return
@@ -27,7 +30,7 @@ class MainTest {
         edges[1] = arrayListOf(2)
         edges[2] = arrayListOf(0)
 
-        checkAnswer(edges, solve(edges, n), n, m)
+        checkAnswer(edges, solve(edges, n), m)
     }
 
     @Test
@@ -43,13 +46,12 @@ class MainTest {
         edges[4] = arrayListOf(0, 3)
         edges[5] = arrayListOf(1, 4)
 
-        checkAnswer(edges, solve(edges, n), n, m)
+        checkAnswer(edges, solve(edges, n), m)
     }
 
     @Test
     fun test3() {
         val n = 2
-        val m = 1
         val edges = Array(n, { ArrayList<Int>() })
 
         edges[0] = arrayListOf(1)
@@ -60,7 +62,6 @@ class MainTest {
     @Test
     fun test4() {
         val n = 6
-        val m = 6
         val edges = Array(n, { ArrayList<Int>() })
 
         edges[0] = arrayListOf(1)
@@ -86,6 +87,6 @@ class MainTest {
         edges[3] = arrayListOf(1, 2)
         edges[4] = arrayListOf(2, 3)
 
-        checkAnswer(edges, solve(edges, n), n, m)
+        checkAnswer(edges, solve(edges, n), m)
     }
 }
