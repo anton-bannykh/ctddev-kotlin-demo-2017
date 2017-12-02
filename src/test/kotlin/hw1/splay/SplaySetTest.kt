@@ -1,4 +1,4 @@
-package splay
+package hw1.splay
 
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue

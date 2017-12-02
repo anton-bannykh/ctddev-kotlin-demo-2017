@@ -1,4 +1,4 @@
-package splay
+package hw1.splay
 
 fun <K : Comparable<K>> splaySetOf(vararg ks: K): SplaySet<K> {
     val tree = SplaySet<K>()

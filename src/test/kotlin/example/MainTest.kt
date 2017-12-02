@@ -1,3 +1,8 @@
+package example
+
+import example.foo
+import example.sum
+import example.sumFun
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
