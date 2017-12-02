@@ -3,37 +3,67 @@ import org.junit.Test
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun testDisconnectedGraph() {
+        startTest(10, 4)
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testProbabilityOfEdge25() {
+        startTest(10, 3)
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun testProbabilityOfEdge50() {
+        startTest(10, 2)
     }
 
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+    fun testProbabilityOfEdge75() {
+        startTest(10, 1)
     }
 
     @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
+    fun testCompleteGraph() {
+        startTest(10, 0)
     }
 
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
+    private fun startTest(n: Int, probability: Int) {
+        val from = (0..n).random()
+        val edges = Array(n, { ArrayList<Pair<Int, Long>>() })
+        val dist = LongArray(n, { 1_000_000_000_000 })
+        dist[from] = 0
+        val was = BooleanArray(n, { false })
 
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+        fun generateGraph() {
+            for (i in 0..(n - 1)) {
+                for (j in (i + 1)..(n - 1)) {
+                    val edgeExist = ((1..5).random() > probability)
+                    if (edgeExist) {
+                        edges[i].add(Pair(j, (1..100_000).random().toLong()))
+                        edges[j].add(Pair(i, (1..100_000).random().toLong()))
+                    }
+                }
+            }
+        }
+
+        var way: Long = 0
+        fun checkAns(v: Int) {
+            was[v] = true
+            for ((u, len) in edges[v]) {
+                if (was[u]) continue
+                way += len
+                if (way < dist[u]) {
+                    dist[u] = way
+                }
+                checkAns(u)
+                way -= len
+            }
+            was[v] = false
+        }
+
+        generateGraph()
+        val ans = dijkstra(from, edges)
+        checkAns(from)
+        assertEquals(dist, ans)
     }
 }
