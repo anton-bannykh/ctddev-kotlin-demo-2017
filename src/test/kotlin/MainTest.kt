@@ -1,5 +1,5 @@
-import org.junit.Assert.assertEquals
 import org.junit.Test
+import java.util.Arrays
 
 class MainTest {
     @Test
@@ -64,6 +64,6 @@ class MainTest {
         generateGraph()
         val ans = dijkstra(from, edges)
         checkAns(from)
-        assertEquals(dist, ans)
+        assert(Arrays.equals(dist, ans))
     }
 }
