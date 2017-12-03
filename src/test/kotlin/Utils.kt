@@ -8,15 +8,3 @@ fun randomShuffle(array: Array<Int>) {
     }
 }
 
-fun treeRandomPermutation(): VanEmdeBoas {
-    val tree = VanEmdeBoas(5)
-    val input = Array(32, { a->a })
-    randomShuffle(input)
-    for (i in input){
-        print("$i  ")
-    }
-    println()
-    input.forEach {elm -> tree.add(elm)}
-
-    return tree
-}
