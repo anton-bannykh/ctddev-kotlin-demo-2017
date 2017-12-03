@@ -5,7 +5,7 @@
 Репозиторий предназначен для знакомства студентов второго курса КТ с основами языка [Kotlin](kotlinlang.org)
 
 [Google Doc c баллами](https://docs.google.com/spreadsheets/d/1rpBErIUVnsn0_QTr-PFzxGzP3exrx2vTqB1tMRyDSB8/edit?usp=sharing)
-
+ 
 # Инструкция
 
 1. Основы
