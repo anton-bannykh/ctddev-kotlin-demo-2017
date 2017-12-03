@@ -1,17 +1,83 @@
 package my.lib
+val INF: Int = Int.MAX_VALUE
 
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
+class Graph(sizeVertex: Int) {
+    private val n = sizeVertex
+    private val edges = arrayListOf<Edge>()
+    private val paths = arrayListOf<ArrayList<Int>>()
 
-fun foo() = 10
+    class Edge(val from: Int, val to: Int, val weight: Int)
 
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
+    fun addEdge(from: Int, to: Int, weight: Int) {
+        edges.add(Edge(from, to, weight))
     }
-    return result
+
+    fun fordBellman(start: Int): Pair<ArrayList<Int>?, ArrayList<ArrayList<Int>>> {
+        val dist = ArrayList<Int>(n)
+        for (i in 0 until n)
+            dist.add(INF)
+        val parent = IntArray(n, { -1 })
+        dist[start] = 0
+        val m = edges.size
+        var x: Int = -1
+        for (i in 0 until n) {
+            var check = false
+            x = -1
+            for (j in 0 until m)
+                if (dist[edges[j].from] < INF) {
+                    if (dist[edges[j].to] > dist[edges[j].from] + edges[j].weight) {
+                        dist[edges[j].to] = dist[edges[j].from] + edges[j].weight
+                        parent[edges[j].to] = edges[j].from
+                        x = edges[j].to
+                        check = true
+                    }
+                }
+            if (!check) break
+        }
+        return if (x == -1) {
+            getPaths(start, dist, parent)
+        } else {
+            getNegativeCycle(x, parent)
+        }
+    }
+
+    private fun getNegativeCycle(x: Int, parent: IntArray): Pair<ArrayList<Int>?, ArrayList<ArrayList<Int>>> {
+        var y = x
+        for (i in 0 until n)
+            y = parent[y]
+        val path = arrayListOf<Int>()
+        var cur = y
+        while (cur != y || path.size <= 1) {
+            path.add(cur)
+            cur = parent[cur]
+        }
+        path.reverse()
+        paths.add(path)
+        return Pair(null, paths)
+    }
+
+    private fun getPaths(start: Int, dist: ArrayList<Int>, parent: IntArray): Pair<ArrayList<Int>, ArrayList<ArrayList<Int>>> {
+        for (i in 0 until n)
+            paths.add(ArrayList())
+        for (i in 0 until n) {
+            if (i == start) {
+                continue
+            }
+            if (dist[i] == INF) {
+                paths[i].add(INF)
+                continue
+            }
+            val path = arrayListOf<Int>()
+            var cur = i
+            while (cur != -1) {
+                path.add(cur)
+                cur = parent[cur]
+            }
+            path.reverse()
+            for (item in path)
+                paths[i].add(item)
+        }
+        return Pair(dist, paths)
+    }
 }
 
-fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
