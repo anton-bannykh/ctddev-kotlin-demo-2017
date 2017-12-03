@@ -1,39 +1,59 @@
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
+import java.util.Random
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun testQuickSortEmpty() {
+        val array = ArrayList<Int>()
+        quickSort(array)
+        assertEquals(ArrayList<Int>(), array)
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testQuickSortSingleElement() {
+        val array = arrayListOf(1)
+        quickSort(array)
+        assertEquals(arrayListOf(1), array)
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun testQuickSortSortedArray() {
+        val array = arrayListOf(1, 2, 3, 4, 5)
+        quickSort(array)
+        assertEquals(arrayListOf(1, 2, 3, 4, 5), array)
     }
 
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+    fun testQuickSortTrivial() {
+        val array = arrayListOf(2, 4, 1, 3, 5)
+        quickSort(array)
+        assertEquals(arrayListOf(1, 2, 3, 4, 5), array)
     }
 
     @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
+    fun testQuickSortRepeatingElements() {
+        val array = arrayListOf(-3, 0, -3, 1, 2, 1, 1)
+        quickSort(array)
+        assertEquals(arrayListOf(-3, -3, 0, 1, 1, 1, 2), array)
     }
 
     @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
+    fun testQuickSortBigInput() {
+        val random = Random()
+        val inputSize = 1_000_000
+        val array = ArrayList<Int>(inputSize)
+        repeat(inputSize, { array.add(random.nextInt()) })
+        quickSort(array)
+        for (i in 0..array.size - 2)
+            assertTrue(array[i] <= array[i + 1])
     }
 
     @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun testQuickSortString() {
+        val array = arrayListOf("ab", "b", "ac", "aba", "ba")
+        quickSort(array)
+        assertEquals(arrayListOf("ab", "aba", "ac", "b", "ba"), array)
     }
 }
