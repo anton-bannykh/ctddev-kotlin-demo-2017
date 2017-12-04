@@ -1,0 +1,11 @@
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:4:12: Missing spacing before "{"
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:14:32: Missing spacing after "{"
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:14:37: Missing spacing before "}"
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:15:29: Missing spacing after "{"
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:15:40: Missing spacing before "}"
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:72:24: Unnecessary semicolon
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:77:29: Missing spacing after "{"
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:77:40: Missing spacing before "}"
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:80:20: Missing spacing around "-"
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:86:32: Missing spacing after "{"
+/home/antifrizz/Kotlin/ctddev-kotlin-demo-2017/src/main/kotlin/Main.kt:86:37: Missing spacing before "}"

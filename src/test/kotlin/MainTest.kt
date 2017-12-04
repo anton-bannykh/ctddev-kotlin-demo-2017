@@ -3,37 +3,27 @@ import org.junit.Test
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun testBinTree() {
+        create_tree(7, arrayOf(1, 1, 2, 2, 3, 3))
+        assertEquals(1, LCA(1, 2))
+        assertEquals(1, LCA(1, 3))
+        assertEquals(1, LCA(2, 3))
+        assertEquals(1, LCA(4, 6))
+        assertEquals(2, LCA(4, 5))
+        assertEquals(6, LCA(6, 6))
     }
-
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testBambooTree() {
+        create_tree(5, arrayOf(1, 2, 3, 4))
+        assertEquals(1, LCA(1, 2))
+        assertEquals(2, LCA(2, 4))
+        assertEquals(5, LCA(5, 5))
     }
-
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
-    }
-
-    @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
-    }
-
-    @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
-
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun testSunTree() {
+        create_tree(5, arrayOf(1, 1, 1, 1))
+        assertEquals(1, LCA(2, 3))
+        assertEquals(1, LCA(3, 4))
+        assertEquals(1, LCA(1, 3))
     }
 }
