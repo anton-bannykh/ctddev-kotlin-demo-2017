@@ -36,4 +36,14 @@ class MainTest {
     fun testSumFunMany() {
         assertEquals(6, sumFun(1, 2, 3))
     }
+
+    @Test
+    fun testLCA() {
+        var n = 5
+        var m = 2
+        var batyaList: MutableList<Int> = mutableListOf(0, 0, 1, 2)
+        var questionList: MutableList<Pair<Int, Int> > = mutableListOf(Pair(1, 2), Pair(3, 4))
+        var correctAns: MutableList<Int> = mutableListOf(0, 0)
+        assertEquals(correctAns, solve(n, m, batyaList, questionList))
+    }
 }
