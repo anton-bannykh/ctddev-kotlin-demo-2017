@@ -1,9 +1,11 @@
-import java.util.*
+import java.util.ArrayList
+import java.util.LinkedList
+import java.util.Scanner
 
 val C = 505
 val INF = 1000 * 1000 * 1000
 
-class Edge(val a:Int, val b: Int, val cap: Int) {
+class Edge(val a: Int, val b: Int, val cap: Int) {
     var flow = 0
 }
 
@@ -12,9 +14,9 @@ var m = 0
 var s = 0
 var t = 0
 var edges = ArrayList<Edge>()
-var g = Array(C, {ArrayList<Int>()})
-var pt = Array(C, {0})
-var d = Array(C, {0})
+var g = Array(C, { ArrayList<Int>() })
+var pt = Array(C, { 0 })
+var d = Array(C, { 0 })
 
 fun addEdge(edge: Edge) {
     g[edge.a].add(edges.size)
@@ -25,20 +27,20 @@ fun addEdge(edge: Edge) {
 }
 
 fun bfs(flow: Int): Boolean {
-    d = Array(C, {INF})
+    d = Array(C, { INF })
     d[s] = 0
 
     val q = LinkedList<Int>()
     q.push(s)
 
-    while(!q.isEmpty() && d[t] == INF) {
+    while (!q.isEmpty() && d[t] == INF) {
         val cur = q.first
         q.pop()
 
-        for(id in g[cur]) {
+        for (id in g[cur]) {
             val edge = edges[id]
             val to = edge.b
-            if(d[to] == INF && edge.cap - edge.flow >= flow) {
+            if (d[to] == INF && edge.cap - edge.flow >= flow) {
                 d[to] = d[cur] + 1
                 q.push(to)
             }
@@ -49,18 +51,18 @@ fun bfs(flow: Int): Boolean {
 }
 
 fun dfs(v: Int, flow: Int): Boolean {
-    if(flow == 0)
+    if (flow == 0)
         return false
-    if(v == t)
+    if (v == t)
         return true
-    while(pt[v] != g[v].size) {
+    while (pt[v] != g[v].size) {
         val id = g[v][pt[v]]
         val edge = edges[id]
         val to = edge.b
 
-        if(d[to] == d[v] + 1 && edge.cap - edge.flow >= flow) {
+        if (d[to] == d[v] + 1 && edge.cap - edge.flow >= flow) {
             val pushed = dfs(to, flow)
-            if(pushed) {
+            if (pushed) {
                 edge.flow += flow
                 edges[id xor 1].flow -= flow
                 return true
@@ -73,7 +75,7 @@ fun dfs(v: Int, flow: Int): Boolean {
 
 fun clearData() {
     edges.clear()
-    for(i in 0 until C) {
+    for (i in 0 until C) {
         g[i].clear()
         pt[i] = 0
     }
@@ -85,19 +87,19 @@ fun solve(verticesCnt: Int, edges: Array<Edge>): Int {
     m = edges.size
     s = 0
     t = n - 1
-    for(edge in edges)
+    for (edge in edges)
         addEdge(edge)
     var result = 0
     var flow = 1 shl 30
-    while(flow > 0) {
-        if(!bfs(flow)) {
+    while (flow > 0) {
+        if (!bfs(flow)) {
             flow /= 2
             continue
         }
 
-        pt = Array(C, {0})
+        pt = Array(C, { 0 })
 
-        while(dfs(s, flow)) {
+        while (dfs(s, flow)) {
             result += flow
         }
     }
@@ -110,9 +112,9 @@ fun main(args: Array<String>) {
     val n = sc.nextInt()
     val m = sc.nextInt()
 
-    val edges = Array(m, {Edge(0, 0, 0)})
+    val edges = Array(m, { Edge(0, 0, 0) })
 
-    for(i in 0 until m) {
+    for (i in 0 until m) {
         val a = sc.nextInt()
         val b = sc.nextInt()
         val c = sc.nextInt()
