@@ -22,7 +22,7 @@ class MainTest {
         val matchingFileNames = (1..4).map { "$MATCHING_TESTS_PATH$it.txt" }
         val eulerFileNames = (1..2).map { "$EULER_TESTS_PATH$it.txt" }
         val pathCoverageOrientedFileNames = (1..2).map { "$ORIENTED_TESTS_PATH$it.txt" }
-        val pathCoverageNonOrientedFileNames = (1..10).map { "$NON_ORIENTED_TESTS_PATH$it.txt" }
+        val pathCoverageNonOrientedFileNames = (1..1).map { "$NON_ORIENTED_TESTS_PATH$it.txt" }
 
     }
 
@@ -39,10 +39,9 @@ class MainTest {
         if (it.isNonOriented) it.findMinPathCoverageInNonOriented()
         else it.findMinPathCoverageInOriented()
     }, { coverage ->
-        println("coverage: ${coverage.map { it.edges.map{"(" + (it.from + 1) + "," + (it.to + 1) + ")"}.joinToString(", ") }.joinToString("\n")}")
         coverage.size == size && coverage.all { path ->
             path.edges.filter { it.from != it.to } .all { it.to in graph.g[it.from] }
-        }
+        } && (0 until graph.vertexCount).all { v -> coverage.any { it.edges.any { v in it } } }
     })
 
     class EulerPathTestSet(graph: Graph): TestSet<Graph, Path>(graph, { it.toMultiGraph().findEulerPath()
@@ -115,32 +114,32 @@ class MainTest {
     private infix fun Int.power(deg: Int): Int = (this * this.power(deg - 1)).takeIf { deg != 0 } ?: 1
 
     fun generateEulerPathTestSet(vertexes: Int) : EulerPathTestSet {
-        val g = Array(vertexes) { (0 until vertexes).filter { random.nextBoolean() }.toMutableList() }
-        var ok = false
-        while (!ok) {
-            ok = true
-            val additional = arrayListOf<Edge>()
-            g.forEachIndexed { v, outcoming ->
-                additional.addAll(outcoming.filter { v !in g[it] }.map { Edge(it, v) })
-            }
-            additional.forEach { (it, v) ->
-                g[it].add(v)
-            }
-            if (additional.isNotEmpty())
-                ok = false
-            g.forEach {
-                if (it.size % 2 == 1) {
-                    it.add((0 until vertexes)
-                            .toMutableList()
-                            .also { rest -> rest.removeAll(it) }[0])
-                    ok = false
+        val g = Array(vertexes) { v -> (0 until vertexes).filter { random.nextBoolean() && it !=  v }.toMutableList() }
+        val additional = arrayListOf<Edge>()
+        g.forEachIndexed { v, outcoming ->
+            additional.addAll(outcoming.filter { v !in g[it] }.map { Edge(it, v) })
+        }
+        additional.forEach { (it, v) ->
+            g[it].add(v)
+        }
+        additional.clear()
+        var lastOdd: Int? = null
+        g.forEachIndexed { v, outcoming ->
+            if (outcoming.size % 2 == 1) {
+                if (lastOdd != null) {
+                    additional.add(Edge(lastOdd!!, v))
+                    lastOdd = null
+                } else {
+                    lastOdd = v
                 }
             }
         }
-        if (g.mapIndexed { v, es -> es.count { v in g[it] } }.sum() != 0)
-            return EulerPathTestSet(Graph.default)
+        additional.forEach { (it, v) ->
+            g[it].add(v)
+            g[v].add(it)
+        }
         val used = Array(vertexes) { false }
-        fun dfs(v: Int): Unit {
+        fun dfs(v: Int) {
             if (used[v])
                 return
             used[v] = true
@@ -153,8 +152,17 @@ class MainTest {
         )
     }
 
-    fun <G: AbstractGraph, T>generateAndTest(vertexes: Int, edges: Int, generator: (Int, Int) -> TestSet<G, T>) =
-            generator(vertexes, edges).check()
+    fun generateNonOrientedTestSet(vertexes: Int) : PathCoverageTestSet {
+        fun Random.nextInt(l: Int, r: Int) = l + this.nextInt(r - l + 1)
+        val g = Array(vertexes) { mutableListOf<Int>() }
+        (0 until vertexes / 2).forEach {
+            g[it].add(it + 1)
+        }
+        (vertexes / 2 + 1 until vertexes - 1).forEach {
+            g[it].add(it + 1)
+        }
+        return PathCoverageTestSet(Graph(vertexes, g.map { it.size }.sum(), g), 2)
+    }
 
     @Test
     fun testMatchingFromFiles() = assertTrue(matchingFileNames.all { testMatchingFromFile(it) })
@@ -163,7 +171,7 @@ class MainTest {
     fun testEulerFromFiles() = assertTrue(eulerFileNames.all { testEulerPathFromFile(it) })
 
     @Test
-    fun testEulerGens() = assertTrue((2 until 30 step 2).asSequence()
+    fun testEulerGens() = assertTrue((3 until 100 step 2).asSequence()
             .map { generateEulerPathTestSet(it) }
             .all { it.check() })
 
@@ -175,6 +183,13 @@ class MainTest {
     @Test
     fun testPathCoverageNonOrientedFromFiles() = assertTrue(
             pathCoverageNonOrientedFileNames.all { testPathCoverageFromFile(it) }
+    )
+
+    @Test
+    fun testNonOrientedGens() = assertTrue(
+            (5 until 100).asSequence()
+                    .map { generateNonOrientedTestSet(it) }
+                    .all { it.check() }
     )
 
     @Test

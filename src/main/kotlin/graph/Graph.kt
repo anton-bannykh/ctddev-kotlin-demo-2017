@@ -3,7 +3,10 @@ package graph
 import java.util.*
 
 
-data class Edge(val from: Int, val to: Int)
+data class Edge(val from: Int, val to: Int) {
+    operator fun contains(vertex: Int) = vertex in listOf(from, to)
+}
+
 open class Path(val edges: List<Edge>) {
     operator fun get(i: Int) = edges[i]
     fun last() = edges.last()
@@ -49,8 +52,10 @@ class Graph(val vertexCount: Int, val edgeCount: Int, val g: Array<MutableList<I
     }
 
     fun toMultiGraph() = MultiGraph.create(vertexCount, edgeCount) {
-        Array(vertexCount) { v -> TreeMap<Int, Int>().also {
-            it.putAll(g[v].associateBy( { it }, { 1 })) }
+        Array(vertexCount) { v ->
+            TreeMap<Int, Int>().also {
+                g[v].forEach { u -> it.put(u, (it[u] ?: 0) + 1) }
+            }
         }
     }
 
@@ -63,7 +68,7 @@ class BipartieGraph(val leftPartSize: Int,
 class MultiGraph(val vertexCount: Int, val edgeCount: Int, val g: Array<TreeMap<Int, Int>>): AbstractGraph {
     fun addEdge(u: Int, v: Int) {
         fun addDir(u: Int, v: Int) {
-            g[u].putIfAbsent(v, (g[u][v] ?: 0) + 1)
+            g[u].put(v, (g[u][v] ?: 0) + 1)
         }
         addDir(u, v).also { addDir(v, u) }
     }

@@ -8,7 +8,6 @@ import graph.Path
 
 fun MultiGraph.findEulerPath(): Path {
     val copy = MultiGraph(vertexCount, edgeCount, g)
-    println("g: \n ${g.mapIndexed { v, es -> "${v + 1} : ${es.map { (u, c) -> "cnt(${u + 1}) = $c" }.joinToString(", ", "{", "}")}" }}")
     val pathVertexes = arrayListOf<Int>()
     val stack = arrayListOf(0)
     fun MultiGraph.eraseEdge(u: Int, v: Int) {
