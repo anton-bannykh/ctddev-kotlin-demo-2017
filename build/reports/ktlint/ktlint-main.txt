@@ -1,0 +1,8 @@
+D:\Programms\Kotlin\ctddev-kotlin-demo-2017\src\main\kotlin\Main.kt:4:24: Missing spacing after "{"
+D:\Programms\Kotlin\ctddev-kotlin-demo-2017\src\main\kotlin\Main.kt:4:25: Missing spacing before "}"
+D:\Programms\Kotlin\ctddev-kotlin-demo-2017\src\main\kotlin\Main.kt:7:8: Missing spacing after ":"
+D:\Programms\Kotlin\ctddev-kotlin-demo-2017\src\main\kotlin\Main.kt:30:29: Missing spacing after ":"
+D:\Programms\Kotlin\ctddev-kotlin-demo-2017\src\main\kotlin\Main.kt:30:39: Missing spacing after ":"
+D:\Programms\Kotlin\ctddev-kotlin-demo-2017\src\main\kotlin\Main.kt:31:11: Unnecessary semicolon
+D:\Programms\Kotlin\ctddev-kotlin-demo-2017\src\main\kotlin\Main.kt:36:27: Missing spacing after "{"
+D:\Programms\Kotlin\ctddev-kotlin-demo-2017\src\main\kotlin\Main.kt:36:28: Missing spacing before "}"
