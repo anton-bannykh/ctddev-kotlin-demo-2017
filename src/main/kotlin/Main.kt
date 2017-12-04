@@ -1,15 +1,20 @@
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
-
-fun foo() = 10
-
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
+fun dv(n: Int) : Int { //ближайшая степень двойки
+    var n2: Int = n
+    n2--
+    var t : Int = 1
+    while(t < 64) {
+        n2 = n2 or (n2 shr t)
+        t = t shl 1 //сдвиг влево
     }
-    return result
+    return ++n2
 }
 
-fun sumFun(vararg ints: Int) = ints.fold(0) {acc, i -> acc + i }
+
+
+fun main(args: Array<String>) {
+    val numbersArray = mutableListOf<Int>(1, 2, 3, 4, 5)
+    val segmentTree = SegmentTree(numbersArray)
+    println(segmentTree.query(0, 2))
+    segmentTree.modify(2, 1)
+    println(segmentTree.query(0, 2))
+}
