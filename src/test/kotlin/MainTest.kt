@@ -3,37 +3,24 @@ import org.junit.Test
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun testEasy() {
+        val numbersArray = mutableListOf<Int>(1, 2, 3, 4, 5)
+        val segmentTree = SegmentTree(numbersArray)
+        assertEquals(3, segmentTree.query(0, 2))
     }
 
-    @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
-    }
+
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
-    }
-
-    @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
-    }
-
-    @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
-
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun testHard() {
+        val numbersArray = mutableListOf<Int>(1, 2, 3, 4, 5)
+        val segmentTree = SegmentTree(numbersArray)
+        segmentTree.modify(2, 7)
+        assertEquals(7, segmentTree.query(0, 2))
+        segmentTree.modify(1, 100)
+        segmentTree.modify(0, 200)
+        assertEquals(200, segmentTree.query(0, 2))
+        assertEquals(100, segmentTree.query(1, 2))
+        assertEquals(5, segmentTree.query(4, 4))
     }
 }
