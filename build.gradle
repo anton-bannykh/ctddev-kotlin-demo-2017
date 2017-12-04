@@ -25,7 +25,7 @@ repositories {
 }
 
 ktlint {
-  ignoreFailures = true
+  ignoreFailures = false
 }
 
 dependencies {
