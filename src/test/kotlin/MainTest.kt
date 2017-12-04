@@ -1,12 +1,9 @@
-package test
-
-import main.getMaxMatching
 import org.junit.Test
 import java.lang.Integer.max
 import java.lang.Integer.min
-import java.util.*
+import java.util.Random
 
-var random = Random()
+val random = Random()
 
 fun generateGraph(n: Int, m: Int, k: Int): List<Pair<Int, Int>> {
     assert(k >= 0 && k <= n * m)
