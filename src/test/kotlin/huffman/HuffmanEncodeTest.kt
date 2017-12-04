@@ -2,6 +2,7 @@ package huffman
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import java.util.*
 
 /**
  * Created by Telnov Sergey on 01.12.2017.
@@ -10,21 +11,33 @@ import org.junit.Test
 class HuffmanEncodeTest {
 
     @Test
-    fun huffmanEncodeTest() {
-        assertEquals(
-                "01001100100111",
-                huffmanEncode("abacabad")
-        )
+    fun testHuffmanEncodeSimple() {
         assertEquals(
                 "0",
                 huffmanEncode("a")
         )
+    }
+
+    @Test
+    fun testHuffmanEncode() {
+        assertEquals(
+                "01001100100111",
+                huffmanEncode("abacabad")
+        )
+    }
+
+    @Test
+    fun testHuffmanDecodeSimple() {
         assertEquals(
                 "a",
                 decodeHuffmanEncode("0", hashMapOf(
                         Pair("0", 'a')
                 ))
         )
+    }
+
+    @Test
+    fun testHuffmanDecode() {
         assertEquals(
                 "abacabad",
                 decodeHuffmanEncode("01001100100111", hashMapOf(
@@ -34,8 +47,8 @@ class HuffmanEncodeTest {
                         Pair("111", 'd')
                 ))
         )
-
     }
+
 //    @Test
 //    fun huffmanRandomTest() {
 //        val random = Random()
@@ -43,10 +56,9 @@ class HuffmanEncodeTest {
 //            val s = buildString {
 //                val characters = Array<Int>(random.nextInt(1000)) { random.nextInt(26)}
 //                characters.forEach {
-//                    append((it + 141).toChar())
+//                    append((it + 100).toChar())
 //                }
 //            }
-//
 //        }
 //    }
 }

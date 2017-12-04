@@ -14,16 +14,16 @@ internal data class Node(val priority: Int, val name: Char = '#', val left: Node
     }
 }
 
-fun decodeHuffmanEncode(code: String, digitInfo: HashMap<String, Char>) = buildString {
+fun decodeHuffmanEncode(code: String, digitsInfo: HashMap<String, Char>) = buildString {
 
     var index = 0
     while (index < code.length) {
 
         var curIndex = index + 1
-        while (curIndex < code.length && !digitInfo.containsKey(code.substring(index, curIndex)))
+        while (curIndex < code.length && !digitsInfo.containsKey(code.substring(index, curIndex)))
             curIndex++
 
-        append(digitInfo[code.substring(index, curIndex)])
+        append(digitsInfo[code.substring(index, curIndex)])
 
         index = curIndex
     }
