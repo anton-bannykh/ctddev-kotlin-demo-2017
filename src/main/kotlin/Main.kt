@@ -1,5 +1,3 @@
-package main
-
 fun getMaxMatching(n: Int, m: Int, e: List<Pair<Int, Int>>): List<Pair<Int, Int>> {
     val g = Array(n, { arrayListOf<Int>() })
 
