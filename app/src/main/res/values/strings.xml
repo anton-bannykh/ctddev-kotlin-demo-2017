@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="encode_command">encode</string>
+    <string name="input_string_text">your input string:</string>
+    <string name="code_text">your code:</string>
+    <string name="digits_info">digits code:\n</string>
+    <string name="et_hint">enter any text to encode</string>
+    <string name="invalid_input">invalid input!</string>
+
+</resources>

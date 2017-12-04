@@ -1,6 +1,6 @@
-package huffman
+package my.lib.huffman
 
-import java.util.*
+import java.util.PriorityQueue
 
 /**
  * Created by Telnov Sergey on 01.12.2017.
@@ -14,24 +14,23 @@ internal data class Node(val priority: Int, val name: Char = '#', val left: Node
     }
 }
 
-fun decodeHuffmanEncode(code: String, digitInfo: HashMap<String, Char>) = buildString {
+fun decodeHuffmanEncode(code: String, digitsInfo: HashMap<String, Char>) = buildString {
 
     var index = 0
     while (index < code.length) {
 
         var curIndex = index + 1
-        while (curIndex < code.length && !digitInfo.containsKey(code.substring(index, curIndex)))
+        while (curIndex < code.length && !digitsInfo.containsKey(code.substring(index, curIndex)))
             curIndex++
 
-        append(digitInfo[code.substring(index, curIndex)])
+        append(digitsInfo[code.substring(index, curIndex)])
 
         index = curIndex
     }
 }
 
 fun huffmanEncode(s: String): String {
-
-    val digitsInfo = hashMapOf<Char, Int>();
+    val digitsInfo = hashMapOf<Char, Int>()
 
     s.forEach {
         digitsInfo.compute(it) { _, value ->
@@ -67,7 +66,7 @@ fun huffmanEncode(s: String): String {
     }
 
     val root = queue.poll()
-    dfs(root, if(root.name != '#') "0" else "")
+    dfs(root, if (root.name != '#') "0" else "")
 
     return buildString {
         s.forEach {
