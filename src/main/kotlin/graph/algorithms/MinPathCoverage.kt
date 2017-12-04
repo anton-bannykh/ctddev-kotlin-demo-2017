@@ -2,6 +2,7 @@ package graph.algorithms
 
 import graph.*
 
+
 fun Graph.findMinPathCoverageInOriented() : List<Path> {
 
     val bipartie = BipartieGraph(vertexCount, vertexCount, g)
@@ -38,23 +39,28 @@ fun Graph.findMinPathCoverageInOriented() : List<Path> {
 
 }
 
+
+
+
 fun Graph.findMinPathCoverageInNonOriented() : List<Path> {
     val extraGraph = this.toMultiGraph()
     var lastOddVertex: Int? = null
     val (extraEdges, ordinaryEdges) = Pair(hashSetOf<Edge>(), hashSetOf<Edge>())
-    println("g : ${g.mapIndexed { i, it -> "$i : " + it.joinToString(", ") }.joinToString("\n")}")
     (0 until vertexCount).forEach { v ->
         if (g[v].size % 2 == 1) {
-            lastOddVertex?.let { u ->
+            if (lastOddVertex != null) {
+                val u = lastOddVertex!!
                 if (extraGraph.g[u].containsKey(v)) {
                     ordinaryEdges.add(Edge(u, v))
                     ordinaryEdges.add(Edge(v, u))
                 }
-                extraGraph.addEdge(v, u).also {
-                    extraEdges.add(Edge(v, u))
-                    extraEdges.add(Edge(u, v))
-                }
-            }?.also { lastOddVertex = null } ?: { lastOddVertex = v }()
+                extraGraph.addEdge(v, u)
+                extraEdges.add(Edge(v, u))
+                extraEdges.add(Edge(u, v))
+                lastOddVertex = null
+            } else {
+                lastOddVertex = v
+            }
         }
     }
     val eulerPath = extraGraph.findEulerPath()
@@ -64,13 +70,14 @@ fun Graph.findMinPathCoverageInNonOriented() : List<Path> {
             if (ordinaryEdges.contains(it)) {
                 ordinaryEdges.remove(it)
                 ordinaryEdges.remove(Edge(it.to, it.from))
+                result.last().addEdge(it)
             } else {
                 result.add(MutablePath())
             }
+        } else {
+            result.last().addEdge(it)
         }
-        result.last().addEdge(it)
     }
-    println("res:\n" + result.map { it.edges.joinToString(", ") }.joinToString("\n"))
     if (result.size > 1 && result.last().last().to == result[0][0].from) {
         result.last().merge(result[0])
         result.removeAt(0)
