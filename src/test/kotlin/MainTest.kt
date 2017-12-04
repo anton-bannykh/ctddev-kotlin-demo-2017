@@ -24,11 +24,11 @@ class MainTest {
     fun test1() {
         val n = 3
         val m = 3
-        val edges = Array(n, { ArrayList<Int>() })
-
-        edges[0] = arrayListOf(1)
-        edges[1] = arrayListOf(2)
-        edges[2] = arrayListOf(0)
+        val edges = arrayOf(
+                arrayListOf(1),
+                arrayListOf(2),
+                arrayListOf(0)
+        )
 
         checkAnswer(edges, solve(edges, n), m)
     }
@@ -37,14 +37,14 @@ class MainTest {
     fun test2() {
         val n = 6
         val m = 11
-        val edges = Array(n, { ArrayList<Int>() })
-
-        edges[0] = arrayListOf(1)
-        edges[1] = arrayListOf(2, 3)
-        edges[2] = arrayListOf(4, 5)
-        edges[3] = arrayListOf(2, 5)
-        edges[4] = arrayListOf(0, 3)
-        edges[5] = arrayListOf(1, 4)
+        val edges = arrayOf(
+                arrayListOf(1),
+                arrayListOf(2, 3),
+                arrayListOf(4, 5),
+                arrayListOf(2, 5),
+                arrayListOf(0, 3),
+                arrayListOf(1, 4)
+        )
 
         checkAnswer(edges, solve(edges, n), m)
     }
@@ -52,9 +52,10 @@ class MainTest {
     @Test
     fun test3() {
         val n = 2
-        val edges = Array(n, { ArrayList<Int>() })
-
-        edges[0] = arrayListOf(1)
+        val edges = arrayOf(
+                arrayListOf(1),
+                arrayListOf()
+        )
 
         assertNull(solve(edges, n))
     }
@@ -62,15 +63,14 @@ class MainTest {
     @Test
     fun test4() {
         val n = 6
-        val edges = Array(n, { ArrayList<Int>() })
-
-        edges[0] = arrayListOf(1)
-        edges[1] = arrayListOf(2)
-        edges[2] = arrayListOf(0)
-
-        edges[3] = arrayListOf(4)
-        edges[4] = arrayListOf(5)
-        edges[5] = arrayListOf(3)
+        val edges = arrayOf(
+                arrayListOf(1),
+                arrayListOf(2),
+                arrayListOf(0),
+                arrayListOf(4),
+                arrayListOf(5),
+                arrayListOf(3)
+        )
 
         assertNull(solve(edges, n))
     }
@@ -79,13 +79,19 @@ class MainTest {
     fun test5() {
         val n = 10
         val m = 10
-        val edges = Array(n, { ArrayList<Int>() })
 
-        edges[0] = arrayListOf(3, 4)
-        edges[1] = arrayListOf(0, 4)
-        edges[2] = arrayListOf(0, 1)
-        edges[3] = arrayListOf(1, 2)
-        edges[4] = arrayListOf(2, 3)
+        val edges = arrayOf(
+                arrayListOf(),
+                arrayListOf(4, 5),
+                arrayListOf(1, 5),
+                arrayListOf(1, 2),
+                arrayListOf(2, 3),
+                arrayListOf(3, 4),
+                arrayListOf(),
+                arrayListOf(),
+                arrayListOf(),
+                arrayListOf()
+        )
 
         checkAnswer(edges, solve(edges, n), m)
     }
