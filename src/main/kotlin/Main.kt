@@ -1,15 +1,13 @@
-fun main(args: Array<String>) {
-    println("Hello world!")
+fun <T> lcs(first_seq: List<T>, second_seq: List<T>): Int {
+    val n = first_seq.size
+    val m = second_seq.size
+    val ans = Array(n + 1) { IntArray( m + 1) }
+    for (i in 1..n)
+        for (j in 1..m)
+            ans[i][j] = if (first_seq[i - 1] == second_seq[j - 1]) {
+                ans[i - 1][j - 1] + 1
+            } else {
+                maxOf(ans[i - 1][j], ans[i][j - 1])
+            }
+    return ans[n][m]
 }
-
-fun foo() = 10
-
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
-    }
-    return result
-}
-
-fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
