@@ -8,7 +8,7 @@ fun Array<Int>.swap(index1: Int, index2: Int) {
     this[index2] = tmp
 }
 
-fun partition(arr: Array<Int>, left: Int, right: Int) : Int{
+fun partition(arr: Array<Int>, left: Int, right: Int) : Int {
     if (left != right) {
         arr.swap(left + (0..right-left).random(), right)
     }
