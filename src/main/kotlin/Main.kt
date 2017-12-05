@@ -1,10 +1,9 @@
 fun max( a: Int, b: Int ) = if (a > b) a else b
 
-fun LCS(x: String?, y: String?): Int{
+fun LCS(x: String?, y: String?): Int {
     if (x == null || y == null) {
         return 0
-    }
-    else {
+    } else {
         val mas: MutableList<Int> = mutableListOf(0)
 
         for (i in 1..y.length) {
@@ -21,9 +20,7 @@ fun LCS(x: String?, y: String?): Int{
             for (j in 1..y.length - 1) {
                 if (x[i] == y[j]) {
                     lcs[i][j] = lcs[i - 1][j - 1] + 1
-                }
-
-                else {
+                } else {
                     lcs[i][j] = max(lcs[i - 1][j], lcs[i][j - 1])
                 }
             }
