@@ -1,6 +1,5 @@
-public class Graph(n: Int) {
+class Graph(val n: Int) {
 
-    val n: Int = n
     val edges: MutableList<MutableList<Int>> = mutableListOf()
     val revEdges: MutableList<MutableList<Int>> = mutableListOf()
 
@@ -22,7 +21,6 @@ public class Graph(n: Int) {
         edges[from].add(to)
         revEdges[to].add(from)
     }
-
 
     private fun topologicalSort(ver: Int, used: Array<Boolean>, result: MutableList<Int>) {
         used[ver] = true
@@ -54,7 +52,7 @@ public class Graph(n: Int) {
     }
 
     fun getScc(): Map<Int, Int> {
-        val used = Array(n, {false})
+        val used = Array(n, { false })
         var order = mutableListOf<Int>()
         val component = mutableListOf<Int>()
         val result = hashMapOf<Int, Int>()
