@@ -10,7 +10,7 @@ fun Array<Int>.swap(index1: Int, index2: Int) {
 
 fun partition(arr: Array<Int>, left: Int, right: Int) : Int {
     if (left != right) {
-        arr.swap(left + (0..right-left).random(), right)
+        arr.swap(left + (0..right - left).random(), right)
     }
     var lastElementValue = arr[right];
     var i = left - 1;
