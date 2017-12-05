@@ -1,39 +1,45 @@
-import org.junit.Assert.assertEquals
 import org.junit.Test
+import org.junit.Assert.assertEquals
+import java.util.ArrayList
+import java.util.Random
+
+val rand = Random()
 
 class MainTest {
+
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun intTest() {
+        val sequenceOne = listOf(1, 5, 8, 4, 7)
+        val sequenceTwo = listOf(3, 2, 11, 9, 37, 3, 0)
+        assertEquals(lcs(sequenceOne, sequenceTwo), 0)
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun charTest() {
+        val sequenceOne = "abacaba"
+        val sequenceTwo = "abba"
+        val charSequenceOne = sequenceOne.toList()
+        val charSequenceTwo = sequenceTwo.toList()
+        assertEquals(lcs(charSequenceOne, charSequenceTwo), 4)
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
-    }
+    fun randomTest() {
+        val listOne = ArrayList<Int>()
+        for (i in 1..1000)
+            listOne.add(rand.nextInt(10234))
 
-    @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
-    }
+        val listTwo = ArrayList<Int>()
+        for (i in 1..1000)
+            listTwo.add(rand.nextInt(2134) + 20000)
+        assertEquals(lcs(listOne, listTwo), 0)
 
-    @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
     }
-
     @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
+    fun bigTest() {
+        val listOne = (1..20000).toList()
+        val listTwo = (1..5000).map { 2 * it }
+        assertEquals(lcs(listOne, listTwo), 5000)
 
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
     }
 }
