@@ -7,7 +7,7 @@ class MainTest {
         val arr = intArrayOf(0)
         assertEquals(0, solve(arr.size, arr, 1, 1))
     }
-    
+
     @Test
     fun test2() {
         val arr = intArrayOf(-7, 4, 3, 2, 5, 8, -1)
