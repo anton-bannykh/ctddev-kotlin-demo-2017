@@ -1,15 +1,34 @@
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
+fun max( a: Int, b: Int ) = if (a > b) a else b
 
-fun foo() = 10
-
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
+fun LCS(x: String?, y: String?): Int{
+    if (x == null || y == null) {
+        return 0
     }
-    return result
-}
+    else {
+        val mas: MutableList<Int> = mutableListOf(0)
 
-fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
+        for (i in 1..y.length) {
+            mas.add(0)
+        }
+
+        var lcs: MutableList<MutableList<Int>> = mutableListOf(mas)
+
+        for (i in 1..x.length) {
+            lcs.add(mas)
+        }
+
+        for (i in 1..x.length - 1) {
+            for (j in 1..y.length - 1) {
+                if (x[i] == y[j]) {
+                    lcs[i][j] = lcs[i - 1][j - 1] + 1
+                }
+
+                else {
+                    lcs[i][j] = max(lcs[i - 1][j], lcs[i][j - 1])
+                }
+            }
+        }
+
+        return lcs[x.length - 1][y.length - 1]
+    }
+}
