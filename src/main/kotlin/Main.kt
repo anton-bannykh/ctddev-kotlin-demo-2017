@@ -46,7 +46,3 @@ fun solve(n: Int, mas: IntArray, ll: Int, rr: Int): Int {
     val k = logariphms[right - left]
     return Math.min(sparseTable[k][left - 1], sparseTable[k][right - powers[k]])
 }
-
-fun main(args: Array<String>) {
-
-}
