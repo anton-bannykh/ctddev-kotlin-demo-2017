@@ -43,5 +43,3 @@ fun mergeSort(a: IntArray, L: Int = 0, R: Int = a.size) {
         merge(a, L, (L + R) / 2, (L + R) / 2, R);
     }
 }
-
-
