@@ -36,4 +36,25 @@ class MainTest {
     fun testSumFunMany() {
         assertEquals(6, sumFun(1, 2, 3))
     }
+
+    @Test
+    fun testPoints() {
+        var g : graph = graph(4)
+        g.insert(0, 1)
+        g.insert(1, 2)
+        g.insert(2, 0)
+        g.insert(2, 3)
+        var ans : ArrayList <Boolean> = points(g)
+        var ans_e : ArrayList <Boolean> = ArrayList(listOf(false, false, true, false))
+        assertEquals(ans, ans_e)
+    }
+
+    @Test
+    fun testPoints2() {
+        var g : graph = graph(2)
+        g.insert(0, 1)
+        var ans : ArrayList <Boolean> = points(g)
+        var ans_e : ArrayList <Boolean> = ArrayList(listOf(false, false))
+        assertEquals(ans, ans_e)
+    }
 }
