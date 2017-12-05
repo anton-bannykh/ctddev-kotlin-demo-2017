@@ -1,1 +1,1 @@
-class GraphException(message: String) : Exception(message) 
+class GraphException(message: String) : Exception(message)
