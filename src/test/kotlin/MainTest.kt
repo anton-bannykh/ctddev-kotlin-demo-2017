@@ -1,39 +1,48 @@
+import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import java.util.*
 
 class MainTest {
+    var n = 0
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun testCiclic() {
+        n = 5;
+        val (color, graph, topol) = triple()
+        for(i in 0..n-1){
+            graph[i].add((i+1)%n)
+        }
+        assertEquals(false, topsort(color,graph,topol))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testSimple(){
+        n = 4
+        val (color, graph, topol) = triple()
+        graph[0].add(3)
+        graph[3].add(1)
+        graph[3].add(2)
+        graph[2].add(1)
+        val answer = arrayOf(1,4,3,2)
+        topsort(color,graph, topol)
+        Assert.assertArrayEquals(answer, topol)
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun testChain(){
+        n = 4
+        val (color, graph, topol) = triple()
+        for(i in 0..n-2)
+            graph[i].add(i+1)
+        val answer = arrayOf(1,2,3,4)
+        topsort(color,graph, topol)
+        Assert.assertArrayEquals(answer,topol)
     }
 
-    @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
-    }
-
-    @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
-
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    private fun triple(): Triple<Array<Int>, Array<ArrayList<Int>>, Array<Int>> {
+        val color = Array(n, { i -> 0 })
+        val graph = Array<ArrayList<Int>>(n, { i -> ArrayList() })
+        val topol = Array<Int>(n, { 0 })
+        return Triple(color, graph, topol)
     }
 }
