@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.Scanner
 
 fun main(args: Array<String>) {
     val scn = Scanner(System.`in`)
@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
 }
 
 fun createFenwickTree(n: Int): Array<Int> {
-    return Array<Int>(n, {0})
+    return Array<Int>(n, { 0 })
 }
 
 fun updateAtPoint(index: Int, value: Int, fw: Array<Int>) {
