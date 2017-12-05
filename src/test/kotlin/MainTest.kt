@@ -3,10 +3,6 @@ import org.junit.Test
 import java.util.*
 
 class MainTest {
-    /*@Test
-    fun testAddToSegmentTree() {
-
-    }*/
     @Test
     fun testBuildSegmentTree1() {
         val result = BuildSegmentTree(4)
@@ -58,6 +54,8 @@ class MainTest {
 
     @Test
     fun testUnionSet2() {
+        dsuParent.clear()
+        dsuSize.clear()
         val expectedValueParent = arrayOf(2, 2, 2, 3)
         for (i in 0..3) {
             dsuParent.add(i)
