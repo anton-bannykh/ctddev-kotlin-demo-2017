@@ -3,37 +3,30 @@ import org.junit.Test
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun testGen() {
+        var tree = SegmentTree(arrayOf(1, 5, 2, 4, 3, 7, 1, 6))
+        assertEquals(2, tree.get(2, 3))
+        assertEquals(1, tree.get(0, 8))
+        assertEquals(3, tree.get(3, 6))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testAdd() {
+        var tree = SegmentTree(arrayOf(1, 5, 2, 4, 3, 7, 1, 6))
+        tree.add(0, 5)
+        assertEquals(1, tree.get(0, 8))
+        assertEquals(2, tree.get(0, 6))
+        tree.add(3, -100)
+        assertEquals(-96, tree.get(0, 8))
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
-    }
-
-    @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
-    }
-
-    @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
-
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun testSet() {
+        var tree = SegmentTree(arrayOf(1, 5, 2, 4, 3, 7, 1, 6))
+        tree.set(0, 5)
+        assertEquals(1, tree.get(0, 8))
+        assertEquals(2, tree.get(0, 6))
+        tree.set(3, -100)
+        assertEquals(-100, tree.get(0, 8))
     }
 }
