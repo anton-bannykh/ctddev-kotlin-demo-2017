@@ -3,37 +3,51 @@ import org.junit.Test
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun test1() {
+        assertEquals(2, minCostAssignment(
+                listOf(
+                        listOf(1, 2),
+                        listOf(2, 1)
+                )
+        ))
+        assertEquals(12, minCostAssignment(
+                listOf(
+                        listOf(3, 3, 3, 3),
+                        listOf(3, 3, 3, 3),
+                        listOf(3, 3, 3, 3),
+                        listOf(3, 3, 3, 3)
+                )
+        ))
+        assertEquals(12, minCostAssignment(
+                listOf(
+                        listOf(5, 7, 5, 6),
+                        listOf(4, 3, 3, 7),
+                        listOf(3, 2, 8, 4),
+                        listOf(9, 1, 7, 2)
+                )
+        ))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testNegative() {
+        assertEquals(-9, minCostAssignment(
+                listOf(
+                        listOf(-1, -2, -3),
+                        listOf(-2, -3, -1),
+                        listOf(-3, -1, -2)
+                )
+        ))
+        assertEquals(-12, minCostAssignment(
+                listOf(
+                        listOf(-1, 5),
+                        listOf(-17, -3)
+                )
+        ))
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
-    }
-
-    @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
-    }
-
-    @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
-
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun testEmpty() {
+        assertEquals(0, minCostAssignment(listOf<List<Int>>()))
     }
 }
+
