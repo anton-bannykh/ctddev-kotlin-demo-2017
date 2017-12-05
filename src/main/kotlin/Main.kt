@@ -121,6 +121,7 @@ fun getResult(v: Int, tl: Int, tr: Int): String {
         }
         AddedEdges.remove(AddedEdges[AddedEdges.size - 1])
     }
+
     return result
 }
 
@@ -131,6 +132,8 @@ fun solve(n: Int, m: Int, commands: ArrayList<Command>): String {
     InputCommand = commands
     SegmentTree = BuildSegmentTree(m)
     RequestSize = m
+    dsuSize.clear()
+    dsuParent.clear()
     var time = 1
 
     for (i in 0..n - 1) {
