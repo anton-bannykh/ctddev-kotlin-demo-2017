@@ -3,7 +3,8 @@ package my.lib
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import java.util.*
+import java.util.Arrays
+import java.util.Random
 
 class MainTest {
     fun ClosedRange<Int>.random() = Random().nextInt(endInclusive - start) + start
