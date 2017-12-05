@@ -2,38 +2,39 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class MainTest {
+
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun testEasy1() {
+        assertEquals(mutableListOf(2, 1), nextPerm(1, 2))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testEasy2() {
+        assertEquals(mutableListOf(1, 2, 4, 3), nextPerm(1, 2, 3, 4))
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun test1() {
+        assertEquals(mutableListOf(1, 2, 4, 3, 6, 5), nextPerm(1, 2, 4, 3, 5, 6))
     }
 
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+    fun test2() {
+        assertEquals(mutableListOf(1, 2, 4, 6, 3, 5), nextPerm(1, 2, 4, 5, 6, 3))
     }
 
     @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
+    fun test3() {
+        assertEquals(mutableListOf(2, 1, 3, 4, 5, 6), nextPerm(1, 6, 5, 4, 3, 2))
     }
 
     @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
+    fun testNotCorrect1() {
+        assertEquals(mutableListOf(0, 0, 0, 0, 0, 0), nextPerm(6, 5, 4, 3, 2, 1))
     }
 
     @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun testNotCorrect2() {
+        assertEquals(mutableListOf(0), nextPerm(1))
     }
 }
