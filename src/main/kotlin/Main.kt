@@ -1,15 +1,43 @@
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
-
-fun foo() = 10
-
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
+class Stack<T> {
+    val elements: MutableList<T> = mutableListOf()
+    fun isEmpty() = elements.isEmpty()
+    fun count() = elements.size
+    fun push(item: T) = elements.add(item)
+    fun pop(): T? {
+        val item = elements.lastOrNull()
+        if (!isEmpty()) {
+            elements.removeAt(elements.size - 1)
+        }
+        return item
     }
-    return result
+
+    fun peek(): T? = elements.lastOrNull()
+
 }
 
-fun sumFun(vararg ints: Int) = ints.fold(0) {acc, i -> acc + i }
+fun cbs(s: String): Boolean {
+    val st = Stack<Char>()
+    var flag = false
+    for (i in s) {
+        if (i == '(')
+            st.push(i)
+        else {
+            if (st.isEmpty()) {
+                flag = true
+                break
+            } else
+                st.pop()
+
+        }
+    }
+    return (st.isEmpty() && !flag)
+
+}
+
+/*fun Main(args: Array<String>) {
+    val input: String
+    val sc = Scanner(System.`in`)
+    input = sc.next()
+    cbs(input)
+
+}*/
