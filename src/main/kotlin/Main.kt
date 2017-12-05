@@ -1,15 +1,40 @@
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
 
-fun foo() = 10
+class Edge(val a: Int, val b: Int, val weight: Int)
 
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
+class DSU(n: Int) {
+    var head = Array(n, { it })
+    var height = Array(n, { 0 })
+
+    fun get(a: Int): Int {
+        if (head[a] != a)
+            head[a] = get(head[a])
+        return head[a]
     }
-    return result
+
+    fun unite(x: Int, y: Int) {
+        val a = get(x)
+        val b = get(y)
+        if (a == b) return
+        if (height[a] < height[b]) {
+            head[a] = b
+        } else {
+            if (height[a] == height[b]) height[a]++
+            head[b] = a
+        }
+    }
 }
 
-fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
+fun minSpanningTreeWeight(n: Int, graph: Array<Edge>): Int {
+    graph.sortBy { it.weight }
+    val dsu = DSU(n)
+    var answer = 0
+
+    for (i in graph)
+        if (dsu.get(i.a) != dsu.get(i.b)) {
+            dsu.unite(i.a, i.b)
+            answer += i.weight
+        }
+
+    return answer
+}
+
