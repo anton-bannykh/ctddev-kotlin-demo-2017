@@ -2,38 +2,47 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class MainTest {
+    val automat1 = AhoCorasick()
+    val automat2 = AhoCorasick("kek", "lol")
+
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun test1() {
+        automat1.addString("aaa")
+        val check = listOf<Int>(0, 1, 2)
+        assertEquals(check, automat1.findPos("aaaaa"))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun test2() {
+        automat1.addString("aaa")
+        automat1.addString("bb")
+        val check = listOf<Int>(3, 5, 6, 9, 10)
+        assertEquals(check, automat1.findPos("caabbaaaabbb"))
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun test3() {
+        automat1.addString("aaa")
+        val check = listOf<Int>()
+        assertEquals(check, automat1.findPos("c"))
     }
 
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+    fun test4() {
+        val check = listOf<Int>()
+        assertEquals(check, automat1.findPos(""))
     }
 
     @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
+    fun test5() {
+        val check = listOf<Int>(0, 3, 12)
+        assertEquals(check, automat2.findPos("lolkekcheburkek"))
     }
 
     @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun test6() {
+        automat2.addString("k")
+        val check = listOf<Int>(0, 3, 3, 5, 12, 12, 14)
+        assertEquals(check, automat2.findPos("lolkekcheburkek"))
     }
 }
