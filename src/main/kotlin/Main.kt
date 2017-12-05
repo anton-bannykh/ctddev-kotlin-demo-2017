@@ -1,10 +1,10 @@
 import java.lang.Math.min
 import java.lang.Math.pow
 
-var a = Array<Int>(1, {0})
+var a = Array<Int>(1, { 0 })
 var n: Int = 0
 var s: Int = 1000000001
-var y :Int = 0
+var y: Int = 0
 
 fun set(z: Int, v: Int) {
     a[y + z - 1] = v
@@ -16,7 +16,7 @@ fun set(z: Int, v: Int) {
     }
 }
 
-fun minstart(u: Int, v: Int) : Int {
+fun minstart(u: Int, v: Int): Int {
     return mind(u - 1, v - 1)
 }
 
@@ -27,13 +27,13 @@ fun mind(l: Int, r: Int, node: Int = 0, L: Int = 0, R: Int = y): Int {
     return min(mind(l, r, 2 * node + 1, L, m), mind(l, r, 2 * node + 2, m + 1, R))
 }
 
-fun create_segment_tree(tmp:Int, mass:Array<Int>) {
-    n = tmp;
-    var k : Double = 0.0
+fun create_segment_tree(tmp: Int, mass: Array<Int>) {
+    n = tmp
+    var k: Double = 0.0
     while (pow(2.0, k) < n) k++
     y = pow(2.0, k).toInt() - 1
     val x: Int = pow(2.0, k + 1).toInt() - 1
-    a = Array<Int>(x + 1, {0})
+    a = Array<Int>(x + 1, { 0 })
     for (i in y..y + n - 1)
         a[i] = mass[i - y]
     for (i in y + n..x)

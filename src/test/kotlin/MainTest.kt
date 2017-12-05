@@ -15,6 +15,7 @@ class MainTest {
         set(5, 10)
         assertEquals(10, minstart(5, 5))
     }
+
     @Test
     fun test2() {
         create_segment_tree(10, arrayOf(-1, 4, 0, 5, 12, 18, -4, -2, 6, 1))
@@ -26,6 +27,7 @@ class MainTest {
         set(1, 2)
         assertEquals(2, minstart(1, 6))
     }
+
     @Test
     fun test3() {
         create_segment_tree(7, arrayOf(1, 1, 1, 1, 1, 1, 1))
