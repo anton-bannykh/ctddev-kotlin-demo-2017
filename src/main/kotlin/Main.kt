@@ -23,8 +23,7 @@ fun partition(arr: Array<Int>, left: Int, right: Int) : Int {
     return i;
 }
 
-fun nth_element(arr: Array<Int>, ind : Int) : Int {
-    var array = arr
+fun nth_element(array: Array<Int>, ind : Int) : Int {
     var left = 0
     var right = array.size - 1
     var index = ind - 1
