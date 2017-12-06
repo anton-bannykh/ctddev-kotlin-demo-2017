@@ -33,7 +33,7 @@ class FenwickTree {
         var result = 0
         while(pos >= 0) {
             result = maxOf(result, f[pos])
-            pos = (pos and (pos +1)) - 1
+            pos = (pos and (pos + 1)) - 1
         }
         return result
     }
