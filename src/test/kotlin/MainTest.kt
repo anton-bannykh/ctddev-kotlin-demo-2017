@@ -4,36 +4,15 @@ import org.junit.Test
 class MainTest {
     @Test
     fun testFoo() {
-        assertEquals(10, foo())
+        assertEquals(true, isPrime(23))
+    }
+    @Test
+    fun testFoo() {
+        assertEquals(false, isPrime(133))
+    }
+    @Test
+    fun testFoo() {
+        assertEquals(true, isPrime(7))
     }
 
-    @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
-    }
-
-    @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
-    }
-
-    @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
-    }
-
-    @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
-
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
-    }
 }
