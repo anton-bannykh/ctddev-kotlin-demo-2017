@@ -103,12 +103,12 @@ public class Automation(private val numberOfVertexes: Int,
 
         sumArr[0] = 1
         arr[0] = 5
-        var kol: Int = 0
+        var answer: Int = 0
 
         for (i in 0 until out.size) {
-            kol += anss(out[i]);
+            answer += anss(out[i])
         }
 
-        return kol
+        return answer
     }
 }
