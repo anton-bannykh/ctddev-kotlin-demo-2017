@@ -1,6 +1,8 @@
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
-import java.util.*
+import java.util.Random
 
 class GraphTest {
 
@@ -85,7 +87,6 @@ class GraphTest {
         assertNotEquals(scc[1], scc[4])
 
         assertNotEquals(scc[3], scc[4])
-
 
         // Check that amount of SCC is equal to 3
         assertEquals(scc.entries
