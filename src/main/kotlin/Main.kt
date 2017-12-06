@@ -12,7 +12,6 @@ fun compress(a: IntArray) : IntArray{
 }
 
 class FenwickTree {
-
     private val SIZE : Int
     private var f : IntArray
 
