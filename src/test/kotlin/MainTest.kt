@@ -13,10 +13,10 @@ class MainTest {
         var f = IntArray(a.size)
 
         var result = 0
-        for(i in 0..a.size - 1) {
+        for (i in 0..a.size - 1) {
             f[i] = 1
-            for(j in 0..i - 1) {
-                if(a[i] > a[j]) {
+            for (j in 0..i - 1) {
+                if (a[i] > a[j]) {
                     f[i] = maxOf(f[i], f[j] + 1)
                 }
             }
