@@ -59,6 +59,6 @@ class MainTest {
     @Test
     fun testRandom5000() {
         val arr = IntArray(5000, { (-1000000000..1000000000).random() })
-        assertEquals(5, getLIS(arr))
+        assertEquals(brutForce(arr), getLIS(arr))
     }
 }
