@@ -1,9 +1,10 @@
 import org.junit.Assert.*
+import org.junit.Test
 import java.util.*
 
 class GraphTest {
 
-    /*@Test
+    @Test
     fun testEmpty() {
         val graph = Graph(0)
         assertTrue(graph.getScc().isEmpty())
@@ -91,6 +92,6 @@ class GraphTest {
                 .stream()
                 .max { a, b -> a.value.compareTo(b.value) }
                 .get().value, 3)
-    }*/
+    }
 
 }
