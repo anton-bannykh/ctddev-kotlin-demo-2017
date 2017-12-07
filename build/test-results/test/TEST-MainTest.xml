@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MainTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2017-12-01T22:11:28" hostname="DESKTOP-I4HPECU" time="0.015">
+  <properties/>
+  <testcase name="test1" classname="MainTest" time="0.015"/>
+  <testcase name="test2" classname="MainTest" time="0.0"/>
+  <testcase name="test3" classname="MainTest" time="0.0"/>
+  <testcase name="test4" classname="MainTest" time="0.0"/>
+  <testcase name="test5" classname="MainTest" time="0.0"/>
+  <testcase name="test6" classname="MainTest" time="0.0"/>
+  <testcase name="test7" classname="MainTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
