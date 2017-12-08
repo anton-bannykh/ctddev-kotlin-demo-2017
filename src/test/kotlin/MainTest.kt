@@ -43,7 +43,6 @@ class MainTest {
         assertEquals(arrayListOf(1), solve(1, 1, arrayOf(1), arrayOf(1)))
     }
 
-
     @Test
     fun test3() {
         val v = 10
