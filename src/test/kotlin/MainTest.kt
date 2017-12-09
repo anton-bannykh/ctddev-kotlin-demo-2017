@@ -2,12 +2,12 @@ import org.junit.Test
 import java.util.Random
 
 class MainTest {
-    fun sqr(d: Double) = d * d
-    fun distance(x: Pair<Double, Double>, y: Pair<Double, Double>) = Math.sqrt(sqr(x.first - y.first) + sqr(x.second - y.second))
-    fun calculateDistance(array: Array<Pair<Double, Double>>, a: IntArray) =
+    private fun sqr(d: Double) = d * d
+    private fun distance(x: Pair<Double, Double>, y: Pair<Double, Double>) = Math.sqrt(sqr(x.first - y.first) + sqr(x.second - y.second))
+    private fun calculateDistance(array: Array<Pair<Double, Double>>, a: IntArray) =
             a.indices.sumByDouble { distance(array[a[it]], array[a[(it + 1) % a.size]]) }
 
-    fun randomTest(n: Int, maxCoordinate: Int, doubleCoordinate: Boolean = true): Boolean {
+    private fun randomTest(n: Int, maxCoordinate: Int, doubleCoordinate: Boolean = true): Boolean {
         val random = Random()
         val dc = if (doubleCoordinate) 1 else 0
         val array = Array(n,
