@@ -4,12 +4,12 @@ fun minCostAssignment(a: List<List<Int>>): Int {
     if (n == 0)
         return 0
     val minA = a.map{it.min()!!}.min()!!
-    val u1 = Array(n, {0})
-    val u2 = Array(n, {minA})
-    val p2 = Array(n + 1, {-1})
+    val u1 = IntArray(n, {0})
+    val u2 = IntArray(n, {minA})
+    val p2 = IntArray(n + 1, {-1})
     for (i in 0 until n) {
-        val vis1 = Array(i + 1, {false})
-        val vis2 = Array(n + 1, {false})
+        val vis1 = BooleanArray(i + 1, {false})
+        val vis2 = BooleanArray(n + 1, {false})
         val minv = Array(n, {Pair(Int.MAX_VALUE, -1)})
         p2[n] = i
         var j0 = n
@@ -47,9 +47,9 @@ fun minCostAssignment(a: List<List<Int>>): Int {
 }
 
 fun min(a: Pair<Int, Int>, b: Pair<Int, Int>): Pair<Int, Int> {
-    when {
-        a.first < b.first -> return a
-        else -> return b
-    }
+    if (a.first < b.first)
+        return a
+    else
+        return b
 }
 
