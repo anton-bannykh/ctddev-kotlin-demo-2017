@@ -39,22 +39,22 @@ class MainTest {
 
     @Test
     fun testEmptyGraph() {
-        assertEquals(0, findBridjes(0))
+        assertEquals(0, findBridges(0))
     }
 
     @Test
     fun testOnlyVertexex() {
-        assertEquals(0, findBridjes(11))
+        assertEquals(0, findBridges(11))
     }
 
     @Test
     fun testOneEdge() {
-        assertEquals(1, findBridjes(5, Pair(1, 4)))
+        assertEquals(1, findBridges(5, Pair(1, 4)))
     }
 
     @Test
     fun testHard() {
-        assertEquals(6, findBridjes(16, Pair(1, 2), Pair(3, 4), Pair(3, 7), Pair(7, 8), Pair(5, 9), Pair(5, 10),
+        assertEquals(6, findBridges(16, Pair(1, 2), Pair(3, 4), Pair(3, 7), Pair(7, 8), Pair(5, 9), Pair(5, 10),
                 Pair(9, 10), Pair(10, 11), Pair(11, 12), Pair(11, 15), Pair(12, 16), Pair(15, 16), Pair(9, 14), Pair(10, 14), Pair(13, 14)))
     }
 
