@@ -1,8 +1,8 @@
-fun logariphm(x: Int): Int {
+fun logarithm(x: Int): Int {
     if (x == 1) {
         return 0
     } else {
-        return logariphm(Math.floor(x / 2.0).toInt()) + 1
+        return logarithm(Math.floor(x / 2.0).toInt()) + 1
     }
 }
 
@@ -21,12 +21,12 @@ fun power(aa: Int, nn: Int): Int {
 }
 
 fun solve(n: Int, mas: IntArray, ll: Int, rr: Int): Int {
-    val logariphms = Array<Int>(n + 1, { i -> 0 })
+    val logarithms = IntArray(n + 1, { i -> 0 })
     for (i in 1..n) {
-        logariphms[i] = logariphm(i)
+        logarithms[i] = logarithm(i)
     }
-    val powers = Array<Int>(logariphms[n] + 1, { i -> (power(2, i)) })
-    val sparseTable = Array<Array<Int>>(logariphms[n] + 1, { i -> Array<Int>(n - powers[i] + 1, { j -> 0 }) })
+    val powers = IntArray(logarithms[n] + 1, { i -> (power(2, i)) })
+    val sparseTable = Array<IntArray>(logarithms[n] + 1, { i -> IntArray(n - powers[i] + 1, { j -> 0 }) })
     for (i in 0..sparseTable[0].size - 1) {
         sparseTable[0][i] = mas[i]
     }
@@ -43,7 +43,7 @@ fun solve(n: Int, mas: IntArray, ll: Int, rr: Int): Int {
         left = right
         right = p
     }
-    val k = logariphms[right - left]
+    val k = logarithms[right - left]
     return Math.min(sparseTable[k][left - 1], sparseTable[k][right - powers[k]])
 }
 
