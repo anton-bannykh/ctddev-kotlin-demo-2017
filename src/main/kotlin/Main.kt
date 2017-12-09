@@ -1,4 +1,4 @@
-class myDSU {
+class MyDSU {
     private var parent: Array<Int>? = null
     private var size: Array<Int>? = null
     private var countSets: Int = 0
