@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MainTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2017-12-05T18:36:56" hostname="yfxrby-PC" time="0.023">
-  <properties/>
-  <testcase name="test1" classname="MainTest" time="0.022"/>
-  <testcase name="test2" classname="MainTest" time="0.001"/>
-  <testcase name="test3" classname="MainTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
