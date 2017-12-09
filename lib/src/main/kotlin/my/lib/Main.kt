@@ -3,23 +3,28 @@ import java.util.*
 
 class EulerTourTree(var size: Int) {
 
-    private var edges: Array<HashMap<Int, node>?>
-    private var backEdges: Array<HashMap<Int, node>?>
-    private var nodes: Array<HashSet<node>?>
+    private val edges: Array<HashMap<Int, Node>> = Array(size + 1, { HashMap<Int, Node>() })
+    private val backEdges: Array<HashMap<Int, Node>> = Array(size + 1, { HashMap<Int, Node>() })
+    private val nodes: Array<HashSet<Node>> = Array(size + 1, { HashSet<Node>() })
 
     init {
-        nodes = Array(size + 1, { null })
-        edges = Array(size + 1, { null })
-        backEdges = Array(size + 1, { null })
-
         for (i in 1..size + 1 - 1) {
-            nodes[i] = HashSet()
-            val newNode = node(i)
-            nodes[i]!!.add(newNode)
-            edges[i] = HashMap()
-            edges[i]!!.put(i, newNode)
-            backEdges[i] = HashMap()
-            backEdges[i]!!.put(i, newNode)
+            val newNode = Node(i)
+            nodes[i].add(newNode)
+            edges[i].put(i, newNode)
+            backEdges[i].put(i, newNode)
+        }
+    }
+
+    private class Node(var value: Int) {
+        var parent: Node? = null
+        var rightSon: Node? = null
+        var leftSon: Node? = null
+        var weight: Int = 0
+
+        init {
+            var value: Int = value
+            weight = 1
         }
     }
 
@@ -27,33 +32,33 @@ class EulerTourTree(var size: Int) {
         if (connected(left, right)) {
             return
         }
-        val leftNode = nodes[left]!!.iterator().next()
-        val rightNode = nodes[right]!!.iterator().next()
+        val leftNode = nodes[left].iterator().next()
+        val rightNode = nodes[right].iterator().next()
         splay(leftNode)
-        var A2 = leftNode.rightSon
+        var a2 = leftNode.rightSon
         leftNode.rightSon = null
         refreshWeights(leftNode)
-        if (A2 != null) {
-            A2.parent = null
-            A2 = addToTheLeft(A2, leftNode.value)
+        if (a2 != null) {
+            a2.parent = null
+            a2 = addToTheLeft(a2, leftNode.value)
         } else {
-            val newNode = node(leftNode.value)
-            nodes[leftNode.value]!!.add(newNode)
-            A2 = newNode
+            val newNode = Node(leftNode.value)
+            nodes[leftNode.value].add(newNode)
+            a2 = newNode
         }
 
         splay(rightNode)
-        var B1 = rightNode.leftSon
+        var b1 = rightNode.leftSon
         rightNode.leftSon = null
         refreshWeights(rightNode)
-        if (B1 != null) {
-            B1.parent = null
-            B1 = addToTheRight(B1, rightNode.value)
-            B1 = removeFirst(B1)
+        if (b1 != null) {
+            b1.parent = null
+            b1 = addToTheRight(b1, rightNode.value)
+            b1 = removeFirst(b1)
         }
         merge(leftNode, rightNode)
-        merge(rightNode, B1)
-        merge(rightNode, A2)
+        merge(rightNode, b1)
+        merge(rightNode, a2)
     }
 
     fun cut(left: Int, right: Int) {
@@ -63,8 +68,8 @@ class EulerTourTree(var size: Int) {
         var left = left
         var right = right
 
-        val supposedLeft = edges[left]!![right]
-        val supposedRight = backEdges[right]!![left]
+        val supposedLeft = edges[left][right]
+        val supposedRight = backEdges[right][left]
         if (supposedLeft === supposedRight) {
             val temp = left
             left = right
@@ -72,82 +77,70 @@ class EulerTourTree(var size: Int) {
         } else {
             splay(supposedLeft)
             splayUntilSonOfRoot(supposedRight, supposedLeft)
-            if (supposedLeft!!.leftSon === supposedRight) {
+            if (supposedLeft?.leftSon === supposedRight) {
                 val temp = left
                 left = right
                 right = temp
             }
         }
 
-        var leftNodeA = edges[left]!![right]
-        var rightNodeA = backEdges[right]!![left]
+        val leftNodeA = edges[left][right]
+        var rightNodeA = backEdges[right][left]
 
-        var leftNodeB = backEdges[left]!![right]
-        var rightNodeB = edges[right]!![left]
+        val leftNodeB = backEdges[left][right]
+        val rightNodeB = edges[right][left]
 
         splay(leftNodeA)
         splayUntilSonOfRoot(leftNodeB, leftNodeA)
-        leftNodeA!!.rightSon = null
+        leftNodeA?.rightSon = null
         refreshWeights(leftNodeA)
-        leftNodeB!!.parent = null
+        leftNodeB?.parent = null
 
         splay(rightNodeB)
         splayUntilSonOfRoot(rightNodeA, rightNodeB)
-        rightNodeB!!.rightSon = null
+        rightNodeB?.rightSon = null
         refreshWeights(rightNodeB)
-        rightNodeA!!.parent = null
+        rightNodeA?.parent = null
 
         rightNodeA = removeFirst(rightNodeA)
         merge(leftNodeA, rightNodeA)
     }
 
     fun connected(left: Int, right: Int): Boolean {
-        var first: node? = nodes[left]!!.iterator().next()
-        var second: node? = nodes[right]!!.iterator().next()
-        while (first!!.parent != null) {
+        var first: Node? = nodes[left].iterator().next()
+        var second: Node? = nodes[right].iterator().next()
+        while (first?.parent != null) {
             first = first.parent
         }
-        while (second!!.parent != null) {
+        while (second?.parent != null) {
             second = second.parent
         }
         return first === second
     }
 
     fun sizeOfNodesComponent(index: Int): Int {
-        var node: node = nodes[index]!!.iterator().next()
+        val node: Node = nodes[index].iterator().next()
         splay(node)
         return (node.weight + 1) / 2
     }
 
-    private class node(var value: Int) {
-        var parent: node? = null
-        var rightSon: node? = null
-        var leftSon: node? = null
-        var weight: Int = 0
-
-        init {
-            var value: Int = value
-            weight = 1
-        }
-    }
-
-    private fun zigUntilSonOfRoot(node: node, isLeftSon: Boolean) {
+    private fun zigUntilSonOfRoot(node: Node, isLeftSon: Boolean) {
         val parent = node.parent
-        val grandparent = parent!!.parent
+        val grandparent = parent?.parent
         var secondLeft = false
-        if (grandparent!!.leftSon === parent) {
+        if (grandparent?.leftSon === parent) {
             secondLeft = true
         }
         zig(node, isLeftSon)
         node.parent = grandparent
         if (secondLeft) {
-            grandparent!!.leftSon = node
+            grandparent?.leftSon = node
         } else {
-            grandparent!!.rightSon = node
+            grandparent?.rightSon = node
         }
     }
 
-    private fun zig(node: node, isLeftSon: Boolean) {
+    private fun zig(node: Node, isLeftSon: Boolean) {
         val parent = node.parent
         if (isLeftSon) {
             val b = node.rightSon
@@ -175,9 +168,9 @@ class EulerTourTree(var size: Int) {
         refreshWeights(parent)
     }
 
-    private fun zigZig(node: node, isLeftSon: Boolean) {
+    private fun zigZig(node: Node, isLeftSon: Boolean) {
         val parent = node.parent
-        val grandparent = parent!!.parent
+        val grandparent = parent?.parent
         val grandGrandparent = grandparent!!.parent
         if (isLeftSon) {
             val b = node.rightSon
@@ -228,9 +221,9 @@ class EulerTourTree(var size: Int) {
         refreshWeights(grandparent)
     }
 
-    private fun zigZag(node: node, isLeftSon: Boolean) {
+    private fun zigZag(node: Node, isLeftSon: Boolean) {
         val parent = node.parent
-        val grandparent = parent!!.parent
+        val grandparent = parent?.parent
         val grandGrandparent = grandparent!!.parent
         if (isLeftSon) {
             val b = node.leftSon
@@ -288,19 +281,19 @@ class EulerTourTree(var size: Int) {
         refreshWeights(grandparent)
     }
 
-    private fun splay(node: node?) {
-        while (node!!.parent != null) {
+    private fun splay(node: Node?) {
+        while (node?.parent != null) {
             val parent = node.parent
             var isLeftSon = false
-            if (parent!!.leftSon === node) {
+            if (parent?.leftSon === node) {
                 isLeftSon = true
             }
-            if (parent!!.parent == null) {
+            if (parent?.parent == null) {
                 zig(node, isLeftSon)
             } else {
                 var secondLeft = false
                 val grandparent = parent.parent
-                if (grandparent!!.leftSon === parent) {
+                if (grandparent?.leftSon === parent) {
                     secondLeft = true
                 }
                 if (isLeftSon && secondLeft) {
@@ -316,43 +309,43 @@ class EulerTourTree(var size: Int) {
         }
     }
 
-    private fun addToTheLeft(node: node?, value: Int): node {
+    private fun addToTheLeft(node: Node?, value: Int): Node {
         if (node == null) {
-            val newNode = node(value)
-            nodes[value]!!.add(newNode)
+            val newNode = Node(value)
+            nodes[value].add(newNode)
             return newNode
         }
         val firstNode = findFirst(node)
-        val newNode = node(value)
-        nodes[value]!!.add(newNode)
+        val newNode = Node(value)
+        nodes[value].add(newNode)
         firstNode!!.leftSon = newNode
         refreshWeights(firstNode)
         newNode.parent = firstNode
-        edges[value]!!.put(firstNode.value, newNode)
-        backEdges[value]!!.put(firstNode.value, firstNode)
+        edges[value].put(firstNode.value, newNode)
+        backEdges[value].put(firstNode.value, firstNode)
         return node
     }
 
-    private fun addToTheRight(node: node?, value: Int): node {
+    private fun addToTheRight(node: Node?, value: Int): Node {
         if (node == null) {
-            val newNode = node(value)
-            nodes[value]!!.add(newNode)
+            val newNode = Node(value)
+            nodes[value].add(newNode)
             return newNode
         }
         val lastNode = findLast(node)
-        val newNode = node(value)
-        nodes[value]!!.add(newNode)
+        val newNode = Node(value)
+        nodes[value].add(newNode)
         lastNode!!.rightSon = newNode
         refreshWeights(lastNode)
         newNode.parent = lastNode
-        edges[lastNode.value]!!.put(newNode.value, lastNode)
-        backEdges[lastNode.value]!!.put(newNode.value, newNode)
+        edges[lastNode.value].put(newNode.value, lastNode)
+        backEdges[lastNode.value].put(newNode.value, newNode)
         return node
     }
 
-    private fun removeFirst(node: node?): node? {
+    private fun removeFirst(node: Node?): Node? {
         val first = findFirst(node)
-        nodes[first!!.value]!!.remove(first)
+        nodes[first!!.value].remove(first)
 
         val parent = first.parent
         if (parent == null) {
@@ -369,8 +362,8 @@ class EulerTourTree(var size: Int) {
         }
     }
 
-    private fun findFirst(node: node?): node? {
-        var node: node? = node ?: return null
+    private fun findFirst(node: Node?): Node? {
+        var node: Node? = node ?: return null
         while (node!!.parent != null) {
             node = node.parent
         }
@@ -380,8 +373,8 @@ class EulerTourTree(var size: Int) {
         return node
     }
 
-    private fun findLast(node: node?): node? {
-        var node: node? = node ?: return null
+    private fun findLast(node: Node?): Node? {
+        var node: Node? = node ?: return null
         while (node!!.parent != null) {
             node = node.parent
         }
@@ -391,7 +384,7 @@ class EulerTourTree(var size: Int) {
         return node
     }
 
-    private fun merge(left: node?, right: node?) {
+    private fun merge(left: Node?, right: Node?) {
         if (left == null || right == null) {
             return
         }
@@ -402,23 +395,23 @@ class EulerTourTree(var size: Int) {
         lastLeft!!.rightSon = right
         refreshWeights(lastLeft)
         right.parent = lastLeft
-        edges[lastLeft.value]!!.put(firstRight!!.value, lastLeft)
-        backEdges[lastLeft.value]!!.put(firstRight.value, firstRight)
+        edges[lastLeft.value].put(firstRight!!.value, lastLeft)
+        backEdges[lastLeft.value].put(firstRight.value, firstRight)
     }
 
-    private fun splayUntilSonOfRoot(node: node?, neededParent: node?) {
-        while (node!!.parent !== neededParent && node!!.parent != null) {
+    private fun splayUntilSonOfRoot(node: Node?, neededParent: Node?) {
+        while (node?.parent !== neededParent && node?.parent != null) {
             val parent = node.parent
             var isLeftSon = false
-            if (parent!!.leftSon === node) {
+            if (parent?.leftSon === node) {
                 isLeftSon = true
             }
-            if (parent!!.parent === neededParent) {
+            if (parent?.parent === neededParent) {
                 zigUntilSonOfRoot(node, isLeftSon)
             } else {
                 var secondLeft = false
-                val grandparent = parent!!.parent
-                if (grandparent!!.leftSon === parent) {
+                val grandparent = parent?.parent
+                if (grandparent?.leftSon === parent) {
                     secondLeft = true
                 }
                 if (isLeftSon && secondLeft) {
@@ -434,7 +427,7 @@ class EulerTourTree(var size: Int) {
         }
     }
 
-    private fun refreshWeights(node: node?) {
+    private fun refreshWeights(node: Node?) {
         var node = node
         while (true) {
             if (node == null) {
