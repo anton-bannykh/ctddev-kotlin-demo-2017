@@ -1,15 +1,12 @@
-
-var graph: MutableList<MutableList<Int>> = mutableListOf()
-var cycle: MutableList<Int> = mutableListOf()
-var parent: MutableList<Int> = mutableListOf()
 var c_st : Int = -1
 var c_end: Int = 0
-fun dfs(v: Int) : Boolean {
+
+fun dfs(v: Int, graph: MutableList<MutableList<Int>>, cycle: MutableList<Int>, parent: MutableList<Int>) : Boolean {
     cycle[v] = 1
     for (i in graph[v]) {
         if (cycle[i] == 0) {
             parent[i] = v
-            if (dfs(i)) {
+            if (dfs(i, graph, cycle, parent)) {
                 return true
             }
         } else if (cycle[i] == 1) {
@@ -21,10 +18,12 @@ fun dfs(v: Int) : Boolean {
     cycle[v] = 2
     return false
 }
+
 fun answerRequest(ar: MutableList<Pair<Int, Int>> , n: Int) : MutableList<Int> {
-    graph.clear()
-    cycle.clear()
-    parent.clear()
+    val graph = mutableListOf<MutableList<Int>>()
+    val cycle: MutableList<Int> = mutableListOf()
+    val parent: MutableList<Int> = mutableListOf()
+
     c_st = -1
     c_end = 0
 
@@ -35,11 +34,10 @@ fun answerRequest(ar: MutableList<Pair<Int, Int>> , n: Int) : MutableList<Int> {
     }
     for (i in 0..ar.size - 1) {
         graph[ar[i].first].add(ar[i].second)
-
     }
 
     for (i in 0..n - 1) {
-        if (dfs(i)) break
+        if (dfs(i, graph, cycle, parent)) break
     }
     var temp: MutableList<Int> = mutableListOf()
     if (c_st == -1) {
