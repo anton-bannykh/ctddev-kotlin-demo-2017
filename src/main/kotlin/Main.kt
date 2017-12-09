@@ -1,9 +1,10 @@
-class myDSU {
+class MyDSU(sizeX: Int) {
+
     private var parent: Array<Int>? = null
     private var size: Array<Int>? = null
     private var countSets: Int = 0
 
-    fun init(sizeX: Int) {
+    init {
         parent = Array(sizeX + 1, { it })
         size = Array(sizeX + 1, { 1 })
         countSets = sizeX
