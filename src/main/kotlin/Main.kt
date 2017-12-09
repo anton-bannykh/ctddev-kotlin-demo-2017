@@ -15,8 +15,8 @@ var s = 0
 var t = 0
 var edges = ArrayList<Edge>()
 var g = Array(C, { ArrayList<Int>() })
-var pt = Array(C, { 0 })
-var d = Array(C, { 0 })
+var pt = IntArray(C, { 0 })
+var d = IntArray(C, { 0 })
 
 fun addEdge(edge: Edge) {
     g[edge.a].add(edges.size)
@@ -27,7 +27,7 @@ fun addEdge(edge: Edge) {
 }
 
 fun bfs(flow: Int): Boolean {
-    d = Array(C, { INF })
+    d = IntArray(C, { INF })
     d[s] = 0
 
     val q = LinkedList<Int>()
@@ -97,7 +97,7 @@ fun solve(verticesCnt: Int, edges: Array<Edge>): Int {
             continue
         }
 
-        pt = Array(C, { 0 })
+        pt = IntArray(C, { 0 })
 
         while (dfs(s, flow)) {
             result += flow
