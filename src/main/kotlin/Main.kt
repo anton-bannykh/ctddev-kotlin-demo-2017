@@ -14,19 +14,14 @@ fun sum(vararg ints: Int): Int {
 
 fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
 
-fun findBridjes(numberOfVertexex: Int, vararg edjes: Pair<Int, Int>): Int {
-
-//    println(numberOfVertexex);
-//    for (e in edjes) {
-//        println(" - " + (e.first) + " " + e.second)
-//    }
+fun findBridges(numberOfVertexex: Int, vararg edjes: Pair<Int, Int>): Int {
 
     val g: Array<ArrayList<Int>> = Array(numberOfVertexex, { ArrayList<Int>() })
-    var used: BooleanArray = kotlin.BooleanArray(numberOfVertexex, { false })
-    var timer: Int = 0
-    var tin: IntArray = IntArray(numberOfVertexex)
-    var fup: IntArray = IntArray(numberOfVertexex)
-    var ans: ArrayList<Pair<Int, Int>> = ArrayList()
+    val used = BooleanArray(numberOfVertexex, { false })
+    var timer = 0
+    val tin = IntArray(numberOfVertexex)
+    val fup = IntArray(numberOfVertexex)
+    val ans: ArrayList<Pair<Int, Int>> = ArrayList()
 
     for (e in edjes) {
         g[e.first - 1].add(e.second - 1)
@@ -46,9 +41,7 @@ fun findBridjes(numberOfVertexex: Int, vararg edjes: Pair<Int, Int>): Int {
                 dfs(to, vertex)
                 fup[vertex] = minOf(fup[vertex], fup[to])
                 if (fup[to] > tin[vertex]) {
-                    //find new bridge
                     ans.add(Pair(vertex, to))
-                    //println(vertex.toString() + " " + to)
                 }
             }
         }
