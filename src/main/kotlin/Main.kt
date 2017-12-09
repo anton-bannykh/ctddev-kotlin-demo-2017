@@ -8,15 +8,15 @@ var numberOperations = 0
 var b = intArrayOf()
 var distB = 0.0
 
-fun sqr(d: Double) = d * d
-fun distance(x: Pair<Double, Double>, y: Pair<Double, Double>) =
+private fun sqr(d: Double) = d * d
+private fun distance(x: Pair<Double, Double>, y: Pair<Double, Double>) =
         sqrt(sqr(x.first - y.first) + sqr(x.second - y.second))
-fun mod(x: Int, y: Int) = (x + y) % y
+private fun mod(x: Int, y: Int) = (x + y) % y
 
-fun calculateDistance(array: Array<Pair<Double, Double>>, a: IntArray) =
+private fun calculateDistance(array: Array<Pair<Double, Double>>, a: IntArray) =
         a.indices.sumByDouble { distance(array[a[it]], array[a[(it + 1) % a.size]]) }
 
-fun changeDistance(array: Array<Pair<Double, Double>>, a: IntArray, x: Int, y: Int) : Double {
+private fun changeDistance(array: Array<Pair<Double, Double>>, a: IntArray, x: Int, y: Int) : Double {
     var p = -distance(array[a[x]], array[a[mod(x - 1, a.size)]]) -
             distance(array[a[x]], array[a[mod(x + 1, a.size)]]) -
             distance(array[a[y]], array[a[mod(y - 1, a.size)]]) -
@@ -35,8 +35,9 @@ fun changeDistance(array: Array<Pair<Double, Double>>, a: IntArray, x: Int, y: I
     return p
 }
 
-fun simulatedAnnealing(array: Array<Pair<Double, Double>>, a: IntArray, random: Random) : Double {
+private fun simulatedAnnealing(array: Array<Pair<Double, Double>>, a: IntArray, random: Random) : Double {
     var dist = calculateDistance(array, a)
+    numberOperations += a.size
     var t = 1e9
     val dt = min(0.9, random.nextDouble())
 
