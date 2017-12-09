@@ -8,7 +8,7 @@ class EulerTourTree(var size: Int) {
     private val nodes: Array<HashSet<Node>> = Array(size + 1, { HashSet<Node>() })
 
     init {
-        for (i in 1..size + 1 - 1) {
+        for (i in 1..size) {
             val newNode = Node(i)
             nodes[i].add(newNode)
             edges[i].put(i, newNode)
