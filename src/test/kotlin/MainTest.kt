@@ -6,8 +6,10 @@ import kotlin.collections.ArrayList
 class MainTest {
 
     @Test
-    fun testDefaultConstructor() {
-        var x = DSU()
+    fun testNullConstructor() {
+        try {
+            var x = DSU()
+        } catch (x: Exception) {}
     }
 
     @Test
