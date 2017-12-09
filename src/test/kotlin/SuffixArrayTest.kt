@@ -44,4 +44,11 @@ class SuffixArrayTest {
                 intArrayOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25))
     }
 
+    @Test
+    fun longTest() {
+        Assert.assertArrayEquals(suffixArray("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"),
+                intArrayOf(26, 0, 27, 1, 28, 2, 29, 3, 30, 4, 31, 5, 32, 6, 33, 7, 34, 8, 35, 9, 36, 10, 37, 11, 38, 12,
+                        39, 13, 40, 14, 41, 15, 42, 16, 43, 17, 44, 18, 45, 19, 46, 20, 47, 21, 48, 22, 49, 23, 50, 24, 51, 25))
+    }
+
 }

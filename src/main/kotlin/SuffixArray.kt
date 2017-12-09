@@ -5,7 +5,7 @@ fun suffixArray(input: String): IntArray {
     val t = input + delimiter
     val n = t.length
     val s = IntArray(n)
-    val cnt = IntArray(alphabetSize)
+    val cnt = IntArray(maxOf(alphabetSize, n))
     val p = IntArray(n)
     var c = IntArray(n)
 
