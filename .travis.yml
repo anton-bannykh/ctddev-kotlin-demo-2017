@@ -1,5 +1,16 @@
-language: java
+language: android
+android:
+    components:
+        - tools
+        - platform-tools
+        - tools
 
+# The BuildTools version used by your project
+        - build-tools-26.0.0
+  
+# The SDK version used to compile your project
+        - android-26
+        
 before_cache:
     - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
     - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
