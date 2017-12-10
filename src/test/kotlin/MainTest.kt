@@ -13,7 +13,7 @@ class MainTest {
         )
         val command = ArrayList<Command>(input.asList())
         val task = DynamicConnectivity(6, 4, command);
-        val result = Task.solve()
+        val result = task.solve()
         assertEquals("10", result)
     }
 
@@ -28,7 +28,7 @@ class MainTest {
         )
         val command = ArrayList<Command>(input.asList())
         val task = DynamicConnectivity(6, 4, command);
-        val result = Task.solve()
+        val result = task.solve()
         assertEquals("10", result)
     }
 
