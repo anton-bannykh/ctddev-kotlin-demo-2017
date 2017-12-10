@@ -67,13 +67,13 @@ fun lca(uIn: Int, vIn: Int, batya: MutableList<Int>, depth: MutableList<Int>, dp
 
 fun solve(n: Int, m: Int, batyaIn: MutableList<Int>, questions: MutableList<Pair<Int, Int>>): MutableList<Int> {
 
-    var depth: MutableList<Int> = mutableListOf()
-    var dp: MutableList<MutableList<Int>> = mutableListOf()
-    var batya = batyaIn
+    val depth = mutableListOf<Int>()
+    val dp = mutableListOf<MutableList<Int> >()
+    val batya = batyaIn
     batya.add(0, 0)
     prep(batya, depth, dp)
 
-    var ans: MutableList<Int> = mutableListOf()
+    val ans: MutableList<Int> = mutableListOf()
     for (i in 0..(m - 1)) {
         ans.add(lca(questions[i].first, questions[i].second, batya, depth, dp))
     }
