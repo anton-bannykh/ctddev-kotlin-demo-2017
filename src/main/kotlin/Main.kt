@@ -4,9 +4,6 @@ import java.lang.Math.min
 import java.lang.Math.exp
 
 private val maxOperations = 1e6.toInt()
-private var numberOperations = 0
-private var b = intArrayOf()
-private var distB = 0.0
 
 private fun sqr(d: Double) = d * d
 private fun distance(x: Pair<Double, Double>, y: Pair<Double, Double>) =
@@ -35,9 +32,16 @@ private fun changeDistance(array: Array<Pair<Double, Double>>, a: IntArray, x: I
     return p
 }
 
-private fun simulatedAnnealing(array: Array<Pair<Double, Double>>, a: IntArray, random: Random) : Double {
+private fun simulatedAnnealing(array: Array<Pair<Double, Double>>,
+                               a: IntArray,
+                               b: IntArray,
+                               distB: Double,
+                               random: Random) : Pair<IntArray, Int> {
     var dist = calculateDistance(array, a)
-    numberOperations += a.size
+    var nb = b
+    var ndistB = distB
+
+    var numberOperations = a.size
     var t = 1e9
     val dt = min(0.9, random.nextDouble())
 
@@ -57,29 +61,29 @@ private fun simulatedAnnealing(array: Array<Pair<Double, Double>>, a: IntArray, 
         t *= dt
         numberOperations++
 
-        if (dist < distB) {
-            distB = dist
-            b = a.clone()
+        if (dist < ndistB) {
+            ndistB = dist
+            nb = a.clone()
         }
 
     }
-    return dist
+    return Pair(nb, numberOperations)
 }
 
 fun calculateTSP(array: Array<Pair<Double, Double>>) : Pair<Double, IntArray> {
-    numberOperations = 0
+    var numberOperations = 0
 
     val a = IntArray(array.size, { i -> i })
 
-    b = a.clone()
-    distB = calculateDistance(array, b)
+    var b = a.clone()
+    var distB = calculateDistance(array, b)
     val random = Random()
 
-    var e = 0
-
     while (numberOperations < maxOperations) {
-        simulatedAnnealing(array, a, random)
-        e++
+        val q = simulatedAnnealing(array, a, b, distB, random)
+        b = q.first
+        numberOperations += q.second
+        distB = calculateDistance(array, b)
     }
 
     return Pair(distB, b)
