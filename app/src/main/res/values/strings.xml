@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="sort">Sort</string>
+    <string name="input">Input number for sort.</string>
 </resources>

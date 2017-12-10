@@ -1,41 +1,53 @@
 package my.lib
-
-import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
+import java.util.Arrays
 
 class MainTest {
+
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun testSortedArray() {
+        val ms = intArrayOf(0, 1, 2, 3, 4, 5)
+        val ans = ms.clone()
+        Quicksort(ms)
+        ans.sort()
+        assertTrue(Arrays.equals(ans, ms))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testUnSortedArray() {
+        val ms = intArrayOf(100, 67, 32, 10, 0, -100)
+        val ans = ms.clone()
+        Quicksort(ms)
+        ans.sort()
+        assertTrue(Arrays.equals(ans, ms))
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun test12Element() {
+        val ms = intArrayOf(1, 4, 2, 3, 1, 8765, 876875, 876, 76786, 97678, 876876, -99999999)
+        val ans = ms.clone()
+        Quicksort(ms)
+        ans.sort()
+        assertTrue(Arrays.equals(ans, ms))
     }
 
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+    fun test100Element() {
+        val ms = IntArray(100, { (-10000..10000).random() })
+        val ans = ms.clone()
+        Quicksort(ms)
+        ans.sort()
+        assertTrue(Arrays.equals(ans, ms))
     }
 
     @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
+    fun test10000Element() {
+        val ms = IntArray(10000, { (-100000..100000).random() })
+        val ans = ms.clone()
+        Quicksort(ms)
+        ans.sort()
+        assertTrue(Arrays.equals(ans, ms))
     }
 
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
-    }
 }
