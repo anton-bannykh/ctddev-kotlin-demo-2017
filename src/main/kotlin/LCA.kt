@@ -1,18 +1,13 @@
-
-var batya: MutableList<Int> = mutableListOf()
-var depth: MutableList<Int> = mutableListOf()
-var dp: MutableList<MutableList<Int>> = mutableListOf()
-
-fun depthCounter(i: Int) {
+fun depthCounter(i: Int, batya: MutableList<Int>, depth: MutableList<Int>) {
     if (depth[i] == -1) {
         if (depth[batya[i]] == -1) {
-            depthCounter(batya[i])
+            depthCounter(batya[i], batya, depth)
         }
         depth[i] = depth[batya[i]] + 1
     }
 }
 
-fun prep() {
+fun prep(batya: MutableList<Int>, depth: MutableList<Int>, dp: MutableList<MutableList<Int> >) {
     if (batya.size == 0) {
         return
     }
@@ -21,7 +16,7 @@ fun prep() {
         depth.add(-1)
     }
     for (i in 1..(batya.size - 1)) {
-        depthCounter(i)
+        depthCounter(i, batya, depth)
     }
 
     for (i in 0..(batya.size - 1)) {
@@ -33,7 +28,6 @@ fun prep() {
 
     for (i in 0..batya.size - 1) {
         dp[i].set(0, batya[i])
-
     }
 
     for (j in 1..18) {
@@ -43,7 +37,7 @@ fun prep() {
     }
 }
 
-fun lca(uIn: Int, vIn: Int): Int {
+fun lca(uIn: Int, vIn: Int, batya: MutableList<Int>, depth: MutableList<Int>, dp: MutableList<MutableList<Int> >): Int {
     var u = uIn
     var v = vIn
 
@@ -72,13 +66,16 @@ fun lca(uIn: Int, vIn: Int): Int {
 }
 
 fun solve(n: Int, m: Int, batyaIn: MutableList<Int>, questions: MutableList<Pair<Int, Int>>): MutableList<Int> {
-    batya = batyaIn
+
+    var depth: MutableList<Int> = mutableListOf()
+    var dp: MutableList<MutableList<Int>> = mutableListOf()
+    var batya = batyaIn
     batya.add(0, 0)
-    prep()
+    prep(batya, depth, dp)
 
     var ans: MutableList<Int> = mutableListOf()
     for (i in 0..(m - 1)) {
-        ans.add(lca(questions[i].first, questions[i].second))
+        ans.add(lca(questions[i].first, questions[i].second, batya, depth, dp))
     }
     return ans
 }
