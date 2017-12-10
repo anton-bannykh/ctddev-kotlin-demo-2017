@@ -3,10 +3,10 @@ import java.util.Random
 import java.lang.Math.min
 import java.lang.Math.exp
 
-val maxOperations = 1e6.toInt()
-var numberOperations = 0
-var b = intArrayOf()
-var distB = 0.0
+private val maxOperations = 1e6.toInt()
+private var numberOperations = 0
+private var b = intArrayOf()
+private var distB = 0.0
 
 private fun sqr(d: Double) = d * d
 private fun distance(x: Pair<Double, Double>, y: Pair<Double, Double>) =
