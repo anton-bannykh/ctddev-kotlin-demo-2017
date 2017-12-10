@@ -22,18 +22,23 @@ class DynamicConnectivity(val n: Int, val m: Int, val commands: ArrayList<Comman
     private val dsuParent = ArrayList<Int>()
     private val edge = ArrayList<PairInt>()
     private val inputCommand = ArrayList<Command>()
-    private val requestSize: Int = 0
     private val segmentTree = ArrayList<EdgeArray>()
     //((b, c), a) a - last value, b != -1 => update dsuParent, c != -1 => update dsuSize
     private val addedEdges = Vector<PairInt>()
+
+    private var requestSize: Int
 
 
     init {
         commands.forEach { inputCommand.add(it) }
         buildSegmentTree(m).forEach { segmentTree.add(it) }
-        requestSize.plus(m)
-        dsuSize.clear()
-        dsuParent.clear()
+        requestSize = m
+
+        for (i in 0..n - 1) {
+            dsuSize.add(1)
+            dsuParent.add(i)
+        }
+
     }
 
     /*
@@ -44,7 +49,7 @@ class DynamicConnectivity(val n: Int, val m: Int, val commands: ArrayList<Comman
         while (curSize < n) {
             curSize *= 2
         }
-        return Array<EdgeArray>(2 * curSize, { i -> EdgeArray() })
+        return Array<EdgeArray>(2 * curSize, { EdgeArray() })
     }
 
     /*
@@ -139,12 +144,6 @@ class DynamicConnectivity(val n: Int, val m: Int, val commands: ArrayList<Comman
     fun solve(): String {
 
         var time = 1
-
-        for (i in 0..n - 1) {
-            dsuSize.add(1)
-            dsuParent.add(i)
-        }
-
         for (i in commands) {
             if (i.type == 1) {
                 edge.add(PairInt(i.vertex, time))
