@@ -2,7 +2,7 @@ fun logarithm(x: Int): Int {
     if (x == 1) {
         return 0
     } else {
-        return logarithm(Math.floor(x / 2.0).toInt()) + 1
+        return logarithm(x / 2) + 1
     }
 }
 
