@@ -9,7 +9,6 @@ class Trie(list: List<String> = emptyList()) {
         val autoMove: MutableMap<Char, Node> = HashMap()
         var flag = false
 
-
         val suffLink: Node by lazy {
             if (this == ROOT || parent == null || parent == ROOT)
                 ROOT
@@ -81,7 +80,6 @@ class Trie(list: List<String> = emptyList()) {
         }
         return res
     }
-
 
     init {
         for (s in list) {
