@@ -27,10 +27,10 @@ class Bfs(n : Int, m : Int, inp : IntArray, var s : Int = -1) {
             s = random.nextInt(n - 1)
         }
         val to: Int = random.nextInt(n - 1)
-        bfs2(s)
+        bfs(s)
     }
 
-    fun bfs2(s: Int) {
+    fun bfs(s: Int) {
         ans.add(s+1)
         used[s] = true
         q.add(s)
