@@ -1,6 +1,6 @@
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.util.*
-import kotlin.test.assertTrue
 
 class MainTest{
     val random = Random()
@@ -12,9 +12,9 @@ class MainTest{
         val ex = intArrayOf(1, 2, 1, 3, 2, 3)
         val myAns = arrayListOf(1, 2, 3)
         val bfsAns = Bfs(n, m, ex,0).check()
-        assertTrue {myAns == bfsAns}
+        assertEquals (myAns, bfsAns)
     }
-
+    
     @Test
     fun test1_2() {
         val n = 5
@@ -22,7 +22,7 @@ class MainTest{
         val ex = intArrayOf(1, 5, 4, 2, 3, 2, 5, 3, 5, 4)
         val myAns = arrayListOf(1, 5, 3, 4, 2)
         val bfsAns = Bfs(n, m, ex,0).check()
-        assertTrue {myAns == bfsAns}
+        assertEquals (myAns, bfsAns)
     }
 
     @Test
@@ -32,7 +32,7 @@ class MainTest{
         val ex = intArrayOf(3, 2, 4, 2, 1, 3, 3, 3, 1, 2, 1, 4)
         val myAns = arrayListOf(1, 3, 2, 4)
         val bfsAns = Bfs(n, m, ex,0).check()
-        assertTrue {myAns == bfsAns}
+        assertEquals (myAns, bfsAns)
     }
 
     @Test
@@ -42,7 +42,7 @@ class MainTest{
         val ex = intArrayOf(3, 1, 1, 2, 1, 3, 1, 4, 4, 4, 4, 5, 4, 6, 4, 3)
         val myAns = arrayListOf(1, 3, 2, 4, 5, 6)
         val bfsAns = Bfs(n, m, ex,0).check()
-        assertTrue {myAns == bfsAns}
+        assertEquals (myAns, bfsAns)
     }
 
     @Test
@@ -52,7 +52,7 @@ class MainTest{
         val ex = intArrayOf(5, 4, 3, 4, 4, 2, 7, 5, 6, 1, 6, 6, 3, 1, 2, 4, 4, 5)
         val myAns = arrayListOf(1, 6, 3, 4, 5, 2, 7)
         val bfsAns = Bfs(n, m, ex,0).check()
-        assertTrue {myAns == bfsAns}
+        assertEquals (myAns, bfsAns)
     }
 
     @Test
