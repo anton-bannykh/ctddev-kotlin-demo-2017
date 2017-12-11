@@ -13,5 +13,10 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
-.idea
-assemble.bat
+*.iml
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
