@@ -3,7 +3,12 @@ package volkov.alexandr.kotlinandroid
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.text.*
+import android.text.Editable
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.TextWatcher
+import android.text.SpannableStringBuilder
+import android.text.Spanned
 import android.text.method.ScrollingMovementMethod
 import android.text.style.BackgroundColorSpan
 import kotlinx.android.synthetic.main.activity_text.*
