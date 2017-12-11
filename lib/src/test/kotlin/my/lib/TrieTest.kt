@@ -1,6 +1,6 @@
+import my.lib.Trie
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import java.util.ArrayList
 
 class TrieTest {
     @Test

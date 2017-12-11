@@ -1,6 +1,6 @@
 package my.lib
 
-class Trie(list: List<String>) {
+class Trie(list: List<String> = emptyList()) {
     private val ROOT = Node(null, '$')
 
     private inner class Node(private val parent: Node?, private val symb: Char) {
@@ -81,6 +81,7 @@ class Trie(list: List<String>) {
         }
         return res
     }
+
 
     init {
         for (s in list) {
