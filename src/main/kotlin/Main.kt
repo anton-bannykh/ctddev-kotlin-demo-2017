@@ -1,8 +1,5 @@
 import java.util.Random
 
-/**
- * Created by Александр on 29.11.2017.
- */
 fun ClosedRange<Int>.random() = Random().nextInt(endInclusive - start) + start
 
 fun Quicksort(ms: IntArray, l: Int = 0, r: Int = ms.size - 1) {

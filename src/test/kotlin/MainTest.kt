@@ -2,9 +2,6 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.util.Arrays
 
-/**
- * Created by Александр on 29.11.2017.
- */
 class MainTest {
 
     @Test
