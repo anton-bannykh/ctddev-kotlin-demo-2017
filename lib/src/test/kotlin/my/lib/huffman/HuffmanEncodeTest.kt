@@ -1,4 +1,4 @@
-package huffman
+package my.lib.huffman
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -48,16 +48,20 @@ class HuffmanEncodeTest {
         )
     }
 
-//    @Test
-//    fun huffmanRandomTest() {
-//        val random = Random()
-//        (1..10).forEach {
-//            val s = buildString {
-//                val characters = Array<Int>(random.nextInt(1000)) { random.nextInt(26)}
-//                characters.forEach {
-//                    append((it + 100).toChar())
-//                }
-//            }
-//        }
-//    }
+    @Test
+    fun testHuffmanEncodeClass() {
+        val encoder = HuffmanEncode()
+        assertEquals(
+                "01001100100111",
+                encoder.huffmanEncode("abacabad")
+        )
+
+        assertEquals(
+                "a: 0\n" +
+                        "b: 10\n" +
+                        "c: 110\n" +
+                        "d: 111\n",
+                encoder.digitsInfo
+        )
+    }
 }
