@@ -1,10 +1,10 @@
-package hw1.splay
+package my.lib.splay
 
 internal data class SplayNode<K : Comparable<K>>(
-val key: K,
-var parent: SplayNode<K>? = null,
-var left: SplayNode<K>? = null,
-var right: SplayNode<K>? = null
+        val key: K,
+        var parent: SplayNode<K>? = null,
+        var left: SplayNode<K>? = null,
+        var right: SplayNode<K>? = null
 ) {
     fun keepParent() {
         left?.parent = this

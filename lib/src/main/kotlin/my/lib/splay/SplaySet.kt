@@ -1,5 +1,7 @@
 package hw1.splay
 
+import my.lib.splay.SplayNode
+
 fun <K : Comparable<K>> splaySetOf(vararg ks: K): SplaySet<K> {
     val tree = SplaySet<K>()
 
