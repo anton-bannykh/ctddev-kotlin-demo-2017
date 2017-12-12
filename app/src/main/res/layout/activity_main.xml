@@ -23,5 +23,5 @@
         android:layout_height="47dp"
         android:layout_weight="1"
         android:text="@string/sort"
-        android:onClick="Go"/>
+        android:onClick="go"/>
 </LinearLayout>

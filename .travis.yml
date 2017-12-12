@@ -1,4 +1,10 @@
 language: android
+
+env:
+    global:
+        - ADB_INSTALL_TIMEOUT=20
+
+
 android:
     components:
         - tools
@@ -8,6 +14,11 @@ android:
         - android-26
         - extra-google-m2repository
         - extra-android-m2repository
+
+script:
+        - ./gradlew test
+        - ./gradlew lint
+        - ./gradlew ktlintCheck
 
 before_cache:
     - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
