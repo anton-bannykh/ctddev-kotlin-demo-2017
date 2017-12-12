@@ -1,6 +1,6 @@
 package my.lib
 
-import java.util.*
+import java.util.HashMap
 
 class EulerTourTree(var size: Int) {
 

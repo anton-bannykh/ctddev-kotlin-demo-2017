@@ -10,7 +10,6 @@ import java.lang.Integer.parseInt
 import java.lang.String.format
 import java.lang.String.valueOf
 
-
 class MainActivity : AppCompatActivity() {
 
     private var currentTree: EulerTourTree = EulerTourTree(0)
@@ -42,7 +41,6 @@ class MainActivity : AppCompatActivity() {
                     parseInt(secondNode.getText().toString()))
             refreshOutput()
         }
-
 
         cutButton.setOnClickListener {
             currentTree.cut(parseInt(firstNode.getText().toString()),
