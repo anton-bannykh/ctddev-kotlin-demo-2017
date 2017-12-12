@@ -1,19 +1,19 @@
 buildscript {
-  ext.kotlin_version = '1.2.0'
+    ext.kotlin_version = '1.2.0'
 
-  repositories {
-    google()
-    jcenter()
-    mavenCentral()
-    maven {
-      url "https://plugins.gradle.org/m2/"
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:3.0.1'
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    classpath "gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:2.3.0"
-  }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:2.3.0"
+    }
 }
 
 allprojects {
@@ -24,25 +24,11 @@ allprojects {
 }
 
 apply plugin: "org.jlleitschuh.gradle.ktlint"
-apply plugin: 'kotlin'
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 ktlint {
-  ignoreFailures = false
-}
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
-}
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+    ignoreFailures = false
 }
