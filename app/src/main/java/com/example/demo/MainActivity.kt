@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
                 showInpEditText.text = null
                 numOfVertices = 1
             }
+            showInpEditText.hint = "Accepted."
+            showInpEditText.text = null
+            view.setClickable(false);
         }
 
     }
