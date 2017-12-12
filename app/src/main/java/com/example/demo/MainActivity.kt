@@ -1,12 +1,11 @@
 package com.example.demo
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.content.Intent
 import my.lib.sumFun
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,15 +17,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-    fun readNumOfVertices(view : View){
+    fun readNumOfVertices(view : View) {
         val showInpEditText = findViewById<View>(R.id.plain_text_input) as EditText
         val numOfVerticesString = showInpEditText.text.toString()
-        if (numOfVerticesString == ""){
+        if (numOfVerticesString == "") {
             showInpEditText.hint = "Please enter num of vertices"
         } else {
-            numOfVertices  = Integer.parseInt(numOfVerticesString)
-            if (numOfVertices == 0){
+            numOfVertices = Integer.parseInt(numOfVerticesString)
+            if (numOfVertices == 0) {
                 showInpEditText.hint = "Number must be greater than zero."
                 showInpEditText.text = null
                 numOfVertices = 1
@@ -34,13 +32,12 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-    fun readSequenceOfVertices(view : View){
+    fun readSequenceOfVertices(view : View) {
         val showInpEditText = findViewById<View>(R.id.vertices_sequence_input) as EditText
         val verticesSequenceString = showInpEditText.text.toString()
         verticesSequenceString.trim()
         val intent = Intent(this@MainActivity, SecondActivity::class.java)
-        intent.putExtra("seq",verticesSequenceString)
+        intent.putExtra("seq", verticesSequenceString)
         intent.putExtra("num", numOfVertices)
         startActivity(intent)
 
