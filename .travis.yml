@@ -17,6 +17,7 @@ android:
 
 script:
         - ./gradlew test
+        - ./gradlew lint
         - ./gradlew ktlintCheck
 
 before_cache:
