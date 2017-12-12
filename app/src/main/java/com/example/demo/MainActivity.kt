@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val buildButton: Button = findViewById(R.id.build)
 
         buildButton.setOnClickListener {
-            currentTree = EulerTourTree(parseInt(nodesCount.getText().toString()))
+            currentTree = EulerTourTree(parseInt(nodesCount.text.toString()))
             refreshOutput()
         }
 
@@ -37,31 +37,40 @@ class MainActivity : AppCompatActivity() {
         val sizeButton: Button = findViewById(R.id.size)
 
         linkButton.setOnClickListener {
-            currentTree.link(parseInt(firstNode.getText().toString()),
-                    parseInt(secondNode.getText().toString()))
-            refreshOutput()
+            val firstNode = parseInt(firstNode.text.toString())
+            val secondNode = parseInt(secondNode.text.toString())
+            if (firstNode <= currentTree.size && secondNode <= currentTree.size) {
+                currentTree.link(firstNode, secondNode)
+                refreshOutput()
+            }
         }
 
         cutButton.setOnClickListener {
-            currentTree.cut(parseInt(firstNode.getText().toString()),
-                    parseInt(secondNode.getText().toString()))
-            refreshOutput()
+            val firstNode = parseInt(firstNode.text.toString())
+            val secondNode = parseInt(secondNode.text.toString())
+            if (firstNode <= currentTree.size && secondNode <= currentTree.size) {
+                currentTree.cut(firstNode, secondNode)
+                refreshOutput()
+            }
         }
 
         connectedButton.setOnClickListener {
-            val firstNode: Int = parseInt(firstNode.getText().toString())
-            val secondNode: Int = parseInt(secondNode.getText().toString())
-            if (currentTree.connected(firstNode, secondNode)) {
-                answerField.setText(format("%d and %d are connected", firstNode, secondNode))
-            } else {
-                answerField.setText(format("%d and %d are not connected", firstNode, secondNode))
+            val firstNode = parseInt(firstNode.text.toString())
+            val secondNode = parseInt(secondNode.text.toString())
+            if (firstNode <= currentTree.size && secondNode <= currentTree.size) {
+                if (currentTree.connected(firstNode, secondNode)) {
+                    answerField.text = format("%d and %d are connected", firstNode, secondNode)
+                } else {
+                    answerField.text = format("%d and %d are not connected", firstNode, secondNode)
+                }
             }
-
         }
 
         sizeButton.setOnClickListener {
-            answerField.setText(valueOf(currentTree.sizeOfNodesComponent(parseInt(firstNode.getText()
-                    .toString()))))
+            val firstNode = parseInt(firstNode.text.toString())
+            if (firstNode <= currentTree.size) {
+                answerField.text = valueOf(currentTree.sizeOfNodesComponent(firstNode))
+            }
         }
     }
 
@@ -93,7 +102,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         tree = tree.trim()
-        treeField.setText(tree)
+        treeField.text = tree
     }
 
     private fun refreshConnections() {
@@ -114,6 +123,6 @@ class MainActivity : AppCompatActivity() {
             connections += format("%s\n", edges[i])
         }
         connections = connections.trim()
-        connectionsField.setText(connections)
+        connectionsField.text = connections
     }
 }
