@@ -142,6 +142,15 @@
         android:textSize="18sp" />
 
     <TextView
+        android:id="@+id/connections"
+        android:layout_above="@+id/tree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/connections_tip"
+        android:textSize="17sp" />
+
+    <TextView
         android:id="@+id/tree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
