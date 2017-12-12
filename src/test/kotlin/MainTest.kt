@@ -1,6 +1,6 @@
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import java.util.Random
+import java.util.*
 
 class MainTest {
 
@@ -16,12 +16,12 @@ class MainTest {
     fun testPointUpdates() {
         val n = 12345
         val r = Random()
-        var currentArray = Array<Int>(n, { 0 })
+        var currentArray = Array<Int>(n, {0})
         val fw = createFenwickTree(n)
-        val q = Math.abs(r.nextInt()) % 1000 + 10000
+        val q = Math.abs(r.nextInt()) % 1000 + 10000;
         for (i in 0..q) {
             val index = Math.abs(r.nextInt()) % currentArray.size
-            val value = Math.abs(r.nextInt()) % 1000
+            val value = Math.abs(r.nextInt()) % 1000;
             currentArray[index] += value
             updateAtPoint(index, value, fw)
         }
@@ -34,9 +34,9 @@ class MainTest {
     fun testAllUpdates() {
         val n = 123
         val r = Random()
-        var currentArray = Array<Int>(n, { 0 })
+        var currentArray = Array<Int>(n, {0})
         val fw = createFenwickTree(n)
-        val q = Math.abs(r.nextInt()) % 1000 + 10000
+        val q = Math.abs(r.nextInt()) % 1000 + 10000;
         for (i in 0..q) {
             val index = Math.abs(r.nextInt()) % currentArray.size
             val value = Math.abs(r.nextInt()) % 1000
@@ -62,4 +62,5 @@ class MainTest {
             assertEquals(currentArray[i], getElement(i, fw))
         }
     }
+
 }
