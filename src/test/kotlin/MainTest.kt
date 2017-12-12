@@ -16,7 +16,7 @@ class MainTest {
     fun testPointUpdates() {
         val n = 12345
         val r = Random()
-        var currentArray = Array<Int>(n, { 0 })
+        var currentArray = IntArray(n, { 0 })
         val fw = createFenwickTree(n)
         val q = Math.abs(r.nextInt()) % 1000 + 10000
         for (i in 0..q) {
@@ -34,7 +34,7 @@ class MainTest {
     fun testAllUpdates() {
         val n = 123
         val r = Random()
-        var currentArray = Array<Int>(n, { 0 })
+        var currentArray = IntArray(n, { 0 })
         val fw = createFenwickTree(n)
         val q = Math.abs(r.nextInt()) % 1000 + 10000
         for (i in 0..q) {

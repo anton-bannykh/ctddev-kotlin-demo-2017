@@ -23,15 +23,15 @@ fun main(args: Array<String>) {
     }
 }
 
-fun createFenwickTree(n: Int): Array<Int> {
-    return Array<Int>(n, { 0 })
+fun createFenwickTree(n: Int): IntArray {
+    return IntArray(n, { 0 })
 }
 
-fun updateAtPoint(index: Int, value: Int, fw: Array<Int>) {
+fun updateAtPoint(index: Int, value: Int, fw: IntArray) {
     updateAtSegment(index, index, value, fw)
 }
 
-fun update(index: Int, value: Int, fw: Array<Int>) {
+fun update(index: Int, value: Int, fw: IntArray) {
     var currentIndex = index
     while (currentIndex < fw.size) {
         fw[currentIndex] += value
@@ -39,7 +39,7 @@ fun update(index: Int, value: Int, fw: Array<Int>) {
     }
 }
 
-fun updateAtSegment(leftBorder: Int, rightBorder: Int, value: Int, fw: Array<Int>) {
+fun updateAtSegment(leftBorder: Int, rightBorder: Int, value: Int, fw: IntArray) {
     update(leftBorder, value, fw)
     if (rightBorder + 1 < fw.size) {
         update(rightBorder + 1, -value, fw)
@@ -47,7 +47,7 @@ fun updateAtSegment(leftBorder: Int, rightBorder: Int, value: Int, fw: Array<Int
 }
 
 // Getting sum from [0..r]
-fun getSum(r: Int, fw: Array<Int>): Int {
+fun getSum(r: Int, fw: IntArray): Int {
     var currentIndex = r
     var result = 0
     while (currentIndex >= 0) {
@@ -57,6 +57,6 @@ fun getSum(r: Int, fw: Array<Int>): Int {
     return result
 }
 
-fun getElement(position: Int, fw: Array<Int>): Int {
+fun getElement(position: Int, fw: IntArray): Int {
     return getSum(position, fw)
 }
