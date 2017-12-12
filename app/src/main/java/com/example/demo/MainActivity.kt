@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             }
             showInpEditText.hint = "Accepted."
             showInpEditText.text = null
-            view.setClickable(false);
         }
 
     }
