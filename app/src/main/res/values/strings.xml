@@ -1,4 +1,11 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">Kruskal</string>
+    <string name="vertex_number">Enter number of verteces</string>
+    <string name="submit">Submit</string>
+    <string name="first_vertex">Enter first vertex</string>
+    <string name="second_vertex">Enter second vertex</string>
+    <string name="weight_of_edge">Enter weight of edge</string>
+    <string name="add_edge">Add edge</string>
+    <string name="get_result">Get result</string>
+    <string name="result">Result</string>
 </resources>
