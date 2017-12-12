@@ -39,7 +39,7 @@ class MainTest {
 
     @Test
     fun testPoints() {
-        var g : graph = graph(4)
+        var g : Graph = Graph(4)
         g.insert(0, 1)
         g.insert(1, 2)
         g.insert(2, 0)
@@ -51,7 +51,7 @@ class MainTest {
 
     @Test
     fun testPoints2() {
-        var g : graph = graph(2)
+        var g : Graph = Graph(2)
         g.insert(0, 1)
         var ans : ArrayList <Boolean> = points(g)
         var ans_e : ArrayList <Boolean> = ArrayList(listOf(false, false))
