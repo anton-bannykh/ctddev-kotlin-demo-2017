@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     private var n: Int? = null
     private var graph: Graph? = null
     private var dist: Array<Array<Int>>? = null
-    private var counted:Boolean = false
+    private var counted: Boolean = false
 
     private var TextView.intValue: Int
         get() = Integer.parseInt(text.toString())
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             edgeAdderV.text = null
             edgeAdderU.text = null
             edgeAdderW.text = null
-            if (v !in  1..n!! || u !in 1..n!!) {
+            if (v !in 1..n!! || u !in 1..n!!) {
                 throw FormatException()
             }
             graph!![v].add(Pair(u, w))
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
             val u = secondVertex.intValue
             firstVertex.text = null
             secondVertex.text = null
-            if (v !in  1..n!! || u !in 1..n!!) {
+            if (v !in 1..n!! || u !in 1..n!!) {
                 throw FormatException()
             }
             if (dist == null) {
