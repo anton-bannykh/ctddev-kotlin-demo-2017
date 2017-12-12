@@ -15,7 +15,7 @@ class KruskalTest {
                         Edge(2, 4, 6),
                         Edge(3, 4, 7),
                         Edge(1, 4, 4),
-                        Edge(1, 4, 1)
+                        //Edge(1, 4, 1)
                 ))
         )
     }
