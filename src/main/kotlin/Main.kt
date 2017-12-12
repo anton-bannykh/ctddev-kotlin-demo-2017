@@ -16,10 +16,10 @@ fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
 
 fun min(a : Int, b : Int) : Int = if (a > b) b else a
 
-class vertex
+class Vertex
 {
-    var to : ArrayList <Int> = ArrayList()
-    var id : ArrayList <Int> = ArrayList()
+    var to : ArrayList<Int> = ArrayList()
+    var id : ArrayList<Int> = ArrayList()
     fun insert (a : Int, id_e : Int) {
         to.add(a)
         id.add(id_e)
@@ -27,15 +27,14 @@ class vertex
     fun size () = to.size
 }
 
-class graph (max_size : Int)
+class Graph (max_size : Int)
 {
-    var listInc : ArrayList <vertex> = ArrayList()
+    var listInc : ArrayList<Vertex> = ArrayList()
     var tmp_id = 0
 
     init {
-        tmp_id = 0
         for (i in 0..(max_size - 1)) {
-            var tmp : vertex = vertex()
+            var tmp : Vertex = Vertex()
             listInc.add(tmp)
         }
     }
@@ -55,11 +54,11 @@ class graph (max_size : Int)
     fun size_id(i : Int) = (listInc[i].id).size
 }
 
-fun points (g : graph) : ArrayList <Boolean> {
-    var vis : ArrayList <Boolean> = ArrayList()
-    var d : ArrayList <Int> = ArrayList()
-    var up : ArrayList <Int> = ArrayList()
-    var is_point : ArrayList <Boolean> = ArrayList()
+fun points (g : Graph) : ArrayList<Boolean> {
+    var vis : ArrayList<Boolean> = ArrayList()
+    var d : ArrayList<Int> = ArrayList()
+    var up : ArrayList<Int> = ArrayList()
+    var is_point : ArrayList<Boolean> = ArrayList()
     for (i in 0..(g.size() - 1)) {
         vis.add(false)
         d.add(0)
