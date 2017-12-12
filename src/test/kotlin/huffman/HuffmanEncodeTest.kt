@@ -2,7 +2,6 @@ package huffman
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import java.util.*
 
 /**
  * Created by Telnov Sergey on 01.12.2017.

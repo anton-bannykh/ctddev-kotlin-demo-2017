@@ -1,6 +1,6 @@
 package huffman
 
-import java.util.*
+import java.util.PriorityQueue
 
 /**
  * Created by Telnov Sergey on 01.12.2017.
@@ -30,8 +30,7 @@ fun decodeHuffmanEncode(code: String, digitsInfo: HashMap<String, Char>) = build
 }
 
 fun huffmanEncode(s: String): String {
-
-    val digitsInfo = hashMapOf<Char, Int>();
+    val digitsInfo = hashMapOf<Char, Int>()
 
     s.forEach {
         digitsInfo.compute(it) { _, value ->
@@ -67,7 +66,7 @@ fun huffmanEncode(s: String): String {
     }
 
     val root = queue.poll()
-    dfs(root, if(root.name != '#') "0" else "")
+    dfs(root, if (root.name != '#') "0" else "")
 
     return buildString {
         s.forEach {
