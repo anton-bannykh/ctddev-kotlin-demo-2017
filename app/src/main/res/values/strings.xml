@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Demo</string>
+    <string name="app_name">DSU</string>
     <string name="greeting">Wassup!</string>
+    <string name="union">Union</string>
+    <string name="input_number_of_elements">Input number of elements</string>
+    <string name="next">Next</string>
 </resources>

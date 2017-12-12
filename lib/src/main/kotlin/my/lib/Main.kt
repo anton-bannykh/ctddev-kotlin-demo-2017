@@ -1,3 +1,5 @@
+package my.lib
+
 class MyDSU(sizeX: Int) {
 
     private var parent: Array<Int>? = null
