@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val numberArr = text.getText().toString().split(" ")
         val num: ArrayList<Int> = ArrayList()
         for (i in numberArr) {
-            if (!i.isEmpty() ) {
+            if (!i.isEmpty()) {
                 num.add(i.trim().toInt())
             }
         }
