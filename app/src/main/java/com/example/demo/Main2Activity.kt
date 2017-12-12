@@ -11,11 +11,11 @@ import my.lib.MyDSU
 class Main2Activity : AppCompatActivity() {
 
     lateinit var DSU: MyDSU
-
     lateinit var btn: Button
     lateinit var txtUnion1: EditText
     lateinit var txtUnion2: EditText
     lateinit var txtFind3: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
