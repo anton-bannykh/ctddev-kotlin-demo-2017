@@ -5,7 +5,7 @@
 var n=2017
 var prime = IntArray(n+1, { true })
 
-fun isPrime(x: Int){
+fun isPrime(x: Int): Boolean {
     return prime[x]
 }
 
