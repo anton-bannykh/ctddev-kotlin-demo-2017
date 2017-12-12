@@ -4,7 +4,7 @@ import org.junit.Test
 class MainTest {
     @Test
     fun testBinTree() {
-        create_tree(7, arrayOf(1, 1, 2, 2, 3, 3))
+        val tree = LCA(7, arrayOf(1, 1, 2, 2, 3, 3))
         /*
         *      1
         *     / \
@@ -12,16 +12,16 @@ class MainTest {
         *   / \ / \
         *   4 5 6 7
          */
-        assertEquals(1, LCA(1, 2))
-        assertEquals(1, LCA(1, 3))
-        assertEquals(1, LCA(2, 3))
-        assertEquals(1, LCA(4, 6))
-        assertEquals(2, LCA(4, 5))
-        assertEquals(6, LCA(6, 6))
+        assertEquals(1, tree.lca(1, 2))
+        assertEquals(1, tree.lca(1, 3))
+        assertEquals(1, tree.lca(2, 3))
+        assertEquals(1, tree.lca(4, 6))
+        assertEquals(2, tree.lca(4, 5))
+        assertEquals(6, tree.lca(6, 6))
     }
     @Test
     fun testBambooTree() {
-        create_tree(5, arrayOf(1, 2, 3, 4))
+        val tree = LCA(5, arrayOf(1, 2, 3, 4))
         /*
         *  1
         *  |
@@ -33,20 +33,20 @@ class MainTest {
         *  |
         *  5
          */
-        assertEquals(1, LCA(1, 2))
-        assertEquals(2, LCA(2, 4))
-        assertEquals(5, LCA(5, 5))
+        assertEquals(1, tree.lca(1, 2))
+        assertEquals(2, tree.lca(2, 4))
+        assertEquals(5, tree.lca(5, 5))
     }
     @Test
     fun testSunTree() {
-        create_tree(5, arrayOf(1, 1, 1, 1))
+        val tree = LCA(5, arrayOf(1, 1, 1, 1))
         /*
         *       1
         *   |  |  |  |
         *   2  3  4  5
          */
-        assertEquals(1, LCA(2, 3))
-        assertEquals(1, LCA(3, 4))
-        assertEquals(1, LCA(1, 3))
+        assertEquals(1, tree.lca(2, 3))
+        assertEquals(1, tree.lca(3, 4))
+        assertEquals(1, tree.lca(1, 3))
     }
 }
