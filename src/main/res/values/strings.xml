@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CtDevHw2</string>
+    <string name="calculate_button">Calculate</string>
+    <string name="add_button">Add</string>
+    <string name="result_view_success">Added Success</string>
+    <string name="result_view_fail">Added Fail</string>
+    <string name="result_view_answer">Answer:</string>
+    <string name="result_view_clear">Clear</string>
+    <string name="clear_button">Clear</string>
+</resources>
