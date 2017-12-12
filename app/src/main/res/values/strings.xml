@@ -1,4 +1,12 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">RSQ</string>
+    <string name="greeting">Hi! It\'s my first android app!</string>
+    <string name='go'>Let\'s start testing RSQ!</string>
+    <string name='arrayPreText'>Enter numbers</string>
+    <string name='buildTree'>Bulid tree</string>
+    <string name="add">left right value</string>
+    <string name="get">left right</string>
+    <string name="addButton">Add</string>
+    <string name="getButton">Get</string>
+    <string name="show_all">Show all</string>
 </resources>
