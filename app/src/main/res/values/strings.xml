@@ -1,4 +1,11 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">Euler Tour Tree</string>
+    <string name="build">Build tree</string>
+    <string name="link">Link</string>
+    <string name="cut">Cut</string>
+    <string name="connected">Is connected?</string>
+    <string name="node_count">Count of nodes</string>
+    <string name="first_node">First node</string>
+    <string name="second_node">Second node</string>
+    <string name="answer_tip">Answer will be here</string>
 </resources>
