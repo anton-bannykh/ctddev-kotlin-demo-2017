@@ -7,14 +7,86 @@
     tools:context="com.example.demo.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
+        android:id="@+id/textView2"
+        android:layout_width="211dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="60dp"
+        android:text="I can sort your arrays"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="116dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="284dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:onClick="сlickButton"
+        android:text="Sort!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editText3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="295dp"
+        android:layout_height="259dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Sorted: 2 4 6 10"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Enter array values separated by a space"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text = "10 2 6 4"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
