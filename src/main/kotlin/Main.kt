@@ -5,12 +5,12 @@ import java.lang.Math.exp
 
 private val maxOperations = 1e6.toInt()
 
-private fun sqr(d: Double) = d * d
-private fun distance(x: Pair<Double, Double>, y: Pair<Double, Double>) =
+fun sqr(d: Double) = d * d
+fun distance(x: Pair<Double, Double>, y: Pair<Double, Double>) =
         sqrt(sqr(x.first - y.first) + sqr(x.second - y.second))
-private fun mod(x: Int, y: Int) = (x + y) % y
+fun mod(x: Int, y: Int) = (x + y) % y
 
-private fun calculateDistance(array: Array<Pair<Double, Double>>, a: IntArray) =
+fun calculateDistance(array: Array<Pair<Double, Double>>, a: IntArray) =
         a.indices.sumByDouble { distance(array[a[it]], array[a[(it + 1) % a.size]]) }
 
 private fun changeDistance(array: Array<Pair<Double, Double>>, a: IntArray, x: Int, y: Int) : Double {
