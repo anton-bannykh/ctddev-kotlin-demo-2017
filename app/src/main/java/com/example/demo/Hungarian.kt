@@ -52,4 +52,3 @@ fun min(a: Pair<Int, Int>, b: Pair<Int, Int>): Pair<Int, Int> {
     else
         return b
 }
-
