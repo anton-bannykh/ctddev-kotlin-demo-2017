@@ -7,139 +7,118 @@ import kotlin.collections.ArrayList
 class MainTest {
     @Test
     fun testCountSets() {
+        var dsu = DsuBase();
         var count = 0
         for (num in 0..1000) {
-            makeSet(num)
+            dsu.addNode()
             count += 1
-            assertEquals(countElement, count)
-            assertEquals(parent.size, count)
-            assertEquals(rank.size, count)
+            assertEquals(dsu.size(), count)
         }
-        clear()
+        dsu.clear()
         count = 0
-        assertEquals(countElement, count)
-        assertEquals(parent.size, count)
-        assertEquals(rank.size, count)
+        assertEquals(dsu.size(), count)
     }
 
     @Test
     fun testFindAfterMake1() {
+        var dsu = DsuBase(10)
         var array = ArrayList<Int>()
-        for (num in 0..10) {
+        for (num in 0..9) {
             array.add(num)
         }
         ranmodShuffle(array)
-        for (it in array) {
-            makeSet(it)
-        }
-        for (num1 in 0..10) {
-            for (num2 in 0..10) {
+        for (num1 in 0..9) {
+            for (num2 in 0..9) {
                 assertEquals(num1 == num2,
-                        findLead(num1) == findLead(num2))
+                        dsu.commonSet(num1, num2))
             }
         }
-        clear()
     }
 
     @Test
     fun testFindAfterMake2() {
+        var dsu = DsuBase(101)
         var array = ArrayList<Int>()
         for (num in 0..100) {
             array.add(num)
         }
         ranmodShuffle(array)
-        for (it in array) {
-            makeSet(it)
-        }
         for (num1 in 0..100) {
             for (num2 in 0..100) {
                 assertEquals(num1 == num2,
-                        findLead(num1) == findLead(num2))
+                        dsu.commonSet(num1, num2))
             }
         }
-        clear()
     }
 
     @Test
     fun testFindAfterMake3() {
+        var dsu = DsuBase(1001)
         var array = ArrayList<Int>()
         for (num in 0..1000) {
             array.add(num)
         }
         ranmodShuffle(array)
-        for (it in array) {
-            makeSet(it)
-        }
         for (num1 in 0..1000) {
             for (num2 in 0..1000) {
                 assertEquals(num1 == num2,
-                        findLead(num1) == findLead(num2))
+                        dsu.commonSet(num1, num2))
             }
         }
-        clear()
     }
 
     @Test
     fun testAllUnion1() {
+        var dsu = DsuBase(1001)
         var array = ArrayList<Int>()
         for (num in 0..1000) {
             array.add(num)
         }
         ranmodShuffle(array)
         for (num in array) {
-            makeSet(num)
+            dsu.unionSet(0, num)
         }
         ranmodShuffle(array)
-        for (num in array) {
-            unionSet(0, num)
-        }
-        ranmodShuffle(array)
-        val leadAll = findLead(0)
         for (v in array) {
-            assertEquals(findLead(v), leadAll)
+            assert(dsu.commonSet(0, v))
         }
-        clear()
     }
 
     @Test
     fun testUnion() {
+        var dsu = DsuBase(1001)
         var array = ArrayList<Int>()
         for (num in 0..1000) {
             array.add(num)
         }
         ranmodShuffle(array)
-        for (num in array) {
-            makeSet(num)
-        }
 
         for (num1 in array)
             for (num2 in array) {
                 if (num1 % 2 == num2 % 2) {
-                    unionSet(num1, num2)
+                    dsu.unionSet(num1, num2)
                 }
             }
 
         ranmodShuffle(array)
         for (num1 in array)
             for (num2 in array) {
-            assertEquals(findLead(num1) == findLead(num2), num1 % 2 == num2 % 2)
+            assertEquals(dsu.commonSet(num1, num2), num1 % 2 == num2 % 2)
         }
 
         ranmodShuffle(array)
-
         for (num1 in array)
             for (num2 in array) {
                 if (num1 % 2 == num2 % 2) {
-                    unionSet(num1, num2)
+                    dsu.unionSet(num1, num2)
                 }
             }
 
         ranmodShuffle(array)
         for (num1 in array)
             for (num2 in array) {
-                assertEquals(findLead(num1) == findLead(num2), num1 % 2 == num2 % 2)
+                assertEquals(dsu.commonSet(num1, num2), num1 % 2 == num2 % 2)
             }
-        clear()
     }
 }
 
