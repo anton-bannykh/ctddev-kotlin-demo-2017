@@ -33,11 +33,11 @@
         android:layout_height="84dp"
         android:layout_marginBottom="119dp"
         android:background="@android:drawable/presence_online"
+        android:onClick="next"
         android:text="@string/next"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        android:onClick="next"/>
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 </android.support.constraint.ConstraintLayout>

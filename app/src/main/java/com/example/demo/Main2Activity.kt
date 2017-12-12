@@ -33,7 +33,7 @@ class Main2Activity : AppCompatActivity() {
         val x = txtUnion1.text.toString().toInt()
         val y = txtUnion2.text.toString().toInt()
         DSU.union(x, y)
-        Toast.makeText(this,"OK", Toast.LENGTH_SHORT ).show()
+        Toast.makeText(this, "OK", Toast.LENGTH_SHORT).show()
     }
 
     fun findBtn(v: View) {
