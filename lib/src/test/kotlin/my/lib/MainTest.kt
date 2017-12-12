@@ -1,5 +1,3 @@
-package my.lib
-
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -52,4 +50,3 @@ class MainTest {
         assertEquals(0, minCostAssignment(listOf<List<Int>>()))
     }
 }
-
