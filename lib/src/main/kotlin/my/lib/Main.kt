@@ -1,3 +1,5 @@
+package my.lib
+
 import java.util.Scanner
 import kotlin.collections.ArrayList
 
@@ -22,7 +24,7 @@ fun getGraph() : Graph {
     //Number of vertex and edges, |V| and |E|
     val n = getNextNumber(scanner)
     val m = getNextNumber(scanner)
-    val graph = Array<ArrayList<Pair<Int, Int>>>(n + 1, { i -> ArrayList() })
+    val graph = Array<ArrayList<Pair<Int, Int>>>(n + 1, { _ -> ArrayList() })
     for (i in 0..m - 1) {
         val u = getNextNumber(scanner)
         val v = getNextNumber(scanner)
@@ -89,7 +91,7 @@ fun dijkstra(graph: Graph, q: Array<Int>, s: Int) : Array<Int> {
             INF
     }) //d <- INF, d[s] = 0
 
-    val used = Array(graph.size, { i -> false }) //used <- false
+    val used = Array(graph.size, { _ -> false }) //used <- false
 
     while (true) {
         var z = -1
@@ -129,7 +131,7 @@ fun johnson(graph: Graph): Array<Array<Int>>? {
         //Negative cycle
         return null
     }
-    val ans = Array(n, { i -> Array(n, { i -> 0 }) })
+    val ans = Array(n, { _ -> Array(n, { _ -> 0 }) })
     for (v in 1..n) {
         ans[v - 1] = dijkstra(graph, q, v).sliceArray(1..n)
         //don't get fake vertex(has number 0)
