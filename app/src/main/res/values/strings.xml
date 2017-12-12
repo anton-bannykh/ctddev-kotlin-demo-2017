@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">Aho-Corasick</string>
+    <string name="greeting">Add some strings to automat and then check the text</string>
+    <string name="add_string">Add string</string>
+    <string name="add_text">Write text</string>
+    <string name="submit">Submit</string>
+    <string name="output">Output:\n</string>
 </resources>
