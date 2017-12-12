@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Johnson\'s algorithm</string>
+    <string name="enterCount">Enter count of vertex </string>
+    <string name="submitCount">Submit </string>
+    <string name="firstVertex">Enter first vertex </string>
+    <string name="secondVertex">Enter second vertex </string>
+    <string name="weight">Enter weight </string>
+    <string name="addEdge">Add edge </string>
+    <string name="calculate">Calculate distances between all vertex </string>
+    <string name="V">Enter number of vertex V</string>
+    <string name="U">Enter number of vertex U</string>
+    <string name="shower">show dist \n (V ~> U)</string>
+    <string name="answer">Answer will be written here</string>
+    <string name="incorrectNumberOfVertex">Enter correct number of vertex</string>
+
+
+    <string name="graphCreation">New graph created</string>
+    <string name="incorrectVertexNumber">Enter correct number of vertex</string>
+    <string name="newEdgeAdded">New edge added</string>
+    <string name="graphNotCreated">Graph hasn\'t been created</string>
+    <string name="incorrectInput">Incorrect input</string>
+    <string name="distancesCalculated">Distances calculated</string>
+    <string name="notCalculated">Distances haven\'t been calculated</string>
+    <string name="negativeCycle">Negative cycle</string>
+    <string name="INF">INFINITY</string>
+</resources>
