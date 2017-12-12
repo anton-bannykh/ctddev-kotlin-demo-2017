@@ -1,5 +1,6 @@
 .gradle
 /build/
+.idea
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -16,3 +17,11 @@ build
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+
+*.iml
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild

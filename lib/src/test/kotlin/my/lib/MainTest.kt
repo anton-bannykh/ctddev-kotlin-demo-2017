@@ -1,3 +1,4 @@
+package my.lib
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.util.Arrays
@@ -50,4 +51,3 @@ class MainTest {
     }
 
 }
-

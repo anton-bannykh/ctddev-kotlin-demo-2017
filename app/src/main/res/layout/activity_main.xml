@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.demo.MainActivity">
+
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/input"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/sort"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_weight="1"
+        android:onClick="go"
+        android:text="@string/sort" />
+</LinearLayout>
