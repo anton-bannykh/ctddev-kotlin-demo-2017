@@ -1,17 +1,16 @@
 import java.util.*
-import kotlin.collections.ArrayList
 
-class Bfs(n : Int, m : Int, inp : IntArray, var s : Int = -1) {
-    var used : ArrayList<Boolean> = arrayListOf<Boolean>()
-    var p : ArrayList<Int> = arrayListOf<Int>()
-    var d : ArrayList<Int> = arrayListOf<Int>()
-    var gr : ArrayList<ArrayList<Int>> = arrayListOf()
+class Bfs(n : Int, m : Int, inp : MutableList<Int>, var s : Int = -1) {
+    var used = mutableListOf<Boolean>()
+    var p  = mutableListOf<Int>()
+    var d  = mutableListOf<Int>()
+    var gr : MutableList<MutableList<Int>> = mutableListOf()
     var q : PriorityQueue<Int> = PriorityQueue<Int>()
-    var ans : ArrayList<Int> = arrayListOf<Int>()
+    var ans  = mutableListOf<Int>()
 
     init {
         for (i in 0..n - 1) {
-            gr.add(ArrayList<Int>())
+            gr.add(mutableListOf<Int>())
             used.add(false)
             d.add(0)
             p.add(1000000)
@@ -26,7 +25,6 @@ class Bfs(n : Int, m : Int, inp : IntArray, var s : Int = -1) {
         if (s == -1) {
             s = random.nextInt(n - 1)
         }
-        val to: Int = random.nextInt(n - 1)
         bfs(s)
     }
 
@@ -51,7 +49,7 @@ class Bfs(n : Int, m : Int, inp : IntArray, var s : Int = -1) {
         }
     }
 
-    fun check() : ArrayList<Int> {
+    fun check() : MutableList<Int> {
         return ans
     }
 }
