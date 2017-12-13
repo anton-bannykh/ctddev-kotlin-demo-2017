@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private var messageError: Toast? = null
     private var messageAdded: Toast? = null
     private var messageSuccess: Toast? = null
-    private  var edges: Array<ArrayList<Pair<Int, Long>>>? = null
+    private var edges: Array<ArrayList<Pair<Int, Long>>>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         set(value) {
             this.text = "$value"
         }
+
     private var TextView.longText: Long
         get() = "$text".toLong()
         set(value) {
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     fun setSize(view: View) {
         if (!inputSize.text.isEmpty() && !inputVertex.text.isEmpty()) {
             size = inputSize.intText
-            from = inputVertex.intText  - 1
+            from = inputVertex.intText - 1
             if (size > 0 && from in 0 until size) {
                 btnSetSize.isEnabled = false
                 edges = Array(size, { ArrayList<Pair<Int, Long>>() })
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     fun addEdge(view: View) {
         if (!inputFrom.text.isEmpty() && !inputTo.text.isEmpty() && !inputWeight.text.isEmpty()) {
             val from = inputFrom.intText
-            val to  = inputTo.intText
+            val to = inputTo.intText
             val weight = inputWeight.longText
 
             if (from in 1..size && to in 1..size) {
