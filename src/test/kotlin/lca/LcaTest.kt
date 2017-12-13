@@ -5,6 +5,18 @@ import org.junit.Test
 import java.util.*
 
 class MainTest{
+    private val bambooSize = 100
+    private var bamboo = Array(bambooSize){ArrayList<Int>(0)}
+    private val heapSize = 15
+    private var heap = Array(heapSize){ArrayList<Int>(0)}
+    private val myTreeSize = 10
+    private var myTree = Array(heapSize){ArrayList<Int>(0)}
+    init {
+        initBamboo(bamboo)
+        initHeap(heap)
+        initMyTree(myTree)
+
+    }
 
     private fun initBamboo(graph : Array<ArrayList<Int>>){
         for (i in 1 until graph.size){
@@ -14,13 +26,13 @@ class MainTest{
     }
 
     private fun initHeap(graph: Array<ArrayList<Int>>){
-        for (i in 0 until graph.size){
-            if (i * 2 + 1 < graph.size && i * 2 + 2 < graph.size){
+        for (i in 0 until heapSize){
+            if (i * 2 + 1 < heapSize && i * 2 + 2 < heapSize){
                 graph[i].add(i * 2 + 1)
                 graph[i * 2 + 1].add(i)
                 graph[i].add(i * 2 + 2)
                 graph[i * 2 + 2].add(i)
-            } else if ( i * 2 + 1 < graph.size){
+            } else if ( i * 2 + 1 < heapSize){
                 graph[i].add(i * 2 + 1)
                 graph[i * 2 + 1].add(i)
             }
@@ -51,10 +63,7 @@ class MainTest{
 
     @Test
     fun bambooLcaTest(){
-        val bambooSize = 100
-        val bamboo = Array(bambooSize){ArrayList<Int>(0)}
-        initBamboo(bamboo)
-        val tree = Tree(bambooSize,bamboo)
+        val tree = Tree(bambooSize, graph = bamboo)
         for (i in 1 until 10){
             val random = Random()
             val u = random.nextInt(bambooSize)
@@ -68,10 +77,7 @@ class MainTest{
 
     @Test
     fun heapLcaTest(){
-        val heapSize = 15
-        val heap = Array(heapSize){ArrayList<Int>(0)}
-        initHeap(heap)
-        val tree = Tree(heapSize, heap)
+        val tree = Tree(heapSize, graph = heap)
         for (i in 7 until heapSize step 2){
             assertEquals(i / 2, tree.getLca(i, i + 1))
         }
@@ -79,10 +85,7 @@ class MainTest{
 
     @Test
     fun myTreeTest(){
-        val myTreeSize = 10
-        val myTree = Array(myTreeSize){ArrayList<Int>(0)}
-        initMyTree(myTree)
-        val tree = Tree(myTreeSize, myTree)
+        val tree = Tree(myTreeSize, graph = myTree)
         assertEquals(0, tree.getLca(1,9))
         assertEquals(0, tree.getLca(4,7))
         assertEquals(2, tree.getLca(5,6))
