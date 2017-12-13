@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">TestAppLCA</string>
+    <string name="changed_the_text_again">Changed the text again!</string>
+    <string name="test">Parent: %s\nRequest: %s\n</string>
+    <string name="answer">Answer: %s</string>
+    <string name="main_head">You can set amount of points(N) and amounts of requests(M) by click button. When you click START RANDOM TESTprogram make random test and run LCA programm.</string>
 </resources>
