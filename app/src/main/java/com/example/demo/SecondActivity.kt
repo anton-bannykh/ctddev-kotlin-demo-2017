@@ -10,9 +10,9 @@ import my.lib.Tree
 
 class SecondActivity : AppCompatActivity() {
 
-    var num = 0
-    var sequence = ""
-    var errorsFlag = false
+    private var num = 0
+    private var sequence = ""
+    private var errorsFlag = false
 
     private lateinit var tree : Tree
 
