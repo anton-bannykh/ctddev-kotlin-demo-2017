@@ -1,14 +1,23 @@
 var n: Int = 0
-var p: MutableList<Int> = mutableListOf()
-var ww: MutableList<Int> = mutableListOf()
-var d: MutableList<Int> = mutableListOf()
-var dp : MutableList<MutableList<Int>> = mutableListOf()
-var summ : MutableList<MutableList<Int>> = mutableListOf()
-var graf : MutableList<MutableList<Pair<Int, Int>>> = mutableListOf()
-var used: MutableList<Boolean> = mutableListOf()
+var p = mutableListOf<Int>()//предок
+var ww = mutableListOf<Int>()//вес
+var d = mutableListOf<Int>()//глубина
+var dp = mutableListOf<MutableList<Int>>()// двоичные подъемы
+var summ = mutableListOf<MutableList<Int>>()// сумма на двоичных подъемах
+var graf  =  mutableListOf<MutableList<Pair<Int, Int>>>()
+var used = mutableListOf<Boolean>()
+
+fun cleaner() {
+    p.clear()
+    ww.clear()
+    d.clear()
+    dp.clear()
+    summ.clear()
+    graf.clear()
+    used.clear()
+}
 
 fun dfs (v: Int, time: Int, prev: Int, w: Int) {
-
     d[v] = time
     used[v] = true
     p[v] = prev
@@ -101,13 +110,7 @@ fun solve(n1: Int, edges: MutableList<MutableList<Int> >, question: Pair<Int, In
 
     var ans : Int = lca(question.first, question.second)
 
-    p.clear()
-    ww.clear()
-    d.clear()
-    dp.clear()
-    summ.clear()
-    graf.clear()
-    used.clear()
+    cleaner()
 
     return ans
 }
