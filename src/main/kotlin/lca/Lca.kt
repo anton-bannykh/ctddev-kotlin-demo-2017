@@ -2,12 +2,12 @@ package lca
 
 import java.util.*
 
-class Tree(n : Int, graph : Array<ArrayList<Int>>){
-    val g = graph
-    val tin = IntArray(n,{0})
-    val tout = IntArray(n,{0})
-    val log = kotlin.math.log(n.toDouble(), 2.0).toInt() + 1
-    val jumps = Array(n,{ IntArray(log + 1,{0})})
+class Tree(n : Int, log : Int =  kotlin.math.log(n.toDouble(), 2.0).toInt() + 1, graph : Array<ArrayList<Int>>){
+    var g = graph
+    var tin = Array(n,{0})
+    var tout = Array(n,{0})
+    var log = kotlin.math.log(n.toDouble(), 2.0).toInt() + 1
+    var jumps = Array(n,{ Array(log + 1,{0})})
     var time : Int = 0
     init {
         dfs(0)
