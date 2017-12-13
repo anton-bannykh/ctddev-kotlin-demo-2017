@@ -1,5 +1,6 @@
 package my.lib
-import java.util.*
+
+import java.util.HashMap
 
 class EulerTourTree(var size: Int) {
 
@@ -62,7 +63,7 @@ class EulerTourTree(var size: Int) {
     }
 
     fun cut(left: Int, right: Int) {
-        if (!connected(left, right)) {
+        if (!directlyConnected(left, right)) {
             return
         }
         var left = left
@@ -104,6 +105,13 @@ class EulerTourTree(var size: Int) {
 
         rightNodeA = removeFirst(rightNodeA)
         merge(leftNodeA, rightNodeA)
+
+        edges[left].remove(right)
+        edges[right].remove(left)
+    }
+
+    fun directlyConnected(left: Int, right: Int): Boolean {
+        return edges[left].containsKey(right)
     }
 
     fun connected(left: Int, right: Int): Boolean {
