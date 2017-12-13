@@ -6,15 +6,249 @@
     android:layout_height="match_parent"
     tools:context="com.example.demo.MainActivity">
 
+    <EditText
+        android:id="@+id/inputSize"
+        android:layout_width="91dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="@string/InputCount"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/upperSideText"
+        app:layout_constraintStart_toStartOf="@+id/leftSideList"
+        app:layout_constraintTop_toTopOf="@+id/upperInputSize"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/inputVertex"
+        android:layout_width="93dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:hint="@string/inputVertex"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/upperSideText"
+        app:layout_constraintEnd_toStartOf="@+id/rightSideList"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/inputSize"
+        app:layout_constraintTop_toTopOf="@+id/upperInputSize"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/inputWeight"
+        android:layout_width="84dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inputWeight"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lowerSideText"
+        app:layout_constraintEnd_toStartOf="@+id/rightSideList"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/inputTo"
+        app:layout_constraintTop_toTopOf="@+id/upperSideText"
+        app:layout_constraintVertical_bias="0.466" />
+
+    <EditText
+        android:id="@+id/inputTo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inputTo"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lowerSideText"
+        app:layout_constraintEnd_toStartOf="@+id/inputWeight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/inputFrom"
+        app:layout_constraintTop_toTopOf="@+id/upperSideText"
+        app:layout_constraintVertical_bias="0.466" />
+
+    <EditText
+        android:id="@+id/inputFrom"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/inputFrom"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lowerSideText"
+        app:layout_constraintEnd_toStartOf="@+id/inputTo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/upperSideText"
+        app:layout_constraintVertical_bias="0.466" />
+
+    <Button
+        android:id="@+id/btnSetSize"
+        android:layout_width="83dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="setSize"
+        android:text="@string/btnInput"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/upperSideText"
+        app:layout_constraintStart_toStartOf="@+id/rightSideList"
+        app:layout_constraintTop_toTopOf="@+id/upperInputSize"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="115dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="clearList"
+        android:text="@string/btnClear"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomEdge"
+        app:layout_constraintEnd_toStartOf="@+id/rightSideBtn"
+        app:layout_constraintStart_toStartOf="@+id/rightSideList"
+        app:layout_constraintTop_toBottomOf="@+id/btnRandom" />
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="115dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="createGraph"
+        android:text="@string/btnCreate"
+        app:layout_constraintBottom_toTopOf="@+id/btnRandom"
+        app:layout_constraintEnd_toStartOf="@+id/rightSideBtn"
+        app:layout_constraintStart_toStartOf="@+id/rightSideList"
+        app:layout_constraintTop_toBottomOf="@+id/lowerSideText"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btnRandom"
+        android:layout_width="115dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="randomCreate"
+        android:text="@string/btnRandom"
+        app:layout_constraintBottom_toTopOf="@+id/btnClear"
+        app:layout_constraintEnd_toStartOf="@+id/rightSideBtn"
+        app:layout_constraintStart_toStartOf="@+id/rightSideList"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreate"
+        app:layout_constraintVertical_bias="0.245" />
+
+    <ImageButton
+        android:id="@+id/btnAdd"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:contentDescription="@string/btnAddDesc"
+        android:onClick="addEdge"
+        app:layout_constraintBottom_toTopOf="@+id/lowerSideText"
+        app:layout_constraintEnd_toStartOf="@+id/rightSideBtn"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="@+id/rightSideList"
+        app:layout_constraintTop_toTopOf="@+id/upperSideText"
+        app:layout_constraintVertical_bias="0.466"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
     <TextView
+        android:id="@+id/ansDescription"
+        android:layout_width="227dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/startAnsMessage"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/rightSideList"
+        app:layout_constraintStart_toStartOf="@+id/leftSideList"
+        app:layout_constraintTop_toTopOf="@+id/lowerSideText" />
+
+    <TextView
+        android:id="@+id/distShower"
+        android:layout_width="227dp"
+        android:layout_height="302dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/ansText"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomEdge"
+        app:layout_constraintEnd_toStartOf="@+id/rightSideList"
+        app:layout_constraintStart_toStartOf="@+id/leftSideList"
+        app:layout_constraintTop_toBottomOf="@+id/ansDescription"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/leftSideList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rightSideBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rightSideList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="141dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/lowerSideText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="115dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/upperSideText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="64dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/upperInputSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bottomEdge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="494dp" />
 
 </android.support.constraint.ConstraintLayout>
