@@ -1,6 +1,6 @@
 package my.lib.huffman
 
-import java.util.*
+import java.util.PriorityQueue
 
 /**
  * Created by Telnov Sergey on 11.12.2017.
