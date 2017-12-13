@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TestAppLCA</string>
     <string name="changed_the_text_again">Changed the text again!</string>
-    <string name="test">Parent: %s\nRequest: %s\n</string>
-    <string name="answer">Answer: %s</string>
-    <string name="main_head">You can set amount of points(N) and amounts of requests(M) by click button. When you click START RANDOM TESTprogram make random test and run LCA programm.</string>
+    <string name="test">Массив родителей: %s\nЗапросы: %s\n</string>
+    <string name="answer">Ответ: %s</string>
+    <string name="main_head">С помощью кнопки COUNT N задается количество вершин в дереве. С помощью кнопки COUNT M задается количество запросов. При нажатии наи кнопку START RANDOM TEST генерируется и запускается рандомный тест </string>
 </resources>
