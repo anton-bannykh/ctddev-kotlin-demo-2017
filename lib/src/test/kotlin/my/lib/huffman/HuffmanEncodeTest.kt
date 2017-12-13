@@ -61,7 +61,7 @@ class HuffmanEncodeTest {
                         "b: 10\n" +
                         "c: 110\n" +
                         "d: 111\n",
-                encoder.digitsInfo
+                encoder.digitsCode
         )
     }
 }

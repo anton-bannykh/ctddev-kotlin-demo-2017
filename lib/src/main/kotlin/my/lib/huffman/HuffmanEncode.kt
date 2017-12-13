@@ -7,7 +7,7 @@ import java.util.*
  */
 
 class HuffmanEncode {
-    var digitsInfo: String
+    var digitsCode: String
         get() = buildString {
                 keys.forEach {
                     append("${it.key}: ${it.value}\n")
@@ -63,6 +63,6 @@ class HuffmanEncode {
     }
 
     init {
-        digitsInfo = ""
+        digitsCode = ""
     }
 }
