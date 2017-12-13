@@ -1,39 +1,44 @@
-import org.junit.Assert.assertEquals
+import Main.Kotlin.*
+import org.junit.Assert.assertTrue
 import org.junit.Test
+import java.util.*
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun SortedArray() {
+        val arr = intArrayOf(0, 1, 2, 3, 4, 5)
+        val ans = intArrayOf(0, 1, 2, 3, 4, 5)
+        mergeSort(arr)
+        assertTrue(Arrays.equals(arr, ans))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun ReverseArray() {
+        val arr = intArrayOf(5, 4, 3, 2, 1, 0)
+        val ans = intArrayOf(0, 1, 2, 3, 4, 5)
+        mergeSort(arr);
+        assertTrue(Arrays.equals(arr, ans))
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun EqualElements() {
+        val arr = intArrayOf(5, 5, 5, 5)
+        val ans = intArrayOf(5, 5, 5, 5)
+        mergeSort(arr);
+        assertTrue(Arrays.equals(arr, ans))
     }
-
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+    fun NegativeNumber() {
+        val arr = intArrayOf(-8, 3, 0, -7, 4)
+        val ans = intArrayOf(-8, -7, 0, 3, 4)
+        mergeSort(arr);
+        assertTrue(Arrays.equals(arr, ans))
     }
-
     @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
-
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun RandomElements() {
+        val arr = intArrayOf(1, 10, 3, 4567, -100, -3, 3, 3, 600, -1)
+        val ans = intArrayOf(-100, -3, -1, 1, 3, 3, 3, 10, 600, 4567)
+        mergeSort(arr);
+        assertTrue(Arrays.equals(arr, ans))
     }
 }
