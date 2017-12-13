@@ -15,12 +15,12 @@ class MainActivity : AppCompatActivity() {
         text = findViewById<EditText>(R.id.input)
     }
 
-    fun Go(v: View) {
+    fun go(v: View) {
         val intent = Intent(this, Main2Activity::class.java)
         val numberArr = text.getText().toString().split(" ")
         val num: ArrayList<Int> = ArrayList()
         for (i in numberArr) {
-            if (!i.isEmpty() ) {
+            if (!i.isEmpty()) {
                 num.add(i.trim().toInt())
             }
         }
