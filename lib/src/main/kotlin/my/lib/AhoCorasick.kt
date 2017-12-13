@@ -1,23 +1,22 @@
 package my.lib
 
-const val ALPHABET_SIZE = 26 // можно ли это внести внутрь класса?
-const val START_CHAR = 'a'
-
 class AhoCorasick (vararg strs: String) {
+    val ALPHABET_SIZE = 26
+    val START_CHAR = 'a'
     private var nodes: MutableList<Node>
+
     init {
         nodes = MutableList(1, { Node(-1, '#') })
         for (s in strs)
             addString(s)
     }
 
-    private data class Node(val parent: Int, val chFromParent: Char) { // не видит поля внешнего класса
+    private inner class Node(val parent: Int, val chFromParent: Char) {
         var isLeaf = false
         var suffLink = -1
-        var strings: MutableList<String> = MutableList(0, { "" })
-        var children: MutableList<Int> = MutableList(ALPHABET_SIZE, { -1 })
-        var transitions: MutableList<Int> = MutableList(ALPHABET_SIZE, { -1 })
-
+        var strings = MutableList(0, { "" })
+        var children = MutableList(ALPHABET_SIZE, { -1 })
+        var transitions = MutableList(ALPHABET_SIZE, { -1 })
     }
 
     fun addString(s: String) {
