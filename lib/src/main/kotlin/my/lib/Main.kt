@@ -59,4 +59,3 @@ fun main(args: Array<String>) {
     build(1, 0, size, graph, used, parent)
     output_parent(n, parent)
 }
-
