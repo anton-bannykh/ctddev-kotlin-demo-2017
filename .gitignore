@@ -1,6 +1,10 @@
 .gradle
 /build/
 
+# Idea project files
+.idea
+ctddev-kotlin-demo-2017.iml
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
@@ -11,4 +15,16 @@ gradle-app.setting
 .gradletasknamecache
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+<<<<<<< HEAD
+# gradle/wrapper/gradle-wrapper.propertiess
+=======
 # gradle/wrapper/gradle-wrapper.properties
+
+*.iml
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+>>>>>>> 9df37be6e206a7f83b4ae1bd432e62f1bb4b5e0f
