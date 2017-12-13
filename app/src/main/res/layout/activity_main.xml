@@ -8,8 +8,8 @@
 
     <EditText
         android:id="@+id/plain_text_input"
-        android:layout_width="241dp"
-        android:layout_height="41dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:hint="@string/vertices_hint"
         android:inputType="text"
         android:textSize="14sp"
@@ -22,8 +22,8 @@
 
     <EditText
         android:id="@+id/vertices_sequence_input"
-        android:layout_width="322dp"
-        android:layout_height="41dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.258"
@@ -48,8 +48,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="342dp"
-        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/sequence_input_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
