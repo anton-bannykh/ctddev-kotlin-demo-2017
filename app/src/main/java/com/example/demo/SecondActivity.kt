@@ -15,7 +15,7 @@ class SecondActivity : AppCompatActivity() {
             return from
         } else {
             //return Random().nextInt(to - from) + from
-            return 1
+            return (from..to).shuffled()[0]
         }
     }
 
