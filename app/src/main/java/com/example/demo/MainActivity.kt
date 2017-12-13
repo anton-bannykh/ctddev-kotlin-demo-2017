@@ -19,25 +19,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mEditText = findViewById(R.id.et_encode_text);
+        mEditText = findViewById(R.id.et_encode_text)
 
         mCodeText = findViewById(R.id.tv_code)
     }
 
     fun onClick(v : View) {
         val stringToEncode = mEditText.text.toString()
+
         if (stringToEncode != "") {
             mCodeText.text = buildString {
                 append(getString(R.string.input_string_text))
                 append(" '$stringToEncode'\n")
+
                 append(getString(R.string.code_text))
                 append(" '${encoder.huffmanEncode(stringToEncode)}'")
                 append("\n\n\n")
+
                 append(getString(R.string.digits_info))
-                append(encoder.digitsInfo)
+                append(encoder.digitsCode)
             }
         } else {
-            mCodeText.text = "invalid input"
+            mCodeText.text = getString(R.string.input_string_text)
         }
     }
 
