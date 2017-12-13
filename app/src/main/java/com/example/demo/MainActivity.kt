@@ -14,14 +14,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun onAddStringClick(v: View){
+    fun onAddStringClick(v: View) {
         automat.addString(addStringEditText.text.toString())
         addStringEditText.setText("")
     }
 
     @SuppressLint("SetTextI18n") //студия предложила это сделать, зачем?
-    fun onWriteTextClick(v: View){
-        val res = automat.findPos(writeTextEditText.text.toString());
+    fun onWriteTextClick(v: View) {
+        val res = automat.findPos(writeTextEditText.text.toString())
         output.text = getString(R.string.output) + writeTextEditText.text.toString() + "\n"
         for (i in res)
             output.append(i.toString() + " ")
