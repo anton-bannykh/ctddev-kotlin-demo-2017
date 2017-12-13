@@ -1,15 +1,16 @@
-/**
- * Created by гыук on 03.12.2017.
- */
+package my.lib
+
 fun main(args: Array<String>) {
-    println("Hi!")
+    println("Hello world!")
 }
 
-fun nextPerm(vararg ints: Int):MutableList<Int> {
-    var args:MutableList<Int> = mutableListOf()
-    for (i in ints) {
-        args.add(i)
-    }
+fun MutableList<Int>.swap(index1: Int, index2: Int) {
+    val x = this[index1]
+    this[index1] = this[index2]
+    this[index2] = x
+}
+
+fun nextPerm(args:MutableList<Int>):MutableList<Int> {
     var i = args.size - 2
     val n:Int = args.size
     var res:MutableList<Int> = mutableListOf()
@@ -34,13 +35,9 @@ fun nextPerm(vararg ints: Int):MutableList<Int> {
         for(j in 0 .. n - 1) {
             res.add(args[j])
         }
-        var x = res[i]
-        res[i] = res[j]
-        res[j] = x
+        res.swap(i, j)
         for(j in 0 .. ((n - i - 1) / 2) - 1) {
-            x = res[i + 1 + j]
-            res[i + 1 + j] = res[n - 1 - j]
-            res[n - 1 - j] = x
+            res.swap(i + 1 + j, n - 1 - j)
         }
     }
     return res
