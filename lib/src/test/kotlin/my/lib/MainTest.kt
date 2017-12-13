@@ -1,5 +1,6 @@
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import my.lib.johnson
 
 class MainTest {
     @Test
