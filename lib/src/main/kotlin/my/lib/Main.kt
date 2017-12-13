@@ -1,17 +1,45 @@
 package my.lib
 
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
-
-fun foo() = 10
-
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
+fun merge(a: IntArray, l: Int, L: Int, r: Int, R: Int) {
+    var i: Int = l;
+    val i0: Int = L;
+    var j: Int = r;
+    var j0: Int = R;
+    val b = IntArray(a.size);
+    var k: Int = 0;
+    while ((i < i0) && (j < j0)) {
+        if (a[i] <= a[j]) {
+            b[k] = a[i];
+            i++;
+        } else {
+            b[k] = a[j];
+            j++;
+        }
+        k++;
     }
-    return result
+    while (i < i0) {
+        b[k] = a[i];
+        i++;
+        k++;
+    }
+    while (j < j0) {
+        b[k] = a[j];
+        j++;
+        k++;
+    }
+    j0--;
+    k--;
+    while (k >= 0) {
+        a[j0] = b[k];
+        k--;
+        j0--;
+    }
 }
 
-fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
+fun mergeSort(a: IntArray, L: Int = 0, R: Int = a.size) {
+    if (L < R - 1) {
+        mergeSort(a, L, (L + R) / 2);
+        mergeSort(a, (L + R) / 2, R);
+        merge(a, L, (L + R) / 2, (L + R) / 2, R);
+    }
+}
