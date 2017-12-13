@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Demo</string>
     <string name="greeting">Wassup!</string>
+    <string name="ok">OK</string>
+    <string name="n">Введите N</string>
+    <string name="start">От</string>
+    <string name="end">До</string>
+    <string name="to">Перед</string>
+    <string name="move">Переместить</string>
+    <string name="hint">Выберите элементы, обозначающие начало и конец перемещаемого отрезка массива, а так же элемент, перед которым будет произведена вставка</string>
 </resources>

@@ -1,20 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.demo.MainActivity">
+<android.support.v7.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context="com.example.demo.MainActivity">
+    <android.support.v7.widget.LinearLayoutCompat android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:gravity="center">
+        <android.support.v7.widget.AppCompatEditText
+                style="style/Padding"
+                android:id="@+id/n"
+                android:layout_width="wrap_content"
+                android:inputType="numberDecimal"
+                android:layout_height="wrap_content"
+                android:hint="@string/n"/>
+        <Button style="style/Padding"
+                android:id="@+id/startButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ok"/>
+    </android.support.v7.widget.LinearLayoutCompat>
+    <TextView style="style/Padding"
+              android:id="@+id/hint"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:textSize="10sp"
+    android:text="@string/hint"/>
+    <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:gravity="center"
+                                                  android:orientation="horizontal">
+        <Button
+                style="style/Padding"
+                android:id="@+id/start"
+                android:textSize="12sp"
+                android:text="@string/start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <Button style="style/Padding"
+                android:id="@+id/end"
+                android:textSize="12sp"
+                android:text="@string/end"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Button style="style/Padding"
+                android:id="@+id/to"
+                android:text="@string/to"
+                android:textSize="12sp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Button style="style/Padding"
+                android:id="@+id/slice"
+                android:text="@string/move"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </android.support.v7.widget.LinearLayoutCompat>
+    <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v7.widget.LinearLayoutCompat>

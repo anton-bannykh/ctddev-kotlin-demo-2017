@@ -7,5 +7,13 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="letter" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textSize">14sp</item>
+        <item name="textColorPrimary">#f600d1</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    <style name="Padding">
+        <item name="android:padding">10dp</item>
+    </style>
 
 </resources>
