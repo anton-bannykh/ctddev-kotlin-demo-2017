@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">LcaAndroid</string>
+    <string name="vertices_hint">Enter num of vertices</string>
+    <string name="submit_num_of_vertices">Submit</string>
+    <string name="sequence_input_description">Enter num - 1 numbers, where number at position i shows
+        parent for vertex with number i</string>
+    <string name="submit_sequence_of_vertices">Submit</string>
+    <string name="go">Go</string>
+    <string name="back">Back</string>
+    <string name="build">Build</string>
+    <string name="lca_hint">Enter two vertices</string>
+    <string name="run">Run</string>
+
+</resources>
