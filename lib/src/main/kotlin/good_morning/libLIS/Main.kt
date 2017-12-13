@@ -1,6 +1,8 @@
+package good_morning.libLIS
+
 import java.util.PriorityQueue
 
-fun LIS(args: Array<Int>): Array<Int> {
+fun LIS(args: Array<Int>): IntArray {
     val priorityQueue = PriorityQueue<Int>()
     val predecessors = HashMap<Int, Int?>()
 
@@ -12,13 +14,18 @@ fun LIS(args: Array<Int>): Array<Int> {
     return restoreResult(priorityQueue.size, priorityQueue.last(), predecessors)
 }
 
-fun restoreResult(size: Int, first: Int, predecessors: HashMap<Int, Int?>): Array<Int> {
-    val result = Array(size, {_->0})
+fun LIS(args: IntArray): IntArray {
+    val input = IntArray(args.size, {ind -> args[ind]})
+    return LIS(input)
+}
+
+private fun restoreResult(size: Int, first: Int, predecessors: HashMap<Int, Int?>): IntArray {
+    val result = IntArray(size, {0})
 
     result[size - 1] = first
     var index = size - 1
     while (predecessors[result[index]] != null) {
-        result[index - 1] = predecessors[result[index]] as Int
+        result[index - 1] = predecessors[result[index]] ?: break
         index -= 1
     }
     return result
