@@ -1,6 +1,9 @@
-import Main.Kotlin.*
-import org.junit.Assert.assertTrue
+package my.lib
+
+//import org.junit.Assert.assertEquals
 import org.junit.Test
+import org.junit.Assert.assertTrue
+//import org.junit.Test
 import java.util.*
 
 class MainTest {
