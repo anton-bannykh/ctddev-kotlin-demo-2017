@@ -2,7 +2,7 @@ package good_morning.libLIS
 
 import java.util.PriorityQueue
 
-fun LIS(args: Array<Int>): IntArray {
+fun LIS(args: IntArray): IntArray {
     val priorityQueue = PriorityQueue<Int>()
     val predecessors = HashMap<Int, Int?>()
 
@@ -14,7 +14,7 @@ fun LIS(args: Array<Int>): IntArray {
     return restoreResult(priorityQueue.size, priorityQueue.last(), predecessors)
 }
 
-fun LIS(args: IntArray): IntArray {
+fun LIS(args: Array<Int>): IntArray {
     val input = IntArray(args.size, {ind -> args[ind]})
     return LIS(input)
 }
