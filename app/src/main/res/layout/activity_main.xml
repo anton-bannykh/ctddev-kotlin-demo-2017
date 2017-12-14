@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.LinearLayoutCompat
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        tools:context="com.example.demo.MainActivity">
+        tools:context="vladsaif.kotlin.MainActivity">
     <android.support.v7.widget.LinearLayoutCompat android:layout_width="match_parent"
                                                   android:layout_height="wrap_content"
                                                   android:gravity="center">
         <android.support.v7.widget.AppCompatEditText
-                style="style/Padding"
+                style="@style/Padding"
                 android:id="@+id/n"
                 android:layout_width="wrap_content"
                 android:inputType="numberDecimal"
@@ -24,14 +23,18 @@
     </android.support.v7.widget.LinearLayoutCompat>
     <TextView style="style/Padding"
               android:id="@+id/hint"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+              android:paddingTop="20dp"
+              android:paddingBottom="20dp"
+              android:layout_width="wrap_content" android:layout_height="wrap_content"
               android:textSize="10sp"
-    android:text="@string/hint"/>
+              android:text="@string/hint"/>
     <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-                                                  android:layout_height="wrap_content"
-                                                  android:gravity="center"
-                                                  android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
         <Button
                 style="style/Padding"
                 android:id="@+id/start"
@@ -56,13 +59,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
     </android.support.v7.widget.LinearLayoutCompat>
-    <android.support.v7.widget.LinearLayoutCompat
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-
-    </android.support.v7.widget.LinearLayoutCompat>
+    <HorizontalScrollView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:scrollbars="horizontal">
+        <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+        </android.support.v7.widget.LinearLayoutCompat>
+    </HorizontalScrollView>
 </android.support.v7.widget.LinearLayoutCompat>
