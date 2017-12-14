@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/screenBackground"
-    tools:context="com.example.demo.MainActivity">
+    android:background="@color/screenBackground2"
+    tools:context="com.example.demo.SecondActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
-        android:text="@string/hello_world_text"
-        android:textColor="@android:color/white"
-        android:textSize="72sp"
+        android:text="@string/array"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
         app:layout_constraintVertical_bias="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,47 +22,31 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/countplus_button"
+        android:id="@+id/set_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="64dp"
         android:layout_marginTop="8dp"
-        android:background="@color/buttonBackground"
-        android:onClick="countMePlus"
-        android:text="Count++"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/fill_button"
-        android:layout_width="87dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/buttonBackground"
-        android:onClick="fillMe"
-        android:text="Fill"
+        android:background="@color/buttonBackground2"
+        android:onClick="setMe"
+        android:text="Set"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/countminus_button"
+        android:id="@+id/min_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="8dp"
-        android:background="@color/buttonBackground"
-        android:onClick="countMeMinus"
-        android:text="Count--"
+        android:background="@color/buttonBackground2"
+        android:onClick="minMe"
+        android:text="Min"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/fill_button"
-        app:layout_constraintStart_toEndOf="@+id/countplus_button"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </android.support.constraint.ConstraintLayout>
