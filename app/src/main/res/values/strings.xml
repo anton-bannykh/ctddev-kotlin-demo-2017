@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">CentroidDecomposition</string>
+    <string name="add_edge">Add edge</string>
+    <string name="build">Build</string>
+    <string name="clear">Clear</string>
+    <string name="central_text">Enter your tree by edges</string>
+    <string name="centroid_dec_heading">Here is a centroid decomposition for your tree.</string>
 </resources>
