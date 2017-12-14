@@ -11,10 +11,9 @@ class MainTest {
         var c = mutableListOf(a, b)
         var p = Pair(0, 0)
         assertEquals(0, solve(n, c, p))
-
     }
 
- /*   @Test
+    @Test
     fun test2() {
         var n: Int = 3
         var a: MutableList<Int> = mutableListOf(1, 0, 1)
@@ -114,5 +113,5 @@ class MainTest {
         var c: MutableList<MutableList <Int> > = mutableListOf(a, b, bb, ba, baa)
         var p: Pair<Int, Int> = Pair(5, 3)
         assertEquals(30, solve(n, c, p))
-    }*/
+    }
 }

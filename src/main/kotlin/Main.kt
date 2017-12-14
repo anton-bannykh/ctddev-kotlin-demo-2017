@@ -4,7 +4,7 @@ var ww = mutableListOf<Int>()//вес
 var d = mutableListOf<Int>()//глубина
 var dp = mutableListOf<MutableList<Int>>()// двоичные подъемы
 var summ = mutableListOf<MutableList<Int>>()// сумма на двоичных подъемах
-var graf  =  mutableListOf<MutableList<Pair<Int, Int>>>()
+var graf = mutableListOf<MutableList<Pair<Int, Int>>>()
 var used = mutableListOf<Boolean>()
 
 fun cleaner() {
