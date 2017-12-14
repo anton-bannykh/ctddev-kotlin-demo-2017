@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Dijkstra Algorithm</string>
+    <string name="btnRandom">Random Graph</string>
+    <string name="btnCreate">Create Graph</string>
+    <string name="btnClear">CLEAR</string>
+    <string name="inputFrom">From</string>
+    <string name="btnAddDesc">The edge is added</string>
+    <string name="InputCount">Enter size</string>
+    <string name="btnInput">SUBMIT</string>
+    <string name="inputTo">To</string>
+    <string name="inputWeight">Weight</string>
+    <string name="inputVertex">Enter vertex</string>
+    <string name="inputIncorrect">Incorrect input</string>
+    <string name="successSet">Size and from values is set</string>
+    <string name="ansMessage">Distances from %d to all vertices:</string>
+    <string name="startAnsMessage">""</string>
+    <string name="showDist">%d : %d\n</string>
+    <string name="ansText">""</string>
+    <string name="infinity">No way to %d\n</string>
+</resources>

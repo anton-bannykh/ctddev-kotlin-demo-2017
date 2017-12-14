@@ -1,7 +1,9 @@
+package my.lib
+
 import org.junit.Test
 import java.util.Arrays
 
-class MainTest {
+class DijkstraTest {
     @Test
     fun testDisconnectedGraph() {
         startTest(10, 4)
