@@ -1,4 +1,12 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">Topsort</string>
+    <string name="apply">apply</string>
+    <string name="number">0</string>
+    <string name="n">n</string>
+    <string name="m">m</string>
+    <string name="v">v</string>
+    <string name="u">u</string>
+    <string name="set">set</string>
+    <string name="topsort">topsort</string>
+    <string name="first">1 edge</string>
 </resources>
