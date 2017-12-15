@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Components</string>
+    <string name="button2text">Add and\ncount</string>
+    <string name="textviewto">To</string>
+    <string name="textview2">From</string>
+    <string name="button1">Start</string>
+    <string name="textview1">Number</string>
+</resources>
