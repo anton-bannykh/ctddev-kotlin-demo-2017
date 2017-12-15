@@ -1,8 +1,5 @@
-//<<<<<<< HEAD:lib/src/test/kotlin/my/lib/MainTest.kt
-package my.lib
 
-//=======
-//>>>>>>> Tests:src/test/kotlin/MainTest.kt
+package my.lib
 import org.junit.Test
 
 class MainTest {
