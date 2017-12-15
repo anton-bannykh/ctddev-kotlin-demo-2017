@@ -74,7 +74,7 @@ class LCA {
             }
             i--
         }
-        return v.parent + 1;
+        return v.parent + 1
     }
 
     constructor(newN: Int, parent: Array<Int>) {
