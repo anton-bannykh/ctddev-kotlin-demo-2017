@@ -14,12 +14,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun countMePlus (view: View) {
+    fun countMePlus(view: View) {
         val count: Int = Integer.parseInt(textView.text.toString()) + 1
         textView.text = count.toString()
     }
 
-    fun countMeMinus (view: View) {
+    fun countMeMinus(view: View) {
         var count: Int = Integer.parseInt(textView.text.toString())
         if (Integer.parseInt(textView.text.toString()) > 0) {
             count--

@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_second.*
 import my.lib.RMQ
-import java.util.*
 
 class SecondActivity : AppCompatActivity() {
 
@@ -24,15 +23,15 @@ class SecondActivity : AppCompatActivity() {
 
     fun fillMeImpl() {
         val count = intent.getIntExtra(TOTAL_COUNT, 0)
-        val a = Array<Int>(count, { Random().nextInt(21) - 10 })
+        val a = Array<Int>(count, { (21 * Math.random()).toInt() - 10 })
         rmq1.create_segment_tree(count, a)
         showMe()
     }
 
     fun setMe(view: View) {
         val count = intent.getIntExtra(TOTAL_COUNT, 0)
-        val pos = Random().nextInt(count) + 1
-        val num = Random().nextInt(21) - 10
+        val pos = (count * Math.random()).toInt() + 1
+        val num = (21 * Math.random()).toInt() - 10
         rmq1.set(pos, num)
         showMe()
         val myText = Toast.makeText(this, "Successfully put num " + num.toString() + " to " + pos.toString() + " position", Toast.LENGTH_SHORT)
@@ -41,8 +40,8 @@ class SecondActivity : AppCompatActivity() {
 
     fun minMe(view: View) {
         val count = intent.getIntExtra(TOTAL_COUNT, 0)
-        var pos1 = Random().nextInt(count) + 1
-        var pos2 = Random().nextInt(count) + 1
+        var pos1 = (count * Math.random()).toInt() + 1
+        var pos2 = (count * Math.random()).toInt() + 1
         if (pos1 > pos2) {
             val x = pos1
             pos1 = pos2
