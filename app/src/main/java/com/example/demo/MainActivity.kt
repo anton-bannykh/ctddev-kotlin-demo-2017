@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import kotlinx.android.synthetic.main.activity_main.*
 import my.lib.suffixArray
-import java.util.*
+import java.util.Arrays
 
 class MainActivity : AppCompatActivity() {
 
