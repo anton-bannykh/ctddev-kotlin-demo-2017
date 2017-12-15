@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="letter" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorPrimary">#f600d1</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    <style name="Padding">
+        <item name="android:padding">10dp</item>
+    </style>
+
+</resources>
