@@ -1,20 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.demo.MainActivity">
+    android:orientation="vertical"
+    tools:context="com.example.demo.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            style="@style/Padding"
+            android:id="@+id/editText_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="@string/number"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            style="@style/Padding"
+            android:id="@+id/text_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/n"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp" />
+
+        <EditText
+            style="@style/Padding"
+            android:id="@+id/editText_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="@string/number"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            style="@style/Padding"
+            android:id="@+id/text_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/m"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp" />
+
+        <Button
+            style="@style/Padding"
+            android:id="@+id/my_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/apply" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
 
     <TextView
+        style="@style/Padding"
+        android:id="@+id/text_request"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:text=""
+        android:textSize="18sp"
+        android:visibility="visible" />
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            style="@style/Padding"
+            android:id="@+id/edge_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/first"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+        <EditText
+            style="@style/Padding"
+            android:id="@+id/editText_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="@string/number"
+            android:visibility="invisible"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            style="@style/Padding"
+            android:id="@+id/text_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/v"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <EditText
+            style="@style/Padding"
+            android:id="@+id/editText_u"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="@string/number"
+            android:visibility="invisible"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            style="@style/Padding"
+            android:id="@+id/text_u"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/u"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <Button
+            style="@style/Padding"
+            android:id="@+id/button_graph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set"
+            android:visibility="invisible" />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <Button
+        style="@style/Padding"
+        android:id="@+id/button_topsort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/topsort"
+        android:visibility="invisible" />
+
+    <TextView
+        style="@style/Padding"
+        android:id="@+id/text_topol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textSize="18sp"
+        android:visibility="visible" />
+
+</android.support.v7.widget.LinearLayoutCompat>
