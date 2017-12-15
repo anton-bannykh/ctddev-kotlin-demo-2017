@@ -1,11 +1,25 @@
-import kotlin.math.max
+package my.lib
+
+fun main(args: Array<String>) {
+    println("Hello world!")
+}
+
+
+
+fun dv(n: Int) : Int { //ближайшая степень двойки
+    var n2: Int = n
+    n2--
+    var t : Int = 1
+    while(t < 64) {
+        n2 = n2 or (n2 shr t)
+        t = t shl 1 //сдвиг влево
+    }
+    return ++n2
+}
+
+
 
 class SegmentTree {
-    /*public fun outt() {
-        for(i in 0..7) {
-            print("${array[i]}  ")
-        }
-    }*/
     public fun query(l:Int, r:Int):Int {
         if(size == 1) {
             return ST[0]
@@ -25,6 +39,9 @@ class SegmentTree {
     private var ST = mutableListOf<Int>()
     private var size: Int = 0
 
+    constructor(){
+
+    }
     constructor(array: MutableList<Int>) {
         this.array = array
         size = dv(array.size) //ближайшая степень двойки
@@ -57,7 +74,7 @@ class SegmentTree {
         val vm: Int = vl + (vr - vl)/2
         build(2 * v + 1, vl, vm)
         build(2 * v + 2, vm + 1, vr)
-        ST[v] = max(ST[2 * v + 1], ST[2 * v + 2])
+        ST[v] = Math.max(ST[2 * v + 1], ST[2 * v + 2])
     }
 
 
@@ -71,7 +88,7 @@ class SegmentTree {
         }
         val vm: Int = vl + (vr - vl)/2
 
-        return max(query_base(2 * v + 1, vl, vm, l, r),
+        return Math.max(query_base(2 * v + 1, vl, vm, l, r),
                 query_base(2 * v + 2, vm + 1, vr, l, r))
     }
 
@@ -88,7 +105,7 @@ class SegmentTree {
             } else {
                 modify_base(2 * v + 2, vm + 1, vr, pos, value)
             }
-            ST[v] = max(ST[2 * v + 1], ST[2 * v + 2]);
+            ST[v] = Math.max(ST[2 * v + 1], ST[2 * v + 2]);
         }
     }
 }
