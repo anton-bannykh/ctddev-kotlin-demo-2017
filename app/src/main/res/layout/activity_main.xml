@@ -23,7 +23,8 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintVertical_bias="0.03"
+        tools:ignore="OnClick" />
 
     <TextView
         android:id="@+id/textView"
@@ -39,7 +40,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextVertices" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextVertices"
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
         android:id = "@+id/pampam"
@@ -81,12 +83,13 @@
             android:inputType="number" />
 
         <Button
-            android:id="@+id/buttonAdd"
+            android:id="@+id/buttonAdd1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onAddEdge"
-            android:text="Add edge" />
+            android:text="Add edge"
+            tools:ignore="OnClick" />
 
     </LinearLayout>
 
@@ -143,7 +146,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="showAnswer"
-            android:text="Show Answer" />
+            android:text="Show Answer"
+            tools:ignore="OnClick" />
 
     </LinearLayout>
 
