@@ -9,14 +9,14 @@ class MainTest {
     fun testSmallestDist1() {
         val random = Random()
         for (cnt in 0..1000) { // number of tests
-            val n = random.nextInt(1000) + 1
-            val points = Array(n, { i -> Point(random.nextDouble() * 10000, random.nextDouble() * 10000, i) })
-            val calculatedAns = smallestDist(points)
+            val n = random.nextInt(1000) + 2
+            val points = ArrayList(Array(n, { i -> Point(random.nextDouble() * 10000, random.nextDouble() * 10000, i) }).toList())
+            val ans = smallestDist(points)
+            val calculatedAns = dist(ans.first, ans.second)
             var realSmallestDist = Double.POSITIVE_INFINITY
-            for (i in 0..n - 1) {
-                for (j in i + 1..n - 1) {
-                    val dist = Math.sqrt(Math.pow(points[i].x - points[j].x, 2.0) + Math.pow(points[i].y - points[j].y, 2.0))
-                    realSmallestDist = minOf(realSmallestDist, dist)
+            for (i in 0 until n) {
+                for (j in i + 1 until n) {
+                    realSmallestDist = minOf(realSmallestDist, dist(points[i], points[j]))
                 }
             }
             assertEquals(calculatedAns, realSmallestDist, 1e-5)

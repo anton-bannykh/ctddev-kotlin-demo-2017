@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Demo</string>
+    <string name="app_name">Closest points</string>
     <string name="greeting">Wassup!</string>
+    <string name="ans_len_text">distance between closest points is %f</string>
+    <string name="less_then_two_points_error">Need at least 2 points</string>
+    <string name="x_et_hint">x</string>
+    <string name="y_et_hint">y</string>
+    <string name="button_text">Add point</string>
 </resources>
