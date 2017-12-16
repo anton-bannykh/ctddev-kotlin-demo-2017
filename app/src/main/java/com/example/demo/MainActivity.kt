@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 for (i in temp) s.append(str.subSequence(i, str.length)).append("\n")
                 textView.text = s
             } catch (ex: Exception) {
-                textView2.text = "unsupported string"
+                textView2.text = getString(R.string.invalid_data)
                 textView.text = ""
             }
         }
