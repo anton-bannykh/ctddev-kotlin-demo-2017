@@ -1,3 +1,5 @@
+package my.lib
+
 fun <T> lcs(first_seq: List<T>, second_seq: List<T>): Int {
     val n = first_seq.size
     val m = second_seq.size
