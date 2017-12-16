@@ -1,9 +1,7 @@
-<<<<<<< HEAD:src/main/kotlin/Main.kt
+package my.lib
+
 import kotlin.math.min
 import kotlin.math.max
-=======
-package my.lib
->>>>>>> 9df37be6e206a7f83b4ae1bd432e62f1bb4b5e0f:lib/src/main/kotlin/my/lib/Main.kt
 
 fun main(args: Array<String>) {
     var tree = SegmentTree(arrayOf(1, 5, 2, 4, 3, 7, 1, 6))
@@ -13,7 +11,7 @@ fun main(args: Array<String>) {
 class SegmentTree(var elem: Array<Int>) {
     private var root = 0
     private val INF = 10000000
-    private var tree: MutableList<Node> = MutableList(3 * elem.size, { Node(0, 0, 0, 0, 0) })
+    private var tree = MutableList(3 * elem.size, { Node(0, 0, 0, 0, 0) })
 
     init {
         var IND = 0
