@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DFS</string>
+    <string name="inputNumRibs">Введите две вершины через запятую</string>
+    <string name="addEdge">Добавить</string>
+    <string name="enterRibs">Добавить ребро</string>
+    <string name="removeEdge">Удалить</string>
+</resources>
