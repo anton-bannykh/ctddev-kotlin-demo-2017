@@ -1,5 +1,3 @@
-package my.lib
-
 fun depthCounter(i: Int, batya: MutableList<Int>, depth: MutableList<Int>) {
     if (depth[i] == -1) {
         if (depth[batya[i]] == -1) {
@@ -81,19 +79,3 @@ fun solve(n: Int, m: Int, batyaIn: MutableList<Int>, questions: MutableList<Pair
     }
     return ans
 }
-
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
-
-fun foo() = 10
-
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
-    }
-    return result
-}
-
-fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
