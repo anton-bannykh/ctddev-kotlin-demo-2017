@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">Demo</string>
+    <string name="app_name">Find SCC</string>
     <string name="greeting">Wassup!</string>
+    <string name="headerText">Алгоритм для поиска компонент сильной связности</string>
+    <string name="amountOfVersInGraph">Введите количество вершин в графе:</string>
+    <string name="create_graph">Создать граф</string>
+    <string name="number_of_vertex_u">Номер вершины u</string>
+    <string name="enter_vertices_numbers">Введите номера вершин чтобы добавить ребро из U в V</string>
+    <string name="number_of_vertex_v">Номер вершины v</string>
+    <string name="add_edge">Добавить ребро</string>
+    <string name="run_algorithm">Запустить алгоритм</string>
+    <string name="result_of_scc_algorithm">Резльтат поиска компонент сильной связности</string>
 </resources>
