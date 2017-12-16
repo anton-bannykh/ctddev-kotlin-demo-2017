@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             var a = value.text.toString().toInt()
             a--
             if (a < 5)
-                a += 2 // не баг, а фича))))))
+                a += 2 // не баг, а фича)))))))
             value.text = a.toString()
         })
 
