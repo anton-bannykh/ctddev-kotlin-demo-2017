@@ -1,1 +1,4 @@
 /build
+/src/main/AndroidManifest.xml
+/src/main/res/*
+
