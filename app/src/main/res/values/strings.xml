@@ -1,4 +1,6 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">Longest common subsequence</string>
+    <string name="go">Go!</string>
+    <string name="enter_the_second_sequence">Enter the second sequence</string>
+    <string name="enter_the_first_sequence">Enter the first sequence</string>
 </resources>
