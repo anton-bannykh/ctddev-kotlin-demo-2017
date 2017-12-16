@@ -1,20 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.demo.MainActivity">
 
+    <LinearLayout
+        android:id="@+id/layoutNumbersVertices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextNumbersVertices"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/size_of_your_graph"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/buttonCreate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onCreateGraph"
+            android:text="@string/create_new_graph" />
+
+    </LinearLayout>
+
     <TextView
+        android:id="@+id/textViewAddEdge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@id/layoutNumbersVertices"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/textViewAddEdge"
+        android:textSize="20sp" />
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/layoutAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewAddEdge"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextFrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/fromHint"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editTextTo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/to"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editTextWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/weight"
+            android:inputType="numberSigned" />
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onAddEdge"
+            android:text="@string/add" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewShowGraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutAdd"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewFindWay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewAnswer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="62dp"
+        android:text="@string/find_route"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/layoutFind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewShowGraph"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextFromFind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/fromHint"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editTextToFind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/to"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/buttonFind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onFindRoute"
+            android:text="@string/find" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutFind"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:text="@string/answer"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewShowAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewAnswer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp" />
+</RelativeLayout>
