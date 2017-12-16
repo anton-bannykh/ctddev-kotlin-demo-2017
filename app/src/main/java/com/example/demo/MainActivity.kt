@@ -1,8 +1,10 @@
 package com.example.demo
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import my.lib.sumFun
+import android.view.View
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,5 +13,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun test() = sumFun(1, 2, 3)
+    fun addTree(v: View) {
+        val s = Elem.text.toString()
+        val nextIntent = Intent(this, FuncActivity::class.java)
+        nextIntent.putExtra(FuncActivity.ARRAY, s)
+        Elem.setText("")
+        startActivity(nextIntent)
+    }
+
+    fun Close(v: View) {
+        finish()
+    }
 }

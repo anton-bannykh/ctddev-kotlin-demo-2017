@@ -1,4 +1,20 @@
 <resources>
-    <string name="app_name">Demo</string>
+    <string name="app_name">SegmentTree</string>
     <string name="greeting">Wassup!</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="Preview">Here you can add array to create SegmentTree</string>
+    <string name="Addd">Add array of Int</string>
+    <string name="AddTr">Add Tree</string>
+    <string name="title_activity_func">It`s OK</string>
+    <string name="add_element">Add Element</string>
+    <string name="set_element">Set Element</string>
+    <string name="get_min">Get Min</string>
+    <string name="new_tree">New Tree</string>
+    <string name="index">Index</string>
+    <string name="start">Start</string>
+    <string name="value">Value</string>
+    <string name="finish">Finish</string>
 </resources>
