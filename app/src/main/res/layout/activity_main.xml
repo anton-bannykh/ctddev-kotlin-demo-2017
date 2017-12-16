@@ -1,20 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.demo.MainActivity">
+    tools:context="com.example.sun.centroiddecomposition.MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/N"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Enter N"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/edge"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="98dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="71dp"
+        android:onClick="createGraph"
+        android:text="Add N"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/N"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/answer"
+        android:layout_width="218dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <EditText
+        android:id="@+id/edge"
+        android:layout_width="94dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:hint="Enter edge"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/N" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="96dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="83dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="21dp"
+        android:onClick="addEdge"
+        android:text="Add edge"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edge"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginTop="78dp"
+        android:onClick="mainly"
+        android:text="Centroid Decomposition is"
+        app:layout_constraintBottom_toTopOf="@+id/answer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edge"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="28dp"
+        android:onClick="start"
+        android:text="Start again"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="151dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="173dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:text="Create a graph"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/N"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

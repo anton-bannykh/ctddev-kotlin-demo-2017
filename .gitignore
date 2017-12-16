@@ -1,7 +1,5 @@
 .gradle
 /build/
-.idea/
-out/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -17,7 +15,7 @@ gradle-app.setting
 
 *.iml
 /local.properties
-/.idea/
+.idea
 .DS_Store
 /build
 /captures
