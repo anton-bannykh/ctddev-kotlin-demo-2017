@@ -1,6 +1,9 @@
+package my.lib
+
 fun kth(array: IntArray, k: Int): Int {
     checkInput(array, k)
     return kth(array, 0, array.size, k)
+
 }
 
 private fun checkInput(array: IntArray, k: Int) {
@@ -59,3 +62,4 @@ private fun IntArray.swap(i: Int, j: Int) {
     this[i] = this[j]
     this[j] = t
 }
+
