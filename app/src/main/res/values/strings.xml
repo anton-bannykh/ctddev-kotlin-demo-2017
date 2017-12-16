@@ -8,4 +8,5 @@
     <string name="add_edge">Add edge</string>
     <string name="get_result">Get result</string>
     <string name="result">Result</string>
+    <string name="delete_graph">Delete graph</string>
 </resources>

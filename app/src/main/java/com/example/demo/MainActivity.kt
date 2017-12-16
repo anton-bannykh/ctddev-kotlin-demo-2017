@@ -1,4 +1,4 @@
-package com.example.maxim.kruskal
+package com.example.demo
 
 import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         uTextEditor = findViewById(R.id.u_input)
         vTextEditor = findViewById(R.id.v_input)
         wTextEditor = findViewById(R.id.w_input)
-        resultTextView = findViewById(R.id.tv_result_output)
+        resultTextView = findViewById(R.id.result_output)
     }
 
     fun click1(v: View) {
@@ -42,5 +42,10 @@ class MainActivity : AppCompatActivity() {
 
     fun click3(v: View) {
         resultTextView.setText(getWeightOfMST(n, l.toTypedArray()).toString())
+    }
+
+    fun click4(v: View) {
+        n = 0
+        l.clear()
     }
 }

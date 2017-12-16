@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.maxim.kruskal.MainActivity">
+    tools:context="com.example.demo.MainActivity">
 
     <LinearLayout
+        android:id="@+id/input_and_button_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/verteces_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/vertex_number" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click1"
+            android:text="@string/submit" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/input_and_button_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/input_and_button_1"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:id="@+id/u_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/first_vertex" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -17,73 +49,53 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/verteces_input"
+                android:id="@+id/v_input"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/vertex_number" />
+                android:hint="@string/second_vertex" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="click1"
-                android:text="@string/submit" />
-
+                android:onClick="click2"
+                android:text="@string/add_edge" />
         </LinearLayout>
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/w_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <EditText
-                android:id="@+id/u_input"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/first_vertex" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/v_input"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/second_vertex" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="click2"
-                    android:text="@string/add_edge" />
-
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/w_input"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/weight_of_edge" />
-
+            android:hint="@string/weight_of_edge" />
     </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_and_button_2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:onClick="click3"
+        android:text="@string/get_result" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="click3"
-                android:text="@string/get_result" />
+    <TextView
+        android:layout_below="@id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/result_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:text="@string/result" />
 
-            <TextView
-                android:id="@+id/tv_result_output"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/result" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/result_output"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:onClick="click4"
+        android:text="@string/delete_graph" />
 
-        </LinearLayout>
-    </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
