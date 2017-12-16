@@ -45,10 +45,14 @@ class MainTest {
     }
 
     /*@Test(expected = IllegalArgumentException::class)
+=======
+    @Test(expected = IllegalArgumentException::class)
+>>>>>>> Stashed changes
     fun testMatrixProduct3() {
         val a = Array(2, { intArrayOf(1, 2) })
         val b = Array(1, { intArrayOf(1) })
         matrixProduct(a, b, 123)
+<<<<<<< Updated upstream
         Assert.fail("Product of matrices of incorrect sizes must throw exception");
     }*/
 

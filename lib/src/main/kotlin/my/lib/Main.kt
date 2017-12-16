@@ -1,30 +1,9 @@
 package my.lib
-import java.util.Scanner
 
 /**
  * Created by Maria Popyrkina on 04.12.2017.
  */
 
-fun main(args: Array<String>) {
-    val sc = Scanner(System.`in`)
-    val vers = sc.nextInt()
-    val edges = sc.nextInt()
-
-    val g = Array(vers, { IntArray(vers) })
-    for (it in 1..edges) {
-        val fromEdge = sc.nextInt() - 1
-        val toEdge = sc.nextInt() - 1
-        g[fromEdge][toEdge] += 1
-    }
-
-    val k = sc.nextLong()
-    val modulo = 1000000000
-
-    val answer = matrixPower(g, k, modulo)
-    for (line in answer) {
-        println(line.joinToString(" "))
-    }
-}
 
 fun matrixIdentity(n: Int): Array<IntArray> {
     val answer = Array(n, { IntArray(n) })
