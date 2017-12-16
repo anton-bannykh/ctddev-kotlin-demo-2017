@@ -44,14 +44,14 @@ class MainActivity : AppCompatActivity() {
         private lateinit var curAns : Pair<Point, Point>
 
         class ItemHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-            lateinit var p : Point
+            private lateinit var p : Point
             fun bindPoint(p : Point, isAns : Boolean) {
                 this.p = p
                 val view = (itemView as TextView)
                 view.text = p.toString()
                 view.setBackgroundColor(
                         if (isAns) itemView.context.resources.getColor(R.color.ansPointsBackground)
-                        else Color.WHITE);
+                        else Color.WHITE)
             }
         }
 
