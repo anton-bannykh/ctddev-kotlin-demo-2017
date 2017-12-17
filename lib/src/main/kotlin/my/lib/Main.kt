@@ -1,3 +1,5 @@
+package my.lib
+
 fun main(args: Array<String>) {
     println("Hello world!")
 }
@@ -12,4 +14,4 @@ fun sum(vararg ints: Int): Int {
     return result
 }
 
-fun sumFun(vararg ints: Int) = ints.fold(0) {acc, i -> acc + i }
+fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
