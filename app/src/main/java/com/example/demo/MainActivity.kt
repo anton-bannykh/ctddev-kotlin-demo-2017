@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import my.lib.*
+import my.lib.solve
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val weight = arrayListOf<Int>()
         buttonAdd.setOnClickListener {
             if (lastAction) {
-                textAns.text = "answer:\n"
+                textAns.text = "Answer:\n"
                 textThings.text = "Things:\n"
             }
             val p = editPrice.text
@@ -68,11 +68,12 @@ class MainActivity : AppCompatActivity() {
                 for (i in ans) {
                     answer += "$i "
                 }
+                if (ans.isEmpty())
+                    answer += "nothing"
                 textAns.text = textAns.text.toString().plus(answer)
             } catch (e: Exception) {
                 Toast.makeText(this, "Check input1", Toast.LENGTH_LONG).show()
             }
         }
-
     }
 }

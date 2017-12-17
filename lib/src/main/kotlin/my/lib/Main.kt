@@ -33,21 +33,3 @@ fun solve(n: Int, W: Int, weight2: IntArray, price2: IntArray): ArrayList<Int> {
     ans.sort()
     return ans
 }
-
-
-fun main(args: Array<String>) {
-    val string = "1,2         3 4 , 5   ,5   5 ,  5, 2"
-    val a = parse(string)
-    for (x in a) {
-        print("$x ")
-    }
-}
-
-fun parse(string: String) =
-        string.split(',')
-                .filterNot { it.isEmpty() }
-                .map { it.split(' ') }
-                .flatMap { it }
-                .filterNot { it.isEmpty() }
-                .map { it.toInt() }.toIntArray()
-
