@@ -1,6 +1,6 @@
 package my.lib
 
-fun sort_(arr: IntArray) {
+fun sortH(arr: IntArray) {
     var N: Int = arr.size
     var k: Int = N / 2
 
@@ -42,6 +42,6 @@ fun printArray(ms: IntArray) {
 
 fun main(args: Array<String>) {
     val ms = intArrayOf(1, 4, 2, 5, 6, 4, -4, -43, 313, 242, 32, 42, 2, 4, 42)
-    sort_(ms)
+    sortH(ms)
     printArray(ms)
 }
