@@ -1,4 +1,6 @@
-import kotlin.math.min
+package my.lib
+
+import java.lang.Math.min
 
 fun floyd(d: Array<Array<Int>>): Array<Array<Int>> {
     var n = d.size
