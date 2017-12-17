@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import my.lib.sort_
+import my.lib.sortH
 
 class MainActivity : AppCompatActivity() {
     val ms = intArrayOf(1, 4, 2, 5, 6, 4, -4, -43, 313, 242, 32, 42, 2, 4, 42)
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         tv.setText(text)
         var btn_sort = findViewById(R.id.btn_sort) as Button
         btn_sort.setOnClickListener {
-            sort_(ms)
+            sortH(ms)
             val sorted_ms = ms
             text = ""
             for (it in sorted_ms) {
@@ -35,5 +35,4 @@ class MainActivity : AppCompatActivity() {
     //fun test() = sumFun(1, 2, 3)
 
 }
-
 
