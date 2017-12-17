@@ -3,6 +3,7 @@ package my.lib
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import quickSort
 import java.util.Random
 
 class MainTest {
