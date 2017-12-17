@@ -5,7 +5,7 @@ import org.junit.Test
 
 class MainTest {
 
-    private fun checkAns(n: Int, W: Int, weight: Array<Int>, price: Array<Int>): ArrayList<Int> {
+    private fun checkAns(n: Int, W: Int, weight: IntArray, price: IntArray): ArrayList<Int> {
         val ans = ArrayList<Int>()
         var pr = 0
         val x = 1 shl (n) - 1
@@ -37,26 +37,26 @@ class MainTest {
 
     @Test
     fun test1() {
-        assertEquals(arrayListOf(1, 3, 4), solve(4, 6, arrayOf(2, 4, 1, 2), arrayOf(7, 2, 5, 1)))
+        assertEquals(arrayListOf(1, 3, 4), solve(4, 6, intArrayOf(2, 4, 1, 2), intArrayOf(7, 2, 5, 1)))
     }
 
     @Test
     fun test2() {
-        assertEquals(arrayListOf(1), solve(1, 1, arrayOf(1), arrayOf(1)))
+        assertEquals(arrayListOf(1), solve(1, 1, intArrayOf(1), intArrayOf(1)))
     }
 
     @Test
     fun test3() {
         val v = 10
         for (n in 3..15) {
-            val price = Array(n, { i -> i * i })
-            val weight = Array(n, { i -> i + 1 })
+            val price = IntArray(n, { i -> i * i })
+            val weight = IntArray(n, { i -> i + 1 })
             assertEquals(checkAns(n, v, weight, price), solve(n, v, weight, price))
         }
     }
 
     @Test
     fun test4() {
-        assertEquals(arrayListOf<Int>(), solve(3, 1, arrayOf(3, 3, 3), arrayOf(4, 4, 4)))
+        assertEquals(arrayListOf<Int>(), solve(3, 1, intArrayOf(3, 3, 3), intArrayOf(4, 4, 4)))
     }
 }
