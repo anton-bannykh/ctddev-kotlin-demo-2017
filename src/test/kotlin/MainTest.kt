@@ -2,7 +2,6 @@ import org.junit.Test
 import java.util.Random
 
 class MainTest {
-   
     private fun randomTest(n: Int, maxCoordinate: Int, doubleCoordinate: Boolean = true): Boolean {
         val random = Random()
         val dc = if (doubleCoordinate) 1 else 0
