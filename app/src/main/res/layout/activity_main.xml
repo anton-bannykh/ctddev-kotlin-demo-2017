@@ -6,15 +6,109 @@
     android:layout_height="match_parent"
     tools:context="com.example.demo.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="95dp"
+        tools:ignore="MissingConstraints">
 
+        <EditText
+            android:id="@+id/From"
+            android:layout_width="105dp"
+            android:layout_height="46dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/rButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="find distance"
+            android:layout_toRightOf="@+id/gButton"/>
+
+        <TextView
+            android:id="@+id/randomTestText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/gButton"/>
+
+        <Button
+            android:id="@+id/gButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generate"/>
+
+        <EditText
+            android:id="@+id/To"
+            android:layout_width="105dp"
+            android:layout_height="46dp"
+            android:layout_alignEnd="@+id/rButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/rButton"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="1"
+            tools:layout_editor_absoluteX="116dp"
+            tools:layout_editor_absoluteY="449dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView3"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_alignLeft="@+id/To"
+            android:layout_alignStart="@+id/To"
+            android:text="To"
+            tools:layout_editor_absoluteX="116dp"
+            tools:layout_editor_absoluteY="430dp"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/From"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="From"
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="430dp"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/rText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView10"
+            android:layout_toRightOf="@+id/To"
+            android:textSize="35dp"
+            android:textColor="@android:color/black"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/To"
+            android:layout_marginLeft="29dp"
+            android:layout_marginStart="29dp"
+            android:layout_toEndOf="@+id/To"
+            android:layout_toRightOf="@+id/To"
+            android:textColor="@android:color/black"
+            android:text="Result" />
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
