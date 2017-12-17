@@ -4,45 +4,45 @@ fun main(args: Array<String>) {
     println("Hello world!")
 }
 
-val d = 256
-fun search(pat: String, txt: String, q: Int): Int {
-    var result = 0
+
+fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
+
+fun search(pat: String, txt: String): ArrayList<Int> {
+    val P = 31
     val M = pat.length
     val N = txt.length
-    var p = 0 // hash value for pattern
-    var t = 0 // hash value for txt
-    var h = 1
-    var i: Int
-    var j: Int
-    i = 0
-    while (i < M - 1) {
-        h = h * d % q
-        i++
-    }
-    i = 0
-    while (i < M) {
-        p = (d * p + pat[i].toInt()) % q
-        t = (d * t + txt[i].toInt()) % q
-        i++
-    }
-    i = 0
-    while (i <= N - M) {
-        if (p == t) {
-            j = 0
-            while (j < M) {
-                if (txt[i + j] != pat[j])
-                    break
-                j++
+    val answer = ArrayList<Int>()
+
+    if (M > N) {
+        answer.add(-1)
+    } else {
+        val hashArray = LongArray(N + 1)
+        val powAray = LongArray(N + 1)
+        hashArray[0] = 0
+        powAray[0] = 1
+        var pow: Long = 1
+
+        for (i in 1..N) { //хеши для всех префиксов txt
+            hashArray[i] = hashArray[i - 1] + (txt[i - 1] - 'a' + 1) * pow
+            pow *= P
+            powAray[i] = pow
+        }
+
+        var hashT: Long = 0
+        for (i in 0..M - 1) {
+            hashT += (pat[i] - 'a' + 1) * powAray[i]
+        }
+
+        var i = 1
+        var j = M
+        while (j <= N) {
+            val hT = hashT * powAray[i - 1]
+            if (hashArray[j] - hashArray[i - 1] == hT) {
+                answer.add(i)
             }
-            if (j == M)
-                result = i + 1
+            i++
+            j++
         }
-        if (i < N - M) {
-            t = (d * (t - txt[i].toInt() * h) + txt[i + M].toInt()) % q
-            if (t < 0)
-                t += q
-        }
-        i++
     }
-    return result
+    return answer
 }

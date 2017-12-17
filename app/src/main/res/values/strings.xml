@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">TextSearch</string>
+    <string name="greeting">Find the matches in the text</string>
+    <string name="enter_search_query">Search query</string>
+    <string name="enter_text">Text</string>
+    <string name="find">Search</string>
+    <string name="search_query_greeting">Search query</string>
+    <string name="text_greeting">Text</string>
+    <string name="search_button_text">Search</string>
+    <string name="string_no_matches">No matches</string>
+    <string name="string_no_matches_found">no matches found</string>
+    <string name="matches_found">matches found:</string>
 </resources>
