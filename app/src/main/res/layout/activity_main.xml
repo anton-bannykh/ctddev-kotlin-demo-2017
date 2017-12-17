@@ -7,7 +7,7 @@
     tools:context="com.example.demo.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Vertices"
         android:layout_width="0dp"
         android:layout_height="@dimen/data_height"
         android:layout_marginEnd="16dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/Edges"
         android:layout_width="0dp"
         android:layout_height="@dimen/data_height"
         android:layout_marginEnd="16dp"
@@ -34,10 +34,10 @@
         app:layout_constraintEnd_toStartOf="@+id/numberOfEdges"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/Vertices" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/Capacity"
         android:layout_width="0dp"
         android:layout_height="@dimen/data_height"
         android:layout_marginEnd="16dp"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toStartOf="@+id/maxCapacity"
         app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/Edges" />
 
     <EditText
         android:id="@+id/numberOfVertices"
@@ -99,13 +99,13 @@
         android:layout_marginTop="32dp"
         android:onClick="genRandomInput"
         android:text="Random"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/Start"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/Capacity" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Start"
         android:layout_width="115dp"
         android:layout_height="51dp"
         android:layout_marginEnd="44dp"
@@ -116,7 +116,7 @@
         app:layout_constraintTop_toBottomOf="@+id/maxCapacity" />
 
     <EditText
-        android:id="@+id/ans"
+        android:id="@+id/Ans"
         android:layout_width="92dp"
         android:layout_height="@dimen/data_height"
         android:layout_marginBottom="52dp"
@@ -131,7 +131,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/Flow"
         android:layout_width="181dp"
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
@@ -143,7 +143,7 @@
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/ans"
+        app:layout_constraintBottom_toTopOf="@+id/Ans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
