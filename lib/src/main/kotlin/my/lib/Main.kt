@@ -1,12 +1,6 @@
-<<<<<<< HEAD:src/main/kotlin/Main.kt
-class SplayTree<T : Comparable<T>> {
-=======
 package my.lib
 
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
->>>>>>> upstream/master:lib/src/main/kotlin/my/lib/Main.kt
+class SplayTree<T : Comparable<T>> {
 
     private var root : Node? = null
 
