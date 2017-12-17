@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/main/kotlin/Main.kt
 var c_st : Int = -1
 var c_end: Int = 0
 
@@ -17,6 +18,12 @@ fun dfs(v: Int, graph: MutableList<MutableList<Int>>, cycle: MutableList<Int>, p
     }
     cycle[v] = 2
     return false
+=======
+package my.lib
+
+fun main(args: Array<String>) {
+    println("Hello world!")
+>>>>>>> upstream/master:lib/src/main/kotlin/my/lib/Main.kt
 }
 
 fun answerRequest(ar: MutableList<Pair<Int, Int>> , n: Int) : MutableList<Int> {
