@@ -1,17 +1,31 @@
 package my.lib
 
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
-
-fun foo() = 10
-
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
+fun create(count: Int, arr: Array<Int>): Array<Int> {
+    val n = count
+    var array = arr
+    fun quickSort(left: Int, right: Int) {
+        var l = left
+        var r = right
+        var save: Int
+        var midel: Int = array[(l + r) / 2]
+        while (l <= r) {
+            while (array[l] < midel)
+                l++
+            while (array[r] > midel)
+                r--
+            if (l <= r) {
+                save = array[l]
+                array[l] = array[r]
+                array[r] = save
+                l++
+                r--
+            }
+        }
+        if (left < r)
+            quickSort(left, r)
+        if (l < right)
+            quickSort(l, right)
     }
-    return result
+    quickSort(0, n - 1)
+    return array
 }
-
-fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
