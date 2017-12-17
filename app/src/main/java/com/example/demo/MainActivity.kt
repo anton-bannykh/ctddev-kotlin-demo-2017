@@ -41,6 +41,6 @@ class MainActivity : AppCompatActivity() {
         val flows = maxFlow(n, m, data.v, data.u, data.c, 0, n - 1)
         var res = 0
         data.v.forEachIndexed { ind, ver -> if (ver == 1) res += flows[ind] }
-        ans.value = res
+        Ans.value = res
     }
 }
