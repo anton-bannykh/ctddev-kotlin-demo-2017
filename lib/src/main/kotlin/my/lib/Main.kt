@@ -6,12 +6,10 @@ class MyDSU(sizeX: Int) {
     private var size: Array<Int>? = null
     private var countSets: Int = 0
 
-    init {
-        parent = Array(sizeX + 1, { it })
-        size = Array(sizeX + 1, { 1 })
-        countSets = sizeX
-    }
-
+    parent = Array(sizeX + 1, { it })
+    size = Array(sizeX + 1, { 1 })
+    countSets = sizeX
+    
     fun size(x: Int): Int {
         return size!![find(x)]
     }
