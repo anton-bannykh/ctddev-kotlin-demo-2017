@@ -1,5 +1,7 @@
-private fun prefixFunction(s: String): Array<Int> {
-    val pi = Array(s.length + 1, { 0 })
+package ru.walingar.kmp
+
+private fun prefixFunction(s: String): IntArray {
+    val pi = IntArray(s.length + 1, { 0 })
     for (i in 1 until s.length) {
         var j = pi[i - 1]
         while (j > 0 && s[j] != s[i])
