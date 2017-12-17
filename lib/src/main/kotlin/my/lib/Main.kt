@@ -1,4 +1,12 @@
+<<<<<<< HEAD:src/main/kotlin/Main.kt
 import kotlin.math.min
+=======
+package my.lib
+
+fun main(args: Array<String>) {
+    println("Hello world!")
+}
+>>>>>>> upstream/master:lib/src/main/kotlin/my/lib/Main.kt
 
 fun floyd(d: Array<Array<Int>>): Array<Array<Int>> {
     var n = d.size
@@ -14,6 +22,7 @@ fun floyd(d: Array<Array<Int>>): Array<Array<Int>> {
             }
         }
     }
+<<<<<<< HEAD:src/main/kotlin/Main.kt
     for (k in 0 until n) {
         for (i in 0 until n) {
             for (j in 0 until n) {
@@ -25,3 +34,9 @@ fun floyd(d: Array<Array<Int>>): Array<Array<Int>> {
     }
     return d
 }
+=======
+    return result
+}
+
+fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
+>>>>>>> upstream/master:lib/src/main/kotlin/my/lib/Main.kt
