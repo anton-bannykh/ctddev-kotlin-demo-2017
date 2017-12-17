@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/main/kotlin/Main.kt
 import java.util.Random
 
 fun ClosedRange<Int>.random() = Random().nextInt(endInclusive - start) + start
@@ -6,6 +7,12 @@ fun Array<Int>.swap(index1: Int, index2: Int) {
     val tmp = this[index1]
     this[index1] = this[index2]
     this[index2] = tmp
+=======
+package my.lib
+
+fun main(args: Array<String>) {
+    println("Hello world!")
+>>>>>>> upstream/master:lib/src/main/kotlin/my/lib/Main.kt
 }
 
 fun partition(arr: Array<Int>, left: Int, right: Int) : Int {
