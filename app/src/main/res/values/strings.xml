@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">QuickSort</string>
+    <string name="zhen_chen_text">ZHen_CHEN\'</string>
+    <string name="answer">Исходный массив: %1s Отсортированный массив: %1s</string>
 </resources>
