@@ -2,16 +2,12 @@ package com.example.demo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import kotlinx.android.synthetic.*
-import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.Math.min
-import java.util.*
+import java.util.Random
 import android.widget.Toast
-
+import java.lang.Math.min
 
 class MainActivity : AppCompatActivity() {
     private var dst: Array<Array<Int>>? = null
@@ -20,13 +16,12 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-
         val gButton = findViewById<Button>(R.id.gButton)
         val rButton = findViewById<Button>(R.id.rButton)
         val rText = findViewById<TextView>(R.id.rText)
         val from = findViewById<EditText>(R.id.From)
         val to = findViewById<EditText>(R.id.To)
-        var test = findViewById<TextView>(R.id.randomTestText)
+        val test = findViewById<TextView>(R.id.randomTestText)
         var s = ""
         test.text = s
         var haveGraph = false
@@ -63,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun floyd(d: Array<Array<Int>>): Array<Array<Int>> {
+    private fun floyd(d: Array<Array<Int>>): Array<Array<Int>> {
         var n = d.size
         val inf = Int.MAX_VALUE
         for (i in 0 until n) {

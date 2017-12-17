@@ -1,4 +1,5 @@
 package my.lib
+
 import java.lang.Math.min
 
 fun floyd(d: Array<Array<Int>>): Array<Array<Int>> {
@@ -24,5 +25,5 @@ fun floyd(d: Array<Array<Int>>): Array<Array<Int>> {
             }
         }
     }
-    return d 
+    return d
 }
