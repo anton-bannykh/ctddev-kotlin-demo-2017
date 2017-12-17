@@ -1,4 +1,4 @@
-[![Build status](https://api.travis-ci.org/Walingar/ctddev-kotlin-demo-2017.svg?branch=nikolay-rykunov-android)](https://travis-ci.org/Walingar/ctddev-kotlin-demo-2017)
+[![Build status](https://api.travis-ci.org/Walingar/ctddev-kotlin-demo-2017.svg?branch=master)](https://travis-ci.org/Walingar/ctddev-kotlin-demo-2017)
 # Kotlin course 2017
 ## Рыкунов Николай
 
