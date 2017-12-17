@@ -2,15 +2,9 @@ package my.lib
 
 class MyDSU(sizeX: Int) {
 
-    private var parent: Array<Int>? = null
-    private var size: Array<Int>? = null
-    private var countSets: Int = 0
-
-    init {
-        parent = Array(sizeX + 1, { it })
-        size = Array(sizeX + 1, { 1 })
-        countSets = sizeX
-    }
+    private var parent: Array<Int>? = Array(sizeX + 1, { it })
+    private var size: Array<Int>? = Array(sizeX + 1, { 1 })
+    private var countSets: Int = sizeX
 
     fun size(x: Int): Int {
         return size!![find(x)]
