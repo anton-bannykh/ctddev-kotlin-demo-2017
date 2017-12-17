@@ -1,4 +1,4 @@
-[![Build status](https://travis-ci.org/anton-bannykh/ctddev-kotlin-demo-2017.svg?branch=master)](https://travis-ci.org/anton-bannykh/ctddev-kotlin-demo-2017)
+[![Build status](https://api.travis-ci.org/Walingar/ctddev-kotlin-demo-2017.svg?branch=nikolay-rykunov-android)](https://travis-ci.org/Walingar/ctddev-kotlin-demo-2017)
 # Kotlin course 2017
 ## Рыкунов Николай
 
@@ -22,7 +22,24 @@
 */
 fun searchSubstring(s:String, k: String): Int
 ```
+# Задание 2
+## Алгоритм Кнута-Морриса-Пратта (приложение для Android)
+### Скриншоты:
+Вид приложения без ввода данных
 
+![alt text](artifacts/Without%20anything.png "Without anything")
+
+Подстрока не содержится в строке
+
+![alt text](artifacts/Substring%20doesn't%20occurrence.png "Substring doesn't occurrence")
+
+Подстрока содержится в строке
+
+![alt text](artifacts/pineaple%20and%20apple.png "pineapple and apple")
+
+Текст в котором содержится подстрока
+
+![alt text](artifacts/Big%20text%20with%20apple.png "Big text with apple")
 
 # Разное
 

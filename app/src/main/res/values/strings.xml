@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Knuth–Morris–Pratt algorithm</string>
+    <string name="first_occurrence">First occurrence will be here</string>
+    <string name="find_substring">Find substring</string>
+    <string name="substring">Substring</string>
+    <string name="main_string">Main string</string>
+    <string name="input_substring">Input substring</string>
+    <string name="input_string">Input string</string>
+</resources>
