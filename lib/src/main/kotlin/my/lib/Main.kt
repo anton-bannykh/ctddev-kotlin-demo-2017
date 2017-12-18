@@ -1,7 +1,9 @@
+package my.lib
+
 fun getMaxMatching(n: Int, m: Int, e: List<Pair<Int, Int>>): List<Pair<Int, Int>> {
     val g = Array(n, { arrayListOf<Int>() })
 
-    e.forEach { (u, v) -> g[u].add(v) }
+    e.forEach { (u, v) -> g[u - 1].add(v - 1) }
 
     val pair = Array<Int?>(m, { null })
     val used = Array(n, { false })
@@ -18,5 +20,5 @@ fun getMaxMatching(n: Int, m: Int, e: List<Pair<Int, Int>>): List<Pair<Int, Int>
         dfs(v)
     }
 
-    return pair.filterNotNull().mapIndexed { index, v -> v to index }
+    return pair.mapIndexed { index, v -> if (v == null) null else v + 1 to index + 1 }.filterNotNull()
 }
