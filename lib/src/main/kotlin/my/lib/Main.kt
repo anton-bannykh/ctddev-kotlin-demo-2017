@@ -1,3 +1,5 @@
+package my.lib
+
 public class Automation(private val numberOfVertexes: Int,
                         private val numberOfEdges: Int,
                         private val stringOfTerminals: String,
@@ -71,7 +73,7 @@ public class Automation(private val numberOfVertexes: Int,
             terminals.add(i.toInt())
         }
 
-        val autoS = stringOfAutomate.split(" ")
+        val autoS = stringOfAutomate.split("\\s".toRegex())
         for (i in 0 until numberOfEdges) {
             val l = autoS[i * 3].toInt()
             val r = autoS[i * 3 + 1].toInt()
