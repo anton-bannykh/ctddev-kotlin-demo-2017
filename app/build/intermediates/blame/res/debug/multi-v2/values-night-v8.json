@@ -4,7 +4,7 @@
             "outputFile": "/home/alexander/study/main/programming/Kotlin/homework/ctddev-kotlin-demo-2017/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/alexander/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/373e78a196965d31fab107e5c1a30aed/res/values-night-v8/values-night-v8.xml",
+                    "source": "/home/alexander/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1b9c216cf4f20de6ea590b6610bf26ac/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

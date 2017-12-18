@@ -1,4 +1,4 @@
-#Mon Dec 18 02:48:52 MSK 2017
-base.0=/home/alexander/study/main/programming/Kotlin/homework/ctddev-kotlin-demo-2017/app/build/intermediates/transforms/dexMerger/debug/7
+#Mon Dec 18 13:14:37 MSK 2017
+base.0=/home/alexander/study/main/programming/Kotlin/homework/ctddev-kotlin-demo-2017/app/build/intermediates/transforms/dexMerger/debug/26
 path.0=classes.dex
 renamed.0=classes.dex

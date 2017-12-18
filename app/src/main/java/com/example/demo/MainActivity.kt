@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addElement() {
+        if (addValueField.text.isEmpty()) return
         val x : Int = addValueField.text.toString().toInt()
         tree.put(x)
         val s = x.toString() + " was added to Splay tree"
@@ -43,13 +44,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun delElement() {
+        if (addValueField.text.isEmpty()) return
         val x : Int = delValueField.text.toString().toInt()
         tree.del(x)
-        val s = x.toString() + " was erased to Splay tree"
+        val s = x.toString() + " was erased from Splay tree"
         answerField.text = s
     }
 
     fun checkElement() {
+        if (addValueField.text.isEmpty()) return
         val x : Int = checkValueField.text.toString().toInt()
         answerField.text = if (tree.contains(x)) "Splay tree contains element " + x.toString() else "Splay tree doesn't contain element " + x.toString()
     }

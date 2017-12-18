@@ -4,7 +4,7 @@
             "outputFile": "/home/alexander/study/main/programming/Kotlin/homework/ctddev-kotlin-demo-2017/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/home/alexander/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/373e78a196965d31fab107e5c1a30aed/res/values-v24/values-v24.xml",
+                    "source": "/home/alexander/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/1b9c216cf4f20de6ea590b6610bf26ac/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/alexander/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/2b00c19a7ed1023a2d15bd44b89990a9/res/values-v24/values-v24.xml",
+                    "source": "/home/alexander/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c13e780bd1ca333f8e9e95db05b73e5a/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
