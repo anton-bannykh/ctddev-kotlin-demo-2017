@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RMQ</string>
+    <string name="find">Найти</string>
+    <string name="right">right</string>
+    <string name="left">left</string>
+    <string name="input_array">Введите числа, через запятые</string>
+    <string name="names">Поиск минимума на отрезке</string>
+</resources>
