@@ -1,3 +1,6 @@
+group 'demo'
+version '1.0-SNAPSHOT'
+
 buildscript {
   ext.kotlin_version = '1.2.0'
 
