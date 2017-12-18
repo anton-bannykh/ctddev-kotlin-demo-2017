@@ -11,6 +11,10 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.demo.R
 
+@DslMarker
+annotation class layoutConstructor
+
+@layoutConstructor
 class MyConstraintLayout(private val act: AppCompatActivity, name: Int) : ConstraintLayout(act) {
     private val k = act.applicationContext.resources.displayMetrics.density
     private val bounds = ConstraintSet()
@@ -33,6 +37,7 @@ class MyConstraintLayout(private val act: AppCompatActivity, name: Int) : Constr
     fun button(id: Int, init: MyButton.() -> Unit) = addElem(MyButton(act, id, bounds, k), init)
 }
 
+@layoutConstructor
 class MyTextView(act: AppCompatActivity, name: Int, private val bounds: ConstraintSet, private val k: Float) : TextView(act) {
     init {
         id = name
@@ -67,6 +72,7 @@ class MyTextView(act: AppCompatActivity, name: Int, private val bounds: Constrai
     }
 }
 
+@layoutConstructor
 class MyNumber(act: AppCompatActivity, name: Int, private val bounds: ConstraintSet, private val k: Float) : EditText(act) {
     init {
         id = name
@@ -100,6 +106,7 @@ class MyNumber(act: AppCompatActivity, name: Int, private val bounds: Constraint
     }
 }
 
+@layoutConstructor
 class MyButton(act: AppCompatActivity, name: Int, val bounds: ConstraintSet, private val k: Float) : Button(act) {
     init {
         id = name

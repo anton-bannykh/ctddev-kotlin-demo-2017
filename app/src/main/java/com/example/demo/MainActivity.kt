@@ -79,10 +79,10 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     textView(text4Id) {
-                        bottomMargin(number4Id, TOP, 0)
-                        center(layoutId)
                         text = "Maximum Flow"
                         textAlignment = View.TEXT_ALIGNMENT_CENTER
+                        bottomMargin(number4Id, TOP, 0)
+                        center(layoutId)
                     }
 
                     button(startId) {
