@@ -1,41 +1,63 @@
 package my.lib
 
 import org.junit.Assert.assertEquals
+
 import org.junit.Test
 
+
 class MainTest {
-    @Test
-    fun testFoo() {
-        assertEquals(10, foo())
-    }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+
+    fun test1() {
+
+        val a = intArrayOf(1, 2, 3, 3, 4, 4, 7, 8, 10)
+
+        assertEquals(2, BinarySearch(a, 3))
+
     }
 
-    @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
-    }
 
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+
+    fun test2() {
+
+        val a = intArrayOf(1, 2, 15, 40, 60, 70)
+
+        assertEquals(2, BinarySearch(a, 15))
+
     }
 
-    @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
 
     @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
+
+    fun test3() {
+
+        val a = intArrayOf(10, 20, 30, 40, 99, 200, 300)
+
+        assertEquals(5, BinarySearch(a, 200))
+
     }
 
+
     @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+
+    fun test4() {
+
+        val a = intArrayOf(13, 17, 65, 200, 658)
+
+        assertEquals(2, BinarySearch(a, 65))
+
     }
+
+
+    @Test
+
+    fun test5() {
+        val a = intArrayOf(45, 405, 963, 1000, 10023, 50000)
+        assertEquals(2, BinarySearch(a, 963))
+
+    }
+
+
 }
