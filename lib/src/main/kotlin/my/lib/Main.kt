@@ -24,8 +24,6 @@ fun BinarySearch(a: IntArray, x: Int): Int {
 
     }
 
-
-
     return binSearchRec(x, -1, a.size)
 
 }

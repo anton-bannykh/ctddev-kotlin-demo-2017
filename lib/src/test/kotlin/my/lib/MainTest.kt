@@ -4,7 +4,6 @@ import org.junit.Assert.assertEquals
 
 import org.junit.Test
 
-
 class MainTest {
 
     @Test
@@ -17,7 +16,6 @@ class MainTest {
 
     }
 
-
     @Test
 
     fun test2() {
@@ -27,7 +25,6 @@ class MainTest {
         assertEquals(2, BinarySearch(a, 15))
 
     }
-
 
     @Test
 
@@ -39,7 +36,6 @@ class MainTest {
 
     }
 
-
     @Test
 
     fun test4() {
@@ -50,7 +46,6 @@ class MainTest {
 
     }
 
-
     @Test
 
     fun test5() {
@@ -58,6 +53,5 @@ class MainTest {
         assertEquals(2, BinarySearch(a, 963))
 
     }
-
 
 }
