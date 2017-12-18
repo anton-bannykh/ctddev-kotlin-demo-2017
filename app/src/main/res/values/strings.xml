@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">Maximum Matching</string>
+    <string name="refresh">Обновить вершины</string>
+    <string name="parts_size">Размеры долей:</string>
+    <string name="edge_val">Номера вершин в ребре:</string>
+    <string name="add_edge">Добавить ребро</string>
+    <string name="edge_remove">Удалить ребро</string>
+    <string name="find_matching">Найти максимальное паросочетание</string>
 </resources>
