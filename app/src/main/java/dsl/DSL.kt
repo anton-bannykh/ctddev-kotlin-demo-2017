@@ -12,134 +12,92 @@ import android.widget.TextView
 import com.example.demo.R
 
 @DslMarker
-annotation class layoutConstructor
+annotation class LayoutConstructor
 
-@layoutConstructor
-class MyConstraintLayout(private val act: AppCompatActivity, name: Int) : ConstraintLayout(act) {
-    private val k = act.applicationContext.resources.displayMetrics.density
+@LayoutConstructor
+class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
+    val layout = ConstraintLayout(act)
     private val bounds = ConstraintSet()
+    private val k = act.applicationContext.resources.displayMetrics.density
+    val LEFT = ConstraintSet.START
+    val RIGHT = ConstraintSet.END
+    val TOP = ConstraintSet.TOP
+    val BOTTOM = ConstraintSet.BOTTOM
 
-    init {
-        id = name
-    }
-
-    private fun <T : View> addElem(elem: T, init: T.() -> Unit) {
-        addView(elem)
-        bounds.clone(this)
-        elem.init()
-        bounds.applyTo(this)
-    }
-
-    fun textView(id: Int, init: MyTextView.() -> Unit) = addElem(MyTextView(act, id, bounds, k), init)
-
-    fun number(id: Int, init: MyNumber.() -> Unit) = addElem(MyNumber(act, id, bounds, k), init)
-
-    fun button(id: Int, init: MyButton.() -> Unit) = addElem(MyButton(act, id, bounds, k), init)
-}
-
-@layoutConstructor
-class MyTextView(act: AppCompatActivity, name: Int, private val bounds: ConstraintSet, private val k: Float) : TextView(act) {
-    init {
-        id = name
+    private val initTextView: TextView.(Int) -> TextView = { textName ->
+        id = textName
         width = dp(195)
         height = dp(42)
         textSize = 22f
         textAlignment = View.TEXT_ALIGNMENT_VIEW_END
         setTextAppearance(act, R.style.Base_TextAppearance_AppCompat_Large)
+        this
     }
 
-    fun dp(x: Int): Int = (k * x).toInt()
-
-    fun leftMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.START, other, side, dist)
-    }
-
-    fun rightMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.END, other, side, dist)
-    }
-
-    fun topMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.TOP, other, side, dist)
-    }
-
-    fun bottomMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.BOTTOM, other, side, dist)
-    }
-
-    fun center(layoutId: Int) {
-        leftMargin(layoutId, ConstraintSet.START, 8)
-        rightMargin(layoutId, ConstraintSet.END, 8)
-    }
-}
-
-@layoutConstructor
-class MyNumber(act: AppCompatActivity, name: Int, private val bounds: ConstraintSet, private val k: Float) : EditText(act) {
-    init {
-        id = name
+    private val initNumber: EditText.(Int) -> EditText = { numberName ->
+        id = numberName
         layoutParams = ViewGroup.LayoutParams(dp(137), dp(42))
         textSize = 20f
         inputType = InputType.TYPE_CLASS_NUMBER
         textAlignment = View.TEXT_ALIGNMENT_CENTER
+        this
     }
 
-    fun dp(x: Int): Int = (k * x).toInt()
-
-    fun leftMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.START, other, side, dist)
-    }
-
-    fun rightMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.END, other, side, dist)
-    }
-
-    fun topMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.TOP, other, side, dist)
-    }
-
-    fun bottomMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.BOTTOM, other, side, dist)
-    }
-
-    fun center(layoutId: Int) {
-        leftMargin(layoutId, ConstraintSet.START, 8)
-        rightMargin(layoutId, ConstraintSet.END, 8)
-    }
-}
-
-@layoutConstructor
-class MyButton(act: AppCompatActivity, name: Int, val bounds: ConstraintSet, private val k: Float) : Button(act) {
-    init {
-        id = name
+    private val initButton: Button.(Int) -> Button = { buttonName ->
+        id = buttonName
         width = dp(115)
         height = dp(42)
+        this
+    }
 
+    init {
+        layout.id = name
     }
 
     fun dp(x: Int): Int = (k * x).toInt()
 
-    fun leftMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.START, other, side, dist)
+    fun <T : View> T.leftMargin(other: Int, side: Int, dist: Int) {
+        bounds.connect(id, LEFT, other, side, dist)
     }
 
-    fun rightMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.END, other, side, dist)
+    fun <T : View> T.rightMargin(other: Int, side: Int, dist: Int) {
+        bounds.connect(id, RIGHT, other, side, dist)
     }
 
-    fun topMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.TOP, other, side, dist)
+    fun <T : View> T.topMargin(other: Int, side: Int, dist: Int) {
+        bounds.connect(id, TOP, other, side, dist)
     }
 
-    fun bottomMargin(other: Int, side: Int, dist: Int) {
-        bounds.connect(id, ConstraintSet.BOTTOM, other, side, dist)
+    fun <T : View> T.bottomMargin(other: Int, side: Int, dist: Int) {
+        bounds.connect(id, BOTTOM, other, side, dist)
     }
 
-    fun onCLick(init: () -> Unit) {
-        setOnClickListener { init() }
+    fun <T : View> T.center(layoutId: Int) {
+        leftMargin(layoutId, LEFT, 8)
+        rightMargin(layoutId, RIGHT, 8)
     }
+
+    private fun <T : View> addElem(elem: T, init: T.() -> Unit): T {
+        layout.addView(elem)
+        bounds.clone(layout)
+        elem.init()
+        bounds.applyTo(layout)
+        return elem
+    }
+
+    fun textView(id: Int, init: TextView.() -> Unit) = addElem(TextView(act).initTextView(id), init)
+
+    fun number(id: Int, init: EditText.() -> Unit) = addElem(EditText(act).initNumber(id), init)
+
+    fun button(id: Int, init: Button.() -> Unit) = addElem(Button(act).initButton(id), init)
 }
 
-fun AppCompatActivity.constraintLayout(name: Int, init: MyConstraintLayout.() -> Unit): MyConstraintLayout {
-    val layout = MyConstraintLayout(this, name)
+fun Button.onCLick(init: () -> Unit) {
+    setOnClickListener { init() }
+}
+
+fun AppCompatActivity.constraintLayout(name: Int, init: ConstraintLayoutContext.() -> Unit): ConstraintLayoutContext {
+    val layout = ConstraintLayoutContext(this, name)
     layout.init()
     return layout
 }

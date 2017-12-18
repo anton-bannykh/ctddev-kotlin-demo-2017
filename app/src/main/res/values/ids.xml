@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="layoutId" />
+    <item type="id" name="verticesText" />
+    <item type="id" name="verticesNumber" />
+    <item type="id" name="edgesText" />
+    <item type="id" name="edgesNumber" />
+    <item type="id" name="capacityText" />
+    <item type="id" name="capacityNumber" />
+    <item type="id" name="flowText" />
+    <item type="id" name="flowNumber" />
+    <item type="id" name="randButton" />
+    <item type="id" name="startButton" />
+</resources>
