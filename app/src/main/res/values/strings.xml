@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">DSU</string>
+    <string-array name="arrayOfChoises">
+        <item>Одно ли множество у элементов</item>
+        <item>Объединить множества</item>
+    </string-array>
 </resources>

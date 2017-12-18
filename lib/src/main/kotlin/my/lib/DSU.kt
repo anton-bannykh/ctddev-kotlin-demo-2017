@@ -1,4 +1,4 @@
-
+package  my.lib
 class DSU(amount: Int = 0) {
     var data: Array<Node>
 
