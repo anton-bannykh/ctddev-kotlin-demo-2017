@@ -37,7 +37,6 @@ fun solve(n: Int, mas: IntArray, ll: Int, rr: Int): Int {
             sparseTable[i][j] = Math.min(sparseTable[i - 1][j], sparseTable[i - 1][j + powers[i - 1]])
         }
     }
-
     var left = ll
     var right = rr
     if (left > right) {
@@ -50,5 +49,5 @@ fun solve(n: Int, mas: IntArray, ll: Int, rr: Int): Int {
 }
 
 fun main(args: Array<String>) {
-
+    println("Hello, world")
 }
