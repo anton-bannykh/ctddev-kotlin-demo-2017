@@ -1,4 +1,3 @@
-import java.lang.Math
 
 class DSU(amount: Int = 0) {
     var data: Array<Node>
