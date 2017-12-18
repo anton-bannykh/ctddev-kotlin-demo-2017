@@ -3,39 +3,35 @@ package my.lib
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
+
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun test1() {
+        val arr = intArrayOf(0)
+        assertEquals(0, solve(arr.size, arr, 1, 1))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun test2() {
+        val arr = intArrayOf(-7, 4, 3, 2, 5, 8, -1)
+        assertEquals(-7, solve(arr.size, arr, 1, 7))
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun test3() {
+        val arr = intArrayOf(-7, 4, 3, 2, 5, 8, -1)
+        assertEquals(2, solve(arr.size, arr, 6, 2))
     }
 
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+    fun test4() {
+        val arr = intArrayOf(-7, 4, 3, 2, 5, 8, -1)
+        assertEquals(-1, solve(arr.size, arr, 7, 7))
     }
 
     @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
-
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun test5() {
+        val arr = intArrayOf(-7, 4, 3, 2, 5, -8, -1)
+        assertEquals(-8, solve(arr.size, arr, 6, 7))
     }
 }
