@@ -16,12 +16,6 @@ gradle-app.setting
 # Cache of project
 .gradletasknamecache
 
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-<<<<<<< HEAD
-# gradle/wrapper/gradle-wrapper.propertiess
-=======
-# gradle/wrapper/gradle-wrapper.properties
-
 *.iml
 /local.properties
 /.idea/
@@ -29,4 +23,3 @@ gradle-app.setting
 /build
 /captures
 .externalNativeBuild
->>>>>>> b69dab1... Gradle project structure for task2
