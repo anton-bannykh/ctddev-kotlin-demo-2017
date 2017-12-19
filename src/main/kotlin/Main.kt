@@ -30,7 +30,7 @@ fun ukkonen(sa : String) : Int {
     var e = edge()
     for (i in 0..l - 1) {
         if (index_on_edge != -1) {
-            if (a[i] == a[e.left + index_on_edge +1]) {
+            if (a[i] == a[e.left + index_on_edge + 1]) {
                 if (index_on_edge + 1 + e.left == e.right - 1) {
                     u = e.end
                     index_on_edge = -1
