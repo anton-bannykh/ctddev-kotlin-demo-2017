@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                             makeRandomInput()
                         }
                     }
-                }.layout
+                }
         )
         makeRandomInput()
     }

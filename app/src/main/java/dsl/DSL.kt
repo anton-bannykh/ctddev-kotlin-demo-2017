@@ -16,7 +16,7 @@ annotation class LayoutConstructor
 
 @LayoutConstructor
 class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
-    val layout = ConstraintLayout(act)
+    val layout = ConstraintLayout(act).apply { id = name }
     private val bounds = ConstraintSet()
     private val k = act.applicationContext.resources.displayMetrics.density
     val LEFT = ConstraintSet.START
@@ -48,10 +48,6 @@ class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
         width = dp(115)
         height = dp(42)
         this
-    }
-
-    init {
-        layout.id = name
     }
 
     fun dp(x: Int): Int = (k * x).toInt()
@@ -96,8 +92,8 @@ fun Button.onCLick(init: () -> Unit) {
     setOnClickListener { init() }
 }
 
-fun AppCompatActivity.constraintLayout(name: Int, init: ConstraintLayoutContext.() -> Unit): ConstraintLayoutContext {
+fun AppCompatActivity.constraintLayout(name: Int, init: ConstraintLayoutContext.() -> Unit): ConstraintLayout {
     val layout = ConstraintLayoutContext(this, name)
     layout.init()
-    return layout
+    return layout.layout
 }
