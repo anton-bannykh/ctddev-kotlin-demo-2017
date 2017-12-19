@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.text.InputType
 import android.view.View
 import android.widget.EditText
-import android.widget.LinearLayout
+import com.example.demo.builder.*
 import hw1.splay.splaySetOf
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.cancelButton
@@ -21,48 +21,42 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(
                 linearLayout {
-                    layoutParams = LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.MATCH_PARENT
-                    )
+                    layoutParams = linearLayoutParams {
+                        width = MATCH_PARENT
+                        height = MATCH_PARENT
+                    }
 
-                    orientation = LinearLayout.VERTICAL
+                    orientation = VERTICAL
 
-
-                    val layoutParams =
-                        LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT,
-                            1F
-                        ).apply {
-                            setMargins(16.toDp(), 16.toDp(), 16.toDp(), 16.toDp())
-                        }
-
-                    textView(text = resources.getText(R.string.greeting)) {
-                        setTextColor(resources.getColor(R.color.colorPrimaryDark))
+                    textView {
+                        text = extractString(R.string.greeting)
+                        textColor = extractColor(R.color.colorPrimaryDark)
                         textSize = 36F
                     }
 
-                    button(
-                            id = R.id.button_add,
-                            text = resources.getText(R.string.add_number),
-                            onClickListener = this@MainActivity
-                    )
+                    button {
+                        id = R.id.button_add
+                        text = extractString(R.string.add_number)
+                        onClick= this@MainActivity
+                    }
 
-                    button(
-                            id = R.id.button_contains,
-                            text = resources.getText(R.string.contains_number),
-                            onClickListener = this@MainActivity
-                    )
+                    button {
+                        id = R.id.button_contains
+                        text = extractString(R.string.contains_number)
+                        onClick = this@MainActivity
+                    }
 
-                    button(
-                            id = R.id.button_remove,
-                            text = resources.getText(R.string.remove_number),
-                            onClickListener = this@MainActivity
-                    )
+                    button {
+                        id = R.id.button_remove
+                        text = extractString(R.string.remove_number)
+                        onClick = this@MainActivity
+                    }
 
-                    forEachView {
-                        this.layoutParams = layoutParams
+                    childrenLayout = linearLayoutParams {
+                        width = MATCH_PARENT
+                        height = WRAP_CONTENT
+                        weight = 1F
+                        margin = 16.dp
                     }
                 }
         )
