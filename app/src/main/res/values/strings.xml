@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Demo</string>
     <string name="greeting">Wassup!</string>
+    <string name="sortoff_text">Your array</string>
+    <string name="invalid_input">Invalid input</string>
+    <string name="empty_input">Empty input</string>
 </resources>
