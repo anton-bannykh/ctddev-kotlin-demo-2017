@@ -7,6 +7,7 @@ data class Query (
     val r: Int,
     val id: Int
 )
+//Do I need to change something to force travis?
 
 class MyPair(val first: Int, val second: Int) : Comparable<MyPair>
 {
