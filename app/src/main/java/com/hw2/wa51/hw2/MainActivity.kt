@@ -1,18 +1,58 @@
 package com.hw2.wa51.hw2
 
-//import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.Random
 import kotlin.collections.ArrayList
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
+    var TextView.value: Int
+        get() = text.toString().toInt()
+        set(x) {
+            text = x.toString()
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        val display = getWindowManager().getDefaultDisplay()
+        val w = display.getWidth();
+        val h = display.getHeight();
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(
+                constraintLayout(R.layout.activity_main) {
+                    textView(R.id.textView) {
+                        leftMargin(R.layout.activity_main, LEFT, (w - dp(200)) / 2)
+                        text = "find points"
+                        width = dp(200)
+                    }
+
+                    button(R.id.gen) {
+                        bottomMargin(R.layout.activity_main, BOTTOM, dp(10))
+                        leftMargin(R.layout.activity_main, LEFT, (w - dp(200)) / 2)
+                        text = "generate"
+                        width = dp(200)
+                        height = dp(50)
+
+                        onCLick {
+                            gen()
+                        }
+                    }
+
+                    button(R.id.run) {
+                        bottomMargin(R.layout.activity_main, BOTTOM, dp(70))
+                        leftMargin(R.layout.activity_main, LEFT, (w - dp(200)) / 2)
+                        text = "run"
+                        width = dp(200)
+                        height = dp(50)
+
+                        onCLick {
+                            run()
+                        }
+                    }
+                }.layout
+        )
     }
 
     fun min(a : Int, b : Int) : Int = if (a > b) b else a
@@ -103,8 +143,7 @@ class MainActivity : AppCompatActivity() {
 
     var g : Graph = Graph(0)
 
-    //@SuppressLint("SetTextI18n")
-    public fun gen (view : android.view.View) {
+    public fun gen () {
         var rand = Random()
         var n = rand.nextInt(4) + 2
         var m = rand.nextInt(n * (n - 1) / 2) + 1
@@ -119,8 +158,7 @@ class MainActivity : AppCompatActivity() {
         textView.text = str
     }
 
-    //@SuppressLint("SetTextI18n")
-    public fun run (view : android.view.View) {
+    public fun run () {
         var ans = points(g)
         var str = ""
         for (i in ans) {
