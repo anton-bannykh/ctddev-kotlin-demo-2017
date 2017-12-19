@@ -7,12 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import kotlin.DeprecationLevel.ERROR
 
 /**
- * Created by greg on 17/12/2017.
- */
-
-internal val nop: Any.() -> Unit = {}
+* Created by greg on 17/12/2017.
+*/
+const val NO_GETTER = "This property haven't got getter"
 
 fun Context.extractString(id: Int): String = resources.getText(id).toString()
 
@@ -27,7 +28,7 @@ val <T: Number> T.sp: Float
     get() = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, this.toFloat(), Resources.getSystem().displayMetrics)
 
 var View.onClick: View.OnClickListener
-    get() = throw RuntimeException() // TODO Have to something with this
+    @Deprecated(NO_GETTER, level = ERROR) get() = throw IllegalStateException("Don't even try through reflection!")
     set(value) = setOnClickListener(value)
 
 fun View.onClick(onClick: (View) -> Unit) =
@@ -53,36 +54,27 @@ var ViewGroup.childrenLayout: ViewGroup.LayoutParams?
         }
     }
 
-private fun equals(vararg os: Any?): Boolean {
-    val o1 = os.first()
-    for (o2 in os) {
-        if (o1?.equals(o2) == false) {
-            return false
-        }
-    }
-    return true
-}
-
 val ViewGroup.LayoutParams.MATCH_PARENT get() = ViewGroup.LayoutParams.MATCH_PARENT
 val ViewGroup.LayoutParams.WRAP_CONTENT get() = ViewGroup.LayoutParams.WRAP_CONTENT
 var ViewGroup.MarginLayoutParams.margin: Int
-    get() = if (equals(leftMargin, topMargin, rightMargin, bottomMargin))
-        leftMargin
-    else
-        throw IllegalStateException("Margins are not equal")
+    @Deprecated(NO_GETTER, level = ERROR) get() = throw IllegalStateException("Don't even try through reflection!")
     set(value) = setMargins(value, value, value, value)
 
 val LinearLayout.VERTICAL get() = LinearLayout.VERTICAL
 val LinearLayout.HORIZONTAL get() = LinearLayout.HORIZONTAL
 
 fun <T: ViewGroup, R: ViewGroup.LayoutParams>
-        T.customLayoutParams(layoutParams: R, init: R.() -> Unit = nop): R {
+        T.customLayoutParams(layoutParams: R, init: R.() -> Unit): R {
     layoutParams.init()
     return layoutParams
 }
 
-fun LinearLayout.linearLayoutParams(init: LinearLayout.LayoutParams.() -> Unit = nop) =
+fun LinearLayout.linearLayoutParams(init: LinearLayout.LayoutParams.() -> Unit) =
         customLayoutParams(LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.MATCH_PARENT
                     ), init)
+
+fun Context.toast(text: CharSequence) {
+    Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+}

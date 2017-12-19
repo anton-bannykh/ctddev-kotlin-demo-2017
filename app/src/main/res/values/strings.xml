@@ -4,4 +4,5 @@
     <string name="add_number">Add number to set</string>
     <string name="remove_number">Remove number from set</string>
     <string name="contains_number">Contains number</string>
+    <string name="apply">Apply</string>
 </resources>

@@ -5,14 +5,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.InputType
 import android.view.View
-import android.widget.EditText
 import com.example.demo.builder.*
 import hw1.splay.splaySetOf
-import org.jetbrains.anko.alert
-import org.jetbrains.anko.cancelButton
-import org.jetbrains.anko.toast
-import org.jetbrains.anko.yesButton
-
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private val splaySet = splaySetOf<Int>()
@@ -56,25 +50,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         width = MATCH_PARENT
                         height = WRAP_CONTENT
                         weight = 1F
-                        margin = 16.dp
+
+                        margin = 16
                     }
                 }
         )
     }
 
     override fun onClick(view: View) {
+        val input = editText {
+            inputType = InputType.TYPE_CLASS_NUMBER
+            setRawInputType(Configuration.KEYBOARD_12KEY)
+        }
+
         when (view.id) {
             R.id.button_add -> {
                 alert {
                     title = "Insert number"
-
-                    val input = EditText(this@MainActivity)
-                    input.inputType = InputType.TYPE_CLASS_NUMBER
-                    input.setRawInputType(Configuration.KEYBOARD_12KEY)
-
                     customView = input
 
-                    yesButton {
+                    applyButton {
                         val number = input.text.toString().toInt()
                         splaySet.add(number)
                         toast("Number $number added to set!")
@@ -89,14 +84,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.button_remove -> {
                 alert {
                     title = "Remove number"
-
-                    val input = EditText(this@MainActivity)
-                    input.inputType = InputType.TYPE_CLASS_NUMBER
-                    input.setRawInputType(Configuration.KEYBOARD_12KEY)
-
                     customView = input
 
-                    yesButton {
+                    applyButton {
                         val number = input.text.toString().toInt()
                         if (splaySet.remove(number)) {
                             toast("Number $number remove to set!")
@@ -114,14 +104,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.button_contains -> {
                 alert {
                     title = "Contains number"
-
-                    val input = EditText(this@MainActivity)
-                    input.inputType = InputType.TYPE_CLASS_NUMBER
-                    input.setRawInputType(Configuration.KEYBOARD_12KEY)
-
                     customView = input
 
-                    yesButton {
+                    applyButton {
                         val number = input.text.toString().toInt()
                         if (splaySet.remove(number)) {
                             toast("Number $number exists in set!")
