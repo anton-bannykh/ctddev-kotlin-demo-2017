@@ -5,37 +5,44 @@ import org.junit.Test
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun testEmptyString1() {
+        var expected = ArrayList<Int>()
+        assertEquals(expected, substringSearch("", "aaa"))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testEmptyString2() {
+        var expected = ArrayList<Int>()
+        assertEquals(expected, substringSearch("aaa", ""))
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun testEmptyStrings() {
+        var expected = ArrayList<Int>()
+        assertEquals(expected, substringSearch("", ""))
     }
 
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+    fun testZeroIndex() {
+        var expected = arrayListOf<Int>(0)
+        assertEquals(expected, substringSearch("a", "abc"))
     }
 
     @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
+    fun testWithoutOccurrences() {
+        var expected = ArrayList<Int>()
+        assertEquals(expected, substringSearch("d", "abc"))
     }
 
     @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
+    fun testSimple() {
+        var expected = arrayListOf<Int>(2)
+        assertEquals(expected, substringSearch("c", "abc"))
     }
 
     @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun testMany() {
+        var expected = arrayListOf<Int>(0, 4, 7, 11)
+        assertEquals(expected, substringSearch("aba", "abacabaabacaba"))
     }
 }
