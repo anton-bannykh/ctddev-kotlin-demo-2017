@@ -2,7 +2,7 @@ package com.example.demo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import my.lib.sumFun
+//import my.lib.sumFun
 
 class MainActivity : AppCompatActivity() {
 
