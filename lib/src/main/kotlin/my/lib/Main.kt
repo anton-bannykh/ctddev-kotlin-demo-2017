@@ -1,17 +1,24 @@
 package my.lib
 
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
+import java.util.Random
 
-fun foo() = 10
-
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
+class Shuffler<T>() {
+    val rnd = Random()
+    init {
+        rnd.setSeed(System.currentTimeMillis())
     }
-    return result
+    fun shuffle(arr: Array<T>) {
+        for (i in arr.size - 1 downTo 1) {
+            val i1 = rnd.nextInt(i)
+            arr[i] = arr[i1].also({ arr[i1] = arr[i] })
+        }
+    }
+    fun badShuffle(arr: Array<T>) {
+        for (i in 0..arr.size - 1) {
+            val i1 = rnd.nextInt(arr.size-1)
+            arr[i] = arr[i1].also({ arr[i1] = arr[i] })
+        }
+    }
 }
 
-fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
+fun Double.format(digits: Int) = java.lang.String.format("%.${digits}f", this)
