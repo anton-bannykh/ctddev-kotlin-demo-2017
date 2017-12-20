@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Метод отжига</string>
+    <string name="test">решение</string>
+    <string name="random">Random</string>
+    <string name="topCoordinate">Введите координаты вершин</string>
+    <string name="answer">Введите координаты вершин и нажмите \"решение\"</string>
+
+</resources>
