@@ -3,37 +3,20 @@ import org.junit.Test
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun test1() {
+        assertEquals(1, calcPalindromes("a"))
+        assertEquals(3, calcPalindromes("abc"))
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun test2() {
+        assertEquals(6, calcPalindromes("aaa"))
+        assertEquals(7, calcPalindromes("aaycc"))
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
-    }
-
-    @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
-    }
-
-    @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
-
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun test3() {
+        assertEquals(10, calcPalindromes("abcdcba"))
+        assertEquals(9, calcPalindromes("abccba"))
     }
 }
