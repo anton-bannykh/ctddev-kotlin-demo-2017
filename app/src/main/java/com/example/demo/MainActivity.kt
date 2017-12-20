@@ -11,5 +11,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun test() = sumFun(1, 2, 3)
+    //fun test() = sumFun(1, 2, 3)
 }
