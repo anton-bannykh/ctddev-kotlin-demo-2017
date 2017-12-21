@@ -1,16 +1,12 @@
 package My_DSl
 
-import android.content.res.Resources
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
 import android.support.v7.app.AppCompatActivity
-import android.text.InputType
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.example.demo.R
 
 @DslMarker
 annotation class ActivityConstructor
@@ -75,11 +71,11 @@ class ActivityContext(private val activity: AppCompatActivity, name: Int) {
     }
 
     fun Button.onClick(init: () -> Unit) {
-        setOnClickListener{init()}
+        setOnClickListener { init() }
     }
 }
 
-fun AppCompatActivity.makeLayout(name: Int, init: ActivityContext.() -> Unit) :ConstraintLayout {
+fun AppCompatActivity.makeLayout(name: Int, init: ActivityContext.() -> Unit) : ConstraintLayout {
     val element = ActivityContext(this, name)
     element.init()
     return element.layout
