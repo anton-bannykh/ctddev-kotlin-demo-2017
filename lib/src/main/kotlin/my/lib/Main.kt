@@ -1,3 +1,5 @@
+package my.lib
+
 import kotlin.math.min
 import kotlin.math.max
 
@@ -9,7 +11,7 @@ fun main(args: Array<String>) {
 class SegmentTree(var elem: Array<Int>) {
     private var root = 0
     private val INF = 10000000
-    private var tree: MutableList<Node> = MutableList(3 * elem.size, { Node(0, 0, 0, 0, 0) })
+    private var tree = MutableList(3 * elem.size, { Node(0, 0, 0, 0, 0) })
 
     init {
         var IND = 0

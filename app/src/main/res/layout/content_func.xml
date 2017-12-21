@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.demo.FuncActivity"
+    tools:showIn="@layout/activity_func">
+
+    <TextView
+        android:id="@+id/ViewAns"
+        android:layout_width="353dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <Button
+        android:id="@+id/AddButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="36dp"
+        android:onClick="AddElem"
+        android:text="@string/add_element"
+        android:background="@android:color/holo_orange_dark"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editAddInd"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/SetButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="36dp"
+        android:onClick="SetElem"
+        android:text="@string/set_element"
+        android:background="@android:color/holo_purple"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editSetInd"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/GetButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="36dp"
+        android:onClick="GetRes"
+        android:text="@string/get_min"
+        android:background="@android:color/holo_green_dark"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editGetSt"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/CloseButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:onClick="Close"
+        android:text="@string/new_tree"
+        android:textSize="16dp"
+        android:background="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toTopOf="@+id/ViewAns"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GetButton" />
+
+    <EditText
+        android:id="@+id/editAddInd"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:ems="10"
+        android:hint="@string/index"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editAddVal"
+        app:layout_constraintStart_toEndOf="@+id/AddButton" />
+
+    <EditText
+        android:id="@+id/editSetInd"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:ems="10"
+        android:hint="@string/index"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editSetVal"
+        app:layout_constraintStart_toEndOf="@+id/SetButton" />
+
+    <EditText
+        android:id="@+id/editGetSt"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:ems="10"
+        android:hint="@string/start"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editGetFn"
+        app:layout_constraintStart_toEndOf="@+id/GetButton" />
+
+    <EditText
+        android:id="@+id/editAddVal"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="@string/value"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toEndOf="@+id/editAddInd"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editSetVal"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="@string/value"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toEndOf="@+id/editSetInd"
+        app:layout_constraintTop_toBottomOf="@+id/editAddVal" />
+
+    <EditText
+        android:id="@+id/editGetFn"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="@string/finish"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toEndOf="@+id/editGetSt"
+        app:layout_constraintTop_toBottomOf="@+id/editSetVal" />
+
+</android.support.constraint.ConstraintLayout>
