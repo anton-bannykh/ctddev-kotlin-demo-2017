@@ -1,9 +1,9 @@
 package com.example.demo
 
+import android.R.attr.*
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main2.*
-import android.R.attr.start
 import android.view.animation.LinearInterpolator
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
@@ -18,6 +18,12 @@ import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import android.widget.TextView
 import com.example.demo.R
+import constraintLayout
+import kotlinx.android.synthetic.main.activity_main2.view.*
+import onCLick
+import android.widget.LinearLayout
+
+
 
 class Main2Activity : AppCompatActivity() {
 
@@ -27,10 +33,49 @@ class Main2Activity : AppCompatActivity() {
     var g: Array<ArrayList<Int>> = Array(0, { ArrayList<Int>()})
     var status50 = false
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        val W = getWindowManager().getDefaultDisplay().getWidth();
+        setContentView(
+                constraintLayout(R.layout.activity_main) {
+                    textView(R.id.textView2) {
+                        text = "1. Введите количество вершин графа, в котором вы хотите найти количество мостов"
+                        width = dp(250)
+                        leftMargin(R.layout.activity_main, LEFT, (W - dp(250)) / 2)
+                    }
+
+                    ScrollView(R.id.scrollView1){
+                        LinearLayout(R.id.Lin){
+                            topMargin(R.layout.activity_main, TOP, dp(50))
+                            orientation = LinearLayout.VERTICAL
+                        }
+                    }
+
+                    button(R.id.button4) {
+                        text = "НАЗАД"
+                        width = dp(100)
+                        height = dp(70)
+                        bottomMargin(R.layout.activity_main, BOTTOM, dp(20))
+                        leftMargin(R.layout.activity_main, LEFT, W / 2 - dp(180))
+
+                        onCLick {
+                            backToFirstActivity(this)
+                        }
+                    }
+
+                    button(R.id.button2) {
+                        text = "НАЙТИ КОЛИЧЕСТВО МОСТОВ"
+                        width = dp(180)
+                        height = dp(70)
+                        bottomMargin(R.layout.activity_main, BOTTOM, dp(20))
+                        leftMargin(R.layout.activity_main, LEFT, W / 2 + dp(5))
+
+                        onCLick {
+                            findBridjes(this)
+                        }
+                    }
+                }.layout
+        )
 
         val progressAnimator = ObjectAnimator.ofInt(progressBar, "progress", 0, 50)
         progressAnimator.duration = 700
@@ -46,7 +91,8 @@ class Main2Activity : AppCompatActivity() {
                 if (i==j) continue
 
                 val tv = Switch(this)
-                tv.setPadding(0,0,70,0)
+                tv.setPadding(50,0,70,0)
+                tv.width = W
                 tv.text = "  " + (i.toString() + "  --->  " + j.toString())
 
                 tv.setOnClickListener {
