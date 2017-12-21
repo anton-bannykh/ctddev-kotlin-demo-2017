@@ -8,7 +8,7 @@
     <string name="Preview">Here you can add array to create SegmentTree</string>
     <string name="Addd">Add array of Int</string>
     <string name="AddTr">Add Tree</string>
-    <string name="title_activity_func">It`s OK</string>
+    <string name="title_activity_func">Here you can Add|Set|Get values</string>
     <string name="add_element">Add Element</string>
     <string name="set_element">Set Element</string>
     <string name="get_min">Get Min</string>
