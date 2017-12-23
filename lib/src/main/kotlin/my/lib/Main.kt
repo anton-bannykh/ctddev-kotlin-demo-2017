@@ -13,7 +13,7 @@ fun MutableList<Int>.swap(index1: Int, index2: Int) {
 fun nextPerm(args:MutableList<Int>):MutableList<Int> {
     var i = args.size - 2
     val n:Int = args.size
-    var res:MutableList<Int> = mutableListOf()
+    var res = mutableListOf<Int>()
     if (i > 0) {
         while ((i >= 0) and (args[i] > args[i + 1])) {
             i -= 1
