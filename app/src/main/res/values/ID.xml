@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="layoutId" />
+    <item type="id" name="arrayId" />
+    <item type="id" name="STId" />
+    <item type="id" name="forModifyId" />
+    <item type="id" name="forQueryId" />
+    <item type="id" name="answerTextId" />
+    <item type="id" name="answerId" />
+    <item type="id" name="createSTId" />
+    <item type="id" name="modifyId" />
+    <item type="id" name="queryId" />
+</resources>
