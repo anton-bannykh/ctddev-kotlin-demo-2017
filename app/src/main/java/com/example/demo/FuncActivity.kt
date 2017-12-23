@@ -16,7 +16,7 @@ class FuncActivity : AppCompatActivity() {
 
     var s = ""
     var SIZE = 0
-    lateinit var TREE:SegmentTree
+    lateinit var TREE: SegmentTree
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,7 @@ class FuncActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         s = intent.getStringExtra(ARRAY)
         val a = s.trim().split("\\s+".toRegex())
-        val arr = Array(a.size, {i -> (a[i].toInt())})
+        val arr = Array(a.size, { i -> (a[i].toInt()) })
         SIZE = arr.size
         TREE = SegmentTree(arr)
     }
