@@ -23,11 +23,11 @@ class MainActivity : AppCompatActivity() {
                     textView(R.id.textView) {
                         text = "1. Введите количество вершин графа, в котором вы хотите найти количество мостов"
                         width = dp(250)
-                        bottomMargin(R.layout.activity_main, BOTTOM, dp(H/5))
+                        bottomMargin(R.layout.activity_main, BOTTOM, dp(H / 5))
                         leftMargin(R.layout.activity_main, LEFT, (W - dp(250)) / 2)
                     }
 
-                    editText(R.id.editText2){
+                    editText(R.id.editText2) {
                         width = dp(250)
                         height = dp(50)
                         inputType = 2
@@ -57,9 +57,9 @@ class MainActivity : AppCompatActivity() {
             val emptyFieldToast = Toast.makeText(this, "Поле не может быть пустым", Toast.LENGTH_SHORT)
             emptyFieldToast.show()
 
-        } else if (!(Integer.parseInt(inputText) in 2..100)) {
+        } else if (!(Integer.parseInt(inputText) in 2..6)) {
             editText2.setText("")
-            val emptyFieldToast = Toast.makeText(this, "Количество вершин должно быть в пределе от 2 до 100", Toast.LENGTH_SHORT)
+            val emptyFieldToast = Toast.makeText(this, "Количество вершин должно быть в пределе от 2 до 6", Toast.LENGTH_SHORT)
             emptyFieldToast.show()
 
         } else {

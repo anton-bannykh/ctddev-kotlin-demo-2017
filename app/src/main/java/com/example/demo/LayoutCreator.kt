@@ -35,11 +35,6 @@ class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
         this
     }
 
-    private val initScrollView: ScrollView.(Int) -> ScrollView = { editScrollView ->
-        id = editScrollView
-        this
-    }
-
     private val initLinearLayout: LinearLayout.(Int) -> LinearLayout = { editLinearLayout ->
         id = editLinearLayout
         this
@@ -76,8 +71,6 @@ class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
     fun button(id: Int, init: Button.() -> Unit) = addElem(Button(act).initButton(id), init)
 
     fun editText(id: Int, init: EditText.() -> Unit) = addElem(EditText(act).initEditText(id), init)
-
-    fun ScrollView(id: Int, init: ScrollView.() -> Unit) = addElem(ScrollView(act).initScrollView(id), init)
 
     fun LinearLayout(id: Int, init: LinearLayout.() -> Unit) = addElem(LinearLayout(act).initLinearLayout(id), init)
 }

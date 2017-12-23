@@ -24,13 +24,13 @@ import onCLick
 import android.widget.LinearLayout
 
 
-
 class Main2Activity : AppCompatActivity() {
 
     companion object {
         const val TOTAL_COUNT = "total_count"
     }
-    var g: Array<ArrayList<Int>> = Array(0, { ArrayList<Int>()})
+
+    var g: Array<ArrayList<Int>> = Array(0, { ArrayList<Int>() })
     var status50 = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,16 +39,13 @@ class Main2Activity : AppCompatActivity() {
         setContentView(
                 constraintLayout(R.layout.activity_main) {
                     textView(R.id.textView2) {
-                        text = "1. Введите количество вершин графа, в котором вы хотите найти количество мостов"
-                        width = dp(250)
-                        leftMargin(R.layout.activity_main, LEFT, (W - dp(250)) / 2)
+                        width = dp(300)
+                        leftMargin(R.layout.activity_main, LEFT, (W - dp(300)) / 2)
                     }
 
-                    ScrollView(R.id.scrollView1){
-                        LinearLayout(R.id.Lin){
-                            topMargin(R.layout.activity_main, TOP, dp(50))
-                            orientation = LinearLayout.VERTICAL
-                        }
+                    LinearLayout(R.id.Lin) {
+                        topMargin(R.layout.activity_main, TOP, dp(50))
+                        orientation = LinearLayout.VERTICAL
                     }
 
                     button(R.id.button4) {
@@ -87,11 +84,11 @@ class Main2Activity : AppCompatActivity() {
         textView2.text = ("2. Выберите какие ребра есть в этом графе из " + numVertexex.toString() + " вершин")
 
         for (j in 1..numVertexex) {
-            for (i in 1..(j-1) ) {
-                if (i==j) continue
+            for (i in 1..(j - 1)) {
+                if (i == j) continue
 
                 val tv = Switch(this)
-                tv.setPadding(50,0,70,0)
+                tv.setPadding(50, 0, 70, 0)
                 tv.width = W
                 tv.text = "  " + (i.toString() + "  --->  " + j.toString())
 
@@ -104,13 +101,13 @@ class Main2Activity : AppCompatActivity() {
                         status50 = false
                     }
 
-                    if ( !((j-1) in g[i-1])) {
-                        g[i-1].add(j-1)
-                        g[j-1].add(i-1)
+                    if (!((j - 1) in g[i - 1])) {
+                        g[i - 1].add(j - 1)
+                        g[j - 1].add(i - 1)
 
                     } else {
-                        g[i-1].remove(j-1)
-                        g[j-1].remove(i-1)
+                        g[i - 1].remove(j - 1)
+                        g[j - 1].remove(i - 1)
 
                     }
                 }
