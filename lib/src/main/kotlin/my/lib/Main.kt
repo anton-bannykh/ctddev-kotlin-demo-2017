@@ -114,3 +114,4 @@ public class Automation(private val numberOfVertexes: Int,
         return answer
     }
 }
+

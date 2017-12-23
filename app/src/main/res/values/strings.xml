@@ -2,15 +2,4 @@
     <string name="app_name">DFA</string>
     <string name="greeting">Wassup!</string>
     <string name="helpMessage">Number of vertexes and edges is a single number. Then input terminal vertexes through the space. In field egdes on every line input edges as well as in the example. If you input smth wrong, the app will crash.</string>
-    <string name="answer">Answer</string>
-    <string name="input_edges">Input edges:</string>
-    <string name="help">Help</string>
-    <string name="example_1_2_a">Example: 1 2 a</string>
-    <string name="_1_2_3_4_5">1 2 3 4 5</string>
-    <string name="input_terminal_vertexes">Input terminal vertexes:</string>
-    <string name="_111">111</string>
-    <string name="number_of_edges">Number of edges</string>
-    <string name="_42">42</string>
-    <string name="number_of_vertexes">Number of vertexes</string>
-    <string name="r">R</string>
 </resources>

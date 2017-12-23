@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="constLay" type="id" />
+    <item name="constLay2" type="id" />
+    <item name="constLay3" type="id" />
+    <item name="textV" type="id" />
+    <item name="editV" type="id" />
+    <item name="textE" type="id" />
+    <item name="editE" type="id" />
+    <item name="textT" type="id" />
+    <item name="editT" type="id" />
+    <item name="textVU" type="id" />
+    <item name="editVU" type="id" />
+    <item name="buttonA" type="id" />
+    <item name="buttonH" type="id" />
+    <item name="help" type="id" />
+    <item name="answer" type="id" />
+</resources>
