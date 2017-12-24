@@ -150,8 +150,7 @@ class MainActivity : AppCompatActivity() {
                             if (graph == null || n == null) {
                                 nullVertex()
                                 answerShower.text = getString(R.string.graphNotCreated)
-                            }
-                            else if (!counted) {
+                            } else if (!counted) {
                                 answerShower.text = getString(R.string.notCalculated)
                                 nullVertex()
                             } else try {
