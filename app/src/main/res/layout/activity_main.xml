@@ -6,15 +6,105 @@
     android:layout_height="match_parent"
     tools:context="com.example.demo.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/sizeBox"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="enter size of graph"
+        android:inputType="number"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
 
+    <Button
+        android:id="@+id/cteateGraphButton"
+        android:layout_width="88dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="createGraph"
+        android:text="Create"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textViewEdges"
+        android:layout_width="89dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="edges"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sizeBox" />
+
+    <EditText
+        android:id="@+id/fromBox"
+        android:layout_width="80dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="from"
+        android:inputType="number"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewEdges"
+        app:layout_constraintTop_toBottomOf="@+id/sizeBox" />
+
+    <EditText
+        android:id="@+id/toBox"
+        android:layout_width="65dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="to"
+        android:inputType="number"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/fromBox"
+        app:layout_constraintTop_toBottomOf="@+id/sizeBox" />
+
+    <Button
+        android:id="@+id/addEdgeButton"
+        android:layout_width="88dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="12dp"
+        android:onClick="addEdge"
+        android:text="add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sizeBox" />
+
+    <Button
+        android:id="@+id/answerButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:onClick="getAnswer"
+        android:text="get answer"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fromBox" />
+
+    <TextView
+        android:id="@+id/answerTextView"
+        android:scrollbars="vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answerButton" />
 </android.support.constraint.ConstraintLayout>
