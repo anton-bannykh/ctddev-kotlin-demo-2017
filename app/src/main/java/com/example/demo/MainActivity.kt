@@ -6,6 +6,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import My_DSl.makeLayout
 import android.view.ViewGroup
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,10 +60,20 @@ class MainActivity : AppCompatActivity() {
 
     fun addTree() {
         val s = Elem.text.toString()
-        val nextIntent = Intent(this, FuncActivity::class.java)
-        nextIntent.putExtra(FuncActivity.ARRAY, s)
-        Elem.setText("")
-        startActivity(nextIntent)
+        var f = true
+        try {
+            val a = s.trim().split("\\s+".toRegex())
+            val arr = Array(a.size, { i -> (a[i].toInt()) })
+        } catch (e: Exception) {
+            f = false
+            Toast.makeText(this, "!Wrong array!", Toast.LENGTH_LONG).show()
+        }
+        if (f) {
+            val nextIntent = Intent(this, FuncActivity::class.java)
+            nextIntent.putExtra(FuncActivity.ARRAY, s)
+            Elem.setText("")
+            startActivity(nextIntent)
+        }
     }
 
     fun Close() {

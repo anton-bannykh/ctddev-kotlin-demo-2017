@@ -17,6 +17,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text=""
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +33,7 @@
         android:layout_marginStart="36dp"
         android:onClick="AddElem"
         android:text="@string/add_element"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@android:drawable/picture_frame"
         app:layout_constraintBaseline_toBaselineOf="@+id/editAddInd"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -41,7 +44,7 @@
         android:layout_marginStart="36dp"
         android:onClick="SetElem"
         android:text="@string/set_element"
-        android:background="@android:color/holo_purple"
+        android:background="@android:drawable/picture_frame"
         app:layout_constraintBaseline_toBaselineOf="@+id/editSetInd"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -52,7 +55,7 @@
         android:layout_marginStart="36dp"
         android:onClick="GetRes"
         android:text="@string/get_min"
-        android:background="@android:color/holo_green_dark"
+        android:background="@android:drawable/picture_frame"
         app:layout_constraintBaseline_toBaselineOf="@+id/editGetSt"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -66,7 +69,7 @@
         android:onClick="Close"
         android:text="@string/new_tree"
         android:textSize="16dp"
-        android:background="@android:color/holo_red_dark"
+        android:background="@android:drawable/picture_frame"
         app:layout_constraintBottom_toTopOf="@+id/ViewAns"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/GetButton" />
