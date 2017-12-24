@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/tools">
+    <item name="layoutId" type="id">0</item>
+    <item name="addButton" type="id">1</item>
+    <item name="resultButton" type="id">2</item>
+    <item name="clearButton" type="id">3</item>
+    <item name="resultView" type="id">4</item>
+    <item name="inputText" type="id">5</item>
+    <item name="vertexSize" type="id">6</item>
+</resources>
