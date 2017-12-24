@@ -58,7 +58,6 @@ class MyContraintLayout(private val activity: AppCompatActivity, private val lay
         return view
     }
 
-    // I wanted to add view.setTextAppearance(resId: Int) but, unfortunately, this option it available only from API 23 :(
     fun textView(id: Int, init: TextView.() -> Unit): TextView {
         val view = TextView(activity)
         view.id = id
