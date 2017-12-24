@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="layoutId" type="id" />
+    <item name="CreateText" type="id" />
+    <item name="NumberV" type="id" />
+    <item name="Edges" type="id" />
+    <item name="edgeButton" type="id" />
+    <item name="mainButton" type="id" />
+    <item name="StartButton" type="id" />
+    <item name="ansText" type="id" />
+    <item name="NButton" type="id" />
+</resources>
