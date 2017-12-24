@@ -3,7 +3,7 @@
  */
 
 var n=2017
-var prime = IntArray(n+1, { true })
+var prime = BooleanArray(n+1, { true })
 
 fun isPrime(x: Int): Boolean {
     return prime[x]
