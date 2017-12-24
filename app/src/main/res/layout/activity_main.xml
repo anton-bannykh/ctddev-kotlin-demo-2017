@@ -4,27 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.demo.MainActivity">
+    tools:context="com.example.demo.MainActivity"
+    android:id="@+id/layoutId">
 
-    <EditText
+
+     <EditText
         android:id="@+id/editTextVertices"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
         android:ems="15"
         android:hint="Enter number of vertices"
         android:inputType="textPersonName"
-        android:onClick="onCreateGraph"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        tools:ignore="OnClick" />
+        app:layout_constraintVertical_bias="0.03" />
+
+    <Button
+        android:id="@+id/buttonAddgraf"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:onClick="onCreateGraph"
+        android:text="create graf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextVertices"/>
 
     <TextView
         android:id="@+id/textView"
@@ -40,8 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextVertices"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddgraf" />
 
     <LinearLayout
         android:id = "@+id/pampam"
@@ -88,8 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onAddEdge"
-            android:text="Add edge"
-            tools:ignore="OnClick" />
+            android:text="Add edge" />
 
     </LinearLayout>
 
@@ -146,8 +153,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="showAnswer"
-            android:text="Show Answer"
-            tools:ignore="OnClick" />
+            android:text="Show Answer" />
 
     </LinearLayout>
 
