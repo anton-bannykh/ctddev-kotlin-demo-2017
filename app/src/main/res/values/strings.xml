@@ -2,6 +2,7 @@
     <string name="app_name">Fenwick Tree</string>
     <string name="TypeArray">Введите массив:</string>
     <string name="defaultArray">1 2 3 4 -5</string>
+    <string name="default_array_value">1 2 3 4 -5</string>
     <string-array name="requestList">
         <item>Прибавить на отрезке</item>
         <item>Получить значение</item>
