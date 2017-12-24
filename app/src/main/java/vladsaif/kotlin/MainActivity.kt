@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.support.v4.content.ContextCompat
+import android.support.v7.widget.LinearLayoutCompat
 import android.util.Log
+import android.view.ViewGroup.LayoutParams.*
+import android.widget.LinearLayout
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Integer.parseInt
@@ -17,13 +20,75 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(
+                linearLayout {
+                    linearLayout {
+                        height = WRAP_CONTENT
+                        editText {
+                            id = R.id.n // convenience
+                            hint = "Введите N"
+                            width = WRAP_CONTENT
+                            height = WRAP_CONTENT
+                        }
+                        button {
+                            id = R.id.startButton
+                            onClick = { startClick(it) }
+                            text = "OK"
+                            width = WRAP_CONTENT
+                            height = WRAP_CONTENT
+                        }
+                    }
+                    text {
+                        Log.d("HELP", "is here")
+                        text = "Выберите элементы, обозначающие начало и конец перемещаемого отрезка массива, а так же элемент," +
+                                "        перед которым будет произведена вставка"
+                        id = R.id.hint
+                        width = WRAP_CONTENT
+                        height = WRAP_CONTENT
+                    }
+                    linearLayout {
+                        height = WRAP_CONTENT
+                        button {
+                            id = R.id.start
+                            onClick = { mode = 1 }
+                            text = "От"
+                            width = WRAP_CONTENT
+                            height = WRAP_CONTENT
+                        }
+                        button {
+                            id = R.id.end
+                            text = "До"
+                            onClick = { mode = 2 }
+                            width = WRAP_CONTENT
+                            height = WRAP_CONTENT
+                        }
+                        button {
+                            id = R.id.to
+                            text = "Перед"
+                            onClick = { mode = 3 }
+                            width = WRAP_CONTENT
+                            height = WRAP_CONTENT
+                        }
+                        button {
+                            id = R.id.slice
+                            text = "Переместить"
+                            onClick = { sliceClick(it) }
+                            width = WRAP_CONTENT
+                            height = WRAP_CONTENT
+                        }
+                    }
+                    horizontalScroll {
+                        width = WRAP_CONTENT
+                        height = WRAP_CONTENT
+                        linearLayout {
+                            id = R.id.container
+                            width = WRAP_CONTENT
+                            height = WRAP_CONTENT
+                        }
+                    }
+                }
+        )
         hideShow(View.INVISIBLE)
-        start.setOnClickListener({ mode = 1 })
-        end.setOnClickListener({ mode = 2 })
-        to.setOnClickListener({ mode = 3 })
-        slice.setOnClickListener({ sliceClick(it) })
-        startButton.setOnClickListener({ startClick(it) })
     }
 
     private var listLetters = ArrayList<TextView>()
@@ -36,6 +101,7 @@ class MainActivity : AppCompatActivity() {
     private var left = Integer.MAX_VALUE
     private var right = Integer.MAX_VALUE
     private var cut = Integer.MAX_VALUE
+    private val container by lazy { findViewById(R.id.container) as LinearLayoutCompat }
 
     private val elementListener = View.OnClickListener {
         when (mode) {
@@ -66,11 +132,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hideShow(visibility: Int) {
-        start.visibility = visibility
-        end.visibility = visibility
-        to.visibility = visibility
-        slice.visibility = visibility
-        hint.visibility = visibility
+        findViewById(R.id.start).visibility = visibility
+        findViewById(R.id.end).visibility = visibility
+        findViewById(R.id.to).visibility = visibility
+        findViewById(R.id.slice).visibility = visibility
+        findViewById(R.id.hint).visibility = visibility
     }
 
     fun startClick(view: View) {
