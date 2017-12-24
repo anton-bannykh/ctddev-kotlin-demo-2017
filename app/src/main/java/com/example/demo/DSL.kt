@@ -13,9 +13,7 @@ annotation class LayoutBuilder
 
 @LayoutBuilder
 class MyContraintLayout(private val activity: AppCompatActivity, private val layoutId: Int) {
-
     private val bounds = ConstraintSet()
-
     val layout = ConstraintLayout(activity).apply {
         id = layoutId
     }
@@ -78,5 +76,4 @@ class MyContraintLayout(private val activity: AppCompatActivity, private val lay
         button.id = id
         return addSubview(button, init)
     }
-
 }
