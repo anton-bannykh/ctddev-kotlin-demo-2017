@@ -5,7 +5,11 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.view.Gravity.CENTER
 import android.widget.EditText
+import android.widget.LinearLayout
+
 import android.widget.TextView
 import my.lib.topsort
 
@@ -13,10 +17,89 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        findViewById<Button>(R.id.my_button).setOnClickListener({ doSMTH(it) })
-        findViewById<Button>(R.id.button_graph).setOnClickListener({ setEdges(it) })
-        findViewById<Button>(R.id.button_topsort).setOnClickListener({ topological_sort(it) })
+        val linear = linearLayout {
+            orient = LinearLayout.VERTICAL
+            width(MATCH_PARENT)
+            height(MATCH_PARENT)
+
+            linearLayout {
+                width(MATCH_PARENT)
+                gravity(CENTER)
+
+                editText {
+                    id = R.id.editText_n
+                    hint = "0"
+                    vis = View.VISIBLE
+                }
+                text {
+                    id = R.id.text_n
+                    vis = View.VISIBLE
+                    text = "n"
+                }
+                editText {
+                    id = R.id.editText_m
+                    hint = "0"
+                    vis = View.VISIBLE
+                }
+                text {
+                    id = R.id.text_m
+                    vis = View.VISIBLE
+                    text = "m"
+                }
+                button {
+                    id = R.id.my_button
+                    vis = View.VISIBLE
+                    text = "apply"
+                    onClick = View.OnClickListener { doSMTH(it) }
+                }
+            }
+            text {
+                id = R.id.text_request
+                vis = View.VISIBLE
+            }
+            linearLayout {
+                text {
+                    id = R.id.edge_number
+                    text = "1 edge"
+                }
+                editText {
+                    id = R.id.editText_v
+                    hint = "0"
+                }
+                text {
+                    id = R.id.text_v
+                    text = "v"
+                }
+                editText {
+                    id = R.id.editText_u
+                    hint = "0"
+                }
+                text {
+                    id = R.id.text_u
+                    text = "u"
+
+                }
+                button {
+                    id = R.id.button_graph
+                    text = "set"
+                    onClick = View.OnClickListener { setEdges(it) }
+                }
+            }
+
+            button {
+                id = R.id.button_topsort
+                text = "topsort"
+                onClick = View.OnClickListener { topological_sort(it) }
+            }
+
+            text {
+                id = R.id.text_topol
+            }
+        }
+        setContentView(linear.build(this));
+        //findViewById<Button>(R.id.my_button).setOnClickListener({ doSMTH(it) })
+        //findViewById<Button>(R.id.button_graph).setOnClickListener({ setEdges(it) })
+        //findViewById<Button>(R.id.button_topsort).setOnClickListener({ topological_sort(it) })
     }
 
     var n: Int = 0
@@ -25,21 +108,21 @@ class MainActivity : AppCompatActivity() {
     var topol = IntArray(0)
     var graph = Array<ArrayList<Int>>(0, { i -> ArrayList() })
 
-    val text_request by lazy { findViewById<TextView>(R.id.text_request) }
-    val text_topol by lazy { findViewById<TextView>(R.id.text_topol) }
-    val text_v by lazy { findViewById<TextView>(R.id.text_v) }
-    val text_u by lazy { findViewById<TextView>(R.id.text_u) }
-    val edge_number by lazy { findViewById<TextView>(R.id.edge_number) }
+    val text_request by lazy { findViewById<TextView>(R.id.text_request) as TextView }
+    val text_topol by lazy { findViewById<TextView>(R.id.text_topol) as TextView }
+    val text_v by lazy { findViewById<TextView>(R.id.text_v) as TextView }
+    val text_u by lazy { findViewById<TextView>(R.id.text_u) as TextView }
+    val edge_number by lazy { findViewById<TextView>(R.id.edge_number) as TextView }
 
-    val editText_u by lazy { findViewById<EditText>(R.id.editText_u) }
-    val editText_v by lazy { findViewById<EditText>(R.id.editText_v) }
-    val text_n by lazy { findViewById<EditText>(R.id.editText_n) }
-    val text_m by lazy { findViewById<EditText>(R.id.editText_m) }
+    val editText_u by lazy { findViewById<EditText>(R.id.editText_u) as EditText }
+    val editText_v by lazy { findViewById<EditText>(R.id.editText_v) as EditText }
+    val text_n by lazy { findViewById<EditText>(R.id.editText_n) as EditText }
+    val text_m by lazy { findViewById<EditText>(R.id.editText_m) as EditText }
 
-    val button_graph by lazy { findViewById<Button>(R.id.button_graph) }
-    val button_topsort by lazy { findViewById<Button>(R.id.button_topsort) }
+    val button_graph by lazy { findViewById<Button>(R.id.button_graph) as Button }
+    val button_topsort by lazy { findViewById<Button>(R.id.button_topsort) as Button }
 
-    public fun makeVisibility(vis: Int) {
+    fun makeVisibility(vis: Int) {
         edge_number.visibility = vis
         text_request.visibility = vis
         text_v.visibility = vis
@@ -49,7 +132,7 @@ class MainActivity : AppCompatActivity() {
         button_graph.visibility = vis
     }
 
-    public fun doSMTH(view: View) {
+    fun doSMTH(view: View) {
         if (view.width < 0) return
         val newN = Integer.parseInt(text_n.text.toString())
         n = newN
@@ -68,7 +151,7 @@ class MainActivity : AppCompatActivity() {
 
     var i: Int = 1
 
-    public fun setEdges(view: View) {
+    fun setEdges(view: View) {
         if (view.width < 0) return
         if (i == m) {
             makeVisibility(View.INVISIBLE)
