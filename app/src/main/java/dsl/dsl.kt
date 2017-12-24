@@ -20,7 +20,7 @@ class ConstraintLayoutContext(private val activity: AppCompatActivity, name: Int
     val BOTTOM = ConstraintSet.BOTTOM
     val LEFT = ConstraintSet.START
     val RIGHT = ConstraintSet.END
-    val defaultMargin = 8;
+    val defaultMargin = 8
 
     fun scale(x: Int): Int = (k * x).toInt()
 
