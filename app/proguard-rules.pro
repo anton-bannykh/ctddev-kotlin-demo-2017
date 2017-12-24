@@ -12,10 +12,12 @@
 #   public *;
 #}
 
+
 # Uncomment this to preserve the line editText information for
 # debugging stack traces.
 #-keepattributes SourceFile,LineNumberTable
 
 # If you keep the line editText information, uncomment this to
+
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile

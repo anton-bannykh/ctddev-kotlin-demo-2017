@@ -9,12 +9,12 @@ import android.nfc.FormatException
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+
 import my.lib.Graph
 import my.lib.INF
 import my.lib.johnson
 
 import android.text.InputType
-
 
 class MainActivity : AppCompatActivity() {
     private var n: Int? = null
