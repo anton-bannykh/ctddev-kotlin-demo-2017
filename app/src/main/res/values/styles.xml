@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="verdanaFont">
+        <item name="android:fontFamily">Verdana</item>
+    </style>
+
+    <style name="niceBlue">
+        <item name="android:color">#759fd1</item>
+    </style>
+
+    <style name="anotherNiceBlue">
+        <item name="android:color">#519bf6</item>
+    </style>
+
 </resources>
