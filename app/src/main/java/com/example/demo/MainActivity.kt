@@ -15,7 +15,6 @@ import my.lib.johnson
 
 import android.text.InputType
 
-
 class MainActivity : AppCompatActivity() {
     private var n: Int? = null
     private var graph: Graph? = null
@@ -88,8 +87,7 @@ class MainActivity : AppCompatActivity() {
                         setListener {
                             if (graph == null || n == null) {
                                 answerShower.text = getString(R.string.graphNotCreated)
-                            }
-                            else try {
+                            } else try {
                                 val v = edgeAdderV.intValue
                                 val u = edgeAdderU.intValue
                                 val w = edgeAdderW.intValue
@@ -116,8 +114,7 @@ class MainActivity : AppCompatActivity() {
                         setListener {
                             if (graph == null || n == null) {
                                 answerShower.text = getString(R.string.graphNotCreated)
-                            }
-                            else {
+                            } else {
                                 for (x in 1..n!!) {
                                     graph!![0].add(Pair(x, 0))
                                 }
@@ -156,8 +153,7 @@ class MainActivity : AppCompatActivity() {
                             else if (!counted) {
                                 answerShower.text = getString(R.string.notCalculated)
                                 nullVertex()
-                            }
-                            else try {
+                            } else try {
                                 val v = firstVertex.intValue
                                 val u = secondVertex.intValue
                                 if (v !in 1..n!! || u !in 1..n!!) {

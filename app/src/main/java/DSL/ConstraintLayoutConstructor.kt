@@ -81,10 +81,10 @@ class ConstraintLayoutConstructor(_activity: AppCompatActivity) {
 
     private fun throwIllegalArgumentException(argument: Int) {
         throw IllegalArgumentException("Argument of makeConstraint function must be " +
-                "${LEFTBOUND.toString()}(LEFTBOUND), " +
-                "${RIGHTBOUND.toString()}(RIGHTBOUND), " +
-                "${UPPERBOUND.toString()}(UPPERBOUND) or " +
-                "${LOWERBOUND.toString()}(LOWERBOUND), not ${argument.toString()}")
+                "$LEFTBOUND(LEFTBOUND), " +
+                "$RIGHTBOUND(RIGHTBOUND), " +
+                "$UPPERBOUND(UPPERBOUND) or " +
+                "$LOWERBOUND(LOWERBOUND), not $argument")
     }
 
     fun <T: View> T.makeConstraint(myBound: Int, otherId: Int, otherBound: Int, distance: Int) {
