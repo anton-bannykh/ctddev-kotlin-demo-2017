@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                         setHint(R.string.number_of_vertex_v)
                         inputType = InputType.TYPE_CLASS_NUMBER
                         leftMargin(ConstraintSet.RIGHT, R.id.textView2, dp(8))
-                        rightMargin(ConstraintSet.RIGHT, R.id.vertexU,  dp(8))
+                        rightMargin(ConstraintSet.RIGHT, R.id.vertexU, dp(8))
                         topMargin(ConstraintSet.BOTTOM, R.id.textView2, dp(8))
                     }
                     button(R.id.addEdgeButton) {
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
                         text = resources.getText(R.string.add_edge)
                         setBackgroundColor(R.style.anotherNiceBlue)
                         leftMargin(ConstraintSet.LEFT, dp(8))
-                        rightMargin(ConstraintSet.RIGHT,  dp(8))
+                        rightMargin(ConstraintSet.RIGHT, dp(8))
                         topMargin(ConstraintSet.BOTTOM, R.id.vertexU, dp(8))
                     }
                     button(R.id.runAlgorithmButton) {
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
                         text = resources.getText(R.string.run_algorithm)
                         setBackgroundColor(R.style.anotherNiceBlue)
                         leftMargin(ConstraintSet.LEFT, dp(8))
-                        rightMargin(ConstraintSet.RIGHT,  dp(8))
+                        rightMargin(ConstraintSet.RIGHT, dp(8))
                         topMargin(ConstraintSet.BOTTOM, R.id.addEdgeButton, dp(32))
                     }
                 }
