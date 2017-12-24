@@ -1,10 +1,5 @@
 package my.lib
 
-/**
- * Created by Maria Popyrkina on 04.12.2017.
- */
-
-
 fun matrixIdentity(n: Int): Array<IntArray> {
     val answer = Array(n, { IntArray(n) })
     for (i in 0 until n) {

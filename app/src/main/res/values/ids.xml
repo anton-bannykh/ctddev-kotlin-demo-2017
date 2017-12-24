@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="layoutId" type="id" />
+    <item name="solve" type="id" />
+    <item name="length" type="id" />
+    <item name="vert" type="id" />
+    <item name="wordListEdges" type="id" />
+    <item name="listEdges" type="id" />
+    <item name="wordAnswer" type="id" />
+    <item name="forAnswer" type="id" />
+</resources>
