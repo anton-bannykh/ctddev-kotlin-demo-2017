@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                         text = resources.getText(R.string.amountOfVersInGraph)
                         gravity = Gravity.CENTER
                     }
-                   editText(R.id.vertexAmount) {
+                    editText(R.id.vertexAmount) {
                         width = dp(230)
                         height = dp(38)
                         setEms(10)
