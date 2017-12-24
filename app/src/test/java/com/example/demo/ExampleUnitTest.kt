@@ -86,12 +86,4 @@ class MainTest {
         Assert.assertTrue(checkCondensate(graph, condensate(graph)))
     }
 
-    @Test
-    fun randTestMany() {
-        var i = 0
-        while (i < 10) {
-            randTest1()
-            i++
-        }
-    }
 }
