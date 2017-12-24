@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="layoutId" type="id" />
+    <item name="verticesLabel" type="id" />
+    <item name="verticesNumber" type="id" />
+    <item name="edgesLabel" type="id" />
+    <item name="edgesNumber" type="id" />
+    <item name="graphText" type="id" />
+    <item name="connectCompText" type="id" />
+    <item name="generateButton" type="id" />
+    <item name="countButton" type="id" />
+</resources>
