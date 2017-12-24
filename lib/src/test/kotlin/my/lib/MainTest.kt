@@ -3,7 +3,7 @@ package my.lib
 import org.junit.Test
 import java.util.Arrays
 
-class DijkstraTest {
+class MainTest {
     @Test
     fun testDisconnectedGraph() {
         startTest(10, 4)

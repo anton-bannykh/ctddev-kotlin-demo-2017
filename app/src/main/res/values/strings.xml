@@ -5,11 +5,12 @@
     <string name="btnClear">CLEAR</string>
     <string name="inputFrom">From</string>
     <string name="btnAddDesc">The edge is added</string>
-    <string name="InputCount">Enter size</string>
+    <string name="btnAdd">ADD</string>
+    <string name="enterSize">Enter size</string>
     <string name="btnInput">SUBMIT</string>
     <string name="inputTo">To</string>
     <string name="inputWeight">Weight</string>
-    <string name="inputVertex">Enter vertex</string>
+    <string name="enterVertex">Enter vertex</string>
     <string name="inputIncorrect">Incorrect input</string>
     <string name="successSet">Size and from values is set</string>
     <string name="ansMessage">Distances from %d to all vertices:</string>

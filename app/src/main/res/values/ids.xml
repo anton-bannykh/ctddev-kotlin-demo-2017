@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="layout" />
+    <item type="id" name="ansDescription" />
+    <item type="id" name="distShower" />
+    <item type="id" name="inputSize" />
+    <item type="id" name="inputVertex" />
+    <item type="id" name="btnSetSize" />
+    <item type="id" name="inputFrom" />
+    <item type="id" name="inputTo" />
+    <item type="id" name="inputWeight" />
+    <item type="id" name="btnAdd" />
+    <item type="id" name="btnCreate" />
+    <item type="id" name="btnRandom" />
+    <item type="id" name="btnClear" />
+</resources>
