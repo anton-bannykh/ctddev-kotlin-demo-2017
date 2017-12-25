@@ -5,6 +5,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    lintOptions {
+        abortOnError false
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.dima.hw2"

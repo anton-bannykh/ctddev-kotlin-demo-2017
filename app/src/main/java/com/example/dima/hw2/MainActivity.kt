@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
         setContentView(
                 constraintLayoutCreate(R.id.layoutId) {
-                    val view1 = textView(R.id.textView,conv_dp(300), conv_dp(100),"Number of Vertexes", 21) {
+                    val view1 = textView(R.id.textView, conv_dp(300), conv_dp(100), "Number of Vertexes", 21) {
                         tMarg(R.id.layoutId, TOP, conv_dp(12))
                         lMarg(R.id.layoutId, LEFT, conv_dp(75))
                         rMarg(R.id.layoutId, RIGHT, conv_dp(75))
@@ -35,15 +35,16 @@ class MainActivity : AppCompatActivity() {
                 }
         )
     }
-        fun initialized() {
-            if (vert_num.text.toString().isNotEmpty()) {
-                val number = Integer.parseInt(vert_num.text.toString())
-                vert_num.setText("")
-                if (number > 1) {
-                    intent = Intent(this, Main2Activity::class.java)
-                    intent.putExtra("number", number)
-                    startActivity(intent)
-                }
+
+    fun initialized() {
+        if (vert_num.text.toString().isNotEmpty()) {
+            val number = Integer.parseInt(vert_num.text.toString())
+            vert_num.setText("")
+            if (number > 1) {
+                intent = Intent(this, Main2Activity::class.java)
+                intent.putExtra("number", number)
+                startActivity(intent)
             }
         }
+    }
 }

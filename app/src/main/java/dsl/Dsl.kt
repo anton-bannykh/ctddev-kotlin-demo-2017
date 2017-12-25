@@ -13,7 +13,7 @@ import android.widget.TextView
  */
 class ConstraintLayoutCreator(activity_t: AppCompatActivity, name: Int) {
     private val activity = activity_t
-    val layout = ConstraintLayout(activity).apply {id = name}
+    val layout = ConstraintLayout(activity).apply { id = name }
     private val constraints = ConstraintSet()
 
     val TOP = ConstraintSet.TOP
@@ -43,9 +43,9 @@ class ConstraintLayoutCreator(activity_t: AppCompatActivity, name: Int) {
         return this
     }
 
-    fun textView(id: Int, w: Int, h: Int, txt: String, size : Int, initialize: TextView.() -> Unit) = newElem(TextView(activity).new_textView(id, w, h, txt, size), initialize)
+    fun textView(id: Int, w: Int, h: Int, txt: String, size: Int, initialize: TextView.() -> Unit) = newElem(TextView(activity).new_textView(id, w, h, txt, size), initialize)
 
-    private fun TextView.new_textView(id_in: Int, w_in: Int, h_in: Int, txt_in: String, size : Int): TextView {
+    private fun TextView.new_textView(id_in: Int, w_in: Int, h_in: Int, txt_in: String, size: Int): TextView {
         id = id_in
         width = w_in
         height = h_in
@@ -54,9 +54,9 @@ class ConstraintLayoutCreator(activity_t: AppCompatActivity, name: Int) {
         return this
     }
 
-    fun button(id: Int, w: Int, h: Int, txt: String,size : Int, initialize: Button.() -> Unit) = newElem(Button(activity).new_button(id, w, h, txt, size), initialize)
+    fun button(id: Int, w: Int, h: Int, txt: String, size: Int, initialize: Button.() -> Unit) = newElem(Button(activity).new_button(id, w, h, txt, size), initialize)
 
-    private fun Button.new_button(id_in: Int, w_in: Int, h_in: Int, txt_in: String,size : Int): Button {
+    private fun Button.new_button(id_in: Int, w_in: Int, h_in: Int, txt_in: String, size: Int): Button {
         id = id_in
         width = w_in
         height = h_in
@@ -68,20 +68,25 @@ class ConstraintLayoutCreator(activity_t: AppCompatActivity, name: Int) {
     fun Button.setOnClick(onClick: () -> Unit) {
         setOnClickListener { onClick() }
     }
+
     //connect two elem on default
     fun setConnection(st_id: Int, st: Int, end_id: Int, end: Int) {
         constraints.connect(st_id, st, end_id, end)
     }
+
     //connect two elem on distance
     fun <T : View> T.tMarg(x: Int, side: Int, d: Int) {
         constraints.connect(id, TOP, x, side, d)
     }
+
     fun <T : View> T.bMarg(x: Int, side: Int, d: Int) {
         constraints.connect(id, BOTTOM, x, side, d)
     }
-    fun <T : View> T.lMarg(x : Int, side: Int, d: Int) {
+
+    fun <T : View> T.lMarg(x: Int, side: Int, d: Int) {
         constraints.connect(id, LEFT, x, side, d)
     }
+
     fun <T : View> T.rMarg(x: Int, side: Int, d: Int) {
         constraints.connect(id, RIGHT, x, side, d)
     }

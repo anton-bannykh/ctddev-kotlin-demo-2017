@@ -46,15 +46,15 @@ class Main2Activity : AppCompatActivity() {
                 rMarg(R.id.layoutId, RIGHT, conv_dp(4))
                 //lMarg(R.id.st_txt, LEFT, conv_dp(150))
             }
-            val btn_add = button(R.id.add_btn, conv_dp(150), conv_dp(100), "ADD",21) {
+            val btn_add = button(R.id.add_btn, conv_dp(150), conv_dp(100), "ADD", 21) {
                 tMarg(R.id.textView2, TOP, conv_dp(300))
                 lMarg(R.id.layoutId, LEFT, conv_dp(75))
                 rMarg(R.id.layoutId, RIGHT, conv_dp(75))
                 setOnClick {
-                    if(end_txt.text.toString().isNotEmpty() && st_txt.text.toString().isNotEmpty()) {
+                    if (end_txt.text.toString().isNotEmpty() && st_txt.text.toString().isNotEmpty()) {
                         val st = Integer.parseInt(st_txt.text.toString())
                         val end = Integer.parseInt(end_txt.text.toString())
-                        if(number >= maxOf(st,end) && st != 0 && end != 0 && !graph.contain(st - 1, end - 1)) {
+                        if (number >= maxOf(st, end) && st != 0 && end != 0 && !graph.contain(st - 1, end - 1)) {
                             graph.addEdge(st - 1, end - 1)
                             graph_txt.setText(graph_txt.text.toString() + "($st; $end) ")
                         }
@@ -69,13 +69,13 @@ class Main2Activity : AppCompatActivity() {
                 rMarg(R.id.layoutId, RIGHT, conv_dp(10))
                 textAlignment = View.TEXT_ALIGNMENT_CENTER
             }
-            val btn_res = button(R.id.res_btn, conv_dp(150), conv_dp(100), "RESULT",21) {
+            val btn_res = button(R.id.res_btn, conv_dp(150), conv_dp(100), "RESULT", 21) {
                 tMarg(R.id.add_btn, TOP, conv_dp(200))
                 lMarg(R.id.layoutId, LEFT, conv_dp(50))
                 //rMarg(R.id.res_txt, RIGHT, conv_dp(150))
                 setOnClick {
                     val result = graph.answerRequest()
-                    if(result.size != 0) {
+                    if (result.size != 0) {
                         res_txt.setText("YES\n")
                         res_txt.setText(res_txt.text.toString() + result.toString())
                     } else {
@@ -83,10 +83,10 @@ class Main2Activity : AppCompatActivity() {
                     }
                 }
             }
-            val btn_clear = button(R.id.clr_btn, conv_dp(150), conv_dp(100), "CLEAR",21) {
+            val btn_clear = button(R.id.clr_btn, conv_dp(150), conv_dp(100), "CLEAR", 21) {
                 tMarg(R.id.res_btn, TOP, conv_dp(100))
                 lMarg(R.id.layoutId, LEFT, conv_dp(50))
-                bMarg(R.id.layoutId,BOTTOM,conv_dp(40))
+                bMarg(R.id.layoutId, BOTTOM, conv_dp(40))
                 //rMarg(R.id.res_txt, RIGHT, conv_dp(150))
                 setOnClick {
                     graph.clearEd()
@@ -102,9 +102,9 @@ class Main2Activity : AppCompatActivity() {
         })
     }
 
-        /*fun add() {
+    /*fun add() {
 
-        }*/
+    }*/
     /*
         clr_btn.setOnClickListener {
 
