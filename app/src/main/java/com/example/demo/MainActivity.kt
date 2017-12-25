@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.EditText
 import my.lib.sumFun
 import android.widget.LinearLayout
-import com.example.demo.DslBuilder.*
-import com.example.demo.DslBuilder.MATCH_PARENT
+import com.example.demo.dsl.*
+import com.example.demo.dsl.MATCH_PARENT
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                         height = MATCH_PARENT
 
                     }
-                   val inputVertices = editText {
+                    val inputVertices = editText {
                         id = R.id.plain_text_input
                         hint = extractString(R.string.vertices_hint)
                         textSize = 14F

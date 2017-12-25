@@ -1,4 +1,4 @@
-package com.example.demo.DslBuilder
+package com.example.demo.dsl
 
 import android.view.View
 import android.view.ViewGroup

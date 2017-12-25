@@ -8,9 +8,8 @@ import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.example.demo.DslBuilder.*
+import com.example.demo.dsl.*
 import my.lib.Tree
-import org.jetbrains.anko.linearLayout
 
 class SecondActivity : AppCompatActivity() {
 
@@ -23,7 +22,6 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(
-            linearLayout {
                 linearLayout {
                     orientation = LinearLayout.VERTICAL
                     layoutParams = linearLayoutParams {
@@ -63,7 +61,7 @@ class SecondActivity : AppCompatActivity() {
                         setMargins(9,9,9,9)
                     }
                 }
-            }
+
         )
 
         val intent = getIntent()

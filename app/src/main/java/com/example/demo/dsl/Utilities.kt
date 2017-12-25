@@ -1,4 +1,5 @@
-package com.example.demo.DslBuilder
+package com.example.demo.dsl
+
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
