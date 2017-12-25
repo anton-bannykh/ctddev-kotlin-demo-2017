@@ -1,20 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.demo.MainActivity">
 
-    <TextView
+
+    <EditText
+        android:id="@+id/editTextAddNumber"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="119dp"
+        android:ems="10"
+        android:hint="Введите число"
+        android:inputType="numberSigned" />
+
+    <Button
+        android:id="@+id/button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignBaseline="@+id/editTextAddNumber"
+        android:layout_alignBottom="@+id/editTextAddNumber"
+        android:layout_marginStart="19dp"
+        android:layout_toEndOf="@+id/editTextAddNumber"
+        android:onClick="onAddNumber"
+        android:text="Добавить"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView_showArray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_add"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="42dp"
+        android:layout_toEndOf="@+id/PosView" />
+
+    <TextView
+        android:id="@+id/PosView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/editTextFind"
+        android:layout_marginBottom="87dp" />
+
+    <EditText
+        android:id="@+id/editTextFind"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/PosView"
+        android:layout_alignStart="@+id/editTextAddNumber"
+        android:ems="10"
+        android:hint="Введите число"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/button_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_add"
+        android:layout_alignTop="@+id/editTextFind"
+        android:onClick="onFind"
+        android:text="Найти позицию"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+</RelativeLayout>
