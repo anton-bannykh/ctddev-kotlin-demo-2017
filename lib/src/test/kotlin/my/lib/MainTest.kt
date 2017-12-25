@@ -1,55 +1,41 @@
 package my.lib
 
-import org.junit.Assert.assertSame
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class MainTest {
     @Test
-    fun testFor8Queens() {
-        val a = algo(8)
-        val b = a.energy.toInt()
-        assertSame(0, b)
+    fun testFoo() {
+        assertEquals(10, foo())
     }
+
     @Test
-    fun testFor9Queens() {
-        val a = algo(9)
-        val b = a.energy.toInt()
-        assertSame(0, b)
+    fun testSumEmpty() {
+        assertEquals(0, sum())
     }
+
     @Test
-    fun testFor10Queens() {
-        val a = algo(10)
-        val b = a.energy.toInt()
-        assertSame(0, b)
+    fun testSumSingle() {
+        assertEquals(42, sum(42))
     }
+
     @Test
-    fun testFor11Queens() {
-        val a = algo(11)
-        val b = a.energy.toInt()
-        assertSame(0, b)
+    fun testSumMany() {
+        assertEquals(6, sum(1, 2, 3))
     }
+
     @Test
-    fun testFor12Queens() {
-        val a = algo(12)
-        val b = a.energy.toInt()
-        assertSame(0, b)
+    fun testSumFunEmpty() {
+        assertEquals(0, sumFun())
     }
+
     @Test
-    fun testFor13Queens() {
-        val a = algo(13)
-        val b = a.energy.toInt()
-        assertSame(0, b)
+    fun testSumFunSingle() {
+        assertEquals(42, sumFun(42))
     }
+
     @Test
-    fun testFor14Queens() {
-        val a = algo(14)
-        val b = a.energy.toInt()
-        assertSame(0, b)
-    }
-    @Test
-    fun testFor15Queens() {
-        val a = algo(15)
-        val b = a.energy.toInt()
-        assertSame(0, b)
+    fun testSumFunMany() {
+        assertEquals(6, sumFun(1, 2, 3))
     }
 }

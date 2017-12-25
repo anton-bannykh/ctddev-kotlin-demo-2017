@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">Place the queens!</string>
-    <string name="start_value">5</string>
-    <string name="start_button">Поехали!</string>
-    <string name="table">Количество ферзей</string>
+    <string name="app_name">Demo</string>
+    <string name="greeting">Wassup!</string>
 </resources>
