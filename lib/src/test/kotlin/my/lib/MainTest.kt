@@ -1,3 +1,5 @@
+package my.lib
+
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.util.Random
@@ -5,7 +7,7 @@ import java.util.Random
 class MainTest {
     @Test
     fun permutationTest() {
-        val a : Array<Int> = arrayOf(5, 2, 4, 3, 1)
+        val a : IntArray = arrayOf(5, 2, 4, 3, 1).toIntArray()
         val correct : List<Int> = a.sorted()
         mergeSort(a)
         assertEquals(a.toList(), correct)
@@ -13,7 +15,7 @@ class MainTest {
 
     @Test
     fun multipermutationTest() {
-        val a : Array<Int> = arrayOf(1, 1, 5, 2, 5, 3, 3, 4, 6, 3)
+        val a : IntArray = arrayOf(1, 1, 5, 2, 5, 3, 3, 4, 6, 3).toIntArray()
         val correct : List<Int> = a.sorted()
         mergeSort(a)
         assertEquals(a.toList(), correct)
@@ -21,7 +23,7 @@ class MainTest {
 
     @Test
     fun singleTest() {
-        val a : Array<Int> = arrayOf(1)
+        val a : IntArray = arrayOf(1).toIntArray()
         val correct : List<Int> = a.sorted()
         mergeSort(a)
         assertEquals(a.toList(), correct)
@@ -31,7 +33,7 @@ class MainTest {
     fun randomTests() {
         val cntTests = 10
         for (i in 0..cntTests) {
-            val a : Array<Int> = Array<Int>(100000, { Random().nextInt(1000000000) })
+            val a : IntArray = Array<Int>(100000, { Random().nextInt(1000000000) }).toIntArray()
             val correct : List<Int> = a.sorted()
             mergeSort(a)
             assertEquals(a.toList(), correct)

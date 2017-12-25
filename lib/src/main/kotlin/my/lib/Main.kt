@@ -1,4 +1,6 @@
-fun mergeSort(a : Array<Int>, l : Int = 0, r : Int = a.size) {
+package my.lib
+
+fun mergeSort(a : IntArray, l : Int = 0, r : Int = a.size) {
     if (r - l < 2)
         return
     val m = (l + r) / 2
@@ -7,7 +9,7 @@ fun mergeSort(a : Array<Int>, l : Int = 0, r : Int = a.size) {
     merge(a, l, m, r)
 }
 
-fun merge(a : Array<Int>, l : Int, m : Int, r : Int) {
+fun merge(a : IntArray, l : Int, m : Int, r : Int) {
     val tmp = IntArray(r - l)
     var it1 = l
     var it2 = m
