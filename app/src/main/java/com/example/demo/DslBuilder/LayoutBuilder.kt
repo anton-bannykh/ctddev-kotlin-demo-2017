@@ -1,4 +1,4 @@
-package com.example.demo.builder
+package com.example.demo.DslBuilder
 
 /**
  * Created by Facmad on 19.12.2017.

@@ -7,9 +7,8 @@ import android.view.View
 import android.widget.EditText
 import my.lib.sumFun
 import android.widget.LinearLayout
-import com.example.demo.builder.*
-import com.example.demo.builder.MATCH_PARENT
-import my.lib.sumFun
+import com.example.demo.DslBuilder.*
+import com.example.demo.DslBuilder.MATCH_PARENT
 
 
 class MainActivity : AppCompatActivity() {
