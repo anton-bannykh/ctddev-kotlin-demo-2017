@@ -3,10 +3,14 @@ package com.example.demo
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
+import com.example.demo.builder.*
 import my.lib.Tree
+import org.jetbrains.anko.linearLayout
 
 class SecondActivity : AppCompatActivity() {
 
@@ -18,11 +22,53 @@ class SecondActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        setContentView(
+            linearLayout {
+                linearLayout {
+                    orientation = LinearLayout.VERTICAL
+                    layoutParams = linearLayoutParams {
+                        width = MATCH_PARENT
+                        height = MATCH_PARENT
+                    }
+                    val inputLca = editText {
+                        hint = extractString(R.string.lca_hint)
+                    }
+                    button {
+                        text = extractString(R.string.run)
+                        setOnClickListener {
+                            getLca(inputLca)
+                        }
+                    }
+                    textView {
+                        id = R.id.textView3
+                        text = "0"
+                        gravity = Gravity.CENTER
+                        textSize = 30F
+                    }
+
+                    button {
+                        text = extractString(R.string.back)
+                        setOnClickListener {
+                            backToMainActivity()
+                        }
+                    }
+
+                    textView {
+                        id = R.id.textView4
+                    }
+
+                    childrenLayout = linearLayoutParams {
+                        width = MATCH_PARENT
+                        height = WRAP_CONTENT
+                        setMargins(9,9,9,9)
+                    }
+                }
+            }
+        )
+
         val intent = getIntent()
         sequence = intent.getStringExtra("seq")
         num = intent.getIntExtra("num", 1)
-        println(num)
         buildLca()
     }
 
@@ -51,7 +97,7 @@ class SecondActivity : AppCompatActivity() {
     }
 
     fun getLca(view: View) {
-        val showLcaView = findViewById<View>(R.id.editText) as EditText
+        val showLcaView = view as EditText
         val showOutput = findViewById<View>(R.id.textView3) as TextView
         if (!errorsFlag) {
             val lcaVerticesString = showLcaView.text.toString()
@@ -69,7 +115,7 @@ class SecondActivity : AppCompatActivity() {
 
     }
 
-    fun backToMainActivity(view : View) {
+    fun backToMainActivity() {
         val intent = Intent(this@SecondActivity, MainActivity::class.java)
         startActivity(intent)
     }
