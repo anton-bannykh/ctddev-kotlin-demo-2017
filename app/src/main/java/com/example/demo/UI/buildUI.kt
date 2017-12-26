@@ -3,7 +3,13 @@ package com.example.demo.UI
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
+import android.widget.ScrollView
+import android.widget.TextView
+import android.widget.EditText
+import android.widget.Button
+
 
 /**
  * Created by Sergey on 24.12.2017.
