@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="layoutId"> 0 </item>
+    <item type="id" name="numberOfVertex"> 1 </item>
+    <item type="id" name="submitCount"> 2 </item>
+    <item type="id" name="edgeAdderV"> 3 </item>
+    <item type="id" name="edgeAdderU"> 4 </item>
+    <item type="id" name="edgeAdderW"> 5 </item>
+    <item type="id" name="edgeAdder"> 6 </item>
+    <item type="id" name="calculationStarter"> 7 </item>
+    <item type="id" name="firstVertex"> 8 </item>
+    <item type="id" name="secondVertex"> 9 </item>
+    <item type="id" name="distShower"> 10 </item>
+    <item type="id" name="answerShower"> 11 </item>
+</resources>
