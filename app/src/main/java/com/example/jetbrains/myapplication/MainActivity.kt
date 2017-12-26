@@ -35,30 +35,6 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n", "ResourceType")
     fun drawView() {
-//        val layout = LinearLayout(this)
-//        layout.orientation = LinearLayout.VERTICAL
-//        layout.layoutParams = ViewGroup.LayoutParams(
-//                LinearLayout.LayoutParams.FILL_PARENT,
-//                LinearLayout.LayoutParams.FILL_PARENT
-//        )
-//        val button = Button(this)
-//        button.text = "OK!"
-//        button.layoutParams = ViewGroup.LayoutParams(
-//                LinearLayout.LayoutParams.WRAP_CONTENT,
-//                LinearLayout.LayoutParams.WRAP_CONTENT
-//        )
-//        val button2 = Button(this)
-//        button2.text = "OK2!"
-//        button2.layoutParams = ViewGroup.LayoutParams(
-//                LinearLayout.LayoutParams.WRAP_CONTENT,
-//                LinearLayout.LayoutParams.WRAP_CONTENT
-//        )
-//        layout.addView(button)
-//        layout.addView(button2)
-//        this.addContentView(
-//                layout,
-//                layout.layoutParams
-//        )
         linearLayout {
             orientation = LinearLayout.VERTICAL
             wrapContent()
