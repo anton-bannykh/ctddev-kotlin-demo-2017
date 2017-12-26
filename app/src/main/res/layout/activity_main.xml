@@ -6,44 +6,44 @@
     android:layout_height="match_parent"
     tools:context="com.example.demo.MainActivity">
 
-    <EditText
-        android:id="@+id/str"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:ems="10"
-        android:hint="@string/enter_the_sequence"
-        android:inputType="textMultiLine"
-        android:textSize="25sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="100dp"
+        tools:ignore="MissingConstraints">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:layout_marginTop="80dp"
-        android:text="@string/go"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/answer"
-        app:layout_constraintTop_toBottomOf="@+id/str"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="148dp" />
+        <EditText
+            android:id="@+id/str"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:ems="10"
+            android:hint="@string/enter_the_sequence"
+            android:inputType="textMultiLine"
+            android:textSize="25sp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="175dp" />
 
-    <TextView
-        android:id="@+id/answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="72dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/answer"
+            android:layout_width="222dp"
+            android:layout_height="45dp"
+            android:textSize="25sp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="377dp" />
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go"
+            android:textSize="25sp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="277dp" />
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
