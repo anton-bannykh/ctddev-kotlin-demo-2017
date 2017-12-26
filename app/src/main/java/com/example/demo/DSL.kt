@@ -1,4 +1,4 @@
-package com.example.test.myapplication
+package com.example.demo
 
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
