@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/tools">
+    <item name="layout" type="id">0</item>
+    <item name="addEdgeButton" type="id">1</item>
+    <item name="removeEdgeButton" type="id">2</item>
+    <item name="addEdge" type="id">3</item>
+    <item name="removeEdge" type="id">4</item>
+    <item name="edgeFrom" type="id">5</item>
+    <item name="edgeTo" type="id">6</item>
+    <item name="edgeFromDelete" type="id">7</item>
+    <item name="edgeToDelete" type="id">8</item>
+    <item name="from1" type="id">9</item>
+    <item name="to1" type="id">10</item>
+    <item name="from2" type="id">11</item>
+    <item name="to2" type="id">12</item>
+    <item name="root" type="id">13</item>
+    <item name="setRoot" type="id">14</item>
+    <item name="addedEdges" type="id">15</item>
+    <item name="addedEdgesScroll" type="id">16</item>
+    <item name="addedEdgesList" type="id">17</item>
+    <item name="res" type="id">18</item>
+    <item name="resScroll" type="id">19</item>
+    <item name="resList" type="id">20</item>
+</resources>

@@ -2,6 +2,12 @@
     <string name="app_name">DFS</string>
     <string name="inputNumRibs">Введите две вершины через запятую</string>
     <string name="addEdge">Добавить</string>
-    <string name="enterRibs">Добавить ребро</string>
+    <string name="enterEdges">Добавить ребро</string>
     <string name="removeEdge">Удалить</string>
+    <string name="from">Из</string>
+    <string name="to">в</string>
+    <string name="removeEdges">Удалить ребро</string>
+    <string name="root">Стартовая вершина</string>
+    <string name="addedEdges">Добавленные ребра</string>
+    <string name="res">Результат</string>
 </resources>
