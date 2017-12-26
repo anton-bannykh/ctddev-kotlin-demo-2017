@@ -5,22 +5,59 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.text.InputType
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_main.*
 import my.lib.Point
 import my.lib.dist
 import my.lib.smallestDist
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var tvAnsLen: TextView
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var etX: EditText
+    private lateinit var etY: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val layout =
+            linearLayout(width = ViewGroup.LayoutParams.MATCH_PARENT, height = ViewGroup.LayoutParams.MATCH_PARENT) {
+                orientation = LinearLayout.VERTICAL
+                linearLayout(width = ViewGroup.LayoutParams.MATCH_PARENT, height = ViewGroup.LayoutParams.WRAP_CONTENT) {
+                    etX = editText(width = 0) {
+                        hint = "x"
+                        weight = 1f
+                        setRawInputType(InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL or InputType.TYPE_NUMBER_FLAG_SIGNED)
+                    }
+                    etY = editText(width = 0) {
+                        hint = "y"
+                        weight = 1f
+                        setRawInputType(InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL or InputType.TYPE_NUMBER_FLAG_SIGNED)
+                    }
+                    button {
+                        text = resources.getString(R.string.button_text)
+                        setOnClickListener({ addPoint(this) })
+                    }
+                }
+                tvAnsLen = textView {
+                    text = resources.getString(R.string.less_then_two_points_error)
+                    setTextColor(resources.getColor(R.color.distance_message_color))
+                    setPadding(dp(10), dp(5), dp(10), dp(5))
+                    gravity = Gravity.CENTER
+                    textSize = sp(16)
+                }
+                recyclerView = recyclerView(width = LinearLayout.LayoutParams.MATCH_PARENT,
+                                            height = LinearLayout.LayoutParams.MATCH_PARENT) {
 
-        tvAnsLen.text = getString(R.string.less_then_two_points_error)
+                }
+            }
+        setContentView(layout.layout)
+        //setContentView(R.layout.activity_main)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = PointAdapter()
     }
