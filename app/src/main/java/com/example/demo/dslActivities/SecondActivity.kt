@@ -1,4 +1,4 @@
-package com.example.demo
+package com.example.demo.dslActivities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.example.demo.R
 import com.example.demo.dsl.*
 import my.lib.Tree
 
