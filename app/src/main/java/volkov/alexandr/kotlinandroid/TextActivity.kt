@@ -1,17 +1,17 @@
 package volkov.alexandr.kotlinandroid
 
 import android.graphics.Color
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
+import android.support.v7.app.AppCompatActivity
 import android.text.Spannable
-import android.text.SpannableString
-import android.text.TextWatcher
-import android.text.SpannableStringBuilder
 import android.text.Spanned
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.InputType
 import android.text.method.ScrollingMovementMethod
 import android.text.style.BackgroundColorSpan
-import kotlinx.android.synthetic.main.activity_text.*
+import android.view.Gravity
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import my.lib.Trie
 
 class TextActivity : AppCompatActivity() {
@@ -19,26 +19,40 @@ class TextActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_text)
 
         trie = Trie(intent.getStringArrayListExtra(MainActivity.PATTERNS))
-        tvFind.movementMethod = ScrollingMovementMethod()
-        etText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(p0: Editable?) {
-                val text = etText.text.toString()
-                val founded = trie?.findAll(text)
-                tvFind.text = decorate(text, founded!!)
-            }
 
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        val view = linearLayout {
+            var find: Text? = null
+            edit {
+                setHeight(MATCH_PARENT)
+                setWidth(MATCH_PARENT)
+                setWeight(1f)
+                setGravity(Gravity.TOP or Gravity.START)
+                textSize = 18f
+                hint = "Enter text"
+                inputType = InputType.TYPE_TEXT_FLAG_IME_MULTI_LINE
+                textWatcher = simpleTextWatcher {
+                    val text = getText().toString()
+                    val founded = trie?.findAll(text)
+                    find?.text = decorate(text, founded!!)
+                }
             }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            find = text {
+                setHeight(MATCH_PARENT)
+                setWidth(MATCH_PARENT)
+                setWeight(1f)
+                setGravity(Gravity.TOP)
+                textSize = 18f
+                movementMethod = ScrollingMovementMethod()
+                maxLines = 10
+                lines = 8
             }
-        })
+        }.build(this)
+        setContentView(view)
     }
 
-    fun decorate(text: String, founded: List<Pair<Int, String>>): Spannable {
+    private fun decorate(text: String, founded: kotlin.collections.List<Pair<Int, String>>): Spannable {
         if (founded.isEmpty()) {
             return SpannableString(text)
         }
