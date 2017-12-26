@@ -11,88 +11,47 @@
         android:id="@+id/count"
         android:layout_width="283dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:singleLine="false"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitCount" />
+        />
 
     <Button
         android:id="@+id/submitN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="readN"
-        android:text="Задать"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/count"
-        app:layout_constraintTop_toBottomOf="@+id/submitCount" />
+         />
 
     <EditText
         android:id="@+id/readArray"
         android:layout_width="284dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headArray" />
+         />
 
     <Button
         android:id="@+id/submitArray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="readArray"
-        android:text="Задать"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/readArray"
-        app:layout_constraintTop_toBottomOf="@+id/headArray" />
+         />
 
     <Button
         android:id="@+id/startQuickSort"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="startQuickSort"
-        android:text="Отсортировать массив."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/readArray" />
+         />
 
     <TextView
         android:id="@+id/answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/answer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startQuickSort" />
+        />
 
     <TextView
         android:id="@+id/submitCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Введите кол-во чисел."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
 
     <TextView
         android:id="@+id/headArray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Введите массив."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/count" />
+        />
 </android.support.constraint.ConstraintLayout>
