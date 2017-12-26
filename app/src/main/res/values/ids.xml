@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="layoutID" type="id" />
+    <item name="sizeBox" type="id" />
+    <item name="createGraphButton" type="id" />
+    <item name="textViewEdges" type="id" />
+    <item name="fromBox" type="id" />
+    <item name="toBox" type="id" />
+    <item name="answerButton" type="id" />
+    <item name="answerTextView" type="id" />
+    <item name="addEdgeButton" type="id" />
+</resources>
