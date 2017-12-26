@@ -6,6 +6,7 @@ import android.support.constraint.ConstraintSet
 import android.support.v7.app.AppCompatActivity
 import android.text.InputType
 import android.view.View
+import android.view.View.generateViewId
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -22,110 +23,123 @@ class MainActivity : AppCompatActivity() {
     private lateinit var delValueField: EditText
     private lateinit var answerField : TextView
 
+    val layoutId = generateViewId()
+    val textView3 = generateViewId()
+    val editText3 = generateViewId()
+    val button4 = generateViewId()
+    val textView2 = generateViewId()
+    val editText2 = generateViewId()
+    val button = generateViewId()
+    val textView = generateViewId()
+    val editText = generateViewId()
+    val button3 = generateViewId()
+    val textView4 = generateViewId()
+
     private var tree = SplayTree<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 //        setContentView(R.layout.activity_main)
-        setContentView(constraintLayout(R.id.layout) {
-            textView(R.id.textView3) {
+        setContentView(constraintLayout(layoutId) {
+            textView(textView3) {
                 width = dp(100)
                 height = dp(40)
-                leftMargin(R.id.layout, ConstraintSet.START, dp(28))
-                topMargin(R.id.layout, ConstraintSet.TOP, dp(48))
+                leftMargin(layoutId, ConstraintSet.START, dp(28))
+                topMargin(layoutId, ConstraintSet.TOP, dp(48))
                 text = resources.getText(R.string.enter_value)
             }
-            editText(R.id.editText3) {
+            editText(editText3) {
                 width = dp(150)
                 height = dp(40)
                 setEms(10)
                 inputType = InputType.TYPE_CLASS_NUMBER
-                labelFor = R.id.editText3
-                rightMargin(R.id.layout, ConstraintSet.END, dp(24))
-                topMargin(R.id.layout, ConstraintSet.TOP, dp(48))
+                labelFor = editText3
+                rightMargin(layoutId, ConstraintSet.END, dp(24))
+                topMargin(layoutId, ConstraintSet.TOP, dp(48))
             }
-            button(R.id.button4) {
+            button(button4) {
                 width = dp(100)
                 height = dp(40)
                 text = resources.getText(R.string.add_value)
-                topMargin(R.id.layout, ConstraintSet.TOP, dp(88))
-                leftMargin(R.id.layout, ConstraintSet.START, dp(8))
-                rightMargin(R.id.layout, ConstraintSet.END, dp(8))
+                topMargin(layoutId, ConstraintSet.TOP, dp(88))
+                leftMargin(layoutId, ConstraintSet.START, dp(8))
+                rightMargin(layoutId, ConstraintSet.END, dp(8))
             }
 
-            textView(R.id.textView2) {
+            textView(textView2) {
                 width = dp(100)
                 height = dp(40)
-                leftMargin(R.id.layout, ConstraintSet.START, dp(28))
-                topMargin(R.id.textView3, ConstraintSet.BOTTOM, dp(60))
+                leftMargin(layoutId, ConstraintSet.START, dp(28))
+                topMargin(textView3, ConstraintSet.BOTTOM, dp(60))
                 text = resources.getText(R.string.enter_value)
             }
-            editText(R.id.editText2) {
+            editText(editText2) {
                 width = dp(150)
                 height = dp(40)
                 setEms(10)
                 inputType = InputType.TYPE_CLASS_NUMBER
-                labelFor = R.id.editText2
-                rightMargin(R.id.layout, ConstraintSet.END, dp(24))
-                topMargin(R.id.editText3, ConstraintSet.BOTTOM, dp(60))
+                labelFor = editText2
+                rightMargin(layoutId, ConstraintSet.END, dp(24))
+                topMargin(editText3, ConstraintSet.BOTTOM, dp(60))
             }
-            button(R.id.button) {
+            button(button) {
                 width = dp(100)
                 height = dp(40)
                 text = resources.getText(R.string.erase)
-                topMargin(R.id.button4, ConstraintSet.BOTTOM, dp(60))
-                leftMargin(R.id.layout, ConstraintSet.START, dp(8))
-                rightMargin(R.id.layout, ConstraintSet.END, dp(8))
+                topMargin(button4, ConstraintSet.BOTTOM, dp(60))
+                leftMargin(layoutId, ConstraintSet.START, dp(8))
+                rightMargin(layoutId, ConstraintSet.END, dp(8))
             }
 
-            textView(R.id.textView) {
+            textView(textView) {
                 width = dp(100)
                 height = dp(40)
-                leftMargin(R.id.layout, ConstraintSet.START, dp(28))
-                topMargin(R.id.textView2, ConstraintSet.BOTTOM, dp(60))
+                leftMargin(layoutId, ConstraintSet.START, dp(28))
+                topMargin(textView2, ConstraintSet.BOTTOM, dp(60))
                 text = resources.getText(R.string.enter_value)
             }
-            editText(R.id.editText) {
+            editText(editText) {
                 width = dp(150)
                 height = dp(40)
                 setEms(10)
                 inputType = InputType.TYPE_CLASS_NUMBER
-                labelFor = R.id.editText
-                rightMargin(R.id.layout, ConstraintSet.END, dp(24))
-                topMargin(R.id.editText2, ConstraintSet.BOTTOM, dp(60))
+                labelFor = editText
+                rightMargin(layoutId, ConstraintSet.END, dp(24))
+                topMargin(editText2, ConstraintSet.BOTTOM, dp(60))
             }
-            button(R.id.button3) {
+            button(button3) {
                 width = dp(100)
                 height = dp(40)
                 text = resources.getText(R.string.check)
-                topMargin(R.id.button, ConstraintSet.BOTTOM, dp(60))
-                leftMargin(R.id.layout, ConstraintSet.START, dp(8))
-                rightMargin(R.id.layout, ConstraintSet.END, dp(8))
+                topMargin(button, ConstraintSet.BOTTOM, dp(60))
+                leftMargin(layoutId, ConstraintSet.START, dp(8))
+                rightMargin(layoutId, ConstraintSet.END, dp(8))
             }
 
-            textView(R.id.textView4) {
+            textView(textView4) {
                 width = dp(170)
                 height = dp(55)
                 textSize = sp(14)
                 setTypeface(null, Typeface.BOLD)
                 textAlignment = View.TEXT_ALIGNMENT_CENTER
-                leftMargin(R.id.layout, ConstraintSet.START, dp(0))
-                rightMargin(R.id.layout, ConstraintSet.END, dp(0))
-                bottomMargin(R.id.layout, ConstraintSet.BOTTOM, dp(8))
-                topMargin(R.id.button3, ConstraintSet.BOTTOM, dp(8))
+                leftMargin(layoutId, ConstraintSet.START, dp(0))
+                rightMargin(layoutId, ConstraintSet.END, dp(0))
+                bottomMargin(layoutId, ConstraintSet.BOTTOM, dp(8))
+                topMargin(button3, ConstraintSet.BOTTOM, dp(8))
                 text = resources.getText(R.string.enter_value)
             }
 
         })
 
-        addValueField = findViewById(R.id.editText3)
-        checkValueField = findViewById(R.id.editText)
-        delValueField = findViewById(R.id.editText2)
-        answerField = findViewById(R.id.textView4)
+        addValueField = findViewById(editText3)
+        checkValueField = findViewById(editText)
+        delValueField = findViewById(editText2)
+        answerField = findViewById(textView4)
 
-        val btnAdd = findViewById<Button>(R.id.button4)
-        val btnDel = findViewById<Button>(R.id.button)
-        val btnCheck = findViewById<Button>(R.id.button3)
+        val btnAdd = findViewById<Button>(button4)
+        val btnDel = findViewById<Button>(button)
+        val btnCheck = findViewById<Button>(button3)
 
         btnAdd.setOnClickListener { addElement() }
         btnDel.setOnClickListener { delElement() }
