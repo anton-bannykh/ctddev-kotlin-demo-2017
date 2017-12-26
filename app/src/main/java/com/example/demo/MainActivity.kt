@@ -1,4 +1,4 @@
-package com.example.dmitriytrusienko.omgwtf
+package com.example.demo
 
 import android.annotation.SuppressLint
 import android.content.Intent

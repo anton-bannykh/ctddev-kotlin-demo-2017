@@ -1,13 +1,9 @@
-package com.example.dmitriytrusienko.omgwtf
-
+package com.example.demo
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_graph.*
 
-/**
- * Created by Dmitriy Trusienko on 12.12.2017.
- */
 class GraphActivity : AppCompatActivity() {
 
     companion object {

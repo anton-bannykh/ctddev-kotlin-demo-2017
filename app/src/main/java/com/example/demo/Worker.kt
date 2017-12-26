@@ -1,8 +1,5 @@
-package com.example.dmitriytrusienko.omgwtf
+package com.example.demo
 
-/**
- * Created by Dmitriy Trusienko on 13.12.2017.
- */
 class Worker(private val countGraphBad:Int) {
     private val countGraph = countGraphBad + 1
     public var bridges = 0
