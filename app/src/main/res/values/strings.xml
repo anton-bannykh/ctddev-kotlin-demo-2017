@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Ford-Bellman Algorithm</string>
+    <string name="textViewAddEdge">Add Edge</string>
+    <string name="fromHint">from</string>
+    <string name="to">to</string>
+    <string name="add">Add</string>
+    <string name="weight">weight</string>
+    <string name="find">Find</string>
+    <string name="create_new_graph">Create New Graph</string>
+    <string name="answer">Answer</string>
+    <string name="find_route">Find Route</string>
+    <string name="exists_negative_cycle">Graph has negative cycle </string>
+    <string name="size_of_your_graph">Size of your graph</string>
+    <string name="no_route">No route from %1d to %1d</string>
+    <string name="big_numbers">Your entered too big numbers</string>
+    <string name="enter_all_fields">Please, enter all fields</string>
+    <string name="enter_size">Please, enter the size of your graph</string>
+    <string name="create_graph">Please, create graph</string>
+</resources>

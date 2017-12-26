@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="main_layout" type="id"/>
+    <item name="editTextNumbersVertices" type="id"/>
+    <item name="buttonCreate" type="id"/>
+    <item name="textViewAddEdge" type="id"/>
+    <item name="editTextFrom" type="id"/>
+    <item name="editTextTo" type="id"/>
+    <item name="editTextWeight" type="id"/>
+    <item name="buttonAdd" type="id"/>
+    <item name="textViewShowGraph" type="id"/>
+    <item name="textViewFindWay" type="id"/>
+    <item name="editTextFromFind" type="id"/>
+    <item name="editTextToFind" type="id"/>
+    <item name="buttonFind" type="id"/>
+    <item name="textViewAnswer" type="id"/>
+    <item name="textViewShowAnswer" type="id"/>
+
+</resources>

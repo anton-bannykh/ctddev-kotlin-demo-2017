@@ -1,3 +1,5 @@
+package my.lib
+
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -18,7 +20,9 @@ class MainTest {
                 arrayListOf(0, 1, 2),
                 arrayListOf(0, 1, 2, 3)
         )
-        assertEquals(Pair(dist, paths), g.fordBellman(0))
+        val result = g.fordBellman(0)
+        assertEquals(dist, result.first!!.toList())
+        assertEquals(paths, result.second)
     }
 
     @Test
@@ -60,7 +64,9 @@ class MainTest {
                 arrayListOf(2, 3, 1, 0, 5, 4),
                 arrayListOf(2, 3, 1, 0, 5)
         )
-        assertEquals(Pair(dist, paths), g.fordBellman(2))
+        val result = g.fordBellman(2)
+        assertEquals(dist, result.first!!.toList())
+        assertEquals(paths, result.second)
     }
 
     @Test
@@ -82,7 +88,9 @@ class MainTest {
                 arrayListOf(Int.MAX_VALUE),
                 arrayListOf(0, 1, 2, 3, 5)
         )
-        assertEquals(Pair(dist, paths), g.fordBellman(0))
+        val result = g.fordBellman(0)
+        assertEquals(dist, result.first!!.toList())
+        assertEquals(paths, result.second)
     }
 
     @Test
@@ -106,7 +114,9 @@ class MainTest {
                 arrayListOf(),
                 arrayListOf(3, 4)
         )
-        assertEquals(Pair(dist, paths), g.fordBellman(3))
+        val result = g.fordBellman(3)
+        assertEquals(dist, result.first!!.toList())
+        assertEquals(paths, result.second)
     }
 
     @Test
@@ -127,5 +137,4 @@ class MainTest {
         )
         assertEquals((Pair(null, paths)), g.fordBellman(3))
     }
-
 }
