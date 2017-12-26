@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="textViewN" type="id" />
+    <item name="textViewBatya" type="id" />
+    <item name="textViewVert1" type="id" />
+    <item name="textViewVert2" type="id" />
+    <item name="editTextN" type="id" />
+    <item name="but1" type="id" />
+</resources>

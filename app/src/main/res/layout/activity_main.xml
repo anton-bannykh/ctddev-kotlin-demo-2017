@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.demo.MainActivity">
+    tools:context="com.example.demo.MainActivity"
+    android:id = "@+id/activityId">
+
 
     <EditText
         android:id="@+id/editTextN"
@@ -16,7 +18,6 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/textViewN"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textViewN"
         android:layout_width="wrap_content"
@@ -153,5 +154,7 @@
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </android.support.constraint.ConstraintLayout>
