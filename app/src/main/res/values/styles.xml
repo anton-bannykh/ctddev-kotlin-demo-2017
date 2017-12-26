@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="holo_green_dark">
+        <item name="android:color">#FF669900</item>
+    </style>
+
+    <style name="holo_red_dark">
+        <item name="android:color">#FFCC0000</item>
+    </style>
+
+    <style name="holo_blue_dark">
+        <item name="android:color">#FF0099CC</item>
+    </style>
+
 </resources>

@@ -1,5 +1,6 @@
 package com.example.demo
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
@@ -8,7 +9,6 @@ import android.widget.TextView
 import my.lib.EulerTourTree
 import java.lang.Integer.parseInt
 import java.lang.String.format
-import java.lang.String.valueOf
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +16,114 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(layout(R.id.main_layout) {
+            addTextView(R.id.nodes_count) {
+                width = matchParent()
+                height = convertIntToDp(20)
+                text = resources.getText(R.string.node_count)
+            }
+
+            addEditText(R.id.nodes_count_input) {
+                width = matchParent()
+                height = convertIntToDp(40)
+                textSize = 18f
+                setText(R.string.zero)
+            }
+
+            addButton(R.id.build) {
+                width = matchParent()
+                height = convertIntToDp(40)
+                text = resources.getText(R.string.build)
+                textSize = 15f
+            }
+
+            addTextView(R.id.first_node_hint) {
+                width = matchParent()
+                height = convertIntToDp(20)
+                text = resources.getText(R.string.first_node)
+            }
+
+            addEditText(R.id.first_node_input) {
+                width = matchParent()
+                height = convertIntToDp(40)
+                textSize = 18f
+                setText(R.string.zero)
+            }
+
+            addTextView(R.id.second_node_hint) {
+                width = matchParent()
+                height = convertIntToDp(20)
+                text = resources.getText(R.string.second_node)
+            }
+
+            addEditText(R.id.second_node_input) {
+                width = matchParent()
+                height = convertIntToDp(40)
+                textSize = 18f
+                setText(R.string.zero)
+            }
+
+            addButton(R.id.link) {
+                width = matchParent()
+                height = convertIntToDp(20)
+                text = resources.getText(R.string.link)
+                textSize = 15f
+                setTextColor(Color.GREEN)
+                setBackgroundColor(Color.GRAY)
+
+            }
+
+            addButton(R.id.cut) {
+                width = matchParent()
+                height = convertIntToDp(20)
+                text = resources.getText(R.string.cut)
+                textSize = 15f
+                setTextColor(Color.RED)
+                setBackgroundColor(Color.GRAY)
+
+            }
+
+            addButton(R.id.connected) {
+                width = matchParent()
+                height = convertIntToDp(20)
+                text = resources.getText(R.string.connected)
+                textSize = 15f
+                setTextColor(Color.BLUE)
+                setBackgroundColor(Color.GRAY)
+
+            }
+
+            addButton(R.id.size) {
+                width = matchParent()
+                height = convertIntToDp(20)
+                text = resources.getText(R.string.size)
+                textSize = 15f
+                setTextColor(Color.BLUE)
+                setBackgroundColor(Color.GRAY)
+
+            }
+
+            addTextView(R.id.answer) {
+                width = matchParent()
+                height = convertIntToDp(20)
+                text = resources.getText(R.string.answer_tip)
+                setTextSize(17f)
+            }
+
+            addTextView(R.id.connections) {
+                width = matchParent()
+                height = convertIntToDp(80)
+                text = resources.getText(R.string.connections_tip)
+                setTextSize(17f)
+            }
+
+            addTextView(R.id.tree) {
+                width = matchParent()
+                height = convertIntToDp(80)
+                text = resources.getText(R.string.tree_tip)
+                setTextSize(17f)
+            }
+        })
 
         val answerField: TextView = findViewById(R.id.answer)
 
@@ -69,9 +176,18 @@ class MainActivity : AppCompatActivity() {
         sizeButton.setOnClickListener {
             val firstNode = parseInt(firstNode.text.toString())
             if (firstNode <= currentTree.size) {
-                answerField.text = valueOf(currentTree.sizeOfNodesComponent(firstNode))
+                answerField.text = format("Size of %d's component is %d", firstNode,
+                        currentTree.sizeOfNodesComponent(firstNode))
             }
         }
+    }
+
+    private fun convertIntToDp(value: Int): Int {
+        return (this.applicationContext.resources.displayMetrics.density * value).toInt()
+    }
+
+    private fun matchParent(): Int {
+        return convertIntToDp(this.applicationContext.resources.displayMetrics.widthPixels)
     }
 
     private fun refreshOutput() {

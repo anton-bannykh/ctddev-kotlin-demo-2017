@@ -11,4 +11,5 @@
     <string name="answer_tip">Answer will be here</string>
     <string name="tree_tip">Tree will be here</string>
     <string name="connections_tip">Connections between nodes will be here</string>
+    <string name="zero">0</string>
 </resources>
