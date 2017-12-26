@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">Demo</string>
-    <string name="greeting">Wassup!</string>
+    <string name="app_name">2-SAT</string>
 </resources>
