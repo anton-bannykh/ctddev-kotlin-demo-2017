@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="layoutId" />
+    <item type="id" name="arrayDescription" />
+    <item type="id" name="inputArray" />
+    <item type="id" name="intDescription" />
+    <item type="id" name="inputInt" />
+    <item type="id" name="appButton" />
+    <item type="id" name="resultDescription" />
+    <item type="id" name="appResult" />
+</resources>
