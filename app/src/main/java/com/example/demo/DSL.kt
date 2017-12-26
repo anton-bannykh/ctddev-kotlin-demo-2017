@@ -20,30 +20,34 @@ class RelativeLayoutData(private val activity: AppCompatActivity, layoutId: Int)
         id = layoutId
     }
 
-    fun <T : View> addItem(item: T ,params: RelativeLayout.LayoutParams, init: T.() -> Unit): T {
+    fun <T : View> addItem(item: T, params: RelativeLayout.LayoutParams, init: T.() -> Unit): T {
         item.init()
         layout.addView(item, params)
         return item
     }
+
     fun layoutParams(w: Int, h: Int, init: RelativeLayout.LayoutParams.() -> Unit): RelativeLayout.LayoutParams {
         val el = RelativeLayout.LayoutParams(w, h)
         el.init()
         return el
     }
-    fun textView(name: Int,params: RelativeLayout.LayoutParams, init: TextView.() -> Unit): TextView {
+
+    fun textView(name: Int, params: RelativeLayout.LayoutParams, init: TextView.() -> Unit): TextView {
         val el = TextView(activity)
         el.id = name
-        return addItem(el,params, init)
+        return addItem(el, params, init)
     }
-    fun button(name: Int,params: RelativeLayout.LayoutParams, init: TextView.() -> Unit): TextView {
+
+    fun button(name: Int, params: RelativeLayout.LayoutParams, init: TextView.() -> Unit): TextView {
         val el = Button(activity)
         el.id = name
-        return addItem(el,params, init)
+        return addItem(el, params, init)
     }
-    fun editText(name: Int,params: RelativeLayout.LayoutParams, init: TextView.() -> Unit): TextView {
+
+    fun editText(name: Int, params: RelativeLayout.LayoutParams, init: TextView.() -> Unit): TextView {
         val el = EditText(activity)
         el.id = name
-        return addItem(el,params, init)
+        return addItem(el, params, init)
     }
 }
 
