@@ -41,6 +41,12 @@ fun searchSubstring(s:String, k: String): Int
 
 ![alt text](artifacts/Big%20text%20with%20apple.png "Big text with apple")
 
+# Задание 3
+## Алгоритм Кнута-Морриса-Пратта (приложение для Android)
+Генерация ConstraintLayout без парсинга XML
+
+DSL: [code](app/src/main/java/dsl/layout/LayoutDSL.kt)
+
 # Разное
 
 ## Gradle
