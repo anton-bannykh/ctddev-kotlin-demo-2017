@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
-        android:onClick="mainSearchSubstring"
         android:text="@string/find_substring"
         app:layout_constraintStart_toEndOf="@+id/stringTextView"
         app:layout_constraintTop_toBottomOf="@+id/substringEditText" />
