@@ -3,7 +3,7 @@ var graph = ArrayList<ArrayList<Int>>()
 var ans = ArrayList<Int>()
 
 
-fun dfs(u: Int, graph: ArrayList<ArrayList<Int>>, viz: ArrayList<Boolean>,ans: ArrayList<Int>) {
+fun dfs(u: Int, graph: ArrayList<ArrayList<Int>>, viz: ArrayList<Boolean>, ans: ArrayList<Int>) {
     viz[u] = false
     for (i in graph[u]) {
         if (viz[i]) {
