@@ -11,6 +11,7 @@ import android.widget.Spinner
 import android.widget.EditText
 
 class ConstraintLayoutContext(private val activity: AppCompatActivity, layoutId: Int) {
+
     val layout = ConstraintLayout(activity).apply {
         id = layoutId
     }
