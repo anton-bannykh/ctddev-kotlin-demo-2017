@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="mainLayout" />
+    <item type="id" name="secondLayout" />
+    <item type="id" name="textView" />
+    <item type="id" name="add_edge_button" />
+    <item type="id" name="build_button" />
+    <item type="id" name="clear_button" />
+    <item type="id" name="first_vertex" />
+    <item type="id" name="second_vertex" />
+    <item type="id" name="textView_label" />
+    <item type="id" name="textView_centoid_dec" />
+</resources>

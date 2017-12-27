@@ -5,13 +5,68 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import dsl.Layout
+import dsl.onCLick
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(Layout(this, R.id.mainLayout) {
+
+            textView(R.id.textView) {
+                margin(TOP, 24)
+                textSize = 30f
+                text = "Enter your tree by edges"
+                constraint(TOP, R.id.mainLayout, TOP)
+                constraint(START, R.id.mainLayout, START)
+                constraint(END, R.id.mainLayout, END)
+            }
+
+            button(R.id.add_edge_button) {
+                onCLick { addEdge(this) }
+                text = "Add edge"
+                constraint(TOP, R.id.textView, BOTTOM)
+                constraint(BOTTOM, R.id.mainLayout, BOTTOM)
+                constraint(START, R.id.mainLayout, START)
+                constraint(END, R.id.mainLayout, END)
+            }
+
+            button(R.id.build_button) {
+                onCLick { buildCentroidDec(this) }
+                text = "Build"
+                constraint(TOP, R.id.add_edge_button, BOTTOM)
+                constraint(BOTTOM, R.id.clear_button, TOP)
+                constraint(START, R.id.mainLayout, START)
+                constraint(END, R.id.mainLayout, END)
+            }
+
+            button(R.id.clear_button) {
+                onCLick { clear(this) }
+                text = "Clear"
+                constraint(BOTTOM, R.id.mainLayout, BOTTOM)
+                constraint(START, R.id.mainLayout, START)
+                constraint(END, R.id.mainLayout, END)
+            }
+
+            editText(R.id.first_vertex) {
+                constraint(TOP, R.id.textView, BOTTOM)
+                constraint(BOTTOM, R.id.add_edge_button, TOP)
+                constraint(START, R.id.mainLayout, START)
+                constraint(END, R.id.mainLayout, END)
+                horizontalBias(0.1f)
+            }
+
+            editText(R.id.second_vertex) {
+                constraint(TOP, R.id.textView, BOTTOM)
+                constraint(BOTTOM, R.id.add_edge_button, TOP)
+                constraint(START, R.id.mainLayout, START)
+                constraint(END, R.id.mainLayout, END)
+                horizontalBias(0.9f)
+            }
+
+        }.getLayout())
     }
 
     fun addEdge(view: View) {
