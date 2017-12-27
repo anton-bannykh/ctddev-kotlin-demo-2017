@@ -10,7 +10,6 @@ import android.widget.TextView
 import android.widget.EditText
 import android.widget.Button
 
-
 /**
  * Created by Sergey on 24.12.2017.
  */
