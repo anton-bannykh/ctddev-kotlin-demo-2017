@@ -20,7 +20,7 @@ class MyConstraintLayout(private val curActiv: AppCompatActivity, name: Int) {
 
     private val newTextView: TextView.(Int) -> TextView = { textName ->
         id = textName
-        textSize = 50f
+        textSize = 30f
         this
     }
 
@@ -41,6 +41,28 @@ class MyConstraintLayout(private val curActiv: AppCompatActivity, name: Int) {
     fun Button.onCLick(init: () -> Unit) {
         setOnClickListener { init() }
     }
+
+    val LEFT = ConstraintSet.START
+    val RIGHT = ConstraintSet.END
+    val TOP = ConstraintSet.TOP
+    val BOTTOM = ConstraintSet.BOTTOM
+
+    fun <T : View> T.marginTop(other: Int, side: Int, dist: Int) {
+        constraintSet.connect(id, TOP, other, side, dist)
+    }
+
+    fun <T : View> T.marginLeft(other: Int, side: Int, dist: Int) {
+        constraintSet.connect(id, LEFT, other, side, dist)
+    }
+
+    fun <T : View> T.marginRight(other: Int, side: Int, dist: Int) {
+        constraintSet.connect(id, RIGHT, other, side, dist)
+    }
+
+    fun <T : View> T.marginBottom(other: Int, side: Int, dist: Int) {
+        constraintSet.connect(id, BOTTOM, other, side, dist)
+    }
+
 }
 
 fun AppCompatActivity.constraintLayout(name: Int, init: MyConstraintLayout.() -> Unit): ConstraintLayout {

@@ -1,41 +1,25 @@
 package my.lib
 
-import org.junit.Assert.assertEquals
+import org.junit.Assert.assertSame
 import org.junit.Test
 
 class MainTest {
     @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    fun test8() {
+        val a = algo(8)
+        val b = a.energy.toInt()
+        assertSame(0, b)
     }
-
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun test9() {
+        val a = algo(9)
+        val b = a.energy.toInt()
+        assertSame(0, b)
     }
-
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
-    }
-
-    @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
-    }
-
-    @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
-    }
-
-    @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
-    }
-
-    @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun test10() {
+        val a = algo(10)
+        val b = a.energy.toInt()
+        assertSame(0, b)
     }
 }

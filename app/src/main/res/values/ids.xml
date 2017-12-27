@@ -3,7 +3,13 @@
 
     <item type="id" name="globalLay" />
     <item type="id" name="text" />
+    <item type="id" name="number" />
+    <item type="id" name="minus" />
+    <item type="id" name="plus" />
     <item type="id" name="but" />
+    <item type="id" name="resLay" />
+    <item type="id" name="res" />
+
 
 
 </resources>
