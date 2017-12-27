@@ -14,7 +14,7 @@ import android.widget.TextView
  * Created by jetbrains on 17/12/2017.
  */
 
-inline fun <reified T: ViewGroup> Activity.layout(init: (Context) -> T, modifier: T.() -> Unit) =
+inline fun <reified T : ViewGroup> Activity.layout(init: (Context) -> T, modifier: T.() -> Unit) =
         init(this).also {
             modifier(it)
             this.addContentView(it, it.layoutParams)
@@ -26,7 +26,7 @@ inline fun Activity.constraintLayout(modifier: ConstraintLayout.() -> Unit) =
 inline fun Activity.linearLayout(modifier: LinearLayout.() -> Unit) =
         this.layout(::LinearLayout, modifier)
 
-inline fun <reified T: View> ViewGroup.view(init: (Context) -> T, modifier: T.() -> Unit) =
+inline fun <reified T : View> ViewGroup.view(init: (Context) -> T, modifier: T.() -> Unit) =
         this.addView(init(this.context).also { modifier(it) })
 
 inline fun ViewGroup.layout(modifier: ConstraintLayout.() -> Unit) =
@@ -40,7 +40,6 @@ inline fun ViewGroup.button(modifier: Button.() -> Unit) = this.view(::Button, m
 inline fun ViewGroup.label(modifier: TextView.() -> Unit) = this.view(::TextView, modifier)
 
 inline fun ViewGroup.textEdit(modifier: EditText.() -> Unit) = this.view(::EditText, modifier)
-
 
 fun View.fillParent() {
     this.layoutParams = ViewGroup.LayoutParams(

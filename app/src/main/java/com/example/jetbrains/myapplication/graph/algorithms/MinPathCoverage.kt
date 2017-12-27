@@ -3,12 +3,12 @@ package graph.algorithms
 import graph.*
 
 
-fun Graph.findMinPathCoverageInOriented() : List<Path> {
+fun Graph.findMinPathCoverageInOriented(): List<Path> {
 
     val bipartie = BipartieGraph(vertexCount, vertexCount, g)
 
     val matching = bipartie.findMatching()
-    val reverseMatching = Array<Int?>(vertexCount, { null } )
+    val reverseMatching = Array<Int?>(vertexCount, { null })
     matching.forEachIndexed { right, left -> left?.also { reverseMatching[it] = right } }
     val used = Array(vertexCount, { false })
 
@@ -40,9 +40,7 @@ fun Graph.findMinPathCoverageInOriented() : List<Path> {
 }
 
 
-
-
-fun Graph.findMinPathCoverageInNonOriented() : List<Path> {
+fun Graph.findMinPathCoverageInNonOriented(): List<Path> {
     val extraGraph = this.toMultiGraph()
     var lastOddVertex: Int? = null
     val (extraEdges, ordinaryEdges) = Pair(hashSetOf<Edge>(), hashSetOf<Edge>())
