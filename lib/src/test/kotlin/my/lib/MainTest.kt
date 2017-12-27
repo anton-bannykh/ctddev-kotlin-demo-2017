@@ -1,3 +1,5 @@
+package my.lib
+
 import org.junit.Test
 import java.lang.Integer.max
 import java.lang.Integer.min
@@ -51,8 +53,7 @@ class MainTest {
             val k = min(21, (n * m * (kMin + (kMax - kMin) * random.nextDouble())).toInt())
             println("Params: n = $n, m = $m, k = $k")
             val edges = generateGraph(n, m, k)
-//            edges.forEach { println("${it.first} ${it.second}") }
-            val matching = getMaxMatching(n, m, edges)
+            val matching = getMaxMatching(n, m, edges.map { pair -> pair.first + 1 to pair.second + 1 }).map { pair -> pair.first - 1 to pair.second - 1 }
             println("Main solution has found matching of size ${matching.size}")
             assert(checkMatching(matching) && matching.size == bruteMatching(edges))
             println("OK\n")

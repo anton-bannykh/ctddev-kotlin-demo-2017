@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="grid_layout" type="id"/>
+    <item name="top_layout_1" type="id"/>
+    <item name="top_layout_2" type="id"/>
+    <item name="constraint_layout" type="id"/>
+    <item name="linear_layout" type="id"/>
+    <item name="graph_view" type="id"/>
+    <item name="find" type="id"/>
+    <item name="button_refresh" type="id"/>
+    <item name="button_add" type="id"/>
+    <item name="button_remove" type="id"/>
+    <item name="number_n" type="id"/>
+    <item name="number_m" type="id"/>
+    <item name="edge_u" type="id"/>
+    <item name="edge_v" type="id"/>
+</resources>
