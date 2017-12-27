@@ -184,7 +184,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         var bmp: Bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.info_ico_foreground)
         bmp = Bitmap.createScaledBitmap(bmp, dp(35), dp(35), true)
-        setContentView(constraintLayout(viewMain) {
+        setContentView(constraintLayout(viewMain, {
             text1 = textView(text1Id, {
                 setSingleLine(true)
                 leftMargin(viewMain, ConstraintSet.START, dp(28))
@@ -263,7 +263,7 @@ class MainActivity : AppCompatActivity() {
                 setBackgroundColor(android.graphics.Color.TRANSPARENT)
                 setImageBitmap(bmp)
             })
-        })
+        }) )
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val adapter = ArrayAdapter.createFromResource(this,
                 R.array.arrayOfChoises, android.R.layout.simple_spinner_item)
