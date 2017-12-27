@@ -19,13 +19,9 @@ import android.widget.EditText
 
 import android.widget.TextView
 
-
-
 @DslMarker
 
 annotation class LayoutConstructor
-
-
 
 @LayoutConstructor
 
@@ -45,8 +41,6 @@ class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
 
     val BOTTOM = ConstraintSet.BOTTOM
 
-
-
     private val init_TextView: TextView.(Int) -> TextView = { textName ->
 
         id = textName
@@ -62,8 +56,6 @@ class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
         this
 
     }
-
-
 
     private val init_EditText: EditText.(Int) -> EditText = { numberName ->
 
@@ -83,8 +75,6 @@ class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
 
     }
 
-
-
     private val init_Button: Button.(Int) -> Button = { buttonName ->
 
         id = buttonName
@@ -101,11 +91,7 @@ class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
 
     }
 
-
-
     fun dp(x: Int): Int = (k * x).toInt()
-
-
 
     fun <T : View> T.leftMargin(other: Int, side: Int, dist: Int) {
 
@@ -113,15 +99,11 @@ class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
 
     }
 
-
-
     fun <T : View> T.rightMargin(other: Int, side: Int, dist: Int) {
 
         bounds.connect(id, RIGHT, other, side, dist)
 
     }
-
-
 
     fun <T : View> T.topMargin(other: Int, side: Int, dist: Int) {
 
@@ -129,15 +111,11 @@ class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
 
     }
 
-
-
     fun <T : View> T.bottomMargin(other: Int, side: Int, dist: Int) {
 
         bounds.connect(id, BOTTOM, other, side, dist)
 
     }
-
-
 
     private fun <T : View> addsmth(elem: T, init: T.() -> Unit): T {
 
@@ -153,29 +131,19 @@ class ConstraintLayoutContext(private val act: AppCompatActivity, name: Int) {
 
     }
 
-
-
     fun textView(id: Int, init: TextView.() -> Unit) = addsmth(TextView(act).init_TextView(id), init)
 
-
-
     fun editText(id: Int, init: EditText.() -> Unit) = addsmth(EditText(act).init_EditText(id), init)
-
-
 
     fun button(id: Int, init: Button.() -> Unit) = addsmth(Button(act).init_Button(id), init)
 
 }
-
-
 
 fun Button.onCLick(init: () -> Unit) {
 
     setOnClickListener { init() }
 
 }
-
-
 
 fun AppCompatActivity.constraintLayout(name: Int, init: ConstraintLayoutContext.() -> Unit): ConstraintLayout {
 

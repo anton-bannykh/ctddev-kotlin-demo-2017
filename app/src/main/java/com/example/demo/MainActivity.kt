@@ -4,7 +4,6 @@ import DSL.constraintLayout
 import DSL.onCLick
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.appcompat.R.id.wrap_content
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.Toast
 import my.lib.BinarySearch
@@ -41,9 +40,7 @@ class MainActivity : AppCompatActivity() {
 
 //                        rightMargin(R.id.layoutId, LEFT, dp(8))
 
-
                     }
-
 
                     button(R.id.button) {
 
@@ -65,7 +62,6 @@ class MainActivity : AppCompatActivity() {
 
                     }
 
-
                     textView(R.id.textView) {
 
                         topMargin(R.id.editText, BOTTOM, dp(25))
@@ -80,10 +76,9 @@ class MainActivity : AppCompatActivity() {
 
                     }
 
-
                     textView(R.id.textView2) {
 
-//                        width = dp(200)
+                        //                        width = dp(200)
                         height = dp(170)
 
                         topMargin(R.id.textView, BOTTOM, dp(8))
@@ -96,7 +91,7 @@ class MainActivity : AppCompatActivity() {
 
                     textView(R.id.textView3) {
 
-//                        width = dp(280)
+                        //                        width = dp(280)
                         height = dp(50)
 
                         topMargin(R.id.textView2, BOTTOM, dp(8))
@@ -118,8 +113,6 @@ class MainActivity : AppCompatActivity() {
                         leftMargin(R.id.layoutId, LEFT, dp(8))
 
                     }
-
-
 
                     button(R.id.button2) {
 
@@ -161,10 +154,6 @@ class MainActivity : AppCompatActivity() {
 
                     }
 
-
-
-
-
                     textView(R.id.textView4) {
 
                         //width = dp(280)
@@ -196,7 +185,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun push2(){
+    fun push2() {
         if (arr.isEmpty()) {
             Toast.makeText(this, "Сначала введите массив", Toast.LENGTH_SHORT).show()
         } else {
@@ -207,7 +196,7 @@ class MainActivity : AppCompatActivity() {
         clean = false
     }
 
-    fun push3(){
+    fun push3() {
         clean = true
         textView4.text = ""
         textView2.text = ""
@@ -215,5 +204,4 @@ class MainActivity : AppCompatActivity() {
         arr.clear()
     }
 }
-
 
