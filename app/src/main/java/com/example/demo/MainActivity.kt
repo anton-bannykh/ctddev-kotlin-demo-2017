@@ -49,10 +49,10 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     button(R.id.button_find) {
-                     //   width = wrap_content
-                     //   height = dp(80)
+                        //   width = wrap_content
+                        //   height = dp(80)
                         topMargin(R.id.editTextFind, BOTTOM, dp(0))
-                        leftMargin(R.id.layoutId, RIGHT , dp(8))
+                        leftMargin(R.id.layoutId, RIGHT, dp(8))
                         rightMargin(R.id.layoutId, LEFT, dp(8))
                         text = "Найти позицию"
                         onCLick {
@@ -70,12 +70,12 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    private var a = ArrayList<Int> ()
+    private var a = ArrayList<Int>()
 
-    fun onAddNumber(){
-        val inputText:String = editTextAddNumber.text.toString()
-        if(inputText==""){
-            Toast.makeText(applicationContext,"Введите число",Toast.LENGTH_SHORT).show()
+    fun onAddNumber() {
+        val inputText: String = editTextAddNumber.text.toString()
+        if (inputText == "") {
+            Toast.makeText(applicationContext, "Введите число", Toast.LENGTH_SHORT).show()
             editTextAddNumber.text.clear()
             return
         }
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 return
             }
         }
-        val number:Int = editTextAddNumber.text.toString().toInt()
+        val number: Int = editTextAddNumber.text.toString().toInt()
         a.add(number)
         textView_showArray.text = a.toString()
         editTextAddNumber.text.clear()
@@ -94,8 +94,8 @@ class MainActivity : AppCompatActivity() {
 
     fun onFind() {
         val input = editTextFind.text.toString()
-        if(input==""){
-            Toast.makeText(applicationContext,"Введите число",Toast.LENGTH_SHORT).show()
+        if (input == "") {
+            Toast.makeText(applicationContext, "Введите число", Toast.LENGTH_SHORT).show()
             editTextFind.text.clear()
             return
         }
