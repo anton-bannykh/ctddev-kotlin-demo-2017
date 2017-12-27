@@ -1,17 +1,15 @@
 package my.lib
 
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
-
-fun foo() = 10
-
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
+fun binSearch(a: ArrayList<Int>, l: Int, r: Int, x: Int): Int {
+    val m = (l + r) / 2
+    if (x == a[m]) {
+        return m + 1
     }
-    return result
+    if (l == r)
+        return a.size + 1
+    return if (a[m] >= x) {
+        binSearch(a, l, m, x)
+    } else {
+        binSearch(a, m + 1, r, x)
+    }
 }
-
-fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
