@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.EditText
 import android.widget.Button
 
+
 /**
  * Created by Sergey on 24.12.2017.
  */
@@ -38,4 +39,3 @@ fun ViewGroup.textView(id: Int, init: TextView.() -> Unit) = initCustomView(Text
 fun ViewGroup.editText(id: Int, init: EditText.() -> Unit) = initCustomView(EditText(context), id, init)
 
 fun ViewGroup.button(id: Int, init: Button.() -> Unit) = initCustomView(Button(context), id, init)
-
