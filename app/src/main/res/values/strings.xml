@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">DSU</string>
+    <string name="errorMessage">Ошибка!</string>
+    <string name="numberIsTooBig">Число слишком большое</string>
+    <string name="accept">Принять</string>
+    <string name="incorrectInput">Некоректные входные данные</string>
+    <string name="oneOrTwoNumbers">Одно или оба из числа слишком большие</string>
+    <string name="result">Результат</string>
+    <string name="oneU">Элементы принадлежат одному множеству</string>
+    <string name="diffU">Элементы лежат в разных множествах</string>
+    <string name="succesInUnite">Множества успешно объединены</string>
+    <string name="info">INFO</string>
+    <string name="infoText">DSU - структура позволяющая быстро выполнять запросы двух видов:\n1) Узнать принадлежат ли два элемента одному множеству\n2) Связать два множества к которому принадлежат элементы\n\nСначала задайте количество элементов в Вашем множестве, элементы нумеруются от 0 до n - 1, где n количество. Далее Вы можете выполнять запросы.</string>
+    <string name="oK">Ок</string>
+    <string name="amountOfElements">Количество элементов (n):</string>
+    <string name="agree">Подтвердить</string>
+    <string name="numbersOfEllements">Номера элементов (0 .. n - 1):</string>
+    <string name="makeTheCulcs">Провести расчет</string>
+    <string name="resetAll">Сброс</string>
     <string-array name="arrayOfChoises">
         <item>Одно ли множество у элементов</item>
         <item>Объединить множества</item>
