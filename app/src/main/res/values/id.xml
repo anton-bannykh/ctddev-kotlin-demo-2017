@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="layout" type="id" />
+    <item name="SizeOf" type="id" />
+    <item name="sizeIn" type="id" />
+    <item name="inputSize" type="id" />
+    <item name="weightOut" type="id" />
+    <item name="weightIn" type="id" />
+    <item name="priceOut" type="id" />
+    <item name="priceIn" type="id" />
+    <item name="knapsack" type="id" />
+    <item name="answer" type="id" />
+    <item name="getAnswer" type="id" />
+    <item name="Add" type="id" />
+</resources>
