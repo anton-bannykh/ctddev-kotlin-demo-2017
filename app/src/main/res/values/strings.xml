@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Euler Tour Tree</string>
+    <string name="build">Build tree</string>
+    <string name="link">Link</string>
+    <string name="cut">Cut</string>
+    <string name="connected">Is connected?</string>
+    <string name="size">Size of first node?</string>
+    <string name="node_count">Count of nodes</string>
+    <string name="first_node">First node</string>
+    <string name="second_node">Second node</string>
+    <string name="answer_tip">Answer will be here</string>
+    <string name="tree_tip">Tree will be here</string>
+    <string name="connections_tip">Connections between nodes will be here</string>
+    <string name="zero">0</string>
+</resources>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    tools:context="com.example.demo.MainActivity">
+
+    <TextView
+        android:id="@+id/nodes_count"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="@string/node_count" />
+
+    <EditText
+        android:id="@+id/nodes_count_input"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="0"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/build"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/build"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/first_node_hint"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="@string/first_node" />
+
+    <EditText
+        android:id="@+id/first_node_input"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="0"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/second_node_hint"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="@string/second_node" />
+
+    <EditText
+        android:id="@+id/second_node_input"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="0"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/link"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@android:color/darker_gray"
+        android:text="@string/link"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/cut"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@android:color/darker_gray"
+        android:text="@string/cut"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/connected"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@android:color/darker_gray"
+        android:text="@string/connected"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/size"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@android:color/darker_gray"
+        android:text="@string/size"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="@string/answer_tip"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/connections"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="@string/connections_tip"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tree"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="@string/tree_tip"
+        android:textSize="17sp" />
+
+</LinearLayout>
