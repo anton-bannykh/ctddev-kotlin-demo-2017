@@ -6,12 +6,11 @@ import android.graphics.Canvas
 import android.graphics.Point
 import android.graphics.Path
 import android.graphics.Paint
-import android.util.AttributeSet
 import android.view.View
 import java.lang.Math.max
 import java.lang.Math.min
 
-class GraphView(context: Context, attrs: AttributeSet) : View(context, attrs) {
+class GraphView(context: Context) : View(context) {
     private val p: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val path: Path = Path()
     private val minRadius = 5
