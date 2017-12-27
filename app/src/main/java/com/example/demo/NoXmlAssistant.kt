@@ -9,6 +9,11 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.EditText
+//showing compiler that we are going to use DSLf
+@DslMarker
+annotation class NoXmlAssistant
+
+@NoXmlAssistant
 
 class ConstraintLayoutContext(private val activity: AppCompatActivity, layoutId: Int) {
 
