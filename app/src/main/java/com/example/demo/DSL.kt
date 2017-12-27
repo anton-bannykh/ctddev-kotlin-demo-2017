@@ -8,7 +8,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 
+@DslMarker
+annotation class LayoutBuilder
 
+@LayoutBuilder
 class MyConstraintLayout(private val activity: AppCompatActivity, name: Int) {
     val layout = ConstraintLayout(activity).apply { id = name }
 

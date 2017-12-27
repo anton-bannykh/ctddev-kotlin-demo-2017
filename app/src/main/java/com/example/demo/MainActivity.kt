@@ -9,6 +9,12 @@ import my.lib.solve
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var editV: EditText
+    private lateinit var editSize: EditText
+    private lateinit var editPrice: EditText
+    private lateinit var textThings: TextView
+    private lateinit var textAns: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                 textSize = 18f
             }
 
-            editText(R.id.sizeIn) {
+            editV = editText(R.id.sizeIn) {
                 width = dp(139)
                 height = dp(47)
                 leftMargin(R.id.SizeOf, RIGHT, dp(8))
@@ -34,13 +40,13 @@ class MainActivity : AppCompatActivity() {
             textView(R.id.weightOut) {
                 width = dp(139)
                 height = dp(42)
-                topMargin(R.id.layout, TOP, dp(80))
+                topMargin(R.id.SizeOf, BOTTOM, dp(8))
                 leftMargin(R.id.layout, LEFT, dp(8))
-                text = "Size"
+                text = "Weight"
                 textSize = 20f
             }
 
-            editText(R.id.weightIn) {
+            editSize = editText(R.id.weightIn) {
                 width = dp(134)
                 height = dp(45)
                 leftMargin(R.id.weightOut, RIGHT, dp(8))
@@ -57,8 +63,7 @@ class MainActivity : AppCompatActivity() {
                 textSize = 20f
             }
 
-
-            editText(R.id.priceIn) {
+            editPrice = editText(R.id.priceIn) {
                 width = dp(136)
                 height = dp(39)
                 leftMargin(R.id.priceOut, RIGHT, dp(16))
@@ -66,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                 inputType = 2
             }
 
-            textView(R.id.knapsack) {
+            textThings = textView(R.id.knapsack) {
                 width = dp(121)
                 height = dp(260)
                 topMargin(R.id.priceOut, BOTTOM, dp(8))
@@ -89,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                 leftMargin(R.id.knapsack, RIGHT, dp(8))
             }
 
-            textView(R.id.answer) {
+            textAns = textView(R.id.answer) {
                 width = dp(165)
                 height = dp(156)
                 topMargin(R.id.getAnswer, BOTTOM, dp(8))
@@ -101,17 +106,12 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private val editV = findViewById<EditText>(R.id.sizeIn)
-    private val editSize = findViewById<EditText>(R.id.weightIn)
-    private val editPrice = findViewById<EditText>(R.id.priceIn)
-    private val textThings = findViewById<TextView>(R.id.knapsack)
-    private val textAns = findViewById<TextView>(R.id.answer)
     private var lastAction = false
     private var k = 0
     private val price = arrayListOf<Int>()
     private val weight = arrayListOf<Int>()
 
-    fun add() {
+    private fun add() {
         if (lastAction) {
             textAns.text = "Answer:\n"
             textThings.text = "Things:\n"
@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    fun ans() {
+    private fun ans() {
         val v = editV.text
         if (v == null || k == 0 || lastAction) {
             Toast.makeText(this, "Check input", Toast.LENGTH_LONG).show()
