@@ -2,20 +2,16 @@ package com.example.demo
 
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
 
 @DslMarker
 annotation class LayoutConstructor
 
 @LayoutConstructor
 class LayoutBuilder(private val activity: AppCompatActivity, layoutId: Int) {
-//    val linearLayout = LinearLayout(activity).apply {
-//        id = layoutId
-//    }
-//
-//    val relativeLayout = RelativeLayout(activity).apply {
-//        id = layoutId
-//    }
 
     val layout = LinearLayout(activity).apply {
         id = layoutId
@@ -52,15 +48,3 @@ fun AppCompatActivity.layout(name: Int, init: LayoutBuilder.() -> Unit): LinearL
     layout.layout.orientation = LinearLayout.VERTICAL
     return layout.layout
 }
-
-//fun AppCompatActivity.linearLayout(name: Int, init: LayoutBuilder.() -> Unit): LinearLayout {
-//    val layout = LayoutBuilder(this, name)
-//    layout.init()
-//    return layout.linearLayout
-//}
-//
-//fun AppCompatActivity.relativeLayout(name: Int, init: LayoutBuilder.() -> Unit): RelativeLayout {
-//    val layout = LayoutBuilder(this, name)
-//    layout.init()
-//    return layout.relativeLayout
-//}
