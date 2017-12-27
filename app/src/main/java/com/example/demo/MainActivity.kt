@@ -190,7 +190,7 @@ class MainActivity : AppCompatActivity() {
                 leftMargin(viewMain, ConstraintSet.START, dp(28))
                 topMargin(viewMain, ConstraintSet.TOP, dp(55))
                 textSize = sp(20)
-                text = "Количество эллементов(n):"
+                text = "Количество элементов(n):"
             })
             edit1 = editText(edit1Id, {
                 width = TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM
@@ -221,7 +221,7 @@ class MainActivity : AppCompatActivity() {
                 rightMargin(viewMain, ConstraintSet.END, dp(0))
                 topMargin(modeId, ConstraintSet.BOTTOM, dp(30))
                 textSize = sp(20)
-                text = "Количество эллементов(n):"
+                text = "Номер элемента (0..n-1):"
             })
             edit2 = editText(edit2Id, {
                 width = TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM
