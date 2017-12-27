@@ -26,6 +26,15 @@
 
 Полезные команды
 
+<<<<<<< HEAD
+=======
+# Разное
+
+## Gradle
+
+Полезные команды
+
+>>>>>>> upstream/dmitry-belikov
 * `./gradlew assemble` собрать проект
 * `./gradlew test` собрать и запустить тесты
 * `./gradlew check` собрать, запустить все проверки (тесты и style-checker)
