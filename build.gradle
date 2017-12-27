@@ -2,7 +2,6 @@ buildscript {
   ext.kotlin_version = '1.2.0'
 
   repositories {
-<<<<<<< HEAD
     google()
     jcenter()
     mavenCentral()
@@ -19,38 +18,23 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
-        jcenter()
-=======
-    mavenCentral()
-    maven {
-      url "https://plugins.gradle.org/m2/"
->>>>>>> upstream/dmitry-belikov
+      google()
+      jcenter()
     }
-  }
-  dependencies {
-
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    classpath "gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:2.3.0"
-  }
 }
 
-<<<<<<< HEAD
-=======
 apply plugin: 'kotlin'
->>>>>>> upstream/dmitry-belikov
 apply plugin: "org.jlleitschuh.gradle.ktlint"
 
 repositories {
   mavenCentral()
-<<<<<<< HEAD
 }
 
 ktlint {
   ignoreFailures = false
 }
-=======
-}
+
+
 
 ktlint {
   ignoreFailures = false
@@ -68,4 +52,3 @@ compileKotlin {
 compileTestKotlin {
   kotlinOptions.jvmTarget = "1.8"
 }
->>>>>>> upstream/dmitry-belikov
