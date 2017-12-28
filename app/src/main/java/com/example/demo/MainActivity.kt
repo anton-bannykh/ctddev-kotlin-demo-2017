@@ -1,50 +1,65 @@
 package com.example.demo
 
-import android.support.v7.app.AppCompatActivity
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.design.widget.TextInputEditText
-import android.widget.Button
+import android.support.v7.app.AppCompatActivity
 import android.widget.EditText
-import android.widget.SearchView
-import com.example.demo.R.color.colorAccent
-import com.example.demo.R.color.colorAdditional
+import android.widget.*
 import my.lib.search
-import my.lib.sumFun
-
-class MainActivity: AppCompatActivity(){
 
 
+class MainActivity: AppCompatActivity() {
+    private lateinit var answerOutput: EditText
+    private lateinit var searchQuery: SearchView
+    private lateinit var textIn: TextInputEditText
+
+
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val addButton = findViewById<Button>(R.id.button2)
 
-        addButton.setOnClickListener() {
+        setContentView(
+                constraintLayout(R.id.ConstrLayoutID) {
 
-            val textQuery = findViewById<SearchView>(R.id.search_query)
-            val textFor = findViewById<TextInputEditText>(R.id.text)
-            val outputText = findViewById<EditText>(R.id.editText)
+                    searchQuery = searchView(R.id.SearchQueryID) {
+                        leftMargin(R.id.ConstrLayoutID, LEFT, dp(10))
+                        rightMargin(R.id.ConstrLayoutID, RIGHT, dp(10))
+                        topMargin(R.id.ConstrLayoutID, TOP, dp(16))
+                    }
+                    textIn = textInputEditText(R.id.textInID) {
+                        width = dp(400)
 
-            fun onClick(){
-                val stringTextQuery = textQuery.query.toString()
-                val stringText = textFor.text.toString()
-                val positionsList = search(stringTextQuery, stringText)
+                        topMargin(R.id.ConstrLayoutID, TOP, dp(50))
+                        bottomMargin(R.id.answerOutputID, TOP, dp(10))
+                    }
+                    answerOutput = editText(R.id.answerOutputID) {
+                        width = dp(400)
 
-                if (positionsList[0] == -1){
-                    outputText.setText(getString(R.string.string_no_matches_found))
-                 //   textFor.setTextColor(resources.getColor(colorAdditional))
-                } else {
-                    val stringOfPositionList = positionsList.toString()
-                    outputText.setText(stringOfPositionList)
+                        bottomMargin(R.id.SearchButtonID, TOP, dp(8))
+                    }
+
+                    button(R.id.SearchButtonID, { onClick() }) {
+                        text = "Search"
+                        textSize = 18f
+                        bottomMargin(R.id.ConstrLayoutID, BOTTOM, dp(8))
+                        leftMargin(R.id.ConstrLayoutID, RIGHT, dp(150))
+                    }
                 }
-
-            }
-            onClick()
-        }
-
+        )
     }
 
-fun test() = sumFun(1, 2, 3)
+     private fun onClick() {
 
+         val stringTextQuery = searchQuery.query.toString()
+         val stringText = textIn.text.toString()
+         val positionsList = search(stringTextQuery, stringText)
+
+         if (positionsList.isEmpty()) {
+             answerOutput.setText(getString(R.string.string_no_matches_found))
+         } else {
+             val stringOfPositionList = positionsList.toString()
+             answerOutput.setText(stringOfPositionList)
+         }
+    }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="ConstrLayoutID" type="id" />
+    <item name="SearchQueryID" type="id" />
+    <item name="textInID" type="id" />
+    <item name="answerOutputID" type="id" />
+    <item name="SearchButtonID" type="id" />
+
+</resources>
