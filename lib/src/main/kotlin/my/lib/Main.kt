@@ -8,17 +8,20 @@ val STEPS = 100
 fun getRand(n : Int) : Int = ((Math.random() * 100) % (n - 1)).toInt()
 
 class Solution(size : Int) {
-    var solution = IntArray(size, { i -> i })
+    var solution = IntArray(size)
     var energy = 0.0
 
     init {
         for (i in 0..solution.size - 1) {
-            pickUpSolution()
+            solution[i] = i
+        }
+        for (i in 0..solution.size - 1) {
+            pickUpSoilution()
         }
         countEnergy()
     }
 
-    fun pickUpSolution() {
+    fun pickUpSoilution() {
         var x = getRand(solution.size)
         var y : Int
 
@@ -67,7 +70,7 @@ fun algo(n : Int) : Solution {
         for (i in 0..STEPS) {
             var accept = false
 
-            working.pickUpSolution()
+            working.pickUpSoilution()
             working.countEnergy()
 
             if (working.energy <= current.energy) {
@@ -90,3 +93,4 @@ fun algo(n : Int) : Solution {
     }
     return best
 }
+

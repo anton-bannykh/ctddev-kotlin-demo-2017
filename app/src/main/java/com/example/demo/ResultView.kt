@@ -1,20 +1,28 @@
 package com.example.demo
 
-import android.app.Activity
-import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_result.*
 import my.lib.algo
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 
-class ResultView : Activity() {
+class ResultView : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_result)
+        setContentView(constraintLayout(R.id.resLay) {
 
-        val n = intent.getIntExtra(VALUE, 8)
-        val result = getViewRes(n)
+            textView(R.id.res) {
+                val n = intent.getIntExtra(VALUE, 8)
+                val result = getViewRes(n)
 
-        res.text = result
+                text = result
+
+                marginLeft(R.id.resLay, LEFT, 1)
+                marginRight(R.id.resLay, RIGHT, 1)
+                marginTop(R.id.resLay, TOP, 1)
+                marginBottom(R.id.resLay, BOTTOM, 1)
+            }
+
+        })
     }
 
     private fun getViewRes(n : Int) : String {
@@ -25,7 +33,7 @@ class ResultView : Activity() {
 
         for (i in 0..n - 1) {
             for (j in 0..n - 1) {
-                    s += if (a.solution[i] == j) "f " else ". "
+                s += if (a.solution[i] == j) "f " else ". "
             }
             s += "\n"
         }
