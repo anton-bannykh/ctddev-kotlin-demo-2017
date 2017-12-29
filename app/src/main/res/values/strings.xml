@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CBS</string>
+    <string name="run">Run</string>
+    <string name="answer"> </string>
+    <string name="hint">Enter the sequence below</string>
+    <string name="check">next</string>
+    <string name="Corr">Correct!</string>
+    <string name="False">Incorrect!</string>
+</resources>
