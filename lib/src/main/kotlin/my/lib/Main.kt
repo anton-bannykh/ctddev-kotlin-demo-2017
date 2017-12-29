@@ -1,3 +1,4 @@
+package my.lib
 import java.util.ArrayList
 
 class Node(val l: Int, val r: Int, private var value: Int) {

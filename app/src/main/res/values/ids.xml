@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <id name="layout" />
+    <id name="enter_size_view" />
+    <id name="size_edit" />
+    <id name="build_button" />
+    <id name="build_result_view" />
+    <id name="queries_view" />
+    <id name="set_view" />
+    <id name="set_edit1" />
+    <id name="set_edit2" />
+    <id name="set_button" />
+    <id name="set_result_view" />
+    <id name="get_view" />
+    <id name="get_edit1" />
+    <id name="get_edit2" />
+    <id name="get_button" />
+    <id name="get_result_view" />
+</resources>

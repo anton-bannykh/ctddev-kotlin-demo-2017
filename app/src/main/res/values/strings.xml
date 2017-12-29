@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Segment tree</string>
+    <string name="enter_size">Enter size:</string>
+    <string name="create_tree">Create tree</string>
+    <string name="wrong_size">Wrong size</string>
+    <string name="size">size</string>
+    <string name="tree_created">Tree created</string>
+    <string name="queries">Queries:</string>
+    <string name="get_value">Get sum</string>
+    <string name="position">position</string>
+    <string name="from">from</string>
+    <string name="to">to</string>
+    <string name="value">value</string>
+    <string name="Value">Value</string>
+    <string name="set">set</string>
+    <string name="on_position">on position</string>
+    <string name="process">Process</string>
+    <string name="set_value">Set value</string>
+    <string name="wrong_parameters">Wrong parameters</string>
+    <string name="sum_is">Sum is</string>
+</resources>
