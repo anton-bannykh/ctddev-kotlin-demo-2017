@@ -1,20 +1,26 @@
-group 'demo'
-version '1.0-SNAPSHOT'
-
 buildscript {
   ext.kotlin_version = '1.2.0'
 
   repositories {
+    google()
+    jcenter()
     mavenCentral()
     maven {
       url "https://plugins.gradle.org/m2/"
     }
   }
   dependencies {
-
+    classpath 'com.android.tools.build:gradle:3.0.1'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     classpath "gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:2.3.0"
   }
+}
+
+allprojects {
+    repositories {
+      google()
+      jcenter()
+    }
 }
 
 apply plugin: 'kotlin'
@@ -23,6 +29,12 @@ apply plugin: "org.jlleitschuh.gradle.ktlint"
 repositories {
   mavenCentral()
 }
+
+ktlint {
+  ignoreFailures = false
+}
+
+
 
 ktlint {
   ignoreFailures = false
