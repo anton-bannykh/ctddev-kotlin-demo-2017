@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Shuffle</string>
+    <string name="help1">Enter integer array to shuffle:</string>
+    <string name="button_name">Shuffle</string>
+</resources>
