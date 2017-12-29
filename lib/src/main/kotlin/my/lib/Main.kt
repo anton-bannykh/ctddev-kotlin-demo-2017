@@ -1,3 +1,5 @@
+package my.lib
+
 /**
  * Created by Maxim on 05.12.2017.
  */
@@ -5,7 +7,7 @@
 fun compress(a: IntArray) : IntArray {
     val b : IntArray = a.copyOf()
     b.sort()
-    for (i in 0..a.size - 1) {
+    for (i in 0 until a.size) {
         a[i] = b.binarySearch(a[i])
     }
     return a

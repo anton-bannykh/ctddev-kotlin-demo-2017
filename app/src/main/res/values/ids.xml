@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="layoutId" />
+    <item type="id" name="description" />
+    <item type="id" name="array" />
+    <item type="id" name="calculate" />
+    <item type="id" name="answer" />
+</resources>
