@@ -1,3 +1,5 @@
+package ru.walingar.kmp
+
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.util.Random
