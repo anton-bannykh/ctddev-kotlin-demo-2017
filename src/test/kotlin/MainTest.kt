@@ -1,39 +1,60 @@
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import java.util.Random
 
 class MainTest {
-    @Test
-    fun testFoo() {
-        assertEquals(10, foo())
+    private fun runTest(string: String, check: Boolean = true) {
+        val answer = buildSufArray(string)
+        if (check) {
+            val real_answer = easyBuildSufArray(string)
+            assertEquals(answer, real_answer)
+        }
+    }
+
+    private fun generate(n: Int, minCode: Int, maxCode: Int): String {
+        var str = ""
+        for (i in 0 until n) {
+            val code = Random().nextInt(maxCode + 1 - minCode) + minCode
+            str += code.toChar()
+        }
+        return str
     }
 
     @Test
-    fun testSumEmpty() {
-        assertEquals(0, sum())
+    fun testSmall() {
+        val string = "abacabacaaabzd"
+        runTest(string)
     }
 
     @Test
-    fun testSumSingle() {
-        assertEquals(42, sum(42))
+    fun testEmpty() {
+        val string = ""
+        runTest(string)
     }
 
     @Test
-    fun testSumMany() {
-        assertEquals(6, sum(1, 2, 3))
+    fun testAaaa() {
+        val string = "aaaaaaaaaaa"
+        runTest(string)
     }
 
     @Test
-    fun testSumFunEmpty() {
-        assertEquals(0, sumFun())
+    fun testSpecialCharacters() {
+        val string = " a as as \n 123124 12e@#%@!@%Q^^&@U*CEJI!(#*@RUHFwi aesdf      {{{{{}}}__---=-"
+        runTest(string)
     }
 
     @Test
-    fun testSumFunSingle() {
-        assertEquals(42, sumFun(42))
+    fun testBigRandom() {
+        for (n in 10..20000 step 5000) {
+            runTest(generate(n, 0, 255))
+        }
     }
 
     @Test
-    fun testSumFunMany() {
-        assertEquals(6, sumFun(1, 2, 3))
+    fun testBigRandomWithoutCheck() {
+        for (n in 10..200000 step 50000) {
+            runTest(generate(n, 0, 255), check = false)
+        }
     }
 }
