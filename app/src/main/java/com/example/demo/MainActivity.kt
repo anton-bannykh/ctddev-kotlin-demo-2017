@@ -68,6 +68,4 @@ class MainActivity : AppCompatActivity() {
         setContentView(lay)
     }
 
-    fun dp(x: Int): Int = (x * applicationContext.resources.displayMetrics.density).toInt()
-
 }

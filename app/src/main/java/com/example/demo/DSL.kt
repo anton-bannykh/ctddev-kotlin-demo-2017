@@ -16,6 +16,8 @@ fun AppCompatActivity.linearLayout(init: LinearLayout.() -> Unit): LinearLayout 
     return layout
 }
 
+fun AppCompatActivity.dp(x: Int): Int = (x * applicationContext.resources.displayMetrics.density).toInt()
+
 fun <T : View> ViewGroup.initView(view: T, init: T.() -> Unit): T {
     view.init()
     view.id = View.generateViewId()
