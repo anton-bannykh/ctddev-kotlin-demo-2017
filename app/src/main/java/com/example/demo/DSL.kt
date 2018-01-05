@@ -33,7 +33,5 @@ fun ViewGroup.button(init: Button.() -> Unit): Button = initView(Button(this.con
 fun ViewGroup.textView(init: TextView.() -> Unit): TextView = initView(TextView(this.context), init)
 
 fun View.layoutParams(init: ViewGroup.LayoutParams.() -> Unit) {
-    val lp = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-    lp.init()
-    this.layoutParams = lp
+    this.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply(init)
 }
