@@ -1,17 +1,29 @@
 package my.lib
 
-fun main(args: Array<String>) {
-    println("Hello world!")
-}
+fun BinarySearch(a: IntArray, x: Int): Int {
 
-fun foo() = 10
+    fun binSearchRec(x: Int, left: Int, right: Int): Int {
 
-fun sum(vararg ints: Int): Int {
-    var result = 0
-    for (v in ints) {
-        result += v
+        if (left + 1 == right) {
+
+            return right
+
+        }
+
+        val middle = (left + right) / 2
+
+        return if (a[middle] < x) {
+
+            binSearchRec(x, middle, right)
+
+        } else {
+
+            binSearchRec(x, left, middle)
+
+        }
+
     }
-    return result
-}
 
-fun sumFun(vararg ints: Int) = ints.fold(0) { acc, i -> acc + i }
+    return binSearchRec(x, -1, a.size)
+
+}
