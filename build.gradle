@@ -1,5 +1,6 @@
 buildscript {
   ext.kotlin_version = '1.2.0'
+    ext.anko_version='0.10.1'
 
   repositories {
     google()
@@ -12,6 +13,7 @@ buildscript {
   dependencies {
     classpath 'com.android.tools.build:gradle:3.0.1'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    classpath "org.jetbrains.anko:anko:$anko_version"
     classpath "gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:2.3.0"
   }
 }
@@ -20,6 +22,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 

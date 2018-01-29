@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="main_layout" type="id" />
+    <item name="tv" type="id" />
+    <item name="btn_sort" type="id" />
+</resources>
