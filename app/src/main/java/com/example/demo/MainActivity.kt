@@ -13,12 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(
                 constraintLayout(R.id.layout) {
-
                     val string = EditText(R.id.string) {
                         width = dp(256)
                         height = dp(64)
                         textSize = 16f
-                        hint = "СЃС‚СЂРѕРєР°"
+                        hint = "строка"
                         leftMargin(R.id.layout, ConstraintSet.START, dp(8))
                         topMargin(R.id.layout, ConstraintSet.TOP, dp(8))
                     }
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                         width = dp(256)
                         height = dp(64)
                         textSize = 16f
-                        hint = "РїРѕРґСЃС‚СЂРѕРєР°"
+                        hint = "подстрока"
                         leftMargin(R.id.layout, ConstraintSet.START, dp(8))
                         topMargin(R.id.string, ConstraintSet.BOTTOM, dp(24))
                     }
@@ -36,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                         width = dp(256)
                         height = dp(64)
                         textSize = 16f
-                        text = "РРЅРґРµРєСЃС‹ РІС…РѕР¶РґРµРЅРёСЏ РїРѕРґСЃС‚СЂРѕРєРё РІ СЃС‚СЂРѕРєСѓ:"
+                        text = "Индексы вхождения подстроки в строку:"
                         leftMargin(R.id.layout, ConstraintSet.START, dp(8))
                         topMargin(R.id.substring, ConstraintSet.BOTTOM, dp(24))
                     }
@@ -54,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                         width = dp(128)
                         height = dp(64)
                         textSize = 16f
-                        text = "РџРѕРёСЃРє"
+                        text = "Поиск"
                         leftMargin(R.id.layout, ConstraintSet.START, dp(126))
                         topMargin(R.id.answer, ConstraintSet.BOTTOM, dp(24))
                         setOnClickListener({
