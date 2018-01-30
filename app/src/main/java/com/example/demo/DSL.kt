@@ -24,7 +24,7 @@ class DemoConstraintLayout(private val activity: AppCompatActivity, layoutID: In
         return view
     }
 
-    private fun <T:View> T.initialize(id:Int):T{
+    private fun <T : View> T.initialize(id: Int): T {
         this.id = id
         return this
     }
