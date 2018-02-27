@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="layout" type="id"/>
+    <item name="string" type="id"/>
+    <item name="substring" type="id"/>
+    <item name="answer_text" type="id"/>
+    <item name="answer" type="id"/>
+    <item name="button" type="id"/>
+</resources>
