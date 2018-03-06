@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Miller-Rabin Test</string>
-    <string name="greeting">Wassup!</string>
     <string name="check">Check</string>
 </resources>
